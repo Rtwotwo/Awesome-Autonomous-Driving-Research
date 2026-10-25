@@ -47,7 +47,7 @@ function renderMetrics() {
 }
 
 function paperCard(paper) {
-  const trackLabel = { e2e: 'END-TO-END', 'world-model': 'WORLD MODEL', vla: 'VLA', rsi: 'RSI' }[paper.track];
+  const trackLabel = { e2e: 'END-TO-END', 'world-model': 'WORLD MODEL', vla: 'VLA', rsi: 'RSI', 'perception-other': 'PERCEPTION & OTHER' }[paper.track];
   const sourceStatus = paper.codeStatus === 'pending' ? 'CODE PENDING' : paper.openSource ? (paper.codeScope === 'partial' ? 'PARTIAL CODE' : 'PUBLIC CODE') : 'NO VERIFIED CODE LINK';
   const links = [
     paper.paper ? `<a href="${paper.paper}" title="Paper" aria-label="Paper" target="_blank" rel="noopener">📄</a>` : '',

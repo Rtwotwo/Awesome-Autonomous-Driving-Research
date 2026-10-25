@@ -4,7 +4,7 @@ Contributions of papers, datasets, benchmarks, and reproducible results are welc
 
 ## Adding a Paper
 
-The paper catalog is generated from a Zotero BibTeX export. Add the paper to the Zotero collection, export the library, and run:
+The source of truth is `data/papers.json`. Add a verified paper to the appropriate track, together with a repository-audit record and an explicit citation availability record. Then run `npm run readme` and `npm run validate`. An optional Zotero BibTeX import preserves existing curated records:
 
 ```bash
 node scripts/sync_zotero.mjs path/to/Autonomous-Driving.bib
@@ -12,10 +12,12 @@ node scripts/sync_zotero.mjs path/to/Autonomous-Driving.bib
 
 An eligible paper must:
 
-- directly address end-to-end autonomous driving, driving world models, or vision-language-action driving;
+- directly address end-to-end autonomous driving, driving world models, vision-language-action driving, recursive self-improvement, or perception and supporting driving research;
 - provide an arXiv, conference, or publisher page;
 - have a title, year, and source that can be independently verified;
 - use an author-maintained project or repository when code links are included.
+
+Use one primary track per paper: `e2e`, `vla`, `world-model`, `rsi`, or `perception-other`. Keep each track newest first and do not add topic subcategories. A promised release can be `pending` without a repository URL; mark a release as `released` only after verifying actual implementation files. Scope-limited releases use `codeScope: "partial"` with a short explanation. Discovery articles are leads; cite primary paper and author sources for catalog facts.
 
 ## Adding a Benchmark
 

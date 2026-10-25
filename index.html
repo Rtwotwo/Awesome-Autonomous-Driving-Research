@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research tracker and public benchmark hub for end-to-end driving, world models, VLA, and recursive self-improvement">
+  <meta name="description" content="Research tracker and public benchmark hub for end-to-end driving, world models, VLA, recursive self-improvement, perception, and related driving research">
   <title>AutoDrive Research Hub</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
     <section class="hero shell">
       <div class="eyebrow"><span></span> CURATED · REPRODUCIBLE · OPEN</div>
       <h1>Tracking the next<br><em>driving intelligence</em></h1>
-      <p class="hero-copy">A curated map of end-to-end driving, world models, and vision-language-action research, connected to public protocols, code, and reproducible results.</p>
+      <p class="hero-copy">Explore end-to-end driving, world models, VLA, self-improvement, and perception research through source-linked papers, public code, datasets, and evaluation protocols.</p>
       <div class="hero-actions">
         <a class="button primary" href="#papers">EXPLORE PAPERS <span>↘</span></a>
         <a class="button secondary" href="#leaderboard">OPEN BENCHMARKS</a>
@@ -62,7 +62,7 @@
     <section class="section shell" id="landscape">
       <div class="section-heading">
         <div><span class="section-index">01</span><p class="kicker">RESEARCH LANDSCAPE</p></div>
-        <h2>Four research tracks.<br>One evidence-based hub.</h2>
+        <h2>Five research tracks.<br>One evidence-based hub.</h2>
       </div>
       <div class="track-grid">
         <article class="track-card e2e">
@@ -85,6 +85,11 @@
           <h3>Recursive Self-Improvement</h3><p>Study driving policies and agents that improve through repeated feedback, safe learning, real-world experience, and evolving scenarios.</p>
           <div class="track-tags"><span>Self-Evolving</span><span>Safe RL</span><span>Feedback</span></div>
         </article>
+        <article class="track-card perception-other">
+          <span class="track-number">05</span><div class="track-icon">◈</div>
+          <h3>Perception &amp; Other Driving Research</h3><p>Explore scene understanding, 3D reconstruction, motion prediction, safety testing, and surveys that support autonomous driving.</p>
+          <div class="track-tags"><span>Perception</span><span>Prediction</span><span>Safety</span></div>
+        </article>
       </div>
     </section>
 
@@ -102,6 +107,7 @@
             <button class="filter" type="button" data-track="world-model" aria-pressed="false">World Model</button>
             <button class="filter" type="button" data-track="vla" aria-pressed="false">VLA</button>
             <button class="filter" type="button" data-track="rsi" aria-pressed="false">RSI</button>
+            <button class="filter" type="button" data-track="perception-other" aria-pressed="false">Perception &amp; Other</button>
           </div>
           <div class="paper-query-controls">
             <label class="search"><span aria-hidden="true">⌕</span><input id="paperSearch" type="search" placeholder="Search title, method, tag, or dataset…" autocomplete="off" aria-label="Search papers"></label>

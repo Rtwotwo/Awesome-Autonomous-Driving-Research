@@ -173,6 +173,17 @@ footer { border-top: 1px solid var(--line); padding: 44px 0; }footer .shell { di
   .paper-result-bar { gap: 8px; }
   .saved-toggle { flex: 0 0 auto; }
 }
+.track-card.perception-other { --accent: #91c7bb; }
+.track-pill.perception-other { background: #cce8e0; }
+@media (min-width: 901px) {
+  .track-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .track-card { grid-column: span 2; border-bottom: 1px solid var(--line); }
+  .track-card:nth-child(3) { border-right: 0; }
+  .track-card:nth-child(n+4) { grid-column: span 3; border-bottom: 0; }
+}
+@media (min-width: 641px) and (max-width: 900px) {
+  .track-card:last-child { grid-column: 1 / -1; border-bottom: 0; }
+}
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

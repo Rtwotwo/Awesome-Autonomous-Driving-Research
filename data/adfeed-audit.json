@@ -1,0 +1,2396 @@
+{
+  "checkedAt": "2026-10-25",
+  "cutoff": "2026-10-25 Asia/Shanghai",
+  "sourceAccount": "ADFeed (AI DevFeed)",
+  "coverage": {
+    "completeAccountHistory": false,
+    "publicArchivePages": 19,
+    "publicArchiveTitleCount": 380,
+    "addedPapers": 81,
+    "addedByTrack": {
+      "e2e": 9,
+      "rsi": 3,
+      "perception-other": 31,
+      "vla": 22,
+      "world-model": 16
+    },
+    "catalogTotal": 358,
+    "catalogByTrack": {
+      "e2e": 93,
+      "vla": 108,
+      "world-model": 100,
+      "rsi": 25,
+      "perception-other": 32
+    },
+    "limitations": [
+      "Archive pages 1–19 expose 380 titles. Page 20 redirects to login; access controls were not bypassed.",
+      "The public index exposes titles but often no individual article URLs or exact dates. It may lag the account; the cutoff is a search cutoff, not proof of coverage through that day.",
+      "Direct WeChat article access required verification. Independently indexed, explicitly attributed reposts were also searched.",
+      "Descriptor-only matches are marked as inferences. Ambiguous titles remain unresolved rather than being assigned a guessed paper.",
+      "General robotics, video-generation and industry-commentary posts without an established driving research connection are outside this catalog."
+    ]
+  },
+  "policy": {
+    "identity": "Deduplicate by arXiv identifier, primary-paper URL and normalized title, including renamed methods.",
+    "facts": "Verify titles, publication dates, methods and release status using arXiv, publishers, authors and official repositories.",
+    "code": "Repository existence alone is not a released implementation. Pending can lack an announced repository URL; partial releases identify available components.",
+    "dates": "published records first public paper month when verified; venue records later formal publication only when supported by primary sources."
+  },
+  "additions": [
+    {
+      "paperId": "2601-03460",
+      "paper": "https://arxiv.org/abs/2601.03460",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+        "type": "archive",
+        "title": "“冻”住大模型，驾驶成绩反涨：FROST-Drive 用“知识冻结”刷新 Waymo 端到端驾驶榜单",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.03460",
+        "https://arxiv.org/html/2601.03460v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2026-01-06",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "classificationReason": "Uses only the frozen VLM vision encoder, with learned waypoint planning; no language-action model is retained in the driving policy.",
+        "venueNote": "CVF search exposed a WACV2026W/LLVM-AD paper PDF but both official PDF and HTML fetches returned 403; keep year label unless separately verified."
+      }
+    },
+    {
+      "paperId": "2506-03568",
+      "paper": "https://arxiv.org/abs/2506.03568",
+      "track": "rsi",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18",
+        "type": "archive",
+        "title": "C-HAC：置信度引导的自动驾驶强化学习策略",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2506.03568",
+        "https://arxiv.org/html/2506.03568v2",
+        "https://github.com/lzqw/C-HAC",
+        "https://github.com/lzqw/C-HAC/blob/main/dsac_v2_pvp.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-04",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "sourceFilesInspected": [
+          "https://github.com/lzqw/C-HAC/blob/main/dsac_v2_pvp.py"
+        ],
+        "classificationReason": "Explicit second stage performs autonomous RL continuous enhancement beyond the initial human-guided policy."
+      }
+    },
+    {
+      "paperId": "2511-14499",
+      "paper": "https://arxiv.org/abs/2511.14499",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+        "type": "archive",
+        "title": "[华为+清华] RSD: 基于风险语义蒸馏的端到端自动驾驶框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2511.14499",
+        "https://arxiv.org/html/2511.14499v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-18",
+        "abstractRead": true,
+        "classificationReason": "VLM is an offline risk teacher; the deployed driving backbone remains an end-to-end planner.",
+        "titleNote": "Preserves the spelling Distillaion in the official arXiv title."
+      }
+    },
+    {
+      "paperId": "2511-11740",
+      "paper": "https://arxiv.org/abs/2511.11740",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+        "type": "archive",
+        "title": "ExpertAD：提升自动驾驶系统复杂场景处理能力的混合专家架构",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2511.11740",
+        "https://arxiv.org/html/2511.11740v1",
+        "https://github.com/Expert-AD/ExpertAD",
+        "https://github.com/Expert-AD/ExpertAD/blob/main/nuScenes/Expert-UniAD/projects/mmdet3d_plugin/expertuniad/modules/adapter.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-13",
+        "abstractRead": true,
+        "venueEvidence": "arXiv comments explicitly state AAAI 2026 acceptance.",
+        "sourceFilesInspected": [
+          "nuScenes/Expert-UniAD/projects/mmdet3d_plugin/expertuniad/modules/adapter.py"
+        ]
+      }
+    },
+    {
+      "paperId": "2511-13297",
+      "paper": "https://arxiv.org/abs/2511.13297",
+      "track": "rsi",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+        "type": "archive",
+        "title": "[理想汽车+西湖大学] CorrectAD: 提升自动驾驶端到端规划模型鲁棒性的自校正代理系统",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2511.13297",
+        "https://arxiv.org/html/2511.13297v1",
+        "https://ojs.aaai.org/index.php/AAAI/article/download/37718/41680"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-17",
+        "abstractRead": true,
+        "classificationReason": "Failure analysis, targeted synthesis and planner retraining form an explicit self-correcting improvement loop."
+      }
+    },
+    {
+      "paperId": "2510-06038",
+      "paper": "https://arxiv.org/abs/2510.06038",
+      "track": "rsi",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+        "type": "archive",
+        "title": "H-DSAC：提升自动驾驶安全与效率的人机协作强化学习方法",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.06038",
+        "https://arxiv.org/html/2510.06038v1",
+        "https://github.com/lzqw/H-DSAC",
+        "https://github.com/lzqw/H-DSAC/blob/main/dsac_v2_pvp.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-07",
+        "abstractRead": true,
+        "sourceFilesInspected": [
+          "dsac_v2_pvp.py"
+        ],
+        "classificationReason": "Interactive policy learning from intervention feedback; RSI here denotes policy improvement, not autonomous recursive algorithm rewriting."
+      }
+    },
+    {
+      "paperId": "2509-20253",
+      "paper": "https://arxiv.org/abs/2509.20253",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "type": "archive",
+        "title": "AnchDrive：混合轨迹锚点引导的端到端自动驾驶框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.20253",
+        "https://arxiv.org/html/2509.20253v2"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-24",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2509-17940",
+      "paper": "https://arxiv.org/abs/2509.17940",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "type": "archive",
+        "title": "DriveDPO：通过安全直接偏好优化提升端到端自动驾驶策略",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.17940",
+        "https://arxiv.org/html/2509.17940v1",
+        "https://papers.nips.cc/paper_files/paper/2025/hash/750337e1301941f81ae31a90e0a1c181-Abstract-Conference.html"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-22",
+        "abstractRead": true,
+        "venueEvidence": "Official NeurIPS 2025 proceedings abstract."
+      }
+    },
+    {
+      "paperId": "2508-06113",
+      "paper": "https://arxiv.org/abs/2508.06113",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "GMF-Drive：高效多模态融合与空间感知驱动的自动驾驶新框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.06113",
+        "https://arxiv.org/html/2508.06113v2"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-08",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2508-10567",
+      "paper": "https://arxiv.org/abs/2508.10567",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "SpaRC-AD：通过雷达-摄像头融合提升端到端自动驾驶性能新框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.10567",
+        "https://arxiv.org/html/2508.10567v1",
+        "https://phi-wol.github.io/sparcad/",
+        "https://openaccess.thecvf.com/content/ICCV2025W/DriveX/papers/Wolters_SpaRC-AD_A_Baseline_for_Radar-Camera_Fusion_in_End-to-End_Autonomous_Driving_ICCVW_2025_paper.pdf"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-14",
+        "abstractRead": true,
+        "codeVerificationBlocked": true,
+        "venueEvidence": "Official ICCV 2025 DriveX workshop proceedings PDF indexed with exact title and abstract."
+      }
+    },
+    {
+      "paperId": "2507-17596",
+      "paper": "https://arxiv.org/abs/2507.17596",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "title": "[斯堪尼亚+瑞典皇家理工] PRIX: 基于原始像素仅使用摄像头的高效端到端自动驾驶技术",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.17596",
+        "https://maxiuw.github.io/prix/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-23",
+        "abstractRead": true,
+        "venueEvidence": "arXiv comments: accepted for Robotics and Automation Letters and presentation at IROS 2026."
+      }
+    },
+    {
+      "paperId": "2507-17342",
+      "paper": "https://arxiv.org/abs/2507.17342",
+      "track": "e2e",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "title": "DeMo++：解耦运动意图与动态状态的自动驾驶运动预测与规划框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.17342",
+        "https://arxiv.org/html/2507.17342v2",
+        "https://github.com/LogosIntelligenceLab/DeMo",
+        "https://github.com/LogosIntelligenceLab/DeMo/blob/main/src/model/model_forecast.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-23",
+        "abstractRead": true,
+        "sourceFilesInspected": [
+          "src/model/model_forecast.py"
+        ],
+        "venueNote": "Journal extension of NeurIPS 2024 predecessor; no new venue claimed."
+      }
+    },
+    {
+      "paperId": "2510-13108",
+      "paper": "https://arxiv.org/abs/2510.13108",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=8",
+        "type": "archive",
+        "title": "[英伟达] DriveCritic: 具有上下文感知和人类对齐的自动驾驶评估新框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.13108",
+        "https://song-jingyu.github.io/DriveCritic/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-15",
+        "abstractRead": true,
+        "classificationReason": "Supporting evaluator for end-to-end driving rather than a driving policy.",
+        "venueEvidence": "Official project and arXiv metadata."
+      }
+    },
+    {
+      "paperId": "2508-06534",
+      "paper": "https://arxiv.org/abs/2508.06534",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "MetAdv：自动驾驶对抗性测试的统一交互式解决方案",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.06534",
+        "https://arxiv.org/html/2508.06534v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-04",
+        "abstractRead": true,
+        "classificationReason": "General driving evaluation infrastructure; not itself an end-to-end policy or self-improving policy loop."
+      }
+    },
+    {
+      "paperId": "2512-23585",
+      "paper": "https://arxiv.org/abs/2512.23585",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "DIF：精准捕捉罕见高危驾驶场景的无监督框架"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.23585",
+        "https://arxiv.org/html/2512.23585v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-12-29",
+        "abstractRead": true,
+        "nameNote": "DIF is the adopted Deep Isolation Forest algorithm, used as the ADFeed post's shorthand; it is not a new acronym introduced by this paper."
+      }
+    },
+    {
+      "paperId": "2506-02554",
+      "paper": "https://arxiv.org/abs/2506.02554",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "HiLO：基于Transformer的自动驾驶高级目标融合技术"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2506.02554",
+        "https://github.com/rst-tu-dortmund/HiLO",
+        "https://github.com/rst-tu-dortmund/HiLO/blob/release/src/train.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-03",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2506-02358",
+      "paper": "https://arxiv.org/abs/2506.02358",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "RoadFormer：自动驾驶场景下的高效细粒度道路表面分类新架构"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2506.02358",
+        "https://arxiv.org/html/2506.02358v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-03",
+        "abstractRead": true,
+        "identityNote": "This is the 2025 local-global road-surface classifier, distinct from RoadFormer: Duplex Transformer for RGB-Normal Semantic Road Scene Parsing (2023)."
+      }
+    },
+    {
+      "paperId": "2508-04066",
+      "paper": "https://arxiv.org/abs/2508.04066",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "[微软+斯坦福] DRIVE: 通过动态规则推理和验证评估实现安全、高效且符合人类偏好的自动驾驶技术"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.04066",
+        "https://github.com/genglongling/DRIVE",
+        "https://arxiv.org/html/2508.04066v1",
+        "https://github.com/genglongling/DRIVE/blob/main/maximum-likelihood-constraint-inference/rl_with_constraints_convex.py",
+        "https://github.com/genglongling/DRIVE/blob/main/README.md"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-06",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2507-18522",
+      "paper": "https://arxiv.org/abs/2507.18522",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "[宝马+慕尼黑工大] GaussianFusionOcc: 用于自动驾驶中3D语义占用预测的高效多模..."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.18522",
+        "https://arxiv.org/html/2507.18522v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-24",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2507-13425",
+      "paper": "https://arxiv.org/abs/2507.13425",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "CaSTFormer：提升驾驶意图预测准确性的因果时空Transformer模型"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.13425",
+        "https://github.com/srwang0506/CaTFormer",
+        "https://arxiv.org/abs/2507.13425v1",
+        "https://arxiv.org/html/2507.13425v2",
+        "https://github.com/srwang0506/CaTFormer/blob/main/CaTFormer.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-17",
+        "abstractRead": true,
+        "identityNote": "ADFeed refers to v1 CaSTFormer. v2 dated 2026-01-08 renames it CaTFormer; both versions share arXiv ID 2507.13425.",
+        "venueEvidence": "Official arXiv v2 comments state AAAI 2026 acceptance."
+      }
+    },
+    {
+      "paperId": "2507-13373",
+      "paper": "https://arxiv.org/abs/2507.13373",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=17",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "Butter：提升多尺度特征融合的自动驾驶目标检测新框架"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.13373",
+        "https://github.com/Aveiro-Lin/Butter",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/ultralytics/nn/FAFCE.py",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/ultralytics/cfg/models/Butter/Butter-All-BDD100K.yaml",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/Butter-BDD100K-train.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-12",
+        "abstractRead": true
+      }
+    },
+    {
+      "paperId": "2507-18498",
+      "paper": "https://arxiv.org/abs/2507.18498",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "[博世+清华AIR等] 无地图轨迹预测中的地图不确定性分析与创新整合方法"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.18498",
+        "https://github.com/Ethan-Zheng136/Map-Uncertainty-for-Trajectory-Prediction",
+        "https://guoxuan-chi.github.io/assets/pdf/Paper-MapUncertainty.pdf",
+        "https://chenqingsu1.github.io/",
+        "https://github.com/Ethan-Zheng136/Map-Uncertainty-for-Trajectory-Prediction/blob/master/adaptor/adaptor.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-24",
+        "abstractRead": true,
+        "venueEvidence": "Coauthor Boran Zhang's official publication page labels it IROS 2025 Oral."
+      }
+    },
+    {
+      "paperId": "2507-12755",
+      "paper": "https://arxiv.org/abs/2507.12755",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "双分支模型：交通意外预测的新技术"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.12755",
+        "https://arxiv.org/html/2507.12755v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-17",
+        "abstractRead": true,
+        "venueNote": "Secondary sources suggest Communications in Transportation Research, but year retained because publisher metadata was not independently verified."
+      }
+    },
+    {
+      "paperId": "2507-12095",
+      "paper": "https://arxiv.org/abs/2507.12095",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "source": "ADFeed",
+        "title": "BRUM：从360°稀疏图像中进行3D车辆重建方法"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.12095",
+        "https://arxiv.org/html/2507.12095v1",
+        "https://iris.unimore.it/bitstream/11380/1384570/1/IV_2025.pdf",
+        "https://aimagelab-legacy.ing.unimore.it/imagelab/publicationSheet.asp?idpublication=1270"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-16",
+        "abstractRead": true,
+        "codeVerificationBlocked": true,
+        "venueEvidence": "Author laboratory publication page gives IV 2025, 22–25 June 2025; first arXiv release is July."
+      }
+    },
+    {
+      "paperId": "2510-12282",
+      "paper": "https://arxiv.org/abs/2510.12282",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+        "type": "archive",
+        "title": "[理想汽车+哈工大] PAGS: 动态驾驶场景优先自适应高斯插补技术",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.12282",
+        "https://arxiv.org/html/2510.12282v1",
+        "https://zengchang233.github.io/publication/arxiv2025_pags/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-14",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "venueNote": "Author publication page explicitly reports acceptance to ICASSP 2026.",
+        "classificationReason": "Driving-scene reconstruction and rendering; no action-conditioned predictive world model or driving policy is established."
+      }
+    },
+    {
+      "paperId": "2509-22756",
+      "paper": "https://arxiv.org/abs/2509.22756",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "type": "archive",
+        "title": "[高德地图+西交大] PAMR: 面向自动驾驶的持续规则感知高精地图构建新框架",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.22756",
+        "https://ojs.aaai.org/index.php/AAAI/article/view/37619",
+        "https://miv-xjtu.github.io/PAMR/",
+        "https://github.com/MIV-XJTU/PAMR",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents/data_split",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents/assets"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-26",
+        "abstractRead": true,
+        "projectRead": true,
+        "officialCodeVerified": true,
+        "sourceFilesInspected": [
+          "README.md",
+          "data_split/mapdrv2_test.txt",
+          "data_split/mapdrv2_train.txt",
+          "assets/framework.png"
+        ],
+        "venueNote": "arXiv comments and AAAI publisher record confirm AAAI 2026.",
+        "classificationReason": "MLLM outputs map geometry and rules rather than vehicle actions; categorized as driving mapping."
+      }
+    },
+    {
+      "paperId": "2510-13565",
+      "paper": "https://arxiv.org/abs/2510.13565",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+        "type": "archive",
+        "title": "[英飞凌+慕尼黑工业大] XD-RCDepth: 高效融合与创新蒸馏策略的轻量级雷达-相机深度估计框...",
+        "source": "ADFeed"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.13565",
+        "https://arxiv.org/html/2510.13565v3",
+        "https://github.com/harborsarah/XD_RCDepth",
+        "https://github.com/harborsarah/XD_RCDepth/blob/master/trainer.py",
+        "https://github.com/harborsarah/XD_RCDepth/blob/master/models/student_model.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-15",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "officialCodeVerified": true,
+        "sourceFilesInspected": [
+          "trainer.py",
+          "models/student_model.py"
+        ],
+        "venueNote": "No publisher or author venue confirmation found; year label retained.",
+        "classificationReason": "Radar-camera driving perception for depth estimation."
+      }
+    },
+    {
+      "paperId": "2605-23163",
+      "paper": "https://arxiv.org/abs/2605.23163",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+        "title": "Fast-dDrive：\"填空式\"块扩散方法让自动驾驶大模型写得少、想得全、跑得快",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2605.23163",
+        "https://nvlabs.github.io/Fast-dLLM/fast_ddrive/",
+        "https://github.com/NVlabs/Fast-dLLM/blob/main/fast_ddrive/run_chatbot.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2605-22089",
+      "paper": "https://arxiv.org/abs/2605.22089",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+        "title": "LVDrive：潜在视觉增强让AI学会“看未来”的端到端驾驶新框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2605.22089",
+        "https://arxiv.org/html/2605.22089v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-04714",
+      "paper": "https://arxiv.org/abs/2601.04714",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "ThinkDrive：链式思维+分级强化学习让自动驾驶更会“讲道理”的高效小模型",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.04714",
+        "https://arxiv.org/html/2601.04714v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-07092",
+      "paper": "https://arxiv.org/abs/2601.07092",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "SRC-Pipeline：“速写”式视觉问答让自动驾驶算力减负三分之二",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.07092",
+        "https://arxiv.org/html/2601.07092v1",
+        "https://openaccess.thecvf.com/content/WACV2026W/LLVM-AD/papers/Cai_Efficient_Visual_Question_Answering_Pipeline_for_Autonomous_Driving_via_Scene_WACVW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-03519",
+      "paper": "https://arxiv.org/abs/2601.03519",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+        "title": "“聊天”模型变身荒野老司机：OffEMMA 让无人越野车的路线误差直降 13%",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.03519",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2512-24426",
+      "paper": "https://arxiv.org/abs/2512.24426",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "title": "[英伟达] CF-VLA: 让自动驾驶模型“先思后行”的自反思维框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.24426",
+        "https://pengzhenghao.github.io/cfvla/",
+        "https://github.com/pengzhenghao/cfvla",
+        "https://arxiv.org/html/2512.24426",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2512-24331",
+      "paper": "https://arxiv.org/abs/2512.24331",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "title": "[Motional] LVLDrive: 用渐进LiDAR融合给自动驾驶VLM装上度量尺",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.24331",
+        "https://arxiv.org/html/2512.24331v2",
+        "https://openaccess.thecvf.com/content/CVPR2026W/AUTOPILOT/papers/Wei_Spatial-aware_Vision_Language_Model_for_Autonomous_Driving_CVPRW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-01795",
+      "paper": "https://arxiv.org/abs/2510.01795",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "title": "Nav-EE：提升自动驾驶视觉语言模型效率与准确率的导航引导早期退出框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.01795",
+        "https://ieeexplore.ieee.org/abstract/document/11662236",
+        "https://anonymous.4open.science/r/Nav-EE-BBC4",
+        "https://github.com/HugeRaabbit/NavEE",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-25249",
+      "paper": "https://arxiv.org/abs/2509.25249",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "title": "BEV-VLM：基于鸟瞰图特征和视觉语言模型的高效自动驾驶轨迹规划框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.25249",
+        "https://arxiv.org/html/2509.25249v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-15968",
+      "paper": "https://arxiv.org/abs/2509.15968",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "CoReVLA：提升自动驾驶在长尾场景下性能的双阶段端到端框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.15968",
+        "https://github.com/FanGShiYuu/CoReVLA",
+        "https://github.com/FanGShiYuu/CoReVLA/blob/main/bench2drive_files/behaviour.py",
+        "https://fangshiyuu.github.io/CoReVLA/",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-20843",
+      "paper": "https://arxiv.org/abs/2509.20843",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "[小米汽车+清华等] MTRDrive: 通过记忆与工具协同推理提升自动驾驶的鲁棒性与泛化能力的新框...",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.20843",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-18053",
+      "paper": "https://arxiv.org/abs/2509.18053",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "[英伟达] V2V-GoT: 基于多模态大模型和思维图推理的车对车协同自动驾驶框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.18053",
+        "https://github.com/eddyhkchiu/V2V-GoT",
+        "https://github.com/eddyhkchiu/V2V-GoT/blob/main/LLaVA/scripts/eval_v2v4real_3d_grounding.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-19973",
+      "paper": "https://arxiv.org/abs/2509.19973",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "[理想汽车+港科大等] OmniScene: 模拟人类视觉提升自动驾驶4D场景理解的新型多模态框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.19973",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-00789",
+      "paper": "https://arxiv.org/abs/2509.00789",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "title": "[理想汽车+港科大] OmniReason: 提升自动驾驶时空推理与决策可解释性的新型框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.00789",
+        "https://arxiv.org/html/2509.00789v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-01944",
+      "paper": "https://arxiv.org/abs/2509.01944",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "title": "[高德地图] AutoDrive-R^2: 提升自动驾驶系统推理能力的新型VLA框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.01944",
+        "https://arxiv.org/html/2509.01944v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-00060",
+      "paper": "https://arxiv.org/abs/2510.00060",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "title": "Max-V1：高效且泛化能力强的新型端到端自动驾驶框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.00060",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-21824",
+      "paper": "https://arxiv.org/abs/2508.21824",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "title": "DriveQA：评估LLM和MLLM驾驶知识的新基准测试",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.21824",
+        "https://github.com/h2xlab/driveQA/blob/main/data/generate_T_intersection_QA_CARLA.py",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Wei_Passing_the_Driving_Knowledge_Test_ICCV_2025_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-10427",
+      "paper": "https://arxiv.org/abs/2508.10427",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "title": "[Turing] STRIDE-QA 助力自动驾驶视觉问答的大规模时空推理数据集",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.10427",
+        "https://turingmotors.github.io/stride-qa/",
+        "https://github.com/turingmotors/STRIDE-QA-Dataset/blob/main/benchmarks/STRIDE-QA-Bench/src/strideqa_bench/benchmark.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-09061",
+      "paper": "https://arxiv.org/abs/2508.09061",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "title": "VLM-3D：提升自动驾驶3D感知的端到端视觉语言模型框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.09061",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {
+        "classificationReason": "The evaluated output is 3D bounding-box perception, not a driving action policy."
+      }
+    },
+    {
+      "paperId": "2507-12499",
+      "paper": "https://arxiv.org/abs/2507.12499",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "title": "ReAL-AD：基于人类认知模型的自动驾驶推理增强学习框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.12499",
+        "https://4dvlab.github.io/project_page/realad",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Lu_ReAL-AD_Towards_Human-Like_Reasoning_in_End-to-End_Autonomous_Driving_ICCV_2025_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2507-17722",
+      "paper": "https://arxiv.org/abs/2507.17722",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "title": "BetterCheck：提升汽车感知系统VLMs的幻觉检测技术",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.17722",
+        "https://arxiv.org/html/2507.17722v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2507-13729",
+      "paper": "https://arxiv.org/abs/2507.13729",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "title": "[博世] AGENTS-LLM: 通过自然语言增强交通场景的高效框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.13729",
+        "https://arxiv.org/html/2507.13729v1",
+        "https://github.com/mh0797/Agents-LLM",
+        "https://github.com/boschresearch/agents-llm/blob/main/agents_llm/framework.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-02659",
+      "paper": "https://arxiv.org/abs/2509.02659",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "title": "零一汽车：单目相机VLM驱动的端到端自动驾驶技术（CVPR2024自动驾驶国际挑战赛亚军）",
+        "confidence": "descriptor-match",
+        "note": "Unique joint match: ZERON/零一汽车, monocular VLM, and CVPR2024 E2E challenge runner-up. Official organizer PDF independently confirms all technical descriptors."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.02659",
+        "https://opendrivelab.github.io/Challenge%202024/e2e_ZERON.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2506-02580",
+      "paper": "https://arxiv.org/abs/2506.02580",
+      "track": "vla",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18",
+        "title": "V2X-UniPool：赋能高效自动驾驶的多模态数据融合与知识推理框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2506.02580",
+        "https://arxiv.org/html/2506.02580v2",
+        "https://github.com/Xuewen2025/V2X-UniPool/blob/main/build%20v2x%20knowledge%20pool/scene_prompt.py",
+        "https://openaccess.thecvf.com/content/CVPR2026W/DriveX/papers/Luo_V2X-UniPool_Unifying_Multimodal_Perception_and_Knowledge_Reasoning_for_Autonomous_Driving_CVPRW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-09200",
+      "paper": "https://arxiv.org/abs/2510.09200",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+        "title": "DAAD-X数据集+VCBM框架：提高自动驾驶系统可解释性和安全性的新方法",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.09200",
+        "https://mukil07.github.io/VCBM.github.io/",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Karuppasamy_Towards_Safer_and_Understandable_Driver_Intention_Prediction_ICCV_2025_paper.pdf",
+        "https://github.com/Mukil07/Explainable-Driver-Intention-Prediction/blob/main/models/train_i3d.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-17850",
+      "paper": "https://arxiv.org/abs/2509.17850",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "SocialTraj：基于动态社会推理和条件扩散模型的自动驾驶轨迹预测框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.17850",
+        "https://github.com/SimonWicks1",
+        "https://github.com/SimonWicks1/SocialTraj",
+        "https://github.com/SimonWicks1/SocialTraj/blob/master/models/socialtraj.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-16588",
+      "paper": "https://arxiv.org/abs/2509.16588",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "[华为+港中大等] SQS: 自动驾驶中稀疏感知模型的新型预训练技术",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.16588",
+        "https://arxiv.org/html/2509.16588v1",
+        "https://papers.neurips.cc/paper_files/paper/2025/hash/dcfc25c8ff3ecddd5aea6b1928f0db63-Abstract-Conference.html",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-16261",
+      "paper": "https://arxiv.org/abs/2509.16261",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "RaFD：基于流引导助力自动驾驶鲁棒感知的雷达目标检测框架",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.16261",
+        "https://arxiv.org/html/2509.16261v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-06529",
+      "paper": "https://arxiv.org/abs/2508.06529",
+      "track": "perception-other",
+      "adfeed": {
+        "type": "archive-title",
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "title": "RMT-PPAD：助力自动驾驶全景感知的实时多任务学习模型",
+        "confidence": "exact-name"
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.06529",
+        "https://github.com/JiayuanWang-JW/RMT-PPAD",
+        "https://github.com/JiayuanWang-JW/RMT-PPAD/blob/main/ultralytics/models/mtdetr/train.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2412-03934",
+      "paper": "https://arxiv.org/abs/2412.03934",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.iaiol.com/infinicube-lai-zi-ying-wei-da-de-gao-bao-zhen-du-gao-ke-kong-da-gui-mo-dong-tai-3d-jia-shi-chang-jing-sheng-cheng-fang-fa",
+        "type": "explicitly-attributed-repost",
+        "title": "InfiniCube：来自英伟达的高保真度高可控大规模动态3D驾驶场景生成方法",
+        "date": "2025-01-03",
+        "evidence": "Article byline explicitly says 作者：ADFeed; article states it is an authorized repost from 3D视觉之心."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2412.03934",
+        "https://research.nvidia.com/labs/toronto-ai/infinicube/",
+        "https://github.com/nv-tlabs/InfiniCube",
+        "https://github.com/nv-tlabs/InfiniCube/blob/main/infinicube/videogen/inference.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-09452",
+      "paper": "https://arxiv.org/abs/2601.09452",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "type": "archive",
+        "title": "MAD：仅用通用视频模型6%算力炼成顶级驾驶世界模型",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.09452",
+        "https://arxiv.org/html/2601.09452v1",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Rahimi_MAD_Motion_Appearance_Decoupling_for_efficient_Driving_World_Models_CVPR_2026_paper.html",
+        "https://vita-epfl.github.io/MAD-World-Model/",
+        "https://github.com/vita-epfl/MAD-World-Model-Code/blob/main/scripts/run_pipeline.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-01528",
+      "paper": "https://arxiv.org/abs/2601.01528",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+        "type": "archive",
+        "title": "DrivingGen：全球首个自动驾驶生成式世界模型基准测试",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.01528",
+        "https://arxiv.org/html/2601.01528v1",
+        "https://drivinggen-bench.github.io/",
+        "https://openreview.net/pdf?id=OrgL5DsU0f",
+        "https://github.com/youngzhou1999/DrivingGen/blob/main/drivinggen/trajs/traj_quality.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2512-23180",
+      "paper": "https://arxiv.org/abs/2512.23180",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "type": "archive",
+        "title": "[旷视+上海交大等] GaussianDWM: 基于3D-Gaussian的统一驾驶世界模型",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.23180",
+        "https://github.com/dtc111111/GaussianDWM",
+        "https://github.com/dtc111111/GaussianDWM/blob/main/src/gaussiandwm_cvpr/infer/world.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2512-24227",
+      "paper": "https://arxiv.org/abs/2512.24227",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "type": "archive",
+        "title": "[小米汽车] Mirage: 实现自动驾驶场景照片级一致3D资产编辑的单步视频扩散框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.24227",
+        "https://arxiv.org/html/2512.24227v1",
+        "https://github.com/wm-research/mirage",
+        "https://api.github.com/repos/wm-research/mirage/git/trees/main?recursive=1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2512-23983",
+      "paper": "https://arxiv.org/abs/2512.23983",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "type": "archive",
+        "title": "DriveExplorer：纯图像渐进复原的4D高斯驾驶视角外推技术",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2512.23983",
+        "https://arxiv.org/html/2512.23983v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-02469",
+      "paper": "https://arxiv.org/abs/2510.02469",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "type": "archive",
+        "title": "[丰田+普渡等] SIMSplat: 基于自然语言的4D高斯溅射驾驶场景编辑框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.02469",
+        "https://sungyeonparkk.github.io/simsplat/",
+        "https://github.com/sungyeonparkk/SIMSplat_",
+        "https://arxiv.org/html/2510.02469v2",
+        "https://sungyeonparkk.github.io/about/",
+        "https://github.com/sungyeonparkk/SIMSplat_/blob/main/README.md"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-06209",
+      "paper": "https://arxiv.org/abs/2510.06209",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "type": "archive",
+        "title": "[Waymo+Google] Drive&Gen: 联合评估端到端驾驶模型与视频生成模型的新方法",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.06209",
+        "https://waymo.com/intl/zh-cn/research/drive-gen-co-evaluating/",
+        "https://arxiv.org/html/2510.06209v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-23402",
+      "paper": "https://arxiv.org/abs/2509.23402",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "type": "archive",
+        "title": "[小米汽车+南开] WorldSplat: 结合生成扩散与显式3D重建的4D驾驶场景生成技术",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.23402",
+        "https://wm-research.github.io/worldsplat/",
+        "https://github.com/xiaomi-research/worldsplat",
+        "https://github.com/wm-research/worldsplat/blob/main/README.md",
+        "https://github.com/xiaomi-research/worldsplat/blob/main/tools/train_diffusion.py",
+        "https://openreview.net/pdf?id=KWeX6tYno6"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-02150",
+      "paper": "https://arxiv.org/abs/2509.02150",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "type": "archive",
+        "title": "Txt2Sce：基于文本报告的自动驾驶系统测试场景生成方法",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.02150",
+        "https://arxiv.org/html/2509.02150v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-03887",
+      "paper": "https://arxiv.org/abs/2509.03887",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "type": "archive",
+        "title": "[地平线+中科院大学等] OccTENS: 通过时间下一尺度预测实现高保真占用场景生成技术",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.03887",
+        "https://arxiv.org/html/2509.03887v2"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-20965",
+      "paper": "https://arxiv.org/abs/2508.20965",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=13",
+        "type": "archive",
+        "title": "DrivingGaussian++：动态自动驾驶场景重建与编辑新框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.20965",
+        "https://xiong-creator.github.io/DrivingGaussian_plus.github.io/",
+        "https://github.com/VDIGPKU/DrivingGaussian_plus",
+        "https://arxiv.org/html/2508.20965v1",
+        "https://github.com/VDIGPKU/DrivingGaussian_plus/blob/main/README.md"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-20471",
+      "paper": "https://arxiv.org/abs/2508.20471",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=13",
+        "type": "archive",
+        "title": "[无问智行+清华] G^2Editor: 驾驶视频高精度对象编辑框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.20471",
+        "https://arxiv.org/html/2508.20471v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-06982",
+      "paper": "https://arxiv.org/abs/2508.06982",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "WeatherDiffusion：基于扩散模型的自动驾驶场景渲染技术",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.06982",
+        "https://yixinzhu042.github.io/IntrinsicWeather/",
+        "https://github.com/YixinZhu042/IntrinsicWeather",
+        "https://arxiv.org/abs/2508.06982v1",
+        "https://arxiv.org/html/2508.06982v7",
+        "https://github.com/YixinZhu042/IntrinsicWeather/blob/main/training/train_inverse.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-05236",
+      "paper": "https://arxiv.org/abs/2508.05236",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "ArbiViewGen：自动驾驶场景中可控任意视角图像生成的创新框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.05236",
+        "https://arxiv.org/html/2508.05236v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2507-13162",
+      "paper": "https://arxiv.org/abs/2507.13162",
+      "track": "world-model",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "type": "archive",
+        "title": "Orbis：自动驾驶长时域预测的高效世界模型",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2507.13162",
+        "https://lmb-freiburg.github.io/orbis.github.io/",
+        "https://github.com/lmb-freiburg/orbis",
+        "https://arxiv.org/html/2507.13162v2",
+        "https://github.com/lmb-freiburg/orbis/blob/main/evaluate/rollout.py"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2605-11594",
+      "paper": "https://arxiv.org/abs/2605.11594",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+        "type": "archive",
+        "title": "PointForward：用\"点云对齐\"实现又快又稳的街景还原让自动驾驶三维重建告别\"重影\"",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2605.11594",
+        "https://arxiv.org/html/2605.11594v1",
+        "https://wm-research.github.io/PointForward/"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2601-01386",
+      "paper": "https://arxiv.org/abs/2601.01386",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+        "type": "archive",
+        "title": "ParkGaussian：“把3D照相术开进地库”小米汽车新技术让无人车倒库仿真既好看又好停",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2601.01386",
+        "https://wm-research.github.io/ParkGaussian/",
+        "https://github.com/wm-research/ParkGaussian/blob/main/README.md",
+        "https://api.github.com/repos/wm-research/ParkGaussian/git/trees/main?recursive=1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2510-02627",
+      "paper": "https://arxiv.org/abs/2510.02627",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+        "type": "archive",
+        "title": "HiD²：解决自动驾驶轨迹预测长尾问题的创新框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2510.02627",
+        "https://arxiv.org/html/2510.02627v1",
+        "https://ryning.github.io/publications/"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2509-19789",
+      "paper": "https://arxiv.org/abs/2509.19789",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "type": "archive",
+        "title": "[Zoox] RDAR: 自动驾驶中智能体相关性高效估计方法",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2509.19789",
+        "https://arxiv.org/html/2509.19789v1"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-05852",
+      "paper": "https://arxiv.org/abs/2508.05852",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "VISTA：动态环境驾驶员视觉注意力预测框架",
+        "evidence": "Public ADFeed archive title; individual article URL and publication date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.05852",
+        "https://arxiv.org/abs/2508.05852v1",
+        "https://arxiv.org/html/2508.05852v3",
+        "https://journals.sagepub.com/doi/10.1177/10711813261484478",
+        "https://hfesam2026.conference-program.com/presentation/?id=LECT604&sess=sess202"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-19882",
+      "paper": "https://arxiv.org/abs/2508.19882",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=13",
+        "type": "archive",
+        "title": "综述：生成式AI在自动驾驶系统测试中的应用与挑战",
+        "evidence": "Public ADFeed archive title uniquely matches this paper's subject and scope in the surrounding August 2025 paper cluster. The mapping is inferred from the archive title; individual ADFeed post text, URL and date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.19882",
+        "https://arxiv.org/html/2508.19882v1",
+        "https://discovery.ucl.ac.uk/id/eprint/10224339/",
+        "https://doi.org/10.1145/3806653",
+        "https://qunying-song.github.io/"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "2508-19905",
+      "paper": "https://arxiv.org/abs/2508.19905",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=13",
+        "type": "archive",
+        "title": "综述：高光谱成像技术在自动驾驶中的应用挑战与未来方向",
+        "evidence": "Public ADFeed archive title uniquely matches this paper's subject and scope in the surrounding August 2025 paper cluster. The mapping is inferred from the archive title; individual ADFeed post text, URL and date were not exposed."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.19905",
+        "https://arxiv.org/html/2508.19905v1",
+        "https://doi.org/10.1109/ojvt.2025.3636075"
+      ],
+      "verification": {}
+    },
+    {
+      "paperId": "aota-2025",
+      "paper": "https://www.nature.com/articles/s44172-025-00474-7",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+        "title": "基于世界模型和动态图卷积网络的自动驾驶事故预测框架",
+        "type": "archive-descriptor-match",
+        "confidence": "inferred-from-distinctive-method-description",
+        "note": "World-model scene augmentation, dynamic graph accident prediction, and publication period match. The archive does not expose the individual post body."
+      },
+      "primaryEvidence": [
+        "https://www.nature.com/articles/s44172-025-00474-7",
+        "https://github.com/humanlabmembers/Anticipation-of-Traffic-Accident",
+        "https://github.com/humanlabmembers/Anticipation-of-Traffic-Accident/blob/main/model.py"
+      ],
+      "verification": {
+        "firstPublished": "2025-08-05",
+        "doi": "10.1038/s44172-025-00474-7",
+        "sourceFilesInspected": [
+          "model.py"
+        ],
+        "classificationReason": "Accident anticipation is the evaluated task; a pretrained world model supplies negative-scene augmentation."
+      }
+    },
+    {
+      "paperId": "2511-08439",
+      "paper": "https://arxiv.org/abs/2511.08439",
+      "track": "perception-other",
+      "adfeed": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=8",
+        "title": "自动驾驶数据集的安全性与可靠性综述：系统化框架与未来方向",
+        "type": "archive-descriptor-match",
+        "confidence": "inferred-from-title-topic-and-period",
+        "note": "The safety/reliability dataset framework and November 2025 paper match the archive description and neighboring posts. Individual ADFeed article body was not accessible."
+      },
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2511.08439"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-11",
+        "abstractRead": true
+      }
+    }
+  ],
+  "corrections": [
+    {
+      "paperId": "2508-01778",
+      "before": {
+        "track": "e2e",
+        "codeStatus": "released",
+        "codeScope": "partial",
+        "codeNote": "Mapless QCNet training and evaluation components are public; the full DiffSemanticFusion release is still being organized."
+      },
+      "after": {
+        "track": "perception-other",
+        "codeStatus": "released",
+        "codeScope": "partial",
+        "codeNote": "Official paper URL redirects to SunZhigang7/DiffSemanticFusion_MaplessQCNet. Main branch has actual Mapless QCNet, diffusion modules and validation scripts. README checks only Mapless QCNet and its online-map-diffusion extension; full DiffSemanticFusion variants remain unchecked. The diffsemanticfusion branch contains only README. SemanticFormer is explicitly withheld by policy."
+      },
+      "reason": "Motion forecasting with semantic-map fusion belongs to the new supporting-research track. Only released components were verified.",
+      "primaryEvidence": [
+        "https://arxiv.org/abs/2508.01778",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/README.md",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/val_mapless_qcnet_nuscenes_unet_diffusion.py",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/modules/uncertainty_conditional_unet1d.py"
+      ]
+    }
+  ],
+  "alreadyListed": [
+    {
+      "id": "2507-14456",
+      "name": "GEMINUS",
+      "provenance": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+    },
+    {
+      "name": "ResAD",
+      "provenance": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9"
+    },
+    {
+      "name": "EvaDrive",
+      "provenance": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+    },
+    {
+      "name": "DistillDrive",
+      "provenance": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+    },
+    {
+      "name": "LatentVLA",
+      "existingName": "FLARE",
+      "paper": "https://arxiv.org/abs/2601.05611",
+      "reason": "Same arXiv work under a revised title/method name; do not add as a second paper.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "LatentVLA：“无标注、高精、实时” 把大模型蒸馏成车端老司机"
+      }
+    },
+    {
+      "name": "CoWorld-VLA",
+      "id": "2605-10426",
+      "reason": "Already present in world-model track.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+        "title": "CoWorld-VLA：用多专家潜推理打通世界想象与轨迹规划让自动驾驶学会\"一心四用\""
+      }
+    },
+    {
+      "name": "SparseOccVLA",
+      "id": "2601-06474",
+      "reason": "Already present.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "SparseOccVLA：让大模型直接“看懂”3D世界打造自动驾驶新范式"
+      }
+    },
+    {
+      "name": "SGDrive",
+      "id": "2601-05640",
+      "reason": "Already present.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "SGDrive：让轻量级大模型只靠摄像头拿下自动驾驶安全榜首"
+      }
+    },
+    {
+      "name": "AlignDrive",
+      "id": "2601-01762",
+      "reason": "Already present in e2e track.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+        "title": "AlignDrive：“先画路线再踩油门”让自动驾驶学会“带着地图走节拍”"
+      }
+    },
+    {
+      "name": "ColaVLA",
+      "id": "2512-22939",
+      "reason": "Already present.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+        "title": "[滴滴出行+清华等] ColaVLA: 潜空间认知推理驱动的分层并行轨迹规划新范式"
+      }
+    },
+    {
+      "name": "MiMo-Embodied",
+      "id": "2511-16518",
+      "reason": "Already present.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+        "title": "[小米汽车] MiMo-Embodied: 首个实现自动驾驶与具身智能高效整合的跨领域基础模型"
+      }
+    },
+    {
+      "name": "DriveVLA-W0",
+      "id": "2510-12796",
+      "reason": "Already present in world-model track.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+        "title": "[华为引望+中科院] DriveVLA-W0: 世界建模增强自动驾驶VLA模型性能的新范式"
+      }
+    },
+    {
+      "name": "ReflectDrive",
+      "id": "2509-20109",
+      "reason": "Already present.",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+        "title": "[理想汽车+清华] ReflectDrive: 基于离散扩散的自动驾驶轨迹生成框架"
+      }
+    },
+    {
+      "name": "MagicDriveDiT",
+      "reason": "Same arXiv 2411.13807 as existing MagicDrive-V2; ADFeed attributed repost verified at https://www.10100.com/article/54611035."
+    },
+    {
+      "name": "HorizonDrive / DeepSight / CoWorld-VLA / UniDrive-WM / DriveLaW",
+      "reason": "Already present in the existing catalog."
+    },
+    {
+      "name": "DiffSemanticFusion",
+      "dedup_key": "arxiv:2508.01778",
+      "reason": "Already listed; its classification and partial-release note were updated in this increment.",
+      "adfeedProvenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+        "type": "archive",
+        "title": "[博世中国] DiffSemanticFusion: 提升自动驾驶轨迹预测的高精地图多模态融合框架"
+      },
+      "verifiedCodeStatus": "released",
+      "verifiedCodeScope": "partial",
+      "codeNote": "Official paper URL redirects to SunZhigang7/DiffSemanticFusion_MaplessQCNet. Main branch has actual Mapless QCNet, diffusion modules and validation scripts. README checks only Mapless QCNet and its online-map-diffusion extension; full DiffSemanticFusion variants remain unchecked. The diffsemanticfusion branch contains only README. SemanticFormer is explicitly withheld by policy.",
+      "evidenceUrls": [
+        "https://arxiv.org/abs/2508.01778",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/README.md",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/val_mapless_qcnet_nuscenes_unet_diffusion.py",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/modules/uncertainty_conditional_unet1d.py"
+      ]
+    }
+  ],
+  "notAdded": [
+    {
+      "name": "FPC-VLA",
+      "paper": "https://arxiv.org/abs/2509.04018",
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+        "title": "[小米汽车+南开等] FPC-VLA: 具有失败预测和纠正能力的视觉-语言-行动框架"
+      },
+      "reason": "Robot manipulation on SIMPLER/LIBERO and robot arms; no autonomous driving task. Automotive author affiliation alone does not make it a driving paper."
+    },
+    {
+      "name": "GaussianDWM++",
+      "reason": "Primary paper found, but no matching ADFeed article provenance established; cannot inherit GaussianDWM provenance."
+    },
+    {
+      "name": "TeleWorld / LongVie 2",
+      "reason": "Primary experiments evaluate general WorldScore or LongVGenBench. LongVie 2 includes qualitative car-drive style-transfer videos, but no autonomous-driving task evaluation was established.",
+      "evidenceUrls": [
+        "https://arxiv.org/html/2601.00051v1",
+        "https://arxiv.org/html/2512.13604v1"
+      ]
+    },
+    {
+      "name": "WMPO / CTRL-WORLD / HERO / PEWM / GWM / HunyuanWorld 1.0 / Yume / UVA / generic video-generation posts",
+      "reason": "Archive titles indicate robotics/general visual generation or provide insufficient evidence of autonomous-driving evaluation; not admitted to this strict driving shard."
+    },
+    {
+      "name": "Motus / MTV-World",
+      "reason": "General/robotics world-model titles; autonomous-driving evaluation not established."
+    },
+    {
+      "name": "How large models advance autonomous driving (industry overview)",
+      "adfeedProvenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=19",
+        "title": "大模型如何推动自动驾驶技术革新？"
+      },
+      "reason": "The archive title does not identify a research paper; no unique primary publication was verified."
+    }
+  ],
+  "unresolved": [
+    {
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "“左右脑”联手的自动驾驶：用大模型和强化学习让车在开放道路持续进化"
+      },
+      "reason": "Generic description lacks a unique method or paper name. No post body was available, and targeted searches did not establish a unique paper correspondence. Do not add guessed LGDRL/DuSA matches."
+    },
+    {
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+        "title": "“开口就能开”：用对话大模型给 Autoware 装上贴心副驾驶"
+      },
+      "candidate": {
+        "id": "2601-05806",
+        "title": "Modular Autonomy with Conversational Interaction: An LLM-driven Framework for Decision Making in Autonomous Driving",
+        "paper": "https://arxiv.org/abs/2601.05806",
+        "published": "2026-01",
+        "venue": "IEEE IV 2026",
+        "primaryEvidence": [
+          "https://arxiv.org/html/2601.05806v1",
+          "https://ieeexplore.ieee.org/document/11623831/"
+        ],
+        "codeStatus": "not-found"
+      },
+      "provenanceConfidence": "inferred",
+      "reason": "The candidate's conversational Autoware control closely matches the archive description, but the title does not name the work and the post body could not be checked. Kept outside entries for parent review."
+    },
+    {
+      "ADFeedprovenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+        "title": "视觉语言模型驱动的自动驾驶决策框架"
+      },
+      "candidate": {
+        "id": "2511-13881",
+        "title": "VLMs Guided Interpretable Decision Making for Autonomous Driving",
+        "paper": "https://arxiv.org/abs/2511.13881",
+        "published": "2025-11",
+        "venue": "WACV 2026",
+        "primaryEvidence": [
+          "https://openaccess.thecvf.com/content/WACV2026/papers/Hu_VLMs_Guided_Interpretable_Decision_Making_in_Autonomous_Driving_WACV_2026_paper.pdf"
+        ]
+      },
+      "provenanceConfidence": "inferred",
+      "reason": "Title and timing are compatible, but the ADFeed archive title is too generic to identify this particular work uniquely. Do not treat the candidate as a confirmed ADFeed post."
+    },
+    {
+      "name": "小米汽车联合世界模型：打通自动驾驶仿真任督二脉",
+      "reason": "Likely the existing Xiaomi EV World Model, based on the joint-world-model title and timing. Individual ADFeed article text was not available, so no extra paper was added.",
+      "adfeedProvenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+        "title": "小米汽车联合世界模型：打通自动驾驶仿真任督二脉"
+      },
+      "candidate": {
+        "paper": "https://arxiv.org/abs/2605.18137",
+        "existingId": "2605-18137",
+        "existingName": "Xiaomi EV World Model"
+      }
+    },
+    {
+      "name": "基于GenAI的汽车软件开发自动化：从需求到测试的高效新方法",
+      "adfeedProvenance": {
+        "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=17",
+        "type": "archive",
+        "title": "基于GenAI的汽车软件开发自动化：从需求到测试的高效新方法"
+      },
+      "reason": "The strongest candidate is GenAI for Automotive Software Development: From Requirements to Wheels (arXiv:2507.18223), whose abstract explicitly covers requirements, simulation tests and ADAS implementation. However, the same group has several closely related GenAI automotive-software publications, and no ADFeed article body or attributed repost linking this title to a unique paper ID was found. Kept unresolved rather than inferring a definitive match.",
+      "candidatePapers": [
+        {
+          "title": "GenAI for Automotive Software Development: From Requirements to Wheels",
+          "paper": "https://arxiv.org/abs/2507.18223",
+          "published": "2025-07-24"
+        },
+        {
+          "title": "Survey of GenAI for Automotive Software Development: From Requirements to Executable Code",
+          "paper": "https://arxiv.org/abs/2507.15025",
+          "published": "2025-07-20"
+        },
+        {
+          "title": "Automating Automotive Software Development: A Synergy of Generative AI and Model-Based Methods",
+          "paper": "https://arxiv.org/abs/2505.02500",
+          "published": "2025-05-05"
+        }
+      ],
+      "evidenceUrls": [
+        "https://arxiv.org/abs/2507.18223",
+        "https://arxiv.org/html/2507.18223v1",
+        "https://arxiv.org/abs/2507.15025",
+        "https://arxiv.org/abs/2505.02500"
+      ]
+    }
+  ],
+  "archiveInventory": [
+    {
+      "page": 1,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+      "titles": [
+        "Fast-dDrive：\"填空式\"块扩散方法让自动驾驶大模型写得少、想得全、跑得快",
+        "LVDrive：潜在视觉增强让AI学会“看未来”的端到端驾驶新框架",
+        "小米汽车联合世界模型：打通自动驾驶仿真任督二脉",
+        "HorizonDrive：让自动驾驶仿真自我纠错走进“分钟级长镜头”时代",
+        "DeepSight：让自动驾驶学会\"看本质、想长远\"的语义世界模型",
+        "PointForward：用\"点云对齐\"实现又快又稳的街景还原让自动驾驶三维重建告别\"重影\"",
+        "CoWorld-VLA：用多专家潜推理打通世界想象与轨迹规划让自动驾驶学会\"一心四用\"",
+        "对谈理想 CTO 谢炎：AI 时代需要新的计算架构，我想在汽车上试出来",
+        "观察了三年，我把所有人用AI的水平分成了10个等级。",
+        "详解 DeepSeek V4：Infra 巨鲸 “四连击”，百万上下文走进现实",
+        "自由即奴役：我们面临的数字困局",
+        "OmniVLA-RL：用空间感知与稳定强化学习刷新机器人操作纪录",
+        "JoyAI-RA：京东用\"人类+网络+仿真+真机\"四源融合让机器人举一反三",
+        "ST-π：给机器人装上“时空大脑”让复杂操作变得有条有理",
+        "VLA Foundry：丰田研究院开源机器人一站式训练框架",
+        "实测小米MiMo-V2.5-Pro，这可能是目前国内最适合Claude Code的新模型。",
+        "战略定力与战略躁动",
+        "梁文锋做门将，姚顺雨当前锋",
+        "数字员工的蒸馏炼化",
+        "一文带你看懂，火爆全网的Harness Engineering到底是个啥。"
+      ]
+    },
+    {
+      "page": 2,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+      "titles": [
+        "谁能算清“Token账单”？",
+        "LaST0 潜时空思维链模型：“暗号式思考”让机器人边想边干快又稳",
+        "Fast-ThinkAct：让机器人推理提速 9 倍并且更聪明",
+        "ActiveVLA：给机器人一双会“自己找角度”的眼睛让精细操作不再怕遮挡",
+        "LatentVLA：“无标注、高精、实时” 把大模型蒸馏成车端老司机",
+        "“左右脑”联手的自动驾驶：用大模型和强化学习让车在开放道路持续进化",
+        "SparseOccVLA：让大模型直接“看懂”3D世界打造自动驾驶新范式",
+        "“开口就能开”：用对话大模型给 Autoware 装上贴心副驾驶",
+        "SRC-Pipeline：“速写”式视觉问答让自动驾驶算力减负三分之二",
+        "ThinkDrive：链式思维+分级强化学习让自动驾驶更会“讲道理”的高效小模型",
+        "SGDrive：让轻量级大模型只靠摄像头拿下自动驾驶安全榜首",
+        "MAD：仅用通用视频模型6%算力炼成顶级驾驶世界模型",
+        "UniDrive-WM：用统一世界模型让自动驾驶先想象再上路",
+        "NextFlow：5秒出图、还能改图，字节新方法让AI一支笔写完又画完",
+        "MiLDEdit：“一句话改海报”时代来了！全球首个多层设计稿编辑AI，让版式不乱、文字不差、背景秒...",
+        "Qwen3-VL-Embedding & Reranker：开源多模态检索新王炸实现一套向量打通图文...",
+        "MobileDreamer：“脑补”之后再点屏幕，让手机AI的长远规划一次到位",
+        "LTX-2：“打打字就出电影”，让 AI 视频告别“默片时代”",
+        "AI智能体行动指南 2026",
+        "LocalDPO：让视频生成模型告别抽卡式内卷走进局部精准微调新时代"
+      ]
+    },
+    {
+      "page": 3,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+      "titles": [
+        "MagicFight：两张照片一段骨架，AI即可帮你拍功夫大片",
+        "DreamStyle：“一把刷子刷到底”，字节新框架让视频风格化告别“多头换马”时代",
+        "Agentic Retoucher：让T2I模型自动修bug实现“AI给自己当P图师”",
+        "Unified Thinker：“外挂大脑”让开源文生图模型首次学会“先想后画”",
+        "I2E：可物理推理的图像编辑新范式",
+        "GDRO：扩散模型奖励训练新方法让AI生图又快又真",
+        "SOP：新型可扩展在线后训练系统",
+        "InternVLA-A1：会“脑补”的机器人统一大脑",
+        "POINTWORLD：让机器人把世界想成点云就能零样本上手干活",
+        "“冻”住大模型，驾驶成绩反涨：FROST-Drive 用“知识冻结”刷新 Waymo 端到端驾驶榜单",
+        "DrivingGen：全球首个自动驾驶生成式世界模型基准测试",
+        "“聊天”模型变身荒野老司机：OffEMMA 让无人越野车的路线误差直降 13%",
+        "TeleWorld：180 亿参数实时生成世界模型让 AI 长出时空记忆",
+        "AlignDrive：“先画路线再踩油门”让自动驾驶学会“带着地图走节拍”",
+        "ParkGaussian：“把3D照相术开进地库”小米汽车新技术让无人车倒库仿真既好看又好停",
+        "[华为+中科大] RadAR: “径向并行+动态纠错” 实现10步高质量视觉自回归生成技术",
+        "[字节跳动+北交大] ThinkGen: 用链式思维驱动通用视觉生成的解耦RL新框架",
+        "CritiFusion：免训练语义评审与频域融合的文本到图像保真增强器",
+        "[三星] F2IDiff: DINOv2特征驱动的单步扩散超分辨率生成框架",
+        "EmoCtrl：首个“内容保真+情绪可控”的双路情感图像生成框架"
+      ]
+    },
+    {
+      "page": 4,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4",
+      "titles": [
+        "[Meta] PhyGDPO: 首个面向“物理一致”的文本到视频生成框架",
+        "IdentityStory：用身份保持生成器打造“以人为中心”的连续故事图像生成框架",
+        "CoAgent：用显式记忆与验证闭环打造超长连贯视频生成新范式",
+        "[字节Seed] GR-Dexter: 基于VLA的通用高自由度双手灵巧手系统",
+        "[智元机器人] GenieReasoner: 实现离散推理与连续精控统一的轻量强泛化VLA模型",
+        "[华为+港大] Dream-VL & Dream-VLA: 扩散大模型打造顶级VLA智能体",
+        "[英伟达] CF-VLA: 让自动驾驶模型“先思后行”的自反思维框架",
+        "[滴滴出行+清华等] ColaVLA: 潜空间认知推理驱动的分层并行轨迹规划新范式",
+        "DIF：精准捕捉罕见高危驾驶场景的无监督框架",
+        "[小米汽车+华科大] DriveLaW: 共享潜空间链式统一视频生成与轨迹规划的世界模型",
+        "[Motional] LVLDrive: 用渐进LiDAR融合给自动驾驶VLM装上度量尺",
+        "DriveExplorer：纯图像渐进复原的4D高斯驾驶视角外推技术",
+        "[旷视+上海交大等] GaussianDWM: 基于3D-Gaussian的统一驾驶世界模型",
+        "[小米汽车] Mirage: 实现自动驾驶场景照片级一致3D资产编辑的单步视频扩散框架",
+        "详细解读DeepSeek新年的第一篇论文，他们就是这个时代的源神。",
+        "2025：一代人冲出战壕",
+        "神童的情书",
+        "为什么腾讯需要姚顺雨？深度解析<AI下半场>",
+        "LongVie 2：三阶段渐进训练实现3~5分钟可控连贯视频世界模型",
+        "[亚马逊+宾州大学] NSP: 基于因果推理的视频下一场景生成新框架"
+      ]
+    },
+    {
+      "page": 5,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=5",
+      "titles": [
+        "CineLOG：无需训练、四步解耦、轨迹引导的电影级长视频生成新范式",
+        "AdaTooler-V：以自适应工具调用重塑推理效率与精度的多模态大模型",
+        "[华为+港城大] Animus3D: 基于动作评分蒸馏（MSD）的文本驱动 3D 动画框架",
+        "[蚂蚁集团+港科大等] WorldCanvas: 精确控制视频生成事件的“轨迹-文本-参考图像”三模...",
+        "[Snap] EasyV2V: 轻量、灵活、数据驱动的指令式高质量视频编辑新框架",
+        "[快手可灵] Kling-Omni: 统一生成-编辑-推理的多模态视觉语言视频大模型",
+        "[字节Seed] Seedance 1.5pro: 原生音视频联合生成的工业级基础模型",
+        "R4：让视觉-语言模型拥有终身4D记忆与类人时空推理能力的4D检索增强模型",
+        "mimic-video：用互联网视频先验实现机器人通用灵巧控制新范式",
+        "Motus：基于光流潜动作的统一多模态世界模型",
+        "[MetaFAIR] Flowception: 通过“插入-去噪”耦合实现可变长度、非自回归的高效视...",
+        "[阿里通义] Wan-Move: 通过潜轨迹复制实现无插件、可扩展且商业级精度的运动可控视频生成框架",
+        "[Adobe] GimbalDiffusion: 以“重力”为绝对基准的相机控制框架",
+        "UCPE：用统一射线编码让视频扩散模型“看懂”的通用相机位置编码框架",
+        "中国大厂的 AI 战，归根结底是阿里 VS 字节",
+        "夜里，我偷偷用“千问AI小剧场”演了十五部短剧。。。",
+        "[字节TikTok] EditMGT: 首个基于掩码生成Transformer的零泄漏高速图像编辑框...",
+        "FlowDC：单轮流匹配下的复杂图像编辑解耦-衰减框架",
+        "[华为] DynaIP: 实现零样本、高保真、可扩展个性化文本到图像生成的动态图像提示适配器",
+        "CoIG：让图像生成像人类绘画一样可监控、可干预的链式语义框架"
+      ]
+    },
+    {
+      "page": 6,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=6",
+      "titles": [
+        "StorytellingPainter：用LLM与T2I模型协同生成单张高语义密度叙事图像的新框架",
+        "[TikTok] AgentComp: 从自主智能体推理到文本-图像模型的组合式精通模型",
+        "FlowSteer：零样本实现高保真、高感知图像复原模型",
+        "UniT：实现高保真文本感知图像修复的扩散模型与视觉-语言协同框架",
+        "[美团] LongCat-Image: 专为高质量图像生成与编辑打造的6B参数开源中英双语扩散模型",
+        "[MetaAI] OneStory: 用自适应记忆实现可扩展、连贯的多镜头长视频生成框架",
+        "GPT-5.2发布，真正的牛马打工人专属AI来了。",
+        "ReAG：以多级检索-评论过滤-强化学习显式推理为核心的知识型视觉问答新框架",
+        "MoReGen：面向基于代码的文本到视频合成的多智能体运动推理引擎",
+        "[华为+中科大] ParaUni: 基于强化学习驱动的分层并行信息交互统一多模态框架",
+        "RealGen：以检测器奖励驱动GRPO强化学习实现照片级真实文本到图像生成模型",
+        "PhotoFramer：语言与图像双通道实时指导的“拍照即构图”多模态框架",
+        "1699元配蔡司镜片！理想AI眼镜来了，对话负责人解密背后的具身智能大棋",
+        "美国AI泡沫正处于“三期叠加态”",
+        "[阿里达摩院] RynnVLA-002: 统一VLA与世界模型的下一代机器人基础模型",
+        "有泡沫吗？如果有，是什么样的泡沫？",
+        "查资料、劝老板、写周报，给上班人准备的大模型评测",
+        "Google又发布了一篇可能改变AI未来的论文，这次它教AI拥有了记忆。",
+        "TiViBench：视频生成模型推理能力的系统性评估框架",
+        "基于数字孪生表示和大语言模型的推理式文本到视频检索方法"
+      ]
+    },
+    {
+      "page": 7,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=7",
+      "titles": [
+        "[美团+港中大] TWIG: 动态推理与视觉生成协同进化新型框架",
+        "一手体验飞书多维表格应用模式 - 伟大，无需多言。",
+        "用了3年飞书多维表格后，我终于为你们总结了一份保姆级教程。",
+        "[小米汽车] MiMo-Embodied: 首个实现自动驾驶与具身智能高效整合的跨领域基础模型",
+        "SemanticVLA：通过语义对齐提升机器人操作效率与性能的稀疏化和增强技术",
+        "[美的集团+同济等] MTV-World: 基于多视轨迹的具身世界模型",
+        "IPR：基于交互式物理推理的智能体学习框架",
+        "EvoVLA：解决长时域机器人操作任务中阶段幻觉的自演化VLA模型",
+        "DeepThinkVLA：提升机器人推理与动作协同能力的混合架构与强化学习模型",
+        "[华为+清华] RSD: 基于风险语义蒸馏的端到端自动驾驶框架",
+        "视觉语言模型驱动的自动驾驶决策框架",
+        "ExpertAD：提升自动驾驶系统复杂场景处理能力的混合专家架构",
+        "[理想汽车+西湖大学] CorrectAD: 提升自动驾驶端到端规划模型鲁棒性的自校正代理系统",
+        "[Adobe+马里兰大] SliderEdit: 实现连续、细粒度图像编辑的创新框架",
+        "[快手+北航等] CoTyle: 高效可控的代码到风格图像生成框架",
+        "[字节跳动+北大等] MMaDA-Parallel: 提升复杂任务中生成性能的并行多模态扩散框架",
+        "千问APP悄悄上线，阿里的AI超级入口也终于来了。",
+        "蚂蚁也正式加入AI超级入口战场，他的名字，叫灵光。",
+        "UniVA：面向下一代的视频通用智能体",
+        "Time-to-Move：训练无关的图像到视频扩散模型运动与外观控制框架"
+      ]
+    },
+    {
+      "page": 8,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=8",
+      "titles": [
+        "[华为] Visual Bridge: 基于流匹配实现多任务视觉表示高效统一的通用视觉感知框架",
+        "自动驾驶数据集的安全性与可靠性综述：系统化框架与未来方向",
+        "Evo-1：实现高效训练与实时部署的轻量级VLA模型",
+        "[字节Seed+港科大] WMPO: 提升机器人VLA模型性能与泛化能力的世界模型策略优化框架",
+        "AI 造成失业？大部分人的选择又蠢又坏",
+        "一个避免被 AI 取代的新思路，逆练上下文工程",
+        "当代人工智能技术的脉络与展望",
+        "对话郎咸朋：VLA 技术论战、团队换血与不被看好时的自我证明",
+        "AI搅不动今年的“双十一”",
+        "大模型月度回顾 · 2025年10月",
+        "大模型月度回顾 · 2025年9月",
+        "全新开源的DeepSeek-OCR，可能是最近最惊喜的模型。",
+        "[Salesforce] BLIP3o-NEXT: 突破图像生成与编辑的多模态基础模型",
+        "[Adobe] UniFusion: 基于统一编码器的高效图像生成模型",
+        "[法雷奥] BIGFIX: 多令牌预测的自校正图像生成技术",
+        "Vlaser：具身推理与视觉-语言-行动结合的创新模型",
+        "[腾讯优图+南大] VITA-VLA: 基于知识蒸馏的高效视觉-语言模型动作执行能力迁移技术",
+        "[英伟达] VLA-0: 高效简洁的 Vision-Language-Action 模型",
+        "[星海图] DepthVLA: 通过深度感知增强视觉语言动作模型空间推理能力的新型模型",
+        "[英伟达] DriveCritic: 具有上下文感知和人类对齐的自动驾驶评估新框架"
+      ]
+    },
+    {
+      "page": 9,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9",
+      "titles": [
+        "[华为引望+中科院] DriveVLA-W0: 世界建模增强自动驾驶VLA模型性能的新范式",
+        "CTRL-WORLD：提升机器人策略评估与改进能力的可控生成式世界模型",
+        "[英飞凌+慕尼黑工业大] XD-RCDepth: 高效融合与创新蒸馏策略的轻量级雷达-相机深度估计框...",
+        "DAAD-X数据集+VCBM框架：提高自动驾驶系统可解释性和安全性的新方法",
+        "[理想汽车+哈工大] PAGS: 动态驾驶场景优先自适应高斯插补技术",
+        "FlexTraj：支持多粒度和对齐无关轨迹控制的图像到视频生成框架",
+        "[字节跳动] InstructX: 基于MLLM指导的统一图像和视频编辑框架",
+        "[快手可灵+清华等] UniMMVSR: 多模态引导的级联视频超分辨率框架",
+        "InstructUDrag：结合文本指令与对象拖拽的高精度交互式图像编辑",
+        "[字节跳动] Dense2MoE: 高效的文本到图像生成新范式",
+        "[StabilityAI] SViM3D: 多视图一致性与高效重建的单图像3D生成技术",
+        "[快手可灵] UniVideo: 统一多模态视频生成与编辑框架",
+        "[快手可灵+港中大] VideoCanvas: 通过任意时空片段实现统一视频生成的新框架",
+        "[OPPO+中大等] VideoVerse: 从世界模型角度评估文本到视频生成模型的新基准",
+        "[原力灵机] IntentionVLA: 高效人机交互意图推理模型",
+        "视觉-语言-行动（VLA）模型在机器人领域的全面综述：从理论到实践",
+        "MetaVLA：高效具身适应的统一元协同训练框架",
+        "RLinf-VLA：统一且高效的VLA模型强化学习训练框架",
+        "[地平线机器人] ResAD: 通过残差轨迹建模提升端到端自动驾驶性能新方法",
+        "H-DSAC：提升自动驾驶安全与效率的人机协作强化学习方法"
+      ]
+    },
+    {
+      "page": 10,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10",
+      "titles": [
+        "[丰田+普渡等] SIMSplat: 基于自然语言的4D高斯溅射驾驶场景编辑框架",
+        "[Waymo+Google] Drive&Gen: 联合评估端到端驾驶模型与视频生成模型的新方法",
+        "利用世界模型增强VLM的动态理解能力",
+        "SFP：基于模型强化学习的时空预测新范式",
+        "PhysiAgent：通过动态交互和自我调节实现真实世界中的具身智能体框架",
+        "[小米汽车+南开] WorldSplat: 结合生成扩散与显式3D重建的4D驾驶场景生成技术",
+        "HiD²：解决自动驾驶轨迹预测长尾问题的创新框架",
+        "[高德地图+西交大] PAMR: 面向自动驾驶的持续规则感知高精地图构建新框架",
+        "[美的集团+北大等] dVLA: 基于扩散模型的视觉-语言-行动统一框架及其加速策略",
+        "MuSLR：提升复杂推理能力的多模态符号逻辑推理技术",
+        "VLA-R1：提升机器人推理与执行能力的强化学习和思维链监督模型",
+        "Nav-EE：提升自动驾驶视觉语言模型效率与准确率的导航引导早期退出框架",
+        "Max-V1：高效且泛化能力强的新型端到端自动驾驶框架",
+        "BEV-VLM：基于鸟瞰图特征和视觉语言模型的高效自动驾驶轨迹规划框架",
+        "VLA-Reasoner：提升视觉-语言-行动模型长期任务性能的测试时推理技术",
+        "NoTVLA：通过稀疏轨迹优化实现高效泛化的机器人操作框架",
+        "[高通] HyT: 提升性能的视觉-语言-行动模型混合训练框架",
+        "OmniVLA：助力机器人导航的全模态视觉-语言-动作（VLA）模型",
+        "视觉-语言-行动模型（VLA）综述：在机器人领域的应用进展与未来展望",
+        "具身AI的多模态融合概述：LLMs与WMs的协同架构及其应用前景"
+      ]
+    },
+    {
+      "page": 11,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11",
+      "titles": [
+        "CoReVLA：提升自动驾驶在长尾场景下性能的双阶段端到端框架",
+        "[华为+港中大等] SQS: 自动驾驶中稀疏感知模型的新型预训练技术",
+        "[小米汽车+清华等] MTRDrive: 通过记忆与工具协同推理提升自动驾驶的鲁棒性与泛化能力的新框...",
+        "[英伟达] V2V-GoT: 基于多模态大模型和思维图推理的车对车协同自动驾驶框架",
+        "AnchDrive：混合轨迹锚点引导的端到端自动驾驶框架",
+        "SocialTraj：基于动态社会推理和条件扩散模型的自动驾驶轨迹预测框架",
+        "[理想汽车+清华] ReflectDrive: 基于离散扩散的自动驾驶轨迹生成框架",
+        "[Zoox] RDAR: 自动驾驶中智能体相关性高效估计方法",
+        "[理想汽车+港科大等] OmniScene: 模拟人类视觉提升自动驾驶4D场景理解的新型多模态框架",
+        "RaFD：基于流引导助力自动驾驶鲁棒感知的雷达目标检测框架",
+        "DriveDPO：通过安全直接偏好优化提升端到端自动驾驶策略",
+        "理想汽车 LiAuto AI 全景解析",
+        "淘宝悄悄上线了AI导购，懒人购物原来可以这么爽。",
+        "美团悄悄上线了生活Agent，懒人的春天真的要来了。",
+        "VARIN：高效文本引导图像编辑技术",
+        "[昆仑万维] Skywork UniPic 2.0: 基于在线强化学习的统一多模态模型",
+        "[腾讯+人民大学] Hybrid-Tower框架: 高效的文本到视频检索新方法",
+        "[腾讯混元] PromptEnhancer: 提升T2I模型解析复杂用户提示的新框架",
+        "Draw-In-Mind：通过链式思维想象提升精确图像编辑的新方法",
+        "[Adobe+布法罗大学] CompSlider: 用于解耦多属性图像生成的高效滑块模型"
+      ]
+    },
+    {
+      "page": 12,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12",
+      "titles": [
+        "Learn-to-Steer：通过数据驱动优化提升文本到图像生成中的空间关系准确性",
+        "[小红书+华东师范等] IRG: 通过交错推理显著提升文本到图像生成质量的新型框架",
+        "EO-Robotics：通过交错视觉-文本-动作预训练实现通用机器人控制模型",
+        "[Meta FAIR] Vision Language World Model: 高效、可解释的视觉...",
+        "[小米汽车+南开等] FPC-VLA: 具有失败预测和纠正能力的视觉-语言-行动框架",
+        "[理想汽车+港科大] OmniReason: 提升自动驾驶时空推理与决策可解释性的新型框架",
+        "[地平线+中科院大学等] OccTENS: 通过时间下一尺度预测实现高保真占用场景生成技术",
+        "[高德地图] AutoDrive-R^2: 提升自动驾驶系统推理能力的新型VLA框架",
+        "Txt2Sce：基于文本报告的自动驾驶系统测试场景生成方法",
+        "DriveQA：评估LLM和MLLM驾驶知识的新基准测试",
+        "零一汽车：单目相机VLM驱动的端到端自动驾驶技术（CVPR2024自动驾驶国际挑战赛亚军）",
+        "大模型月度回顾 · 2025年8月",
+        "[字节Seed] M3-Agent: 具备长期记忆的多模态智能体框架",
+        "[苹果公司] MobileCLIP2: 低延迟、高精度的多模态图像-文本模型",
+        "[字节跳动+复旦] UniAPO: 多模态自动提示优化框架",
+        "[小米AI] MiDashengLM: 高效音频理解的开源音频语言模型",
+        "[SpreeAI+香槟分校] Dress&Dance: 创新的高分辨率视频虚拟试穿框架",
+        "[Google DeepMind] VoCap: 多模态提示驱动的视频对象分割与描述模型",
+        "SUPERGEN：高效超高清视频生成系统",
+        "今天，AI内容新规正式实施，这次不注意是真的会违法。"
+      ]
+    },
+    {
+      "page": 13,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=13",
+      "titles": [
+        "HERO：高效世界模型的层次化加速框架",
+        "PEWM：解决视频生成具身世界模型瓶颈的新范式",
+        "GWM：面向机器人操作的可扩展高斯世界模型",
+        "综述：生成式AI在自动驾驶系统测试中的应用与挑战",
+        "DrivingGaussian++：动态自动驾驶场景重建与编辑新框架",
+        "综述：高光谱成像技术在自动驾驶中的应用挑战与未来方向",
+        "[无问智行+清华] G^2Editor: 驾驶视频高精度对象编辑框架",
+        "FlowVLA：提升VLA模型物理动态理解和控制性能的视觉推理框架",
+        "Long-VLA：面向长时域机器人操作的视觉-语言-行动模型",
+        "CogVLA：高效高性能的认知对齐视觉-语言-行动（VLA）模型",
+        "一文带你通俗易懂的看懂\"人工智能+\"，这是十年一遇的大机遇。",
+        "[阿里达摩院] RealisMotion: 分解式人类运动控制与视频生成框架",
+        "[昆仑万维] Matrix-3D: 全向可探索3D世界生成技术",
+        "[华为+复旦] KFFocus: 通过关键帧聚焦提升视频理解效率与准确性",
+        "[360AI] NanoControl: 轻量级且高效的可控文本到图像生成框架",
+        "Echo-4o：利用合成图像提升图像生成性能的统一多模态模型",
+        "LIA-X：基于稀疏运动字典的可控肖像动画生成技术",
+        "[阶跃星辰] NextStep-1: 迈向高保真自回归图像生成的新里程碑",
+        "[阶跃星辰+港科大等] ColorCtrl: 基于多模态扩散变换器的训练无关文本引导颜色编辑方法",
+        "GeoVLA：融合3D几何信息提升机器人操作性能的视觉-语言-动作模型"
+      ]
+    },
+    {
+      "page": 14,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14",
+      "titles": [
+        "VLM-3D：提升自动驾驶3D感知的端到端视觉语言模型框架",
+        "[华为+中科大] GraphCoT-VLA: 用于机器人在模糊指令下操作任务的高效3D空间感知推理模...",
+        "[小米汽车+新加坡国立大学等] EvaDrive: 基于对抗优化的多目标强化学习自动驾驶轨迹规划框架",
+        "GMF-Drive：高效多模态融合与空间感知驱动的自动驾驶新框架",
+        "VISTA：动态环境驾驶员视觉注意力预测框架",
+        "RMT-PPAD：助力自动驾驶全景感知的实时多任务学习模型",
+        "[Turing] STRIDE-QA 助力自动驾驶视觉问答的大规模时空推理数据集",
+        "SpaRC-AD：通过雷达-摄像头融合提升端到端自动驾驶性能新框架",
+        "MetAdv：自动驾驶对抗性测试的统一交互式解决方案",
+        "WeatherDiffusion：基于扩散模型的自动驾驶场景渲染技术",
+        "国家有关人工智能的政策汇总（第5版，2025.8更新共41条）",
+        "LayerT2V：助力多目标文本到视频生成的分层生成方法",
+        "CharacterShot：低成本、高质量的4D角色动画生成框架",
+        "[昆仑万维] Skywork UniPic: 高效多模态集成的统一自回归模型",
+        "[字节+港中大等] DreamVE: 统一指令驱动的图像视频编辑模型",
+        "ArbiViewGen：自动驾驶场景中可控任意视角图像生成的创新框架",
+        "[微软+斯坦福] DRIVE: 通过动态规则推理和验证评估实现安全、高效且符合人类偏好的自动驾驶技术",
+        "[博世中国] DiffSemanticFusion: 提升自动驾驶轨迹预测的高精地图多模态融合框架",
+        "[商汤绝影+华东理工等] DistillDrive: 基于知识蒸馏和强化学习的端到端多模式自动驾驶模...",
+        "国外主流AI IDE及编程助手概览（截至2025年7月）"
+      ]
+    },
+    {
+      "page": 15,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=15",
+      "titles": [
+        "实测GPT-5：写作坠入谷底，编程一骑绝尘。",
+        "欢迎OpenAI重返开源大模型赛道！谈一谈我关注的一些要点",
+        "[阿里巴巴] Qwen-Image: 复杂文本渲染与精准图像编辑的图像生成基础模型",
+        "[字节跳动+南洋理工] VTG: 高效通用的过渡视频生成框架",
+        "[阿里+北大] UniLIP: 多模态理解与编辑的统一框架",
+        "[腾讯] HunyuanWorld 1.0: 从文本和图像到沉浸式、可探索和交互式3D世界生成框架",
+        "整个HuggingFace榜，已经被中国AI模型一统江湖了。",
+        "大模型月度回顾 · 2025年7月",
+        "微调之后还能做什么？大模型后训练全链路技术解析",
+        "WAIC 2025，大厂用AI给产业上上强度",
+        "2025 世界人工智能大会（WAIC）：AI 新品大盘点",
+        "五大国产AI IDE横向浅评",
+        "AI Coding ⾮共识报告",
+        "99%的程序员都会失业吗？",
+        "MotionShot：用于文本到视频生成的无需训练自适应运动转移框架",
+        "创新3DGS视频流框架：高效压缩与智能传输的融合技术",
+        "Yume：创新的交互式世界生成模型",
+        "GeoAvatar：显著提升 3D 头部虚拟形象生成质量的自适应几何高斯点绘制框架",
+        "Lumina-mGPT 2.0：助力高质量图像生成的独立自回归模型",
+        "Detail++：用于提升文本到图像生成模型语义对齐能力的训练无关多分支细节增强框架"
+      ]
+    },
+    {
+      "page": 16,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16",
+      "titles": [
+        "[商汤科技+南洋理工等] TokensGen: 利用压缩令牌的高效长视频生成框架",
+        "[阿里通义+港大等] TTS-VAR: 显著提升视觉自回归生成模型性能的高效测试时扩展框架",
+        "[BeingBeyond+北大等] Being-H0: 通过大规模人类视频预训练实现机器人灵巧操作技...",
+        "InstructVLA：通过多模态指令调优实现高效人机交互的通用机器人操控模型",
+        "[英伟达+台大] ThinkAct: 基于强化视觉潜在规划的视觉-语言-行动推理框架",
+        "[字节Seed] GR-3: 通用型机器人策略的突破性进展",
+        "[K-Scale Labs] Edge VLA: 针对移动操作平台的高效视觉语言动作模型",
+        "[博世+清华AIR等] 无地图轨迹预测中的地图不确定性分析与创新整合方法",
+        "双分支模型：交通意外预测的新技术",
+        "CaSTFormer：提升驾驶意图预测准确性的因果时空Transformer模型",
+        "[宝马+慕尼黑工大] GaussianFusionOcc: 用于自动驾驶中3D语义占用预测的高效多模...",
+        "Orbis：自动驾驶长时域预测的高效世界模型",
+        "GEMINUS：助力端到端自动驾驶的新型双感知混合专家架构",
+        "ReAL-AD：基于人类认知模型的自动驾驶推理增强学习框架",
+        "[斯堪尼亚+瑞典皇家理工] PRIX: 基于原始像素仅使用摄像头的高效端到端自动驾驶技术",
+        "DeMo++：解耦运动意图与动态状态的自动驾驶运动预测与规划框架",
+        "基于世界模型和动态图卷积网络的自动驾驶事故预测框架",
+        "BetterCheck：提升汽车感知系统VLMs的幻觉检测技术",
+        "[博世] AGENTS-LLM: 通过自然语言增强交通场景的高效框架",
+        "BRUM：从360°稀疏图像中进行3D车辆重建方法"
+      ]
+    },
+    {
+      "page": 17,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=17",
+      "titles": [
+        "基于GenAI的汽车软件开发自动化：从需求到测试的高效新方法",
+        "Butter：提升多尺度特征融合的自动驾驶目标检测新框架",
+        "INoT：提升AI代理效率的内省思维推理框架",
+        "OntView：首个支持匿名类和GCI公理的本体可视化工具",
+        "ViTCoT：助力视频理解性能提升的视频-文本交错推理范式",
+        "[英伟达+加州大学等] PhyWorldBench: 推动文本到视频生成模型物理真实性的新基准",
+        "LoViC：高效灵活的长视频生成框架",
+        "CharaConsist：细粒度一致的角色生成方法",
+        "[阿里+浙大等] Inversion-DPO: 高效、高精度的扩散模型后训练框架",
+        "[阿里云+浙大] EVS: 结合T2I和T2V模型的高效视频合成方法",
+        "当硅谷染指战争：80亿人的数据被搓成核弹",
+        "AI重塑BAT的三种未来",
+        "Agent 框架协议“三部曲”：MCP、A2A、AG-UI",
+        "万字综述，讲一讲这两年大模型这整个领域到底发展了哪些方面",
+        "月入 5 万美元的 AI 副业靠这几个工具就能跑起来？我把这十类热门工具都试了一遍",
+        "大模型月度回顾 · 2025年6月",
+        "隐藏在Google Labs里的5个神级AI应用。",
+        "未来不是技术决定的，是价值观决定的",
+        "大模型竞争：落后生的两条追赶路线",
+        "辅助or替代：生成式AI时代的市场调研"
+      ]
+    },
+    {
+      "page": 18,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18",
+      "titles": [
+        "AI产业的冷思考：泡沫、寡头、失业与变革",
+        "学习 MCP 最好的时机是 7 个月前，其次是现在",
+        "在中国，大模型的应用困境",
+        "漫谈大模型落地——所有行业都值得用AI重做一遍",
+        "来自AI前夜的警报：凛冬已至",
+        "HiLO：基于Transformer的自动驾驶高级目标融合技术",
+        "V2X-UniPool：赋能高效自动驾驶的多模态数据融合与知识推理框架",
+        "RoadFormer：自动驾驶场景下的高效细粒度道路表面分类新架构",
+        "C-HAC：置信度引导的自动驾驶强化学习策略",
+        "大模型月度回顾 · 2025年5月",
+        "吴恩达：如何在人工智能领域打造你的职业生涯？",
+        "大模型微调知识与实践分享",
+        "AI 如何成为理想一号工程",
+        "RAG 2.0 深入解读",
+        "一文带你 \"看见\" MCP 的过程，彻底理解 MCP 的概念",
+        "一文看懂2025 Google I/O开发者大会 - 250刀Ultra会员、Veo3、Imagen...",
+        "浅入浅出——生成式 AI",
+        "2025 大模型“国战”：从百模混战到五强争锋",
+        "大模型还干不掉BI",
+        "生成式人工智能时代的十大创业机会 (2025)"
+      ]
+    },
+    {
+      "page": 19,
+      "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=19",
+      "titles": [
+        "大模型月度回顾 · 2025年4月",
+        "技术文章热读 TOP20（2025年4月）",
+        "大模型进化史：从Transformer到DeepSeek-R1的AI变革之路",
+        "为什么说广告是AI大模型公司最现实的商业化选择？",
+        "大模型如何推动自动驾驶技术革新？",
+        "大模型“历史的终结”，就剩下谷歌与OpenAI",
+        "OpenAI 复制吉卜力，大模型正在吞噬一切产品？",
+        "一些小道消息",
+        "大模型下半场：7个趋势判断",
+        "万字回顾中国生成式AI大会！50+大咖演讲精华干货爆棚，来没来都值得收藏",
+        "大模型月度回顾 · 2025年3月",
+        "技术文章热读 TOP20（2025年3月）",
+        "AI科普：人工智能通识系列",
+        "统一视频动作模型（UVA）：高效视频动作联合预测通用框架",
+        "EVE：字节基于视觉-语言模型的高效端到端视频字幕提取技术",
+        "CDT：阿里通义基于条件扩散模型的高效视频Token化新方法",
+        "STORM：英伟达的高效长视频理解多模态大模型架构",
+        "LanDiff：月之暗面结合语言模型与扩散模型优势的文本到视频生成新框架",
+        "OAVM 框架：实现精准前景识别与细节提取的对象感知视频抠图技术",
+        "VideoPainter：专注视频修复与编辑的高效双分支视频合成框架"
+      ]
+    }
+  ]
+}

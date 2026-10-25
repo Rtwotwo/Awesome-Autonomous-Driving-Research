@@ -205,7 +205,7 @@ function tagsFor(title, abstract, track) {
     .filter(([, pattern]) => new RegExp(pattern).test(text))
     .map(([tag]) => tag)
     .slice(0, 3);
-  const fallback = { e2e: 'End-to-End', vla: 'VLA', 'world-model': 'World Model' }[track];
+  const fallback = { e2e: 'End-to-End', vla: 'VLA', 'world-model': 'World Model', rsi: 'Self-Improvement', 'perception-other': 'Driving Research' }[track];
   return tags.length ? tags : [fallback];
 }
 
@@ -285,7 +285,7 @@ for (const paper of existingPapers) {
   }
 }
 
-const trackOrder = { e2e: 0, vla: 1, 'world-model': 2, rsi: 3 };
+const trackOrder = { e2e: 0, vla: 1, 'world-model': 2, rsi: 3, 'perception-other': 4 };
 papers.sort((a, b) =>
   trackOrder[a.track] - trackOrder[b.track]
   || b.published.localeCompare(a.published)
@@ -301,7 +301,8 @@ for (const [track, title] of Object.entries({
   e2e: 'End-to-End Autonomous Driving',
   vla: 'Vision-Language-Action Models',
   'world-model': 'Driving World Models',
-  rsi: 'Recursive Self-Improvement for Autonomous Driving'
+  rsi: 'Recursive Self-Improvement for Autonomous Driving',
+  'perception-other': 'Perception & Other Driving Research'
 })) {
   console.log(`${title}: ${papers.filter((paper) => paper.track === track).length}`);
 }

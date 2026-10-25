@@ -5388,6 +5388,654 @@
       "checkedAt": "2026-10-22",
       "status": "unavailable",
       "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2601-03460": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2506-03568": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2511-14499": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2511-11740": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2511-13297": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-06038": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-20253": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-17940": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-06113": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-10567": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-17596": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-17342": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-13108": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-06534": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-23585": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2506-02554": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2506-02358": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-04066": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-18522": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-13425": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-13373": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-18498": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-12755": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-12095": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-12282": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-22756": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-13565": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2605-23163": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2605-22089": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-04714": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-07092": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-03519": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-24426": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-24331": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-01795": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-25249": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-15968": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-20843": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-18053": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-19973": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-00789": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-01944": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-00060": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-21824": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-10427": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-09061": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-12499": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-17722": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-13729": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-02659": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2506-02580": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-09200": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-17850": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-16588": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-16261": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-06529": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2412-03934": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-09452": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-01528": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-23180": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-24227": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2512-23983": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-02469": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-06209": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-23402": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-02150": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-03887": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-20965": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-20471": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-06982": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-05236": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2507-13162": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2605-11594": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2601-01386": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2510-02627": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2509-19789": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-05852": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-19882": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2508-19905": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "aota-2025": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2511-08439": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-25",
+      "status": "unavailable",
+      "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
     }
   },
   "failures": []

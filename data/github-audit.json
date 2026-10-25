@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-09",
   "scope": "Per-paper repository identity and release-availability audit. Repository roots and README release statements were inspected; implementations were not executed. A no-match result is not proof that no public implementation exists. Third-party paper lists and same-name repositories were not treated as author code.",
   "coverage": {
-    "papers": 277,
+    "papers": 358,
     "repositoryNameSearches": 85,
     "identifierFileSearches": 78,
     "repositoryRootChecks": 166,
@@ -1152,16 +1152,18 @@
       "searches": []
     },
     "2508-01778": {
-      "checkedAt": "2026-10-09",
+      "checkedAt": "2026-10-25",
       "codeStatus": "released",
       "codeScope": "partial",
       "repository": "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet",
       "repositoryRole": "partial-release",
       "stars": 56,
-      "note": "Mapless QCNet training and evaluation components are public; the full DiffSemanticFusion release is still being organized.",
+      "note": "Official paper URL redirects to SunZhigang7/DiffSemanticFusion_MaplessQCNet. Main branch has actual Mapless QCNet, diffusion modules and validation scripts. README checks only Mapless QCNet and its online-map-diffusion extension; full DiffSemanticFusion variants remain unchecked. The diffsemanticfusion branch contains only README. SemanticFormer is explicitly withheld by policy.",
       "evidence": [
         "https://arxiv.org/abs/2508.01778",
-        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet"
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/README.md",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/val_mapless_qcnet_nuscenes_unet_diffusion.py",
+        "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet/blob/main/modules/uncertainty_conditional_unet1d.py"
       ],
       "readmeMatch": "paper-title",
       "rootFiles": [
@@ -8018,6 +8020,1416 @@
         "\"Perceives but Doesn't Brake\" github",
         "GitHub repository search: user:matcercola18 pbdb"
       ]
+    },
+    "2601-03460": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code or project link was found in the arXiv abstract/full text or targeted title-plus-code/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.03460",
+        "https://arxiv.org/html/2601.03460v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2026-01-06",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "classificationReason": "Uses only the frozen VLM vision encoder, with learned waypoint planning; no language-action model is retained in the driving policy.",
+        "venueNote": "CVF search exposed a WACV2026W/LLVM-AD paper PDF but both official PDF and HTML fetches returned 403; keep year label unless separately verified."
+      }
+    },
+    "2506-03568": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/lzqw/C-HAC",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository contains algorithm source dsac_v2_pvp.py, environment, network, training and example_train directories, with setup and training instructions; algorithm source page was inspected.",
+      "evidence": [
+        "https://arxiv.org/abs/2506.03568",
+        "https://arxiv.org/html/2506.03568v2",
+        "https://github.com/lzqw/C-HAC",
+        "https://github.com/lzqw/C-HAC/blob/main/dsac_v2_pvp.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-04",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "sourceFilesInspected": [
+          "https://github.com/lzqw/C-HAC/blob/main/dsac_v2_pvp.py"
+        ],
+        "classificationReason": "Explicit second stage performs autonomous RL continuous enhancement beyond the initial human-guided policy."
+      }
+    },
+    "2511-14499": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2511.14499",
+        "https://arxiv.org/html/2511.14499v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-18",
+        "abstractRead": true,
+        "classificationReason": "VLM is an offline risk teacher; the deployed driving backbone remains an end-to-end planner.",
+        "titleNote": "Preserves the spelling Distillaion in the official arXiv title."
+      }
+    },
+    "2511-11740": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Expert-AD/ExpertAD",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Repository includes nuScenes/Expert-UniAD and Expert-VAD implementations, Bench2Drive integration, configuration and training scripts. Inspected actual adapter.py implementing learned routing and track/map adapters.",
+      "evidence": [
+        "https://arxiv.org/abs/2511.11740",
+        "https://arxiv.org/html/2511.11740v1",
+        "https://github.com/Expert-AD/ExpertAD",
+        "https://github.com/Expert-AD/ExpertAD/blob/main/nuScenes/Expert-UniAD/projects/mmdet3d_plugin/expertuniad/modules/adapter.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-13",
+        "abstractRead": true,
+        "venueEvidence": "arXiv comments explicitly state AAAI 2026 acceptance.",
+        "sourceFilesInspected": [
+          "nuScenes/Expert-UniAD/projects/mmdet3d_plugin/expertuniad/modules/adapter.py"
+        ]
+      }
+    },
+    "2511-13297": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2511.13297",
+        "https://arxiv.org/html/2511.13297v1",
+        "https://ojs.aaai.org/index.php/AAAI/article/download/37718/41680"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-17",
+        "abstractRead": true,
+        "classificationReason": "Failure analysis, targeted synthesis and planner retraining form an explicit self-correcting improvement loop."
+      }
+    },
+    "2510-06038": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/lzqw/H-DSAC",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The official repository contains dsac_v2_pvp.py, environment, network, training and real_world directories. Inspected algorithm source defining the distributional actor-critic and update functions.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.06038",
+        "https://arxiv.org/html/2510.06038v1",
+        "https://github.com/lzqw/H-DSAC",
+        "https://github.com/lzqw/H-DSAC/blob/main/dsac_v2_pvp.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-07",
+        "abstractRead": true,
+        "sourceFilesInspected": [
+          "dsac_v2_pvp.py"
+        ],
+        "classificationReason": "Interactive policy learning from intervention feedback; RSI here denotes policy improvement, not autonomous recursive algorithm rewriting."
+      }
+    },
+    "2509-20253": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.20253",
+        "https://arxiv.org/html/2509.20253v2"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-24",
+        "abstractRead": true
+      }
+    },
+    "2509-17940": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.17940",
+        "https://arxiv.org/html/2509.17940v1",
+        "https://papers.nips.cc/paper_files/paper/2025/hash/750337e1301941f81ae31a90e0a1c181-Abstract-Conference.html"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-22",
+        "abstractRead": true,
+        "venueEvidence": "Official NeurIPS 2025 proceedings abstract."
+      }
+    },
+    "2508-06113": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.06113",
+        "https://arxiv.org/html/2508.06113v2"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-08",
+        "abstractRead": true
+      }
+    },
+    "2508-10567": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Paper claims source is available at the official project, but that page was inaccessible in repeated attempts and no implementation repository could be verified. This status means unverified release, not an assertion that code does not exist.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.10567",
+        "https://arxiv.org/html/2508.10567v1",
+        "https://phi-wol.github.io/sparcad/",
+        "https://openaccess.thecvf.com/content/ICCV2025W/DriveX/papers/Wolters_SpaRC-AD_A_Baseline_for_Radar-Camera_Fusion_in_End-to-End_Autonomous_Driving_ICCVW_2025_paper.pdf"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-14",
+        "abstractRead": true,
+        "codeVerificationBlocked": true,
+        "venueEvidence": "Official ICCV 2025 DriveX workshop proceedings PDF indexed with exact title and abstract."
+      }
+    },
+    "2507-17596": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Official project page still states code will be available upon publication; no implementation link is exposed.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.17596",
+        "https://maxiuw.github.io/prix/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-23",
+        "abstractRead": true,
+        "venueEvidence": "arXiv comments: accepted for Robotics and Automation Letters and presentation at IROS 2026."
+      }
+    },
+    "2507-17342": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/LogosIntelligenceLab/DeMo",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Paper points to fudan-zvg/DeMo, which redirects to LogosIntelligenceLab/DeMo. Inspected model_forecast.py and repository tree; README provides DeMo and DeMo+RealMotion forecasting training/checkpoints, with no NAVSIM/nuPlan planning implementation found.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.17342",
+        "https://arxiv.org/html/2507.17342v2",
+        "https://github.com/LogosIntelligenceLab/DeMo",
+        "https://github.com/LogosIntelligenceLab/DeMo/blob/main/src/model/model_forecast.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-23",
+        "abstractRead": true,
+        "sourceFilesInspected": [
+          "src/model/model_forecast.py"
+        ],
+        "venueNote": "Journal extension of NeurIPS 2024 predecessor; no new venue claimed."
+      }
+    },
+    "2510-13108": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Official project page labels code coming soon and describes pending internal release clearance.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.13108",
+        "https://song-jingyu.github.io/DriveCritic/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-15",
+        "abstractRead": true,
+        "classificationReason": "Supporting evaluator for end-to-end driving rather than a driving policy.",
+        "venueEvidence": "Official project and arXiv metadata."
+      }
+    },
+    "2508-06534": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code repository was found in the primary paper or targeted title/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.06534",
+        "https://arxiv.org/html/2508.06534v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-04",
+        "abstractRead": true,
+        "classificationReason": "General driving evaluation infrastructure; not itself an end-to-end policy or self-improving policy loop."
+      }
+    },
+    "2512-23585": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation repository was found in the inspected primary paper and targeted searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.23585",
+        "https://arxiv.org/html/2512.23585v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-12-29",
+        "abstractRead": true,
+        "nameNote": "DIF is the adopted Deep Isolation Forest algorithm, used as the ADFeed post's shorthand; it is not a new acronym introduced by this paper."
+      }
+    },
+    "2506-02554": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/rst-tu-dortmund/HiLO",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository has model, data, loss and training implementations, pretrained weights and tests. Inspected src/train.py with dataloader/model/loss setup and the optimization loop.",
+      "evidence": [
+        "https://arxiv.org/abs/2506.02554",
+        "https://github.com/rst-tu-dortmund/HiLO",
+        "https://github.com/rst-tu-dortmund/HiLO/blob/release/src/train.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-03",
+        "abstractRead": true
+      }
+    },
+    "2506-02358": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation repository was found in the inspected primary paper and targeted searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2506.02358",
+        "https://arxiv.org/html/2506.02358v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-06-03",
+        "abstractRead": true,
+        "identityNote": "This is the 2025 local-global road-surface classifier, distinct from RoadFormer: Duplex Transformer for RGB-Normal Semantic Road Scene Parsing (2023)."
+      }
+    },
+    "2508-04066": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/genglongling/DRIVE",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Repository title matches the paper and contains constraint inference, convex planning, RL and evaluation source. Inspected rl_with_constraints_convex.py. Root basic.py has placeholder logic and the README paper hyperlink points to a different arXiv ID; do not treat all files as complete paper reproduction.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.04066",
+        "https://github.com/genglongling/DRIVE",
+        "https://arxiv.org/html/2508.04066v1",
+        "https://github.com/genglongling/DRIVE/blob/main/maximum-likelihood-constraint-inference/rl_with_constraints_convex.py",
+        "https://github.com/genglongling/DRIVE/blob/main/README.md"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-08-06",
+        "abstractRead": true
+      }
+    },
+    "2507-18522": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation repository was found in the inspected primary paper and targeted searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.18522",
+        "https://arxiv.org/html/2507.18522v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-24",
+        "abstractRead": true
+      }
+    },
+    "2507-13425": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/srwang0506/CaTFormer",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official v2 full text links the repository. Inspected CaTFormer.py defining the model, reciprocal attention and fusion layers; repository also includes training, testing and data scripts.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.13425",
+        "https://github.com/srwang0506/CaTFormer",
+        "https://arxiv.org/abs/2507.13425v1",
+        "https://arxiv.org/html/2507.13425v2",
+        "https://github.com/srwang0506/CaTFormer/blob/main/CaTFormer.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-17",
+        "abstractRead": true,
+        "identityNote": "ADFeed refers to v1 CaSTFormer. v2 dated 2026-01-08 renames it CaTFormer; both versions share arXiv ID 2507.13425.",
+        "venueEvidence": "Official arXiv v2 comments state AAAI 2026 acceptance."
+      }
+    },
+    "2507-13373": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Aveiro-Lin/Butter",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository includes the FAFCE and PHFFNet implementation, model YAML configurations, dataset preparation and training scripts. Inspected FAFCE.py plus the BDD100K model configuration and training entrypoint.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.13373",
+        "https://github.com/Aveiro-Lin/Butter",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/ultralytics/nn/FAFCE.py",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/ultralytics/cfg/models/Butter/Butter-All-BDD100K.yaml",
+        "https://github.com/Aveiro-Lin/Butter/blob/master/Butter-BDD100K-train.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-12",
+        "abstractRead": true
+      }
+    },
+    "2507-18498": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Ethan-Zheng136/Map-Uncertainty-for-Trajectory-Prediction",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official paper links repository containing modified HiVT, DenseTNT, MapTR, MapTRv2 and StreamMapNet implementations plus adaptors. Inspected adaptor/adaptor.py data/map transformation source.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.18498",
+        "https://github.com/Ethan-Zheng136/Map-Uncertainty-for-Trajectory-Prediction",
+        "https://guoxuan-chi.github.io/assets/pdf/Paper-MapUncertainty.pdf",
+        "https://chenqingsu1.github.io/",
+        "https://github.com/Ethan-Zheng136/Map-Uncertainty-for-Trajectory-Prediction/blob/master/adaptor/adaptor.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-24",
+        "abstractRead": true,
+        "venueEvidence": "Coauthor Boran Zhang's official publication page labels it IROS 2025 Oral."
+      }
+    },
+    "2507-12755": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation repository was found in the inspected primary paper and targeted searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.12755",
+        "https://arxiv.org/html/2507.12755v1"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-17",
+        "abstractRead": true,
+        "venueNote": "Secondary sources suggest Communications in Transportation Research, but year retained because publisher metadata was not independently verified."
+      }
+    },
+    "2507-12095": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Paper explicitly claims code/data at the official project, but the project was inaccessible and no implementation repository could be verified. Not-found denotes unverified availability.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.12095",
+        "https://arxiv.org/html/2507.12095v1",
+        "https://iris.unimore.it/bitstream/11380/1384570/1/IV_2025.pdf",
+        "https://aimagelab-legacy.ing.unimore.it/imagelab/publicationSheet.asp?idpublication=1270"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-07-16",
+        "abstractRead": true,
+        "codeVerificationBlocked": true,
+        "venueEvidence": "Author laboratory publication page gives IV 2025, 22–25 June 2025; first arXiv release is July."
+      }
+    },
+    "2510-12282": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The arXiv full text and author publication page provide paper links but no official implementation link; targeted title/GitHub searches did not establish an official release as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.12282",
+        "https://arxiv.org/html/2510.12282v1",
+        "https://zengchang233.github.io/publication/arxiv2025_pags/"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-14",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "venueNote": "Author publication page explicitly reports acceptance to ICASSP 2026.",
+        "classificationReason": "Driving-scene reconstruction and rendering; no action-conditioned predictive world model or driving policy is established."
+      }
+    },
+    "2509-22756": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/MIV-XJTU/PAMR",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Official project links this repository, but contents inspection found only README.md, one framework image, and dataset split text files. README references missing source scripts and a placeholder weight link (xxx); model/training/inference implementation is not present.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.22756",
+        "https://ojs.aaai.org/index.php/AAAI/article/view/37619",
+        "https://miv-xjtu.github.io/PAMR/",
+        "https://github.com/MIV-XJTU/PAMR",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents/data_split",
+        "https://api.github.com/repos/MIV-XJTU/PAMR/contents/assets"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-09-26",
+        "abstractRead": true,
+        "projectRead": true,
+        "officialCodeVerified": true,
+        "sourceFilesInspected": [
+          "README.md",
+          "data_split/mapdrv2_test.txt",
+          "data_split/mapdrv2_train.txt",
+          "assets/framework.png"
+        ],
+        "venueNote": "arXiv comments and AAAI publisher record confirm AAAI 2026.",
+        "classificationReason": "MLLM outputs map geometry and rules rather than vehicle actions; categorized as driving mapping."
+      }
+    },
+    "2510-13565": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/harborsarah/XD_RCDepth",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The arXiv v3 abstract links this official repository. Inspected actual trainer.py and models/student_model.py implementing the XD_RCDepth training setup and MobileNetV2 camera/radar student encoders; README documents training and evaluation with distillation.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.13565",
+        "https://arxiv.org/html/2510.13565v3",
+        "https://github.com/harborsarah/XD_RCDepth",
+        "https://github.com/harborsarah/XD_RCDepth/blob/master/trainer.py",
+        "https://github.com/harborsarah/XD_RCDepth/blob/master/models/student_model.py"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-10-15",
+        "abstractRead": true,
+        "fullTextRead": true,
+        "officialCodeVerified": true,
+        "sourceFilesInspected": [
+          "trainer.py",
+          "models/student_model.py"
+        ],
+        "venueNote": "No publisher or author venue confirmation found; year label retained.",
+        "classificationReason": "Radar-camera driving perception for depth estimation."
+      }
+    },
+    "2605-23163": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/NVlabs/Fast-dLLM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official fast_ddrive directory contains chatbot, training, and evaluation Python/scripts; run_chatbot.py was inspected. Model implementation is distributed with the linked Hugging Face checkpoint.",
+      "evidence": [
+        "https://arxiv.org/abs/2605.23163",
+        "https://nvlabs.github.io/Fast-dLLM/fast_ddrive/",
+        "https://github.com/NVlabs/Fast-dLLM/blob/main/fast_ddrive/run_chatbot.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1"
+      ],
+      "verification": {}
+    },
+    "2605-22089": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2605.22089",
+        "https://arxiv.org/html/2605.22089v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1"
+      ],
+      "verification": {}
+    },
+    "2601-04714": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.04714",
+        "https://arxiv.org/html/2601.04714v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2"
+      ],
+      "verification": {}
+    },
+    "2601-07092": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.07092",
+        "https://arxiv.org/html/2601.07092v1",
+        "https://openaccess.thecvf.com/content/WACV2026W/LLVM-AD/papers/Cai_Efficient_Visual_Question_Answering_Pipeline_for_Autonomous_Driving_via_Scene_WACVW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2"
+      ],
+      "verification": {}
+    },
+    "2601-03519": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.03519",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3"
+      ],
+      "verification": {}
+    },
+    "2512-24426": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/pengzhenghao/cfvla",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "The author repository contains the project website (HTML and static assets), not the VLA implementation. Website availability is not counted as a model-code release.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.24426",
+        "https://pengzhenghao.github.io/cfvla/",
+        "https://github.com/pengzhenghao/cfvla",
+        "https://arxiv.org/html/2512.24426",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4"
+      ],
+      "verification": {}
+    },
+    "2512-24331": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.24331",
+        "https://arxiv.org/html/2512.24331v2",
+        "https://openaccess.thecvf.com/content/CVPR2026W/AUTOPILOT/papers/Wei_Spatial-aware_Vision_Language_Model_for_Autonomous_Driving_CVPRW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4"
+      ],
+      "verification": {}
+    },
+    "2510-01795": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Authors claim code availability. The anonymous release was inaccessible to the browser; the IEEE publication's GitHub link HugeRaabbit/NavEE returned 404 through both browser and GitHub API. No source files were verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.01795",
+        "https://ieeexplore.ieee.org/abstract/document/11662236",
+        "https://anonymous.4open.science/r/Nav-EE-BBC4",
+        "https://github.com/HugeRaabbit/NavEE",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    "2509-25249": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.25249",
+        "https://arxiv.org/html/2509.25249v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    "2509-15968": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/FanGShiYuu/CoReVLA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Verified Bench2Drive integration Python patches, launch scripts and data. Weights are linked by the authors. The repository still lists training/evaluation and takeover-data release items as TODO; this is a partial release, not a verified full training pipeline.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.15968",
+        "https://github.com/FanGShiYuu/CoReVLA",
+        "https://github.com/FanGShiYuu/CoReVLA/blob/main/bench2drive_files/behaviour.py",
+        "https://fangshiyuu.github.io/CoReVLA/",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-20843": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.20843",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-18053": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/eddyhkchiu/V2V-GoT",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository includes DMSTrack, LLaVA, training scripts and cooperative-perception evaluation. The V2V4Real grounding evaluation Python source was fetched and inspected.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.18053",
+        "https://github.com/eddyhkchiu/V2V-GoT",
+        "https://github.com/eddyhkchiu/V2V-GoT/blob/main/LLaVA/scripts/eval_v2v4real_3d_grounding.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-19973": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.19973",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-00789": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.00789",
+        "https://arxiv.org/html/2509.00789v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    "2509-01944": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.01944",
+        "https://arxiv.org/html/2509.01944v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    "2510-00060": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The latest arXiv abstract explicitly states that code will be available upon publication; no implementation repository was located.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.00060",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=10"
+      ],
+      "verification": {}
+    },
+    "2508-21824": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/h2xlab/driveQA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository includes CARLA question-answer data-generation Python scripts, verified by opening generate_T_intersection_QA_CARLA.py. This verifies dataset-generation code, not every model-training experiment.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.21824",
+        "https://github.com/h2xlab/driveQA/blob/main/data/generate_T_intersection_QA_CARLA.py",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Wei_Passing_the_Driving_Knowledge_Test_ICCV_2025_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    "2508-10427": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/turingmotors/STRIDE-QA-Dataset",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Verified benchmark.py plus inference runners, metric/parser utilities and visualization code. This is a benchmark/evaluation toolkit; full training reproduction was not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.10427",
+        "https://turingmotors.github.io/stride-qa/",
+        "https://github.com/turingmotors/STRIDE-QA-Dataset/blob/main/benchmarks/STRIDE-QA-Bench/src/strideqa_bench/benchmark.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {}
+    },
+    "2508-09061": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.09061",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {
+        "classificationReason": "The evaluated output is 3D bounding-box perception, not a driving action policy."
+      }
+    },
+    "2507-12499": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The official project page has an inactive GitHub label; no author implementation was located.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.12499",
+        "https://4dvlab.github.io/project_page/realad",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Lu_ReAL-AD_Towards_Human-Like_Reasoning_in_End-to-End_Autonomous_Driving_ICCV_2025_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    "2507-17722": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was located in the checked primary paper and targeted public search.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.17722",
+        "https://arxiv.org/html/2507.17722v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    "2507-13729": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/boschresearch/agents-llm",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The author-linked placeholder redirects readers to the Bosch Research release. Verified agents_llm/framework.py with scenario-augmentation implementation; the release includes modification and visualization scripts.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.13729",
+        "https://arxiv.org/html/2507.13729v1",
+        "https://github.com/mh0797/Agents-LLM",
+        "https://github.com/boschresearch/agents-llm/blob/main/agents_llm/framework.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=16"
+      ],
+      "verification": {}
+    },
+    "2509-02659": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official model implementation was located in the challenge report or targeted search.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.02659",
+        "https://opendrivelab.github.io/Challenge%202024/e2e_ZERON.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=12"
+      ],
+      "verification": {}
+    },
+    "2506-02580": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/Xuewen2025/V2X-UniPool",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "The author-linked repository contains only a scene-prompt string in scene_prompt.py, example infrastructure data, and notes. This is a prompt/data resource, not a verified executable implementation of the knowledge-pool/RAG/planning system.",
+      "evidence": [
+        "https://arxiv.org/abs/2506.02580",
+        "https://arxiv.org/html/2506.02580v2",
+        "https://github.com/Xuewen2025/V2X-UniPool/blob/main/build%20v2x%20knowledge%20pool/scene_prompt.py",
+        "https://openaccess.thecvf.com/content/CVPR2026W/DriveX/papers/Luo_V2X-UniPool_Unifying_Multimodal_Perception_and_Knowledge_Reasoning_for_Autonomous_Driving_CVPRW_2026_paper.pdf",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=18"
+      ],
+      "verification": {}
+    },
+    "2510-09200": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Mukil07/Explainable-Driver-Intention-Prediction",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Author project links the implementation; models/train_i3d.py contains model construction, maneuver/explanation losses, and training loops. The old institutional DAAD-X page currently shows unrelated content, so it is not used as the project link.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.09200",
+        "https://mukil07.github.io/VCBM.github.io/",
+        "https://openaccess.thecvf.com/content/ICCV2025/papers/Karuppasamy_Towards_Safer_and_Understandable_Driver_Intention_Prediction_ICCV_2025_paper.pdf",
+        "https://github.com/Mukil07/Explainable-Driver-Intention-Prediction/blob/main/models/train_i3d.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=9"
+      ],
+      "verification": {}
+    },
+    "2509-17850": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/SimonWicks1/SocialTraj",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Author repository contains models/socialtraj.py, Bayesian social-value estimation, conditional diffusion, and training code. README describes a preliminary reviewer release with core algorithms; complete reproduction was not tested.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.17850",
+        "https://github.com/SimonWicks1",
+        "https://github.com/SimonWicks1/SocialTraj",
+        "https://github.com/SimonWicks1/SocialTraj/blob/master/models/socialtraj.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-16588": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation link was located in the arXiv paper, publisher record, or targeted title/author searches. The cited MMDetection3D repository is infrastructure, not a release of SQS.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.16588",
+        "https://arxiv.org/html/2509.16588v1",
+        "https://papers.neurips.cc/paper_files/paper/2025/hash/dcfc25c8ff3ecddd5aea6b1928f0db63-Abstract-Conference.html",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2509-16261": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was found in the primary paper and targeted title searches.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.16261",
+        "https://arxiv.org/html/2509.16261v1",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=11"
+      ],
+      "verification": {}
+    },
+    "2508-06529": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/JiayuanWang-JW/RMT-PPAD",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The arXiv abstract links the official repository. ultralytics/models/mtdetr/train.py contains the multitask trainer and model construction; model, prediction, validation, and BDD configuration files are present.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.06529",
+        "https://github.com/JiayuanWang-JW/RMT-PPAD",
+        "https://github.com/JiayuanWang-JW/RMT-PPAD/blob/main/ultralytics/models/mtdetr/train.py",
+        "https://www.jintiankansha.me/column/HW4Hx23mHq?page=14"
+      ],
+      "verification": {}
+    },
+    "2412-03934": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/nv-tlabs/InfiniCube",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official implementation includes voxel generation, video generation and Gaussian reconstruction. The released video stage is reimplemented with Wan2.1; it is not the original paper's SVD implementation.",
+      "evidence": [
+        "https://arxiv.org/abs/2412.03934",
+        "https://research.nvidia.com/labs/toronto-ai/infinicube/",
+        "https://github.com/nv-tlabs/InfiniCube",
+        "https://github.com/nv-tlabs/InfiniCube/blob/main/infinicube/videogen/inference.py"
+      ],
+      "verification": {}
+    },
+    "2601-09452": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/vita-epfl/MAD-World-Model-Code",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official MAD-LTX release contains training, inference, preprocessing and evaluation Python files, configurations and checkpoint links.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.09452",
+        "https://arxiv.org/html/2601.09452v1",
+        "https://openaccess.thecvf.com/content/CVPR2026/html/Rahimi_MAD_Motion_Appearance_Decoupling_for_efficient_Driving_World_Models_CVPR_2026_paper.html",
+        "https://vita-epfl.github.io/MAD-World-Model/",
+        "https://github.com/vita-epfl/MAD-World-Model-Code/blob/main/scripts/run_pipeline.py"
+      ],
+      "verification": {}
+    },
+    "2601-01528": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/youngzhou1999/DrivingGen",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official evaluation code, trajectory extraction, video/trajectory metrics, dataset downloader and example inference are public.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.01528",
+        "https://arxiv.org/html/2601.01528v1",
+        "https://drivinggen-bench.github.io/",
+        "https://openreview.net/pdf?id=OrgL5DsU0f",
+        "https://github.com/youngzhou1999/DrivingGen/blob/main/drivinggen/trajs/traj_quality.py"
+      ],
+      "verification": {}
+    },
+    "2512-23180": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/dtc111111/GaussianDWM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "CVPR release includes QA and world-generation training/inference chains and weights. Repository explicitly excludes trajectory code and later journal extensions.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.23180",
+        "https://github.com/dtc111111/GaussianDWM",
+        "https://github.com/dtc111111/GaussianDWM/blob/main/src/gaussiandwm_cvpr/infer/world.py"
+      ],
+      "verification": {}
+    },
+    "2512-24227": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/wm-research/mirage",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Author-linked repository contains README, license and static/assets resources; inference, training and full models remain on its release checklist. Recursive tree inspection found no Python implementation.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.24227",
+        "https://arxiv.org/html/2512.24227v1",
+        "https://github.com/wm-research/mirage",
+        "https://api.github.com/repos/wm-research/mirage/git/trees/main?recursive=1"
+      ],
+      "verification": {}
+    },
+    "2512-23983": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was found in the arXiv abstract/full text or targeted title-plus-code/GitHub searches as of 2026-10-25.",
+      "evidence": [
+        "https://arxiv.org/abs/2512.23983",
+        "https://arxiv.org/html/2512.23983v1"
+      ],
+      "verification": {}
+    },
+    "2510-02469": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/sungyeonparkk/SIMSplat_",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Author homepage links this official repository. Its tree contains only README.md with a postponed release notice, no implementation. The latest arXiv title differs from the original Predictive Driving Scene Editing title.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.02469",
+        "https://sungyeonparkk.github.io/simsplat/",
+        "https://github.com/sungyeonparkk/SIMSplat_",
+        "https://arxiv.org/html/2510.02469v2",
+        "https://sungyeonparkk.github.io/about/",
+        "https://github.com/sungyeonparkk/SIMSplat_/blob/main/README.md"
+      ],
+      "verification": {}
+    },
+    "2510-06209": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code link found in the paper, Waymo publication page or targeted searches. Waymo's publication page confirms IROS 2025.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.06209",
+        "https://waymo.com/intl/zh-cn/research/drive-gen-co-evaluating/",
+        "https://arxiv.org/html/2510.06209v1"
+      ],
+      "verification": {}
+    },
+    "2509-23402": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/xiaomi-research/worldsplat",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The original wm-research/worldsplat README explicitly transfers maintenance to xiaomi-research/worldsplat. Actual training/inference and Gaussian decoder files exist. The README's checkpoint table still says Coming soon despite its release headline; execution and checkpoint availability were not validated.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.23402",
+        "https://wm-research.github.io/worldsplat/",
+        "https://github.com/xiaomi-research/worldsplat",
+        "https://github.com/wm-research/worldsplat/blob/main/README.md",
+        "https://github.com/xiaomi-research/worldsplat/blob/main/tools/train_diffusion.py",
+        "https://openreview.net/pdf?id=KWeX6tYno6"
+      ],
+      "verification": {}
+    },
+    "2509-02150": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The paper says the tool is open source, but no official repository link could be verified in the paper or targeted title/GitHub searches. The open-source claim alone is not treated as a verified release.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.02150",
+        "https://arxiv.org/html/2509.02150v1"
+      ],
+      "verification": {}
+    },
+    "2509-03887": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link found in the abstract, full paper or targeted title/GitHub searches. Journal metadata was not independently confirmed from the publisher; the first-release year is retained.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.03887",
+        "https://arxiv.org/html/2509.03887v2"
+      ],
+      "verification": {}
+    },
+    "2508-20965": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/VDIGPKU/DrivingGaussian_plus",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Official repository README reports TPAMI 2026 acceptance. Its recursive tree contains README and demonstration/web assets but no implementation source files, so the repository is not classified as released code.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.20965",
+        "https://xiong-creator.github.io/DrivingGaussian_plus.github.io/",
+        "https://github.com/VDIGPKU/DrivingGaussian_plus",
+        "https://arxiv.org/html/2508.20965v1",
+        "https://github.com/VDIGPKU/DrivingGaussian_plus/blob/main/README.md"
+      ],
+      "verification": {}
+    },
+    "2508-20471": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was found in the paper or targeted searches. A secondary IV 2026 listing could not be independently confirmed with the publisher, so the first-release year is retained.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.20471",
+        "https://arxiv.org/html/2508.20471v1"
+      ],
+      "verification": {}
+    },
+    "2508-06982": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/YixinZhu042/IntrinsicWeather",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "This is the paper formerly titled WeatherDiffusion, not the unrelated IGITUGraz/WeatherDiffusion restoration repository. Actual forward/inverse inference and WeatherSynthetic training scripts exist; WeatherReal construction remains unchecked in the release checklist. CVPR 2026 Highlight confirmed by arXiv.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.06982",
+        "https://yixinzhu042.github.io/IntrinsicWeather/",
+        "https://github.com/YixinZhu042/IntrinsicWeather",
+        "https://arxiv.org/abs/2508.06982v1",
+        "https://arxiv.org/html/2508.06982v7",
+        "https://github.com/YixinZhu042/IntrinsicWeather/blob/main/training/train_inverse.py"
+      ],
+      "verification": {}
+    },
+    "2508-05236": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link found in the arXiv abstract/full paper or targeted title-plus-code/GitHub searches.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.05236",
+        "https://arxiv.org/html/2508.05236v1"
+      ],
+      "verification": {}
+    },
+    "2507-13162": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/lmb-freiburg/orbis",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official project links the repository and confirms NeurIPS 2025. Actual tokenizer/world-model training and rollout source files are present, with checkpoint and validation-set links. Runtime reproduction was not performed.",
+      "evidence": [
+        "https://arxiv.org/abs/2507.13162",
+        "https://lmb-freiburg.github.io/orbis.github.io/",
+        "https://github.com/lmb-freiburg/orbis",
+        "https://arxiv.org/html/2507.13162v2",
+        "https://github.com/lmb-freiburg/orbis/blob/main/evaluate/rollout.py"
+      ],
+      "verification": {}
+    },
+    "2605-11594": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The official project and arXiv abstract explicitly promise code upon publication. The project displays an unlinked Code label, and no official implementation repository was verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2605.11594",
+        "https://arxiv.org/html/2605.11594v1",
+        "https://wm-research.github.io/PointForward/"
+      ],
+      "verification": {}
+    },
+    "2601-01386": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/wm-research/ParkGaussian",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Official README confirms CVPR 2026 and reports ParkRecon3D dataset release. The repository contains README, project HTML and static assets only; no implementation source is present and code release remains promised.",
+      "evidence": [
+        "https://arxiv.org/abs/2601.01386",
+        "https://wm-research.github.io/ParkGaussian/",
+        "https://github.com/wm-research/ParkGaussian/blob/main/README.md",
+        "https://api.github.com/repos/wm-research/ParkGaussian/git/trees/main?recursive=1"
+      ],
+      "verification": {}
+    },
+    "2510-02627": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The author's publication page confirms IROS 2026. No official code or project link was verified in the paper, author's publication listing or targeted searches. The paper body prefixes its title with HiD²; the exact arXiv metadata title is retained.",
+      "evidence": [
+        "https://arxiv.org/abs/2510.02627",
+        "https://arxiv.org/html/2510.02627v1",
+        "https://ryning.github.io/publications/"
+      ],
+      "verification": {}
+    },
+    "2509-19789": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was found in the arXiv paper or targeted title/GitHub and Zoox searches. The evaluation uses proprietary data; a publication venue was not independently verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2509.19789",
+        "https://arxiv.org/html/2509.19789v1"
+      ],
+      "verification": {}
+    },
+    "2508-05852": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Originally titled VISTA: Vision-Language Imitation of Situational Thinking and Attention for Human-Like Driver Focus in Dynamic Environments; the same arXiv record was renamed. The publisher confirms HFES proceedings publication. No official implementation was found. Distinct from the Vista driving world model.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.05852",
+        "https://arxiv.org/abs/2508.05852v1",
+        "https://arxiv.org/html/2508.05852v3",
+        "https://journals.sagepub.com/doi/10.1177/10711813261484478",
+        "https://hfesam2026.conference-program.com/presentation/?id=LECT604&sess=sess202"
+      ],
+      "verification": {}
+    },
+    "2508-19882": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Literature survey, not a new executable model. No official implementation or project repository was found in the paper, author page or targeted searches. UCL confirms the accepted TOSEM 2026 article; the accepted version reviews 92 studies, versus 91 in arXiv v1.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.19882",
+        "https://arxiv.org/html/2508.19882v1",
+        "https://discovery.ucl.ac.uk/id/eprint/10224339/",
+        "https://doi.org/10.1145/3806653",
+        "https://qunying-song.github.io/"
+      ],
+      "verification": {}
+    },
+    "2508-19905": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Survey and commercial-sensor analysis rather than a released perception implementation. No official code or project was found in the paper or targeted searches. The arXiv journal reference confirms IEEE OJVT volume 7, pages 124–143, 2026; datasets listed are reviewed resources, not new evaluation runs.",
+      "evidence": [
+        "https://arxiv.org/abs/2508.19905",
+        "https://arxiv.org/html/2508.19905v1",
+        "https://doi.org/10.1109/ojvt.2025.3636075"
+      ],
+      "verification": {}
+    },
+    "aota-2025": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/humanlabmembers/Anticipation-of-Traffic-Accident",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The repository exposes model.py and dataset/checkpoint links. Its README says generative and inference code will be re-uploaded after cleanup; a complete scene-generation pipeline was not verified.",
+      "evidence": [
+        "https://www.nature.com/articles/s44172-025-00474-7",
+        "https://github.com/humanlabmembers/Anticipation-of-Traffic-Accident",
+        "https://github.com/humanlabmembers/Anticipation-of-Traffic-Accident/blob/main/model.py"
+      ],
+      "verification": {
+        "firstPublished": "2025-08-05",
+        "doi": "10.1038/s44172-025-00474-7",
+        "sourceFilesInspected": [
+          "model.py"
+        ],
+        "classificationReason": "Accident anticipation is the evaluated task; a pretrained world model supplies negative-scene augmentation."
+      }
+    },
+    "2511-08439": {
+      "checkedAt": "2026-10-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Survey and assurance framework; no author-linked implementation was verified in the paper metadata or exact-title code search.",
+      "evidence": [
+        "https://arxiv.org/abs/2511.08439"
+      ],
+      "verification": {
+        "firstSubmitted": "2025-11-11",
+        "abstractRead": true
+      }
     }
   },
   "lastIncrementalUpdate": {
@@ -8064,5 +9476,14 @@
       "notFound": 14
     },
     "note": "Only the newly added entries were checked in this increment. Older entries and audit dates are preserved. ADFeed was searched as a discovery reference, but recent WeChat pages could not be retrieved; these additions are not represented as an ADFeed recommendation list. Metadata and code status rely on primary paper and author sources."
+  },
+  "incrementalAudit": {
+    "checkedAt": "2026-10-25",
+    "newPapers": 81,
+    "updatedPapers": [
+      "2508-01778"
+    ],
+    "source": "adfeed-audit.json",
+    "note": "Earlier records and their observation dates are preserved; old search counters describe the earlier audit only."
   }
 }

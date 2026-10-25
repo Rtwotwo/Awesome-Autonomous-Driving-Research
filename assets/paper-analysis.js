@@ -3,13 +3,15 @@ const labels = {
   e2e: 'End-to-End',
   'world-model': 'World Model',
   vla: 'Vision · Language · Action',
-  rsi: 'Recursive Self-Improvement'
+  rsi: 'Recursive Self-Improvement',
+  'perception-other': 'Perception & Other Driving Research'
 };
 const framing = {
   e2e: 'This paper belongs to end-to-end driving. Focus on how sensor inputs and scene representations support executable driving decisions.',
   'world-model': 'This paper belongs to driving world models. Focus on how it represents scene states, forecasts futures, or supports downstream driving tasks.',
   vla: 'This paper belongs to vision-language-action research. Focus on how reasoning is grounded in visual scenes and translated into executable actions.',
-  rsi: 'This paper belongs to recursive self-improvement research. Focus on the feedback loop, repeated optimization, and evidence of safe policy improvement.'
+  rsi: 'This paper belongs to recursive self-improvement research. Focus on the feedback loop, repeated optimization, and evidence of safe policy improvement.',
+  'perception-other': 'This paper studies perception or a supporting driving task. Identify its inputs, outputs, evaluation setting, and demonstrated connection to autonomous-driving systems.'
 };
 const prompts = {
   e2e: [
@@ -31,6 +33,11 @@ const prompts = {
     'What safety constraints, independent regression tests, and stopping rules govern each improvement round?',
     'Are gains consistent across scenarios or concentrated in a few evaluation subsets?',
     'How do repeated updates preserve driving behaviors that were already reliable?'
+  ],
+  'perception-other': [
+    'What task is evaluated: perception, reconstruction, prediction, testing, or a survey of existing evidence?',
+    'Are sensors, annotations, data splits, and evaluation conditions comparable across baselines?',
+    'Is downstream driving benefit demonstrated, or is evaluation limited to the supporting task?'
   ]
 };
 const byId = new Map();

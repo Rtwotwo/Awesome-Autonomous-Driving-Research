@@ -55,7 +55,7 @@ for (const paper of papers) {
   if (paper.citationStatus === 'available' && (!Number.isInteger(paper.citationCount) || !/^https:\/\/openalex\.org\/W\d+$/.test(paper.citationURL || ''))) errors.push(`paper ${paper.id}: available citations require a count and source record`);
   if (paper.citationStatus !== 'available' && paper.citationCount !== null) errors.push(`paper ${paper.id}: unknown citations must use null, not zero`);
   if (!citation || citation.count !== paper.citationCount || citation.source !== paper.citationSource || citation.status !== paper.citationStatus || citation.checkedAt !== paper.citationCheckedAt || citation.url !== paper.citationURL) errors.push(`paper ${paper.id}: citation snapshot mismatch`);
-  if (!['e2e','world-model','vla','rsi'].includes(paper.track)) errors.push(`paper ${paper.id}: invalid track`);
+  if (!['e2e','world-model','vla','rsi','perception-other'].includes(paper.track)) errors.push(`paper ${paper.id}: invalid track`);
   if (typeof paper.summary !== 'string' || paper.summary.trim().length < 40 || paper.summary.trim().length > 500) errors.push(`paper ${paper.id}: summary must be 40-500 characters`);
   if ('category' in paper) errors.push(`paper ${paper.id}: subcategory field is not allowed`);
   if (!Number.isInteger(paper.year) || paper.year < 1980 || paper.year > 2100) errors.push(`paper ${paper.id}: invalid year`);
@@ -63,12 +63,13 @@ for (const paper of papers) {
   if (!Array.isArray(paper.tags) || !paper.tags.length) errors.push(`paper ${paper.id}: tags required`);
   if (!['released', 'pending', 'not-found'].includes(paper.codeStatus)) errors.push(`paper ${paper.id}: invalid codeStatus`);
   if (paper.openSource !== (paper.codeStatus === 'released')) errors.push(`paper ${paper.id}: openSource must match released code status`);
-  if ((paper.codeStatus === 'released' || paper.codeStatus === 'pending') !== Boolean(paper.code)) errors.push(`paper ${paper.id}: code link must match released/pending status`);
+  if (paper.codeStatus === 'released' && !paper.code) errors.push(`paper ${paper.id}: released code requires a verified link`);
+  if (paper.codeStatus === 'not-found' && paper.code) errors.push(`paper ${paper.id}: unverified code must not have a code link`);
   if (paper.stars !== null && (!Number.isInteger(paper.stars) || paper.stars < 0)) errors.push(`paper ${paper.id}: invalid stars`);
   for (const field of ['paper','code','project','githubRepo']) if (paper[field] && !https(paper[field])) errors.push(`paper ${paper.id}: ${field} must use https`);
 }
 if (Object.keys(githubAudit.records || {}).length !== papers.length) errors.push('repository audit must contain exactly one record per paper');
-for (const track of ['e2e','vla','world-model','rsi']) {
+for (const track of ['e2e','vla','world-model','rsi','perception-other']) {
   const items = papers.filter((paper) => paper.track === track);
   for (let index = 1; index < items.length; index += 1) {
     if (items[index].published > items[index - 1].published) errors.push(`${track}: papers must be sorted newest first`);

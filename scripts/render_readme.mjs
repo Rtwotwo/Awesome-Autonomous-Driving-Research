@@ -12,7 +12,8 @@ const tracks = [
   ['e2e', 'End-to-End Autonomous Driving'],
   ['vla', 'Vision-Language-Action Models'],
   ['world-model', 'Driving World Models'],
-  ['rsi', 'Recursive Self-Improvement for Autonomous Driving']
+  ['rsi', 'Recursive Self-Improvement for Autonomous Driving'],
+  ['perception-other', 'Perception & Other Driving Research']
 ];
 const datasetCategories = [
   'Perception and Multimodal Understanding',
@@ -50,18 +51,20 @@ const resources = (item) => [
 ].filter((value) => value !== dash).join(' ');
 
 let readme = '# Awesome Autonomous Driving Research\n\n';
-readme += `A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, public datasets, and reproducible evaluation. The catalog currently contains **${papers.length} papers** across four research tracks.\n\n`;
+readme += `A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **${papers.length} papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.\n\n`;
 const reviewDate = process.env.CATALOG_REVIEW_DATE || new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
 readme += `Last updated: ${reviewDate}. Verify paper metadata against the latest arXiv or publisher version before citation.\n\n`;
 readme += '[Paper Studio](paper-studio/README.md) is the companion local paper-to-WeChat workspace, available under a separate **noncommercial source license**.\n\n';
 readme += '## Table of Contents\n\n- [Papers](#papers)\n';
-for (const [, title] of tracks) readme += `  - [${title}](#${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')})\n`;
+for (const [, title] of tracks) readme += `  - [${title}](#${title.toLowerCase().replace(/&/g, '').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')})\n`;
 readme += '- [Public Datasets](#public-datasets)\n- [Public Evaluation Benchmarks](#public-evaluation-benchmarks)\n- [Leaderboard](#leaderboard)\n- [License](#license)\n\n';
 for (const category of datasetCategories) readme = readme.replace('- [Public Evaluation Benchmarks]', `  - [${category}](#${anchor(category)})\n- [Public Evaluation Benchmarks]`);
 for (const category of benchmarkCategories) readme = readme.replace('- [Leaderboard]', `  - [${category}](#${anchor(category)})\n- [Leaderboard]`);
 readme += '## Papers\n\n';
 readme += 'Tags were checked against paper titles, abstracts, and method descriptions. GitHub repositories were checked against paper titles, arXiv identifiers, official project pages, and repository contents. **Code pending** marks an announced implementation that is not yet available; **Partial code** identifies a limited release such as inference or data tools. Project-only repositories are identified in the resource notes. Missing links mean no matching implementation was verified as of the audit date. The per-paper evidence and search coverage are recorded in [data/github-audit.json](data/github-audit.json).\n\n';
 readme += 'The RSI track groups autonomous-driving research with an explicit iterative improvement loop. Papers may describe this as self-improving, self-evolving, safe online learning, or agentic evolution; inclusion does not imply that a fully general recursively self-modifying system has been demonstrated.\n\n';
+readme += 'Perception & Other Driving Research covers perception, reconstruction, motion prediction, safety testing, and surveys that do not fit the four model-focused tracks. Each paper is listed once, in its primary research track.\n\n';
+readme += 'The [ADFeed discovery audit](data/adfeed-audit.json) records the 2026-10-25 additions, matched titles, primary sources, duplicates, and unresolved leads. It covers publicly accessible archive pages and attributed reposts; it is not a complete export of the account history.\n\n';
 
 for (const [track, title] of tracks) {
   const trackPapers = papers.filter((item) => item.track === track);
@@ -81,7 +84,7 @@ for (const [track, title] of tracks) {
       const github = (paper.githubRepo || paper.code) ? icon(iconText.github, paper.githubRepo || paper.code, paper.code ? 'Paper-related code repository' : 'Official GitHub project repository; implementation not released') : dash;
       const resources = [paperBadge(paper.paper), github, project].filter(item => item !== dash).join(' ');
       const codeLabel = paper.code ? (paper.codeScope === 'partial' ? 'Partial code' : paper.codeStatus === 'pending' ? 'Code pending' : 'Code released') : paper.codeStatus === 'pending' ? 'Code pending' : '';
-      const codeNotes = [paper.code && (paper.codeStatus === 'pending' || paper.codeScope === 'partial') ? codeLabel : '', paper.codeNote].filter(Boolean);
+      const codeNotes = [paper.codeStatus === 'pending' || paper.codeScope === 'partial' ? codeLabel : '', paper.codeNote].filter(Boolean);
       const codeBadge = codeNotes.length ? `<br><sub>${html(codeNotes.join(': '))}</sub>` : '';
       readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${resources}${codeBadge} |\n`;
     }
