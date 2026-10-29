@@ -1,8 +1,8 @@
 # Awesome Autonomous Driving Research
 
-A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **358 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
+A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **375 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
 
-Last updated: 2026-10-25. Verify paper metadata against the latest arXiv or publisher version before citation.
+Last updated: 2026-10-30. Verify paper metadata against the latest arXiv or publisher version before citation.
 
 [Paper Studio](paper-studio/README.md) is the companion local paper-to-WeChat workspace, available under a separate **noncommercial source license**.
 
@@ -38,17 +38,21 @@ The [ADFeed discovery audit](data/adfeed-audit.json) records the 2026-10-25 addi
 
 ### End-to-End Autonomous Driving
 
-_93 papers; 55 with a verified public code link._
+_97 papers; 56 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **CLAP-AD**<br><sub>Closed-Loop Aware Planning via Imitation-Free Speed Scoring for End-to-End Autonomous Driving</sub> | WACV 2027 | `End-to-End Driving` · `Speed Control` · `Trajectory Scoring` · `Safety Constraints` | [![arXiv](https://img.shields.io/badge/arXiv-2610.36079-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.36079) [💻](https://github.com/clap-ad/clap-ad "Paper-related code repository") [🌐](https://clap-ad.github.io/ "Official project page")<br><sub>Code pending: Implementation announced; repository currently contains only README and showcase assets.</sub> |
+| **Model-Aware Safety-Critical Scenes**<br><sub>Model-Aware Generation of Safety-Critical Scenes for Robust End-to-End Driving via Distilled Planner Surrogates</sub> | 2026 | `Adversarial Scene Generation` · `Planner Distillation` · `Data Augmentation` · `Policy Improvement` | [![arXiv](https://img.shields.io/badge/arXiv-2610.35448-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.35448)<br><sub>Code pending: Code, distilled surrogates and generated scenes announced; no repository verified.</sub> |
 | **Expand-and-Prune**<br><sub>Expand-and-Prune: Test-Time Candidate-Space Adaptation for End-to-End Autonomous Driving</sub> | WACV 2027 | `Test-Time Adaptation` · `Candidate Expansion` · `Uncertainty-Aware Pruning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.23262-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.23262) [💻](https://github.com/iis-esslingen/Expand-and-Prune "Paper-related code repository") [🌐](https://github.com/iis-esslingen/Expand-and-Prune "Official project page")<br><sub>Code pending: Implementation announced for late October; README-only repository at this check.</sub> |
+| **VITAL**<br><sub>VITAL: From Visual Motion to Precise Action</sub> | 2026 | `Action Tokenization` · `Flow Matching` · `Visual Motion` · `Residual Refinement` | [![arXiv](https://img.shields.io/badge/arXiv-2610.20604-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.20604) [💻](https://github.com/worldbench/VITAL "Paper-related code repository") [🌐](https://worldbench.github.io/vital.html "Official project page")<br><sub>Partial code: Inference and NAVSIM v1 evaluation released; training code and NAVSIM v2 evaluation pending.</sub> |
 | **DIVA**<br><sub>Beyond Planning: Differentiable Control-in-the-loop End-to-End Autonomous Driving</sub> | 2026 | `Differentiable Vehicle Dynamics` · `Control-in-the-Loop` · `Model Mismatch` | [![arXiv](https://img.shields.io/badge/arXiv-2610.18167-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.18167) |
 | **ConDenseDrive**<br><sub>ConDenseDrive: Knowledge-Dense, Token-Sparse Visual Encoder for End-to-End Autonomous Driving</sub> | 2026 | `Visual Knowledge Distillation` · `Register Tokens` · `Token Compression` | [![arXiv](https://img.shields.io/badge/arXiv-2610.16908-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.16908) |
 | **FPD-Drive**<br><sub>FPD-Drive: Future Policy Distillation for End-to-End Autonomous Driving</sub> | 2026 | `Privileged Future Supervision` · `Policy Distillation` · `Safety-Aware Scoring` | [![arXiv](https://img.shields.io/badge/arXiv-2610.13232-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.13232) |
+| **SDPAD**<br><sub>SDPAD: A Fully Spike-Driven Pipeline for End-to-End Autonomous Driving</sub> | 2026 | `Spiking Neural Networks` · `Efficient Planning` · `BEV` · `End-to-End Driving` | [![arXiv](https://img.shields.io/badge/arXiv-2610.11583-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.11583) |
 | **ViRA**<br><sub>Do Better Visual Representations Always Lead to Better End-to-End Autonomous Driving?</sub> | 2026 | `Visual Representation Alignment` · `Foundation Model Distillation` · `Diffusion Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.09695-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.09695) [💻](https://github.com/OpenDriveLab/ViRA "Paper-related code repository") [🌐](https://opendrivelab.com/ViRA/ "Official project page")<br><sub>Partial code: ViRA-Diffusion inference and weights released October 22; full training release pending.</sub> |
 | **Odyssey**<br><sub>Odyssey: A Closed-Loop Benchmark for Long-Horizon Real-World Driving with Explicit Navigation Routes</sub> | 2026 | `Long-Horizon Benchmark` · `SD-Route Navigation` · `Closed-Loop Evaluation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.06469-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.06469) [💻](https://github.com/SNU-ADR/Odyssey "Paper-related code repository") [🌐](https://snu-adr.github.io/Odyssey-Page/ "Official project page") |
 | **ECO**<br><sub>Guiding End-to-End Driving Models with Endpoint-Constrained Trajectory Optimization</sub> | 2026 | `Trajectory Optimization` · `Test-Time Refinement` · `Control Feasibility` | [![arXiv](https://img.shields.io/badge/arXiv-2609.31383-b31b1b?style=flat-square)](https://arxiv.org/abs/2609.31383) |
@@ -191,19 +195,22 @@ _93 papers; 55 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_108 papers; 53 with a verified public code link._
+_111 papers; 54 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **Reasoning-Action Coupling**<br><sub>Measuring the Reasoning-Action Coupling in Driving Vision-Language-Action Models through Counterfactuals</sub> | 2026 | `Counterfactual evaluation` · `Reasoning faithfulness` · `Explainability` · `Driving VLA` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30953-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30953) |
 | **Perceives but Doesn't Brake**<br><sub>Perceives but Doesn't Brake: A Perception-Action Binding Gap in Reasoning Driving VLAs</sub> | 2026 | `Safety diagnosis` · `Perception-action alignment` · `Inference-time guidance` · `Flow matching` | [![arXiv](https://img.shields.io/badge/arXiv-2610.28184-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.28184) [🌐](https://matcercola18.github.io/pbdb/ "Official project page")<br><sub>Project URL supplied by the paper; page unavailable at this check.</sub> |
+| **Cartender**<br><sub>Cartender: Verifiable Language-Conditioned Driving by Learning the Drives Not Taken</sub> | 2026 | `Instruction following` · `Counterfactual supervision` · `Flow matching` · `GRPO` | [![arXiv](https://img.shields.io/badge/arXiv-2610.26390-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.26390) |
 | **LECDrive**<br><sub>Think Densely, Act Sparsely: Latent Expert Cognitive Chains for Vision-Language-Action Autonomous Driving</sub> | NeurIPS 2026 | `Latent reasoning` · `Knowledge distillation` · `Dense supervision` · `Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.25734-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.25734) [🌐](https://wj-cv.github.io/LECDrive/ "Official project page")<br><sub>Code and checkpoints announced; no implementation repository verified.</sub> |
 | **Scene-Adaptive VLA**<br><sub>Scene-Adaptive VLA: Efficient Autonomous Driving via Dynamic Layer Routing</sub> | NeurIPS 2026 | `Efficient inference` · `Dynamic routing` · `Adaptive computation` · `Closed-loop` | [![arXiv](https://img.shields.io/badge/arXiv-2610.24590-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.24590) [💻](https://github.com/yang-luvu/Scene-Adaptive-VLA "Paper-related code repository") |
 | **SafeDriveVLA**<br><sub>SafeDriveVLA: Navigation-Conditioned World Model Dreaming for Conflict-Aware End-to-End Autonomous Driving</sub> | CoRL 2026 | `Instruction following` · `Safety` · `World model` · `Conflict awareness` | [![arXiv](https://img.shields.io/badge/arXiv-2610.20609-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.20609) [💻](https://github.com/ASGuard-UCI/safedrive-vla "Paper-related code repository") [🌐](https://safedrive-vla.github.io/SafeDriveVLA/ "Official project page") |
 | **DriveWLA**<br><sub>DriveWLA: Unifying Future Dynamics and Scene Semantics through World-Language-Action Modeling for Autonomous Driving</sub> | 2026 | `World-Language-Action` · `Mixture of Transformers` · `Flow-GRPO` | [![arXiv](https://img.shields.io/badge/arXiv-2610.17903-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.17903) |
 | **AUGUstus**<br><sub>AUGUstus: Autonomous Driving VLA Model with Unified Generation and Understanding</sub> | 2026 | `Unified Generation and Understanding` · `Chain of Thought` · `GRPO` | [![arXiv](https://img.shields.io/badge/arXiv-2610.16985-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.16985) [💻](https://github.com/haha-yuki-haha/AUGUstus "Paper-related code repository") [🌐](https://augustus-ad.github.io/ "Official project page") |
+| **Language2Drive**<br><sub>Language2Drive: Do Vision-Language-Action Models Really Follow the Instructions in Autonomous Driving?</sub> | 2026 | `Instruction following` · `Benchmark` · `Counterfactual evaluation` · `Closed-loop evaluation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.16634-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.16634) [💻](https://github.com/ZihanYou/Language2Drive "Paper-related code repository") [🌐](https://zihanyou.github.io/Language2Drive/ "Official project page")<br><sub>Evaluator code and adapter SDK released; some datasets and checkpoints remain pending.</sub> |
 | **AD-Memo**<br><sub>Vision-Language-Action Autonomous Driving Agent with Language-based Memory</sub> | 2026 | `Language memory` · `Reinforcement learning` · `Temporal reasoning` · `VQA` | [![arXiv](https://img.shields.io/badge/arXiv-2609.38641-b31b1b?style=flat-square)](https://arxiv.org/abs/2609.38641) [🌐](https://kaiyan289.github.io/projects/ad-memo/ "Official project page") |
 | **FocusDrive**<br><sub>FocusDrive: Reasoning with Visual Focus for Autonomous Driving</sub> | 2026 | `Visual Focus` · `Grounded Reasoning` · `Trajectory Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2609.33190-b31b1b?style=flat-square)](https://arxiv.org/abs/2609.33190) |
 | **iDriveVLA**<br><sub>Evaluation Is All You Need for Multi-Modal Autonomous Driving</sub> | 2026 | `Multi-Modal Planning` · `Trajectory Scoring` · `VLM Guidance` | [![arXiv](https://img.shields.io/badge/arXiv-2609.30818-b31b1b?style=flat-square)](https://arxiv.org/abs/2609.30818) |
@@ -343,13 +350,16 @@ _108 papers; 53 with a verified public code link._
 
 ### Driving World Models
 
-_100 papers; 53 with a verified public code link._
+_103 papers; 54 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **DriveUniTok**<br><sub>DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models</sub> | 2026 | `World-Action Model` · `Multimodal Tokenizer` · `Diffusion` · `Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.35044-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.35044) |
+| **Dream2Assist**<br><sub>Dream to Assist: Intent-Conditioned World Models for Shared Vehicle Control</sub> | 2026 | `World Model` · `Model-Based RL` · `Shared Control` · `Human Intent` | [![arXiv](https://img.shields.io/badge/arXiv-2610.34650-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.34650)<br><sub>The earlier Dream2Assist repository was not verified as implementing this 2026 extension.</sub> |
+| **CADRE**<br><sub>Rethinking Video Autoencoders for Interactive World Models</sub> | 2026 | `World Model` · `Video Autoencoder` · `Action-Conditioned Generation` · `Real-Time Simulation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30129-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30129) [💻](https://github.com/kyutai-labs/cadre-autoencoders-and-world-models "Paper-related code repository") [🌐](https://kyutai.org/blog/2026-10-22-cadre/ "Official project page") |
 | **OccWAM**<br><sub>OccWAM: Occupancy World-Action Models with Joint Scene-to-Ego Flow Matching</sub> | 2026 | `Occupancy` · `World-Action Model` · `Flow Matching` | [![arXiv](https://img.shields.io/badge/arXiv-2610.17688-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.17688) |
 | **MORE**<br><sub>MORE: Learning Motion-Oriented Registers for Driving World Models and Planning</sub> | 2026 | `V-JEPA` · `Motion-Oriented Registers` · `Latent World Model` | [![arXiv](https://img.shields.io/badge/arXiv-2610.14871-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.14871) |
 | **SimVTA**<br><sub>SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models</sub> | 2026 | `Simulation Supervision` · `World-Action Model` · `GRPO` | [![arXiv](https://img.shields.io/badge/arXiv-2610.13781-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.13781) [💻](https://github.com/OpenDriveLab/SimVTA "Paper-related code repository") [🌐](https://opendrivelab.com/SimVTA/ "Official project page")<br><sub>Code pending: Official repository currently contains results and documentation; implementation and checkpoints remain on its release checklist.</sub> |
@@ -495,14 +505,17 @@ _100 papers; 53 with a verified public code link._
 
 ### Recursive Self-Improvement for Autonomous Driving
 
-_25 papers; 10 with a verified public code link._
+_28 papers; 10 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **TerraTransfer++**<br><sub>TerraTransfer++: Demonstration-Free End-to-End Planner</sub> | 2026 | `Self-Play` · `Policy Distillation` · `End-to-End Driving` · `Flow Matching` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30319-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30319) |
 | **GRID-Planner**<br><sub>GRID-Planner: Graph-Structured Relational Reward Shaping for Diffusion Planning</sub> | ACM MM 2026 | `Diffusion Planning` · `Relational Reward Shaping` · `On-Policy Self-Distillation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.21984-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.21984) [💻](https://github.com/yangzhaojason/GRID-Planner "Paper-related code repository") |
+| **SHRED**<br><sub>SHRED: Self-Play for Heterogeneous Road-Users without Expert Demonstrations</sub> | 2026 | `Self-Play` · `Multi-Agent RL` · `Traffic Simulation` · `Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.20866-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.20866) |
+| **UncArms**<br><sub>Uncertainty-Driven Self-Play for Robust Multi-Agent Driving Policies</sub> | 2026 | `Self-Play` · `Uncertainty` · `Automatic Curriculum` · `Multi-Agent RL` | [![arXiv](https://img.shields.io/badge/arXiv-2610.19714-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.19714) |
 | **SOAR-Flow**<br><sub>Beyond Safe Execution: Safe Online Reinforcement Learning for Autonomous Driving with Value Calibration and Adaptive Guidance</sub> | 2026 | `Online RL` · `Safe policy improvement` · `Flow policy` · `CBF-MPC` | [![arXiv](https://img.shields.io/badge/arXiv-2610.17799-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.17799) [💻](https://github.com/lzqw/SOAR-Flow "Paper-related code repository") [🌐](https://lzqw.github.io/SOAR-Flow/ "Official project page") |
 | **RIWANav**<br><sub>RIWANav: Recursive World-Action Models with Self-Improvement for Urban Navigation</sub> | 2026 | `Recursive Self-Improvement` · `World-Policy Co-Adaptation` · `Urban Navigation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.08640-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.08640) |
 | **RoXDrive**<br><sub>RoXDrive: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving via Action-Faithful Rollouts</sub> | 2026 | `World-Model Feedback` · `Closed-Loop Policy Improvement` · `Action-Faithful Rollouts` | [![arXiv](https://img.shields.io/badge/arXiv-2609.36851-b31b1b?style=flat-square)](https://arxiv.org/abs/2609.36851) [💻](https://github.com/Hongbin98/RoXDrive "Paper-related code repository") [🌐](https://hongbin98.github.io/RoXDrive/ "Official project page")<br><sub>Code pending: The official repository contains a README and project-page assets; implementation is not released.</sub> |
@@ -564,13 +577,17 @@ _25 papers; 10 with a verified public code link._
 
 ### Perception & Other Driving Research
 
-_32 papers; 12 with a verified public code link._
+_36 papers; 12 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **SRP**<br><sub>Structured Representation Probing for Risk Anticipation in End-to-End Autonomous Driving</sub> | 2026 | `Risk Anticipation` · `Runtime Monitoring` · `Representation Probing` · `End-to-End Driving` | [![arXiv](https://img.shields.io/badge/arXiv-2610.37299-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.37299) |
+| **Road Infrastructure Perception Survey**<br><sub>Road Infrastructure Perception for Autonomous Driving: Taxonomy, Representations, Tasks, and Challenges</sub> | 2026 | `Survey` · `Road Infrastructure` · `Online Mapping` · `Planning-Oriented Evaluation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.33758-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.33758) |
+| **Foundation4D**<br><sub>Foundation4D: Towards a unified perception and reconstruction model for autonomous vehicles</sub> | 2026 | `Unified Perception` · `3D Reconstruction` · `Semantic Occupancy` · `Multi-Camera Video` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30340-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30340) |
+| **CoGaussian**<br><sub>CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding</sub> | IROS 2026 SeMaNa Workshop | `Cooperative Perception` · `Open Vocabulary` · `3D Gaussians` · `Semantic Occupancy` | [![arXiv](https://img.shields.io/badge/arXiv-2610.28530-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.28530) |
 | **PointForward**<br><sub>PointForward: Feedforward Driving Reconstruction through Point-Aligned Representations</sub> | 2026 | `3D reconstruction` · `Feedforward reconstruction` · `3D Gaussian splatting` · `Multi-view consistency` | [![arXiv](https://img.shields.io/badge/arXiv-2605.11594-b31b1b?style=flat-square)](https://arxiv.org/abs/2605.11594) [🌐](https://wm-research.github.io/PointForward/ "Official project page")<br><sub>Code pending: The official project and arXiv abstract explicitly promise code upon publication. The project displays an unlinked Code label, and no official implementation repository was verified.</sub> |
 | **ParkGaussian**<br><sub>ParkGaussian: Surround-view 3D Gaussian Splatting for Autonomous Parking</sub> | CVPR 2026 | `3D reconstruction` · `Autonomous parking` · `3D Gaussian splatting` · `Parking-slot perception` | [![arXiv](https://img.shields.io/badge/arXiv-2601.01386-b31b1b?style=flat-square)](https://arxiv.org/abs/2601.01386) [💻](https://github.com/wm-research/ParkGaussian "Paper-related code repository") [🌐](https://wm-research.github.io/ParkGaussian/ "Official project page")<br><sub>Code pending: Official README confirms CVPR 2026 and reports ParkRecon3D dataset release. The repository contains README, project HTML and static assets only; no implementation source is present and code release remains promised.</sub> |
 

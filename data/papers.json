@@ -1,5 +1,77 @@
 [
   {
+    "id": "2610-36079",
+    "name": "CLAP-AD",
+    "title": "Closed-Loop Aware Planning via Imitation-Free Speed Scoring for End-to-End Autonomous Driving",
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "WACV 2027",
+    "tags": [
+      "End-to-End Driving",
+      "Speed Control",
+      "Trajectory Scoring",
+      "Safety Constraints"
+    ],
+    "datasets": [
+      "Bench2Drive-Speed",
+      "Bench2Drive",
+      "NAVSIM v2"
+    ],
+    "paper": "https://arxiv.org/abs/2610.36079",
+    "code": "https://github.com/clap-ad/clap-ad",
+    "project": "https://clap-ad.github.io/",
+    "openSource": false,
+    "codeStatus": "pending",
+    "codeNote": "Implementation announced; repository currently contains only README and showcase assets.",
+    "stars": null,
+    "summary": "CLAP-AD adds a planning head that learns the driving path by imitation and scores candidate speeds against physically grounded safety criteria. It lets existing end-to-end policies follow a requested speed when feasible without speed-conditioned retraining. Evaluations use Bench2Drive-Speed, Bench2Drive and NAVSIM v2.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": "https://github.com/clap-ad/clap-ad",
+    "githubRepoRole": "pending-implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-35448",
+    "name": "Model-Aware Safety-Critical Scenes",
+    "title": "Model-Aware Generation of Safety-Critical Scenes for Robust End-to-End Driving via Distilled Planner Surrogates",
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Adversarial Scene Generation",
+      "Planner Distillation",
+      "Data Augmentation",
+      "Policy Improvement"
+    ],
+    "datasets": [
+      "nuScenes",
+      "NeuroNCAP",
+      "Challenger"
+    ],
+    "paper": "https://arxiv.org/abs/2610.35448",
+    "openSource": false,
+    "codeStatus": "pending",
+    "codeNote": "Code, distilled surrogates and generated scenes announced; no repository verified.",
+    "stars": null,
+    "summary": "A differentiable BEV surrogate distilled from each planner guides quality-diversity search for attacks and feasible escape trajectories. Only selected scenes are rendered, then used to fine-tune SparseDrive or DiffusionDrive planning heads. The planner-targeted training pipeline is evaluated on NeuroNCAP, Challenger and clean nuScenes.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
     "id": "2610-23262",
     "name": "Expand-and-Prune",
     "title": "Expand-and-Prune: Test-Time Candidate-Space Adaptation for End-to-End Autonomous Driving",
@@ -34,6 +106,43 @@
     "citationSource": "OpenAlex",
     "citationStatus": "unavailable",
     "citationCheckedAt": "2026-10-22",
+    "citationURL": null
+  },
+  {
+    "id": "2610-20604",
+    "name": "VITAL",
+    "title": "VITAL: From Visual Motion to Precise Action",
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Action Tokenization",
+      "Flow Matching",
+      "Visual Motion",
+      "Residual Refinement"
+    ],
+    "datasets": [
+      "NAVSIM v1",
+      "NAVSIM v2"
+    ],
+    "paper": "https://arxiv.org/abs/2610.20604",
+    "code": "https://github.com/worldbench/VITAL",
+    "project": "https://worldbench.github.io/vital.html",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeScope": "partial",
+    "codeNote": "Inference and NAVSIM v1 evaluation released; training code and NAVSIM v2 evaluation pending.",
+    "stars": null,
+    "summary": "VITAL pairs visual-motion-derived action tokens with a normalized residual for precise trajectories. A flow-matching expert predicts both from the current image, ego state and navigation command; bounded reinforcement refinement adjusts only the residual. The resulting planner uses one action denoising step and is evaluated on NAVSIM v1 and v2.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": "https://github.com/worldbench/VITAL",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
     "citationURL": null
   },
   {
@@ -130,6 +239,39 @@
     "citationSource": "OpenAlex",
     "citationStatus": "unavailable",
     "citationCheckedAt": "2026-10-20",
+    "citationURL": null
+  },
+  {
+    "id": "2610-11583",
+    "name": "SDPAD",
+    "title": "SDPAD: A Fully Spike-Driven Pipeline for End-to-End Autonomous Driving",
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Spiking Neural Networks",
+      "Efficient Planning",
+      "BEV",
+      "End-to-End Driving"
+    ],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
+    "paper": "https://arxiv.org/abs/2610.11583",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "SDPAD converts a pretrained perception stack to integer spikes, lifts multi-camera features into BEV through Spike-3D-Lift, and decodes trajectories with Spike-QFormer and deformable spike attention. It uses a single feed-forward pass without temporal simulation loops and evaluates planning on nuScenes and NAVSIM.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
     "citationURL": null
   },
   {
@@ -2955,6 +3097,40 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2610-30953",
+    "name": "Reasoning-Action Coupling",
+    "title": "Measuring the Reasoning-Action Coupling in Driving Vision-Language-Action Models through Counterfactuals",
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Counterfactual evaluation",
+      "Reasoning faithfulness",
+      "Explainability",
+      "Driving VLA"
+    ],
+    "datasets": [
+      "DriveLM",
+      "nuScenes",
+      "PhysicalAI-AV"
+    ],
+    "paper": "https://arxiv.org/abs/2610.30953",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "Tests whether generated reasoning causally influences four driving VLAs through controlled text edits, meaning-preserving paraphrases and object-removal image counterfactuals. Evaluations on DriveLM and PhysicalAI-AV reveal model-dependent reasoning-action coupling: visually responsive explanations do not consistently account for the resulting trajectories.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
     "id": "2610-28184",
     "name": "Perceives but Doesn't Brake",
     "title": "Perceives but Doesn't Brake: A Perception-Action Binding Gap in Reasoning Driving VLAs",
@@ -2990,6 +3166,39 @@
     "citationSource": "OpenAlex",
     "citationStatus": "unavailable",
     "citationCheckedAt": "2026-10-22",
+    "citationURL": null
+  },
+  {
+    "id": "2610-26390",
+    "name": "Cartender",
+    "title": "Cartender: Verifiable Language-Conditioned Driving by Learning the Drives Not Taken",
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Instruction following",
+      "Counterfactual supervision",
+      "Flow matching",
+      "GRPO"
+    ],
+    "datasets": [
+      "WOD-E2E",
+      "CARLA"
+    ],
+    "paper": "https://arxiv.org/abs/2610.26390",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "Constructs alternative instruction-action pairs from recorded driving scenes using counterfactual branching. A learned scene-language compatibility gate regulates flow-matching trajectory generation, while a reward-trained language residual ranks candidates. WOD-E2E experiments test instruction control under identical scene inputs and reduce execution of unsupported instructions.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
     "citationURL": null
   },
   {
@@ -3171,6 +3380,45 @@
     "citationURL": null,
     "code": "https://github.com/haha-yuki-haha/AUGUstus",
     "project": "https://augustus-ad.github.io/"
+  },
+  {
+    "id": "2610-16634",
+    "name": "Language2Drive",
+    "title": "Language2Drive: Do Vision-Language-Action Models Really Follow the Instructions in Autonomous Driving?",
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Instruction following",
+      "Benchmark",
+      "Counterfactual evaluation",
+      "Closed-loop evaluation"
+    ],
+    "datasets": [
+      "CARLA-Language2Drive",
+      "RealSim",
+      "nuScenes",
+      "NAVSIM",
+      "WOD-E2E"
+    ],
+    "paper": "https://arxiv.org/abs/2610.16634",
+    "code": "https://github.com/ZihanYou/Language2Drive",
+    "project": "https://zihanyou.github.io/Language2Drive/",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Evaluator code and adapter SDK released; some datasets and checkpoints remain pending.",
+    "stars": null,
+    "summary": "Evaluates whether driving VLAs follow passenger instructions using paired counterfactual units that fix the scene and change only the instruction. Covers four instruction scopes across CARLA, reconstructed real-world scenes and open-loop datasets. Paired success reveals instruction-control failures hidden by isolated driving success; evaluator source and a model-adapter SDK are released.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": "https://github.com/ZihanYou/Language2Drive",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
   },
   {
     "id": "2609-38641",
@@ -6461,6 +6709,107 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2610-35044",
+    "name": "DriveUniTok",
+    "title": "DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "World-Action Model",
+      "Multimodal Tokenizer",
+      "Diffusion",
+      "Planning"
+    ],
+    "datasets": [
+      "NAVSIM",
+      "NAVSIM v2"
+    ],
+    "paper": "https://arxiv.org/abs/2610.35044",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "DriveUniTok compresses camera appearance, projected LiDAR depth and ego motion into one decodable latent. A diffusion world-action model, DriveUniWAM, predicts future unified latents that decode into scene observations and ego trajectories. NAVSIM experiments evaluate prediction and planning, with an additional reinforcement-learning post-training stage.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-34650",
+    "name": "Dream2Assist",
+    "title": "Dream to Assist: Intent-Conditioned World Models for Shared Vehicle Control",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "World Model",
+      "Model-Based RL",
+      "Shared Control",
+      "Human Intent"
+    ],
+    "datasets": [
+      "CARLA",
+      "GRIP"
+    ],
+    "paper": "https://arxiv.org/abs/2610.34650",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "The earlier Dream2Assist repository was not verified as implementing this 2026 extension.",
+    "stars": null,
+    "summary": "Dream2Assist augments a recurrent state-space world model with driver-intent inference and trains an assistive policy through fictitious co-play. This extension adds human-data augmentation, reward restructuring and a deployment workflow, evaluated in racing and urban human studies plus preliminary vehicle trials. It studies shared control rather than fully autonomous driving.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-30129",
+    "name": "CADRE",
+    "title": "Rethinking Video Autoencoders for Interactive World Models",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "World Model",
+      "Video Autoencoder",
+      "Action-Conditioned Generation",
+      "Real-Time Simulation"
+    ],
+    "datasets": [
+      "PhysicalAI-AV"
+    ],
+    "paper": "https://arxiv.org/abs/2610.30129",
+    "code": "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models",
+    "project": "https://kyutai.org/blog/2026-10-22-cadre/",
+    "openSource": true,
+    "codeStatus": "released",
+    "stars": null,
+    "summary": "CADRE studies how video compression affects interactive world models using a family of causal autoencoders with frozen visual features and a distilled diffusion decoder. Identical action-conditioned world models are trained across compression settings, including driving on PhysicalAI-AV. The study compares rollout quality, action following and latency; it is a cross-domain representation study with explicit driving experiments.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
     "id": "2610-17688",
     "name": "OccWAM",
     "title": "OccWAM: Occupancy World-Action Models with Joint Scene-to-Ego Flow Matching",
@@ -9675,6 +10024,42 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2610-30319",
+    "name": "TerraTransfer++",
+    "title": "TerraTransfer++: Demonstration-Free End-to-End Planner",
+    "track": "rsi",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Self-Play",
+      "Policy Distillation",
+      "End-to-End Driving",
+      "Flow Matching"
+    ],
+    "datasets": [
+      "nuPlan",
+      "InterPlan",
+      "WOSAC",
+      "HUGSim",
+      "NAVSIM"
+    ],
+    "paper": "https://arxiv.org/abs/2610.30319",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "TerraTransfer++ trains a shared driving policy through multi-agent self-play in TerraZero, so policy updates also change the surrounding traffic. It then freezes that policy, distills its rollouts into a flow-matching trajectory teacher and aligns camera students using action, feature and trajectory losses. The self-improvement loop is in teacher pretraining; subsequent transfer uses frozen teachers.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
     "id": "2610-21984",
     "name": "GRID-Planner",
     "title": "GRID-Planner: Graph-Structured Relational Reward Shaping for Diffusion Planning",
@@ -9705,6 +10090,74 @@
     "citationSource": "OpenAlex",
     "citationStatus": "unavailable",
     "citationCheckedAt": "2026-10-22",
+    "citationURL": null
+  },
+  {
+    "id": "2610-20866",
+    "name": "SHRED",
+    "title": "SHRED: Self-Play for Heterogeneous Road-Users without Expert Demonstrations",
+    "track": "rsi",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Self-Play",
+      "Multi-Agent RL",
+      "Traffic Simulation",
+      "Planning"
+    ],
+    "datasets": [
+      "nuPlan",
+      "WOSAC",
+      "InterPlan"
+    ],
+    "paper": "https://arxiv.org/abs/2610.20866",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "SHRED jointly learns vehicle, pedestrian and cyclist policies from random initialization through heterogeneous self-play. Procedural scenarios, type-specific dynamics and rewards, and PPO updates from mixed-agent rollouts let interaction behavior co-evolve without human demonstrations. It evaluates traffic realism on WOSAC and driving planning on InterPlan, including transfer from nuPlan map geometry.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-19714",
+    "name": "UncArms",
+    "title": "Uncertainty-Driven Self-Play for Robust Multi-Agent Driving Policies",
+    "track": "rsi",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Self-Play",
+      "Uncertainty",
+      "Automatic Curriculum",
+      "Multi-Agent RL"
+    ],
+    "datasets": [
+      "Waymo Open Motion Dataset",
+      "nuPlan",
+      "Argoverse 2"
+    ],
+    "paper": "https://arxiv.org/abs/2610.19714",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "UncArms creates a driving curriculum through uncertainty-driven self-play: probing agents seek increases in neighboring agents' epistemic uncertainty while neutral agents learn safe goal-reaching behavior. A role-conditioned shared policy is updated with PPO as probing agents expose its changing weaknesses. Evaluation includes reactive Waymo traffic and zero-shot ego-policy transfer to nuPlan and Argoverse 2.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
     "citationURL": null
   },
   {
@@ -10476,6 +10929,135 @@
     "githubRepoRole": null,
     "githubStarsCheckedAt": null,
     "codeCheckedAt": "2026-10-09"
+  },
+  {
+    "id": "2610-37299",
+    "name": "SRP",
+    "title": "Structured Representation Probing for Risk Anticipation in End-to-End Autonomous Driving",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Risk Anticipation",
+      "Runtime Monitoring",
+      "Representation Probing",
+      "End-to-End Driving"
+    ],
+    "datasets": [
+      "Bench2Drive"
+    ],
+    "paper": "https://arxiv.org/abs/2610.37299",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "SRP anticipates failures by reading actor, ego and map representations from a frozen driving policy. Separate linear risk directions and normalized log-mean-exp pooling produce an alert score, trained with event-window labels and auxiliary failure types. Evaluations cover DriveTransformer, UniAD and VAD on Bench2Drive.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-33758",
+    "name": "Road Infrastructure Perception Survey",
+    "title": "Road Infrastructure Perception for Autonomous Driving: Taxonomy, Representations, Tasks, and Challenges",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Survey",
+      "Road Infrastructure",
+      "Online Mapping",
+      "Planning-Oriented Evaluation"
+    ],
+    "datasets": [],
+    "paper": "https://arxiv.org/abs/2610.33758",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "Organizes road infrastructure perception by geometric structure, functional space and regulatory semantics. It connects lanes, drivable areas, traffic controls and online maps through sensing, representation and evaluation choices, highlighting gaps in temporal consistency, relation reasoning and downstream planning assessment.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-30340",
+    "name": "Foundation4D",
+    "title": "Foundation4D: Towards a unified perception and reconstruction model for autonomous vehicles",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Unified Perception",
+      "3D Reconstruction",
+      "Semantic Occupancy",
+      "Multi-Camera Video"
+    ],
+    "datasets": [
+      "PAI-Foundation4D",
+      "Waymo Open Dataset",
+      "nuScenes",
+      "OpenOccupancy"
+    ],
+    "paper": "https://arxiv.org/abs/2610.30340",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "Shares a feed-forward spatiotemporal backbone across geometry estimation, 3D detection, semantic occupancy and Gaussian reconstruction from multi-camera video. Pose optimization and track assembly connect prediction windows. Introduces the PAI-Foundation4D benchmark and studies task co-training and benchmark-specific adaptation; it is a perception model rather than a driving policy.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
+  },
+  {
+    "id": "2610-28530",
+    "name": "CoGaussian",
+    "title": "CoGaussian: Open-Vocabulary Gaussian-based Collaborative 3D Scene Understanding",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "IROS 2026 SeMaNa Workshop",
+    "tags": [
+      "Cooperative Perception",
+      "Open Vocabulary",
+      "3D Gaussians",
+      "Semantic Occupancy"
+    ],
+    "datasets": [
+      "Semantic-OPV2V"
+    ],
+    "paper": "https://arxiv.org/abs/2610.28530",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "Uses sparse 3D Gaussians aligned with foundation-model features to exchange geometric and semantic information between agents. The compact shared representation supports open-vocabulary collaborative occupancy prediction beyond a fixed semantic label set. Experiments use Semantic-OPV2V to compare collaborative and single-agent scene understanding.",
+    "codeCheckedAt": "2026-10-30",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-10-30",
+    "citationURL": null
   },
   {
     "id": "2605-11594",

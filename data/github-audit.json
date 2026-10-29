@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-09",
   "scope": "Per-paper repository identity and release-availability audit. Repository roots and README release statements were inspected; implementations were not executed. A no-match result is not proof that no public implementation exists. Third-party paper lists and same-name repositories were not treated as author code.",
   "coverage": {
-    "papers": 358,
+    "papers": 375,
     "repositoryNameSearches": 85,
     "identifierFileSearches": 78,
     "repositoryRootChecks": 166,
@@ -9430,52 +9430,658 @@
         "firstSubmitted": "2025-11-11",
         "abstractRead": true
       }
+    },
+    "2610-37299": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or release announcement was found in the arXiv abstract/full text or targeted title/GitHub searches checked on 2026-10-30.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.37299",
+        "https://arxiv.org/html/2610.37299v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.37299",
+          "note": "Official title, first submission 2026-10-27, authors, method and Bench2Drive evaluation."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.37299v1",
+          "note": "Full text describes a lightweight monitor for a frozen policy, not a new planner; assigned to perception-other diagnostics. No official code link or release promise found."
+        }
+      ],
+      "firstSubmitted": "2026-10-27",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"end-to-end autonomous driving\" \"Oct\" \"2026\" arxiv",
+        "\"Structured Representation Probing\" github",
+        "GitHub repository search: Structured Representation Probing"
+      ]
+    },
+    "2610-36079": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/clap-ad/clap-ad",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "The official repository contains README.md and showcase assets. Its README states that code is being prepared for release; no implementation files were present in the live GitHub contents check on 2026-10-30.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.36079",
+        "https://clap-ad.github.io/",
+        "https://github.com/clap-ad/clap-ad/blob/main/README.md",
+        "https://api.github.com/repos/clap-ad/clap-ad/git/trees/main?recursive=1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.36079",
+          "note": "Official title and first submission 2026-10-26; comments explicitly state acceptance to WACV 2027."
+        },
+        {
+          "url": "https://clap-ad.github.io/",
+          "note": "Author project links the official repository and explains path imitation, candidate speed scoring, and safe requested-speed selection."
+        },
+        {
+          "url": "https://github.com/clap-ad/clap-ad/blob/main/README.md",
+          "note": "Official README says code is being prepared for release."
+        },
+        {
+          "url": "https://api.github.com/repos/clap-ad/clap-ad/git/trees/main?recursive=1",
+          "note": "Live recursive GitHub tree check on 2026-10-30 returned only README.md, assets and assets/clapad_thumbnail.png; no implementation files."
+        }
+      ],
+      "firstSubmitted": "2026-10-26",
+      "readmeMatch": "paper-title-or-author-link",
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"NAVSIM\" \"2026-10\" arxiv",
+        "\"CLAP-AD\" github"
+      ]
+    },
+    "2610-35448": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The official paper explicitly promises code, distilled surrogates and generated adversarial scenes. No official repository URL was found in the paper or targeted searches checked on 2026-10-30.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.35448",
+        "https://arxiv.org/html/2610.35448v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.35448",
+          "note": "Official title, first submission 2026-10-26, and model-aware attack/escape generation followed by planner fine-tuning."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.35448v1",
+          "note": "Introduction explicitly promises code, distilled surrogates and generated scenes. Sections III-A-D and IV-A document a frozen planner surrogate, a fixed generated scene batch and one planning-head fine-tuning stage, using nuScenes, NeuroNCAP and Challenger. Classified E2E: no repeated updated-policy to regenerated-surrogate/scenes cycle is reported."
+        }
+      ],
+      "firstSubmitted": "2026-10-26",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"end-to-end\" \"driving\" \"2026-10\" arxiv",
+        "\"Model-Aware Generation\" \"Driving\" github",
+        "GitHub repository search: Model-Aware Generation"
+      ]
+    },
+    "2610-20604": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/worldbench/VITAL",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official source implements one-step planning, bounded residual correction and NAVSIM v1 PDMS inference/evaluation, with pretrained checkpoint download instructions. README marks tokenizer, action-expert and residual-refinement training code as pending; the released evaluator does not implement NAVSIM v2 EPDMS/navhard.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.20604",
+        "https://github.com/worldbench/VITAL/blob/main/README.md",
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/models/policy.py",
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/models/residual.py",
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/services/inference.py"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.20604",
+          "note": "Official title, first submission 2026-10-14, technical-report status, benchmarks and author links to project/repository."
+        },
+        {
+          "url": "https://github.com/worldbench/VITAL/blob/main/README.md",
+          "note": "Live README confirms released inference code/checkpoints and pending training code; release supports official NAVSIM v1 PDMS, not v2 EPDMS or reactive NAVHARD."
+        },
+        {
+          "url": "https://github.com/worldbench/VITAL/blob/main/src/vital/models/policy.py",
+          "note": "Inspected VITALPolicy initialization and predict: visual backbone/action weights, trajectory decoder, one flow step, residual correction and 40-pose output are implemented."
+        },
+        {
+          "url": "https://github.com/worldbench/VITAL/blob/main/src/vital/models/residual.py",
+          "note": "Inspected ResidualPolicy.correction: normalized hidden features, learned six-coordinate correction and physical projection implement bounded residual inference."
+        },
+        {
+          "url": "https://github.com/worldbench/VITAL/blob/main/src/vital/services/inference.py",
+          "note": "Inspected run_inference: loads NAVSIM observations, calls VITALPolicy.predict, checks token coverage and saves trajectories."
+        }
+      ],
+      "firstSubmitted": "2026-10-14",
+      "readmeMatch": "paper-title-or-author-link",
+      "rootFiles": [],
+      "implementationFiles": [
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/models/policy.py",
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/models/residual.py",
+        "https://github.com/worldbench/VITAL/blob/main/src/vital/services/inference.py"
+      ],
+      "searches": [
+        "\"VITAL\" \"From Visual Motion to Precise Action\""
+      ]
+    },
+    "2610-11583": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation URL or release announcement was found in the arXiv abstract/full text, web search or GitHub repository search checked on 2026-10-30. Search results for unrelated SDP solvers were excluded.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.11583",
+        "https://arxiv.org/html/2610.11583v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.11583",
+          "note": "Official title, first submission 2026-10-08, authors, architecture and nuScenes/NAVSIM benchmarks."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.11583v1",
+          "note": "Full method describes quantized ANN2SNN conversion, Spike-3D-Lift and Spike-QFormer. No code URL or release promise found."
+        }
+      ],
+      "firstSubmitted": "2026-10-08",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"SDPAD\" github",
+        "GitHub repository search: SDPAD"
+      ]
+    },
+    "2610-30953": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation repository or release announcement was identified in the official paper or targeted title/GitHub searches as of 2026-10-30.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.30953",
+        "https://arxiv.org/html/2610.30953v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.30953",
+          "note": "Official title and initial submission date 2026-10-22; comments list 11 pages, four figures and three tables, with no venue claim."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.30953v1",
+          "note": "Sections 3-6 define semantic interventions and object removal; Section 5 evaluates AutoVLA, ORION, Alpamayo-R1 and Alpamayo-1.5 on DriveLM/nuScenes and PhysicalAI-AV. No author code link found."
+        }
+      ],
+      "firstSubmitted": "2026-10-22",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"autonomous driving\" \"VLA\" after:2026-10-19 before:2026-10-31 arxiv",
+        "\"autonomous driving\" \"VLA\" \"2610.3\"",
+        "\"autonomous driving\" \"VLA\" \"2610.4\"",
+        "\"autonomous driving\" \"VLA\" \"Oct 2026\" \"29\"",
+        "\"autonomous driving\" \"VLA\" \"Oct 2026\" \"30\"",
+        "\"Measuring the Reasoning-Action Coupling\" code",
+        "GitHub repositories: \"Reasoning-Action Coupling\""
+      ]
+    },
+    "2610-26390": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The official paper contains no author code URL or release announcement. Targeted web and GitHub repository searches did not identify an author implementation as of 2026-10-30.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.26390",
+        "https://arxiv.org/html/2610.26390v2"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.26390",
+          "note": "Official title; first submitted 2026-10-19 and revised 2026-10-21. No conference acceptance stated."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.26390v2",
+          "note": "Section 3 specifies B-spline conditional flow matching, compatibility gating and GRPO ranking residual; Section 4 uses WOD-E2E for Cartender and CARLA for released-policy diagnostics. No author code link found."
+        }
+      ],
+      "firstSubmitted": "2026-10-19",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"Cartender\" github",
+        "\"Cartender\" \"Verifiable Language-Conditioned Driving\"",
+        "GitHub repositories: Cartender"
+      ]
+    },
+    "2610-16634": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/ZihanYou/Language2Drive",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Actual benchmark source verified: WOD-E2E scripts/evaluate_paper.py implements frozen-contract paired scoring; nuScenes model_eval/semantic_metrics.py implements trajectory compliance and paired-response metrics. Repository also contains the coordinator SDK and five evaluator backends. Some versioned datasets/checkpoints remain on its release roadmap; licensed input assets are external.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.16634",
+        "https://github.com/ZihanYou/Language2Drive",
+        "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.WOD-E2E/scripts/evaluate_paper.py",
+        "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.nScenes/model_eval/semantic_metrics.py"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.16634",
+          "note": "Official title and first submission 2026-10-12; introduces paired counterfactual instruction evaluation."
+        },
+        {
+          "url": "https://github.com/ZihanYou/Language2Drive",
+          "note": "Author repository links the project page and paper; documents CARLA, RealSim, nuScenes, NAVSIM and WOD-E2E tracks, SDK, released evaluators and remaining dataset/checkpoint roadmap."
+        },
+        {
+          "url": "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.WOD-E2E/scripts/evaluate_paper.py",
+          "note": "Read actual implementation lines 1-120: validates frozen P0 contracts and release hashes, loads predictions and aggregates paired instruction metrics."
+        },
+        {
+          "url": "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.nScenes/model_eval/semantic_metrics.py",
+          "note": "Read actual implementation lines 1-110: speed/corridor compliance, paired trajectory response and scene-level bootstrap aggregation."
+        }
+      ],
+      "firstSubmitted": "2026-10-12",
+      "readmeMatch": "paper-title-or-author-link",
+      "rootFiles": [],
+      "implementationFiles": [
+        "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.WOD-E2E/scripts/evaluate_paper.py",
+        "https://github.com/ZihanYou/Language2Drive/blob/main/language2drive.OpenloopTrack.nScenes/model_eval/semantic_metrics.py"
+      ],
+      "searches": [
+        "\"Language2Drive\" github",
+        "\"Language2Drive\" arxiv",
+        "GitHub recursive tree and source-file inspection: ZihanYou/Language2Drive"
+      ]
+    },
+    "2610-35044": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation repository was verified on 2026-10-30. The paper's reproducibility statement documents architecture and training details but does not provide a code release link.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.35044",
+        "https://arxiv.org/html/2610.35044v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.35044",
+          "note": "Official title, authors and first submission date: 2026-10-26. Abstract describes unified appearance/depth/motion tokenization and future prediction."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.35044v1",
+          "note": "Sections 3.2-3.3 describe the tokenizer and DriveUniWAM; Appendix E evaluates NAVSIM v2. Reproducibility statement supplies methodological details, with no author code URL found."
+        }
+      ],
+      "firstSubmitted": "2026-10-26",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "DriveUniTok code github",
+        "DriveUniWAM github",
+        "site:arxiv.org/abs/ driving world model 26 Oct 2026"
+      ]
+    },
+    "2610-34650": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "An official repository exists for the earlier CoRL Dream2Assist paper, but code matching this 2026 extension's human studies, urban deployment and physical-vehicle pipeline was not verified. The older repository is not counted as this paper's release.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.34650",
+        "https://arxiv.org/html/2610.34650v1",
+        "https://github.com/ToyotaResearchInstitute/dream2assist"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.34650",
+          "note": "Official metadata gives first submission 2026-10-26; abstract specifies intent-aware RSSM, fictitious co-play and shared vehicle control."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.34650v1",
+          "note": "Introduction explicitly distinguishes the earlier synthetic-setting paper from this extension to real human partners; Sections 4 and 6 describe CARLA and the GRIP physical platform."
+        },
+        {
+          "url": "https://github.com/ToyotaResearchInstitute/dream2assist",
+          "note": "Author repository identifies itself as code for the earlier CoRL paper, Dreaming to Assist: Learning to Align with Human Objectives for Shared Control in High-Speed Racing; no verified attribution to the 2026 extension."
+        }
+      ],
+      "firstSubmitted": "2026-10-26",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "Dream to Assist code GitHub",
+        "Dream2Assist github",
+        "Dream to Assist Intent-Conditioned World Models for Shared Vehicle Control"
+      ]
+    },
+    "2610-30319": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation for TerraTransfer++ was verified on 2026-10-30. Search surfaced an older TerraTransfer project-page repository, whose direct URL returned 404; a project-page reference is not treated as released model code.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.30319",
+        "https://arxiv.org/html/2610.30319v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.30319",
+          "note": "Official title, authors and first submission date: 2026-10-21. Describes self-play pretraining, trajectory distillation and vision alignment."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.30319v1",
+          "note": "Section 2.2 says current-policy copies control all agents, pooled transitions drive PPO updates, and the interaction distribution evolves with the policy. Sections 2.3-2.4 freeze teachers for transfer. This is the basis for RSI classification, not the distillation alone."
+        }
+      ],
+      "firstSubmitted": "2026-10-21",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "TerraTransfer++ github code",
+        "TerraTransfer project github"
+      ]
+    },
+    "2610-30129": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Verified actual WorldModel implementation, world-model training entry point, driving recipes, evaluation scripts and data preparation. The author repository also links pretrained autoencoders and driving world-model weights; execution was not tested.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.30129",
+        "https://kyutai.org/blog/2026-10-22-cadre/",
+        "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/model_world_model.py",
+        "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/main_world_model.py"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.30129",
+          "note": "Official title, author list and first submission date: 2026-10-21; abstract links the author project and describes the controlled autoencoder study."
+        },
+        {
+          "url": "https://kyutai.org/blog/2026-10-22-cadre/",
+          "note": "Author announcement identifies PhysicalAI Autonomous Vehicles as the driving world-model dataset and distinguishes the four evaluated environments."
+        },
+        {
+          "url": "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/model_world_model.py",
+          "note": "Actual Python implementation includes WorldModel(nn.Module), latent projections, time embeddings and space-time transformer blocks."
+        },
+        {
+          "url": "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/main_world_model.py",
+          "note": "Actual training entry point loads the frozen autoencoder, environment dataset and world-model Trainer, then calls train; supports the driving configuration."
+        }
+      ],
+      "firstSubmitted": "2026-10-21",
+      "readmeMatch": "paper-title-or-author-link",
+      "rootFiles": [],
+      "implementationFiles": [
+        "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/model_world_model.py",
+        "https://github.com/kyutai-labs/cadre-autoencoders-and-world-models/blob/main/main_world_model.py"
+      ],
+      "searches": [
+        "CADRE Kyutai world models arxiv 2026 October",
+        "CADRE driving world model code"
+      ]
+    },
+    "2610-20866": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author repository or release promise was verified in the paper or title/author searches on 2026-10-30. Unrelated projects also named SHRED are excluded.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.20866",
+        "https://arxiv.org/html/2610.20866v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.20866",
+          "note": "Official metadata gives first submission 2026-10-14; abstract specifies joint heterogeneous self-play from random initialization without demonstrations or logged-trajectory replay."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.20866v1",
+          "note": "Training section details mixed heterogeneous rollouts, per-type advantage standardization and PPO updates. Evaluation covers WOSAC realism and InterPlan planning; paper contains no verified author code link."
+        }
+      ],
+      "firstSubmitted": "2026-10-14",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "SHRED Self-Play driving arxiv",
+        "SHRED Wei-Jer code",
+        "SHRED Self-Play github.com"
+      ]
+    },
+    "2610-19714": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation repository or code-release promise was verified in the paper or targeted title/method searches on 2026-10-30. PufferDrive is the underlying simulator, not a verified release of UncArms.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.19714",
+        "https://arxiv.org/html/2610.19714v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.19714",
+          "note": "Official title, authors and first submission date: 2026-10-14; abstract describes the probing-versus-safe-driving curriculum."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.19714v1",
+          "note": "Sections III-D and IV identify the method as UncArms, use a 50/50 probing-neutral split and PPO in PufferDrive. Waymo evaluation is fully reactive; transfer evaluations control only ego while background agents replay logged trajectories."
+        }
+      ],
+      "firstSubmitted": "2026-10-14",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "Uncertainty-Driven Self-Play code",
+        "Uncertainty-Driven Self-Play Marvi github",
+        "UncArms code github"
+      ]
+    },
+    "2610-33758": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Survey rather than a new implementation. No author code repository verified from the paper or targeted title searches; links to surveyed benchmarks are not author implementations.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.33758",
+        "https://arxiv.org/html/2610.33758v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.33758",
+          "note": "Official title, authors and first submission on 2026-10-24; no conference acceptance stated."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.33758v1",
+          "note": "Full-text taxonomy and benchmark discussion checked. GitHub links in references point to existing benchmark dependencies, not a new author implementation."
+        }
+      ],
+      "firstSubmitted": "2026-10-24",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "Road Infrastructure Perception Zhao github",
+        "\"Road Infrastructure Perception\" \"code\""
+      ]
+    },
+    "2610-30340": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation URL verified in the official paper or targeted NVIDIA/GitHub searches. The paper reports a benchmark release, which is distinct from releasing model source code.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.30340",
+        "https://arxiv.org/html/2610.30340v1"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.30340",
+          "note": "Official NVIDIA author list, title, first submission 2026-10-21 and evaluation scope."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.30340v1",
+          "note": "Sections 3-7 explain shared backbone, video-level stitching, PAI-Foundation4D and benchmark-specific fine-tuning. No author source-code URL identified; data release is not counted as model code."
+        }
+      ],
+      "firstSubmitted": "2026-10-21",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "Foundation4D NVIDIA github code",
+        "\"Foundation4D\" site:github.com",
+        "\"Foundation4D\" site:research.nvidia.com"
+      ]
+    },
+    "2610-28530": {
+      "checkedAt": "2026-10-30",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Author publication page identifies the IROS SeMaNa workshop and links the paper, but no implementation. No official repository was verified in targeted searches.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.28530",
+        "https://arxiv.org/html/2610.28530v1",
+        "https://junshao0104.github.io/"
+      ],
+      "sourceNotes": [
+        {
+          "url": "https://arxiv.org/abs/2610.28530",
+          "note": "Official title, authors, first submission on 2026-10-20 and Semantic-OPV2V experiment."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.28530v1",
+          "note": "Method and evaluation inspected; no author code URL found."
+        },
+        {
+          "url": "https://junshao0104.github.io/",
+          "note": "Coauthor Lingjun Zhao lists this exact paper under IROS 2026 SeMaNa Workshop with an OpenReview paper link and no code link. OpenReview required browser verification and was not read."
+        }
+      ],
+      "firstSubmitted": "2026-10-20",
+      "readmeMatch": null,
+      "rootFiles": [],
+      "implementationFiles": [],
+      "searches": [
+        "\"CoGaussian\" code github",
+        "\"CoGaussian\" github"
+      ]
     }
   },
   "lastIncrementalUpdate": {
-    "date": "2026-10-22",
+    "date": "2026-10-30",
     "added": [
-      "Expand-and-Prune",
-      "GRID-Planner",
-      "DIVA",
-      "ConDenseDrive",
-      "ViRA",
-      "Odyssey",
-      "ECO",
-      "ROIDrive",
-      "LECDrive",
-      "Scene-Adaptive VLA",
-      "SafeDriveVLA",
-      "AD-Memo",
-      "LADA",
-      "RAF-VLA",
-      "LaPla",
-      "BEV-Forcing",
-      "SOAR-Flow",
-      "PlanWAM",
-      "GeoWM",
-      "ReWAM",
-      "PhysWAM",
-      "V2X-WAM",
-      "DriveReferee",
-      "CounterPlay",
-      "Perceives but Doesn't Brake"
+      "SRP",
+      "CLAP-AD",
+      "Model-Aware Safety-Critical Scenes",
+      "VITAL",
+      "SDPAD",
+      "Reasoning-Action Coupling",
+      "Cartender",
+      "Language2Drive",
+      "DriveUniTok",
+      "Dream2Assist",
+      "TerraTransfer++",
+      "CADRE",
+      "SHRED",
+      "UncArms",
+      "Road Infrastructure Perception Survey",
+      "Foundation4D",
+      "CoGaussian"
     ],
     "releaseStatusUpdated": [],
     "counts": {
-      "added": 25,
+      "added": 17,
+      "total": 375,
       "byTrack": {
-        "e2e": 7,
-        "vla": 9,
-        "world-model": 6,
-        "rsi": 3
+        "e2e": 4,
+        "vla": 3,
+        "world-model": 3,
+        "rsi": 3,
+        "perception-other": 4
       },
-      "released": 9,
-      "partial": 2,
+      "totalsByTrack": {
+        "e2e": 97,
+        "vla": 111,
+        "world-model": 103,
+        "rsi": 28,
+        "perception-other": 36
+      },
+      "released": 3,
+      "partial": 1,
       "pending": 2,
-      "notFound": 14
+      "notFound": 12
     },
-    "note": "Only the newly added entries were checked in this increment. Older entries and audit dates are preserved. ADFeed was searched as a discovery reference, but recent WeChat pages could not be retrieved; these additions are not represented as an ADFeed recommendation list. Metadata and code status rely on primary paper and author sources."
+    "note": "Incremental search through 2026-10-30, prioritizing late-October submissions and several missed October papers. Only the added entries were checked; previous records and observation dates are preserved. Primary arXiv papers and author sources support the additions. Generic self-play, simulation or evaluation does not imply general recursive self-modification. No claim of exhaustive coverage or ADFeed endorsement is made."
   },
   "incrementalAudit": {
     "checkedAt": "2026-10-25",

@@ -6036,6 +6036,142 @@
       "checkedAt": "2026-10-25",
       "status": "unavailable",
       "note": "Not refreshed in this bibliography increment; null does not mean zero citations."
+    },
+    "2610-37299": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-36079": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-35448": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-20604": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-11583": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-30953": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-26390": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-16634": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-35044": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-34650": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-30319": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-30129": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-20866": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-19714": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-33758": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-30340": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-28530": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-10-30",
+      "status": "unavailable",
+      "note": "Not queried during this metadata/code-release update; no citation count is inferred."
     }
   },
   "failures": []
