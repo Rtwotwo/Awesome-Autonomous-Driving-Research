@@ -7,12 +7,12 @@ class FieldTests(unittest.TestCase):
     def test_augustus_summary_keeps_complete_method_sentence(self):
         first='AUGUstus把扩散式动作生成与自回归CoT理解放进同一个Transformer：训练时CoT读动作，动作不读CoT，推理只输出动作。'
         original=first+'论文报告NAVSIMv1 94.6 PDMS、NAVSIMv2 90.7 EPDMS，并在内部评测与初步实车测试中报告部署时延。'*3
-        values={'title':'AUGUstus：让CoT监督动作','digest':original,'author':'Rtwotwo'}
+        values={'title':'AUGUstus：让CoT监督动作','digest':original,'author':'Paper Studio'}
         before=copy.deepcopy(values)
         fitted,changes=adapt_fields(values,{})
         self.assertEqual(fitted['digest'],first)
         self.assertEqual(values,before);self.assertEqual(changes[0]['before'],original)
-        self.assertEqual(fitted['author'],'Rtwotwo')
+        self.assertEqual(fitted['author'],'Paper Studio')
 
     def test_in_range_unicode_digest_and_title_are_preserved(self):
         values={'title':'AUGUstus','digest':'📚'*120}

@@ -17,7 +17,7 @@ MAX_BYTES = 60 * 1024 * 1024
 MAX_PAGES = 120
 MAX_TEXT = 600_000
 ARXIV_ID = re.compile(r'(?:\d{4}\.\d{4,5}|[a-zA-Z][a-zA-Z.\-]+/\d{7})(?:v\d+)?')
-CAPTION = re.compile(r'^(?i:Figure|Fig\.|Table|图|表)\s*\d+(?:[A-Za-z])?(?:\s*[.:：]|\s+(?=[A-Z\u4e00-\u9fff]))')
+CAPTION = re.compile(r'^(?i:Figure|Fig\.|Table|图|表)\s*\d+(?:[A-Za-z])?(?:\s*[.:：|｜]|\s+(?=[A-Z\u4e00-\u9fff]))')
 PDF_LOCK = threading.RLock()
 
 
@@ -55,10 +55,10 @@ def parse_arxiv(value):
     if ARXIV_ID.fullmatch(value):
         return value
     url = urllib.parse.urlsplit(value)
-    if url.scheme != 'https' or url.hostname not in {'arxiv.org', 'www.arxiv.org', 'export.arxiv.org'} or url.username or url.password or url.port:
-        raise ValueError('请输入 arxiv.org 的 HTTPS 链接或 arXiv ID。')
+    if url.scheme != 'https' or url.hostname not in {'arxiv.org', 'www.arxiv.org', 'export.arxiv.org', 'alphaxiv.org', 'www.alphaxiv.org'} or url.username or url.password or url.port:
+        raise ValueError('请输入 arXiv / AlphaXiv 的 HTTPS 论文链接或 arXiv ID。')
     path = urllib.parse.unquote(url.path).removesuffix('.pdf').rstrip('/')
-    for prefix in ('/abs/', '/pdf/', '/html/'):
+    for prefix in ('/abs/', '/pdf/', '/html/', '/overview/'):
         if path.startswith(prefix) and ARXIV_ID.fullmatch(path[len(prefix):]):
             return path[len(prefix):]
     raise ValueError('无法识别 arXiv ID。示例：https://arxiv.org/abs/2212.10156')
@@ -119,6 +119,8 @@ def arxiv_metadata(aid,check_cancel=lambda:None):
             ns = '{http://www.w3.org/2005/Atom}'
             meta.update(title=' '.join((entry.findtext(ns + 'title') or '').split()),
                         authors=[a.findtext(ns + 'name', '') for a in entry.findall(ns + 'author')],
+                        abstract=' '.join((entry.findtext(ns + 'summary') or '').split()),
+                        arxiv_categories=[c.get('term') for c in entry.findall(ns + 'category') if c.get('term')],
                         published=entry.findtext(ns + 'published', '')[:10])
     except Exception:
         meta['metadata_note'] = 'arXiv 元数据接口未响应；标题来自 PDF，请检查。'
@@ -179,7 +181,7 @@ def refresh_identity(folder, manifest, progress=lambda *_: None, online=True):
                 progress('已识别 PDF 中的 arXiv ID，正在补齐官方题名与作者…')
                 meta = arxiv_metadata(aid)
         manifest.update(title=meta.get('title') or title)
-        for key in ('arxiv_id', 'authors', 'published', 'metadata_note'):
+        for key in ('arxiv_id', 'authors', 'published', 'metadata_note', 'abstract', 'arxiv_categories'):
             if key in meta: manifest[key] = meta[key]
         if meta.get('url'): manifest['source_url'] = meta['url']
         if meta.get('title'): manifest['metadata_note'] = ''
@@ -311,7 +313,7 @@ def page_tables(page, captions):
 
 
 @serialized_pdf
-def repair_crops(folder, manifest, progress=lambda *_: None):
+def repair_crops(folder, manifest, progress=lambda *_: None, persist=True):
     folder = Path(folder)
     links = list(manifest.get('resource_links', []))
     with pdf.open(folder / 'source.pdf') as doc:
@@ -342,7 +344,10 @@ def repair_crops(folder, manifest, progress=lambda *_: None):
                     'bbox':list(box),'original_bbox':list(box),'image':'images/'+fid+'.png','kind':'table' if caption.startswith(('Table','表')) else 'figure',
                     'crop_status':status,'selected':False,'reviewed':False})
     manifest['resource_links'] = links
-    write_json(folder / 'source.json', manifest)
+    if manifest['figures']:
+        manifest['warnings'] = [w for w in manifest.get('warnings', []) if not w.startswith('未定位到标准图注')]
+    if persist:
+        write_json(folder / 'source.json', manifest)
     return manifest
 
 
@@ -412,6 +417,7 @@ def extract_pdf(data, folder, filename='paper.pdf', metadata=None, progress=lamb
     if len(figures) == 50:
         warnings.append('已达到 50 张自动候选图上限，其他图片可从原文页手动裁剪。')
     manifest = {'id': folder.name, 'title': title, 'authors': metadata.get('authors', []),
+                'abstract': metadata.get('abstract', ''), 'arxiv_categories': metadata.get('arxiv_categories', []),
                 'source_url': metadata.get('url', ''), 'arxiv_id': metadata.get('arxiv_id', ''),
                 'published': metadata.get('published', ''), 'filename': Path(filename).name, 'resource_links': links,
                 'pages': pages, 'figures': figures, 'warnings': warnings,

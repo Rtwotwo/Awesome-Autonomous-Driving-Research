@@ -1,4 +1,4 @@
-"""Local, single-user paper-to-WeChat workbench. Human-reviewed draft submission; no public publication."""
+"""Local paper-to-WeChat workbench. Automated or manual review; draft-only submission."""
 import argparse
 import base64
 from concurrent.futures import ThreadPoolExecutor
@@ -22,15 +22,22 @@ from materials import catalog as material_catalog, extract_embedded, accept_imag
 from sources import MAX_BYTES, crop_figure, download_arxiv, extract_pdf, parse_arxiv, write_json, repair_crops, refresh_identity
 from publication import clean_article, paper_details, validate_paper_info
 from project_media import discover, import_material
-from writing import generate_article, prompt_pack, validate_article, provider_config
+from writing import generate_article, prompt_pack, validate_article, provider_config, read_generation_draft, chat_json
 from exporting import article_html, document_html, export_bundle, markdown
 from model_store import ModelStore
+from categories import catalog as category_catalog, classify, validate_override, with_override
+from model_options import PROFILE_FIELDS, endpoint
+from model_transport import SafeModelError
 from wechat_api import Account, submit_draft, recheck, reset_submission, image_file
 from wechat_review import prepare, approve, is_approved, revoke, read_json, asset_path
 from covers import generate_cover
 from formatting import compact_baoyu, current_baoyu, layout_markdown
 from autofeed import AutoFeed
 from wechat_fields import adapt_fields, record_adjustments, validated_adjustments
+from delivery import DEFAULT_EDITOR, current_report, prepare_delivery, deliver_article, mark_manual_cover
+from xhs_connector import XhsConnector
+from xhs_notes import prepare_note, save_note, export_note
+from xhs_delivery import note_status, record_source, require_publishable, publish_note, recover_interrupted, reset_submission as reset_xhs
 
 ROOT = Path(__file__).resolve().parent
 JOB_ID = re.compile(r'^[0-9a-f]{32}$')
@@ -57,11 +64,13 @@ class Studio:
         self.model_warning = ''
         self.model_revision = 0
         self.wechat = Account(Path(config_path).with_name("wechat.dpapi") if config_path else None)
+        self.xhs = XhsConnector(self.data_dir.parent)
         self.desktop_action = None
         self.processes = set()
         self.closing = False
         self.lock = threading.RLock()
         self.jobs = {}
+        self.category_cache = {}
         self.pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix='studio')
         for path in self.data_dir.glob('*/status.json'):
             try:
@@ -69,6 +78,7 @@ class Studio:
                 if item['status'] in {'running', 'queued'}:
                     item.update(status='error', message='上次运行已中断；原文与已保存成稿仍可使用。')
                 self.jobs[path.parent.name] = item
+                recover_interrupted(path.parent)
             except (ValueError, KeyError, OSError):
                 continue
         if self.model_store:
@@ -96,20 +106,25 @@ class Studio:
     def profile_values(values):
         result = {key: str(values.get(key, '')).strip() for key in ('base_url', 'model', 'api_key')}
         result['name'] = str(values.get('name') or result['model'])[:80]
-        validated = provider_config({**result, 'output_tokens': values.get('output_tokens'),
-                                     'thinking': values.get('thinking')}, use_environment=False)
-        result.update(output_tokens=validated['output_tokens'], thinking=validated['thinking'])
+        keys = PROFILE_FIELDS
+        validated = provider_config({**result, **{k:values.get(k) for k in keys}}, use_environment=False)
+        result.update({k:validated[k] for k in keys})
+        result['base_url'] = validated['url']
         return result
 
     def model_session(self):
         with self.lock:
-            safe = [{key: profile.get(key) for key in ('name', 'base_url', 'model', 'output_tokens', 'thinking')}
+            safe = [{key: profile.get(key) for key in ('name', 'base_url', 'model', *PROFILE_FIELDS)}
                     | {'id': ident, 'configured': bool(profile.get('api_key'))}
                     for ident, profile in self.profiles.items()]
             return {'profiles': safe, 'active_profile': self.active_profile,
                     'remember_models': self.remember_models, 'model_warning': self.model_warning,
                     'output_tokens': self.provider.get('output_tokens', 0),
-                    'thinking': self.provider.get('thinking', 'high')}
+                    'thinking': self.provider.get('thinking', 'high'),
+                    'request_timeout': self.provider.get('request_timeout', 600),
+                    'response_mode': self.provider.get('response_mode', 'stream'),
+                    'json_mode': self.provider.get('json_mode', 'auto'),
+                    **{key:self.provider.get(key) for key in PROFILE_FIELDS if key not in {'output_tokens','thinking','request_timeout','response_mode','json_mode'}}}
 
     def configure_models(self, body):
         with self.lock:
@@ -132,8 +147,9 @@ class Studio:
                 ident = str(body.get('profile_id', active))
                 if ident and ident not in profiles: raise ValueError('模型配置不存在。')
                 previous = profiles.get(ident, self.provider if 'profile_id' not in body else {})
-                values = dict(body)
-                if not str(values.get('api_key', '')).strip() and str(values.get('base_url', '')).strip().rstrip('/') == previous.get('base_url', '').rstrip('/'):
+                values = {**{k:previous[k] for k in PROFILE_FIELDS if k in previous}, **body}
+                if (not str(values.get('api_key', '')).strip() and previous.get('base_url')
+                        and endpoint(values.get('base_url', '')) == endpoint(previous['base_url'])):
                     values['api_key'] = previous.get('api_key', '')
                 profile = self.profile_values(values)
                 active = ident or uuid.uuid4().hex
@@ -181,10 +197,32 @@ class Studio:
         if self.autofeed.running and self.autofeed.mode in {'selected','batch'}:
             raise ValueError('逐篇投递正在运行；请先停止队列或完成本篇后停止，再编辑或导入作品。')
 
+    def library_item(self, job_id):
+        """Compute labels without writing source data or invalidating a draft."""
+        with self.lock:
+            item = dict(self.jobs[job_id])
+            path = self.folder(job_id) / 'source.json'
+            try:
+                stat = path.stat()
+                signature = (stat.st_mtime_ns, stat.st_size, item.get('title', ''))
+                cached = self.category_cache.get(job_id)
+                if not cached or cached[0] != signature:
+                    source = read_json(path, {})
+                    automatic = classify(source if isinstance(source, dict) else {}, item.get('title', ''))
+                    self.category_cache[job_id] = (signature, automatic)
+                else:
+                    automatic = cached[1]
+            except OSError:
+                automatic = classify({}, item.get('title', ''))
+            item.update(with_override(automatic, item.get('category_override')))
+            return item
+
     def library_update(self, job_id, values):
         with self.lock:
             self.idle(job_id)
             changes = {}
+            if 'category_override' in values:
+                changes['category_override'] = validate_override(values['category_override'])
             if 'display_name' in values:
                 name = str(values['display_name']).strip()
                 if len(name) > 160: raise ValueError('作品名称最多 160 字。')
@@ -193,23 +231,32 @@ class Studio:
                 if key in values:
                     if not isinstance(values[key], bool): raise ValueError('作品设置无效。')
                     changes[key] = values[key]
-            self.update(job_id, **changes)
-            return dict(self.jobs[job_id])
+            updated = {**self.jobs[job_id], **changes}
+            write_json(self.folder(job_id) / 'status.json', updated)
+            self.jobs[job_id] = updated
+            return self.library_item(job_id)
 
     def submit(self, job_id, operation, work):
         with self.lock:
             self.idle(job_id)
-            self.update(job_id, status='queued', operation=operation, message='等待处理…', cancelled=False)
+            self.update(job_id, status='queued', operation=operation, message='等待处理…', cancelled=False, started_at=None, finished_at=None)
         def run():
+            started = time.monotonic()
             try:
-                if self.jobs[job_id]['cancelled']: raise ValueError('任务已取消。')
-                self.update(job_id, status='running', message='开始处理…')
+                if self.jobs[job_id]['cancelled']: raise SafeModelError('任务已取消。')
+                self.update(job_id, status='running', message='开始处理…', started_at=time.time())
                 work(lambda message: self.update(job_id, message=message))
-                if self.jobs[job_id]['cancelled']: raise ValueError('任务已取消；已保存内容保留。')
-                self.update(job_id, status='ready', message='处理完成。')
+                if self.jobs[job_id]['cancelled']: raise SafeModelError('任务已取消；已保存内容保留。')
+                receipt = read_json(self.folder(job_id)/'wechat-submission.json', {})
+                delivered = operation in {'generate', 'direct-draft', 'wechat-auto-submit', 'wechat-submit', 'wechat-recheck'} and receipt.get('state') in {'submitted', 'submitted_unverified'}
+                message = receipt.get('message', '草稿已创建。') if delivered else '处理完成。'
+                self.update(job_id, status='ready', message=message, finished_at=time.time())
             except Exception as exc:
-                message = str(exc) if isinstance(exc, ValueError) else '处理未完成，请检查输入文件或模型服务后重试。'
-                self.update(job_id, status='error', message=message)
+                from diagnostics import save_failure
+                detail = save_failure(self.folder(job_id), 'job-error.json', exc,
+                                      self.jobs[job_id].get('message', operation), started)
+                message = str(exc) if isinstance(exc, SafeModelError) or (operation != 'generate' and isinstance(exc, ValueError)) else f'处理未完成（{detail["error_type"]}）。已保留原稿，错误详情见数据目录 job-error.json。'
+                self.update(job_id, status='error', message=message, finished_at=time.time())
         self.pool.submit(run)
 
     def save_article(self, job_id, article):
@@ -267,27 +314,66 @@ class Studio:
         html = re.sub(r'\sdata-local-path="[^"]*"', '', html)
         (folder / 'article.html').write_text(html, encoding='utf-8')
 
-    def wechat_prepared(self, job_id):
+    def wechat_prepared(self, job_id, *, automatic=False):
         folder=self.folder(job_id)
         return prepare(folder,self.load(job_id,'article.json'),self.load(job_id),
-                       read_json(folder/'wechat-options.json',{}),self.wechat.public())
+                       read_json(folder/'wechat-options.json',{}),self.wechat.public(),automatic=automatic)
+
+    def queue_delivery(self, job_id, send=False, options=None):
+        """Capture the destination before queueing; every upload checks cancellation."""
+        operation = 'wechat-auto-submit' if send else 'wechat-auto-prepare'
+        snapshot = dict(self.wechat.config)
+        if send and not snapshot:
+            raise ValueError('请先配置目标公众号。')
+        self.submit(job_id, operation, lambda progress: self.run_delivery(job_id, snapshot, send, options, progress))
+
+    def run_delivery(self, job_id, snapshot, send=True, options=None, progress=lambda _:None):
+        account = Account(request=self.wechat.request)
+        account.config = dict(snapshot)
+        def guarded(message):
+            if self.closing or self.jobs[job_id].get('cancelled'):
+                raise ValueError('自动投递已取消；本地稿件与已保存进度保留。')
+            if self.wechat.config != snapshot:
+                raise ValueError('目标公众号配置已改变，请重新操作。')
+            progress(message)
+        try:
+            guarded('开始自动准备；只创建公众号草稿，不发表或群发。')
+            if send:
+                return deliver_article(self, job_id, account, options, guarded)
+            report, _ = prepare_delivery(self, job_id, options, guarded, account.public())
+            if not report['ready']:
+                raise ValueError('；'.join(report['blockers']))
+            return report
+        finally:
+            account.close()
 
     def wechat_status(self, job_id):
         folder=self.folder(job_id);article=read_json(folder/'article.json',{})
         saved=read_json(folder/'wechat-options.json',{})
-        options={'title':article.get('title',''),'digest':article.get('digest',''),'author':'','cover_id':'','theme':'ink',**saved}
+        options={'title':article.get('title',''),'digest':article.get('digest',''),'author':DEFAULT_EDITOR,'cover_id':'','theme':'ink',**saved}
         status={'options':options,'approved':False,'blocker':'','reviewed_at':None,'video_count':0,'html_chars':0}
         changes=read_json(folder/'wechat-field-adjustments.json',{}).get('adjustments',[])
         status['field_adjustments']=[c for c in changes if options.get(c['field'])==c['after']]
         review=read_json(folder/'wechat-review.json',{})
         try:
-            prepared=self.wechat_prepared(job_id)
-            status.update(approved=is_approved(folder,prepared),video_count=prepared['video_count'],html_chars=len(prepared['content']),reviewed_at=review.get('reviewed_at'))
+            prepared=self.wechat_prepared(job_id, automatic=True)
+            status.update(video_count=prepared['video_count'],html_chars=len(prepared['content']),reviewed_at=review.get('reviewed_at'))
+            parts=prepared.get('parts') or [{'options':prepared['options'],'content':prepared['content']}]
+            status['parts']=[{'title':part['options']['title'],'html_chars':len(part['content'])} for part in parts]
+            try:
+                status['approved']=is_approved(folder,self.wechat_prepared(job_id))
+            except (ValueError,KeyError,TypeError,OSError):
+                status['approved']=False
         except ValueError as exc:status['blocker']=str(exc)
         except (KeyError,TypeError):status['blocker']='请保存标题、摘要和封面，检查稿件内容后再审核。'
         status['layout']='baoyu' if saved.get('theme')=='baoyu' else 'builtin'
         record=read_json(folder/'wechat-submission.json',{})
-        status['submission']={k:record.get(k) for k in ('state','message','media_id','verified_at','account') if k in record}
+        status['submission']={k:record.get(k) for k in ('state','message','media_id','verified_at','account','verification') if k in record}
+        try:
+            status['automation']=current_report(folder,article,self.load(job_id),saved,self.wechat.public())
+        except (ValueError,KeyError,TypeError,OSError):
+            status['automation']={'ready':False,'blockers':['请先保存完整文章和论文素材。'],
+                                  'warnings':[],'stages':[],'editor':DEFAULT_EDITOR,'cover':{},'checked_at':None}
         return status
 
     def close(self):
@@ -304,6 +390,7 @@ class Studio:
                     process.kill()
                     process.wait(timeout=5)
         self.pool.shutdown(wait=False, cancel_futures=True)
+        self.xhs.close()
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -384,19 +471,42 @@ class Handler(BaseHTTPRequestHandler):
                                   'skill_available': bool(bun_runner())})
             if path == '/api/wechat':
                 return self.send(self.studio.wechat.public())
+            if path == '/api/xhs/status':
+                if not self.studio.desktop: raise ValueError('小红书接入仅在私有桌面版使用。')
+                return self.send(self.studio.xhs.status())
             if path == '/api/autofeed':
                 return self.send(self.studio.autofeed.status())
+            if path == '/api/categories':
+                return self.send(category_catalog())
             if path == '/api/jobs':
-                with self.studio.lock: items = [dict(x) for x in self.studio.jobs.values()]
+                with self.studio.lock: items = [self.studio.library_item(key) for key in self.studio.jobs]
                 return self.send(sorted(items, key=lambda j: (bool(j.get('pinned')), j['created_at']), reverse=True))
-            match = re.fullmatch(r'/api/jobs/([0-9a-f]{32})/(status|source|article|audit|preview|export|asset|project-media|wechat|wechat-preview|materials)', path)
+            match = re.fullmatch(r'/api/jobs/([0-9a-f]{32})/(status|source|article|audit|preview|export|asset|project-media|wechat|wechat-review|wechat-preview|materials|xhs-note|xhs-export|generation-draft|generation-preview)', path)
             if match:
                 job_id, action = match.groups()
                 folder = self.studio.folder(job_id)
                 if action == 'status': return self.send(dict(self.studio.jobs[job_id]))
-                if action == 'wechat':return self.send(self.studio.wechat_status(job_id))
+                if action in {'generation-draft','generation-preview'}:
+                    source=self.studio.load(job_id)
+                    recovery=read_generation_draft(folder,source)
+                    checkpoint=read_json(folder/'generation-progress.json',{})
+                    persisted=read_json(folder/'article.json',{})
+                    same_article=bool(recovery and persisted and all(persisted.get(k)==v for k,v in recovery['article'].items()))
+                    pending=recovery if recovery and (not checkpoint.get('complete') or not same_article and (not persisted or self.studio.jobs[job_id].get('status')=='error')) else None
+                    if action=='generation-draft':
+                        saved_options=read_json(folder/'writing-options.json',{})
+                        public_options={k:saved_options[k] for k in ('style','length','brief','auto_figures','vision','figure_ids') if k in saved_options}
+                        return self.send({'recovery':pending,'options':public_options,'completed_article':bool(checkpoint.get('complete') and persisted and not pending)})
+                    if not pending:raise ValueError('暂无可恢复的待复核草稿。')
+                    content=article_html(pending['article'],source,folder,'ink',embed=True)
+                    label='生成已完成，尚待恢复保存；此版本尚未投递。' if pending['complete'] else '待复核草稿：尚未完成生成，不会自动提交此版本。'
+                    return self.send(document_html('待恢复草稿', '<p style="padding:16px;background:#fff3df;color:#735027">'+label+'</p>'+content), 'text/html; charset=utf-8')
+                if action == 'xhs-note': return self.send(note_status(folder))
+                if action == 'xhs-export': return self.send(export_note(folder), 'application/zip', attachment='xiaohongshu-note.zip')
+                if action in {'wechat','wechat-review'}:return self.send(self.studio.wechat_status(job_id))
                 if action == 'wechat-preview':
-                    prepared=self.studio.wechat_prepared(job_id);content=prepared['content']
+                    from wechat_content import preview_parts
+                    prepared=self.studio.wechat_prepared(job_id, automatic=True);content=preview_parts(prepared)
                     for item in prepared['assets']:
                         _,mime,data=image_file(asset_path(folder,item['image']))
                         content=content.replace('src="'+item['image']+'"','src="data:'+mime+';base64,'+base64.b64encode(data).decode()+'"')
@@ -413,7 +523,9 @@ class Handler(BaseHTTPRequestHandler):
                     return self.send(dict(source, publication_info=paper_details(article, source)))
                 if action == 'asset':
                     name = query.get('name', [''])[0]
-                    if not (name == 'source.pdf' or re.fullmatch(r'images/(?:page|fig)-\d{3}\.png|materials/pdf-\d+-\d+\.png|covers/cover-[0-9a-f]{16}\.png|media/media-[0-9a-f]{16}\.(?:mp4|webm)', name)):
+                    if not (name == 'source.pdf' or re.fullmatch(r'images/(?:page|fig)-\d{3}\.png|materials/pdf-\d+-\d+\.png|covers/cover-[0-9a-f]{16}\.png|xhs/card-[0-9a-f]{16}\.png|media/media-[0-9a-f]{16}\.(?:mp4|webm)', name)):
+                        raise ValueError('无效资源路径。')
+                    if folder.resolve() not in (folder / name).resolve().parents:
                         raise ValueError('无效资源路径。')
                     return self.send((folder / name).read_bytes(), mimetypes.guess_type(name)[0] or 'application/octet-stream')
                 article = self.studio.load(job_id, 'article.json')
@@ -462,6 +574,15 @@ class Handler(BaseHTTPRequestHandler):
             if len(raw) != length: raise ValueError('上传中断，请重试。')
             body = {} if path == '/api/import/pdf' or image_upload else json.loads(raw)
             if not isinstance(body, dict): raise ValueError('请求需要 JSON 对象。')
+            if path in {'/api/xhs/start', '/api/xhs/login', '/api/xhs/check', '/api/xhs/stop'}:
+                if not self.studio.desktop: raise ValueError('小红书接入仅在私有桌面版使用。')
+                with self.studio.lock:
+                    if any(j['status'] in {'queued','running'} and j.get('operation') == 'xhs-publish' for j in self.studio.jobs.values()):
+                        raise ValueError('小红书正在提交，请等待结束后再操作连接。')
+                action = path.rsplit('/', 1)[1]
+                method = {'start': self.studio.xhs.start, 'login': self.studio.xhs.login,
+                          'check': self.studio.xhs.check_login, 'stop': self.studio.xhs.stop}[action]
+                return self.send(method())
             if path in {'/api/autofeed/config','/api/autofeed/run','/api/autofeed/discover','/api/autofeed/pause','/api/autofeed/links','/api/autofeed/resume','/api/autofeed/finish-current'}:
                 if not self.studio.desktop:raise ValueError('自动投递仅在私有桌面版使用。')
                 feed=self.studio.autofeed
@@ -484,11 +605,18 @@ class Handler(BaseHTTPRequestHandler):
                 self.studio.configure_models(body)
                 return self.send({'ok': True, 'configured': bool(self.studio.provider.get('api_key')),
                                   **self.studio.model_session()})
+            if self.studio.desktop and path == '/api/models/check':
+                with self.studio.lock:
+                    config = provider_config(dict(self.studio.provider, _desktop=True))
+                config['request_timeout'] = 30
+                started = time.monotonic()
+                chat_json(config, 'Connection test. Return only this JSON object: {"ok":true}.', max_tokens=4096)
+                return self.send({'ok':True, 'message':f'已收到有效模型响应，用时 {time.monotonic()-started:.1f} 秒。未发送论文或图片。'})
             if path in {'/api/wechat/config','/api/wechat/check'}:
                 if not self.studio.desktop:raise ValueError('公众号接入仅在私有桌面版中使用。')
                 with self.studio.lock:
                     if self.studio.autofeed.running:raise ValueError('自动任务正在运行，请先暂停并等待请求结束，再修改公众号配置。')
-                    if any(j['status'] in {'queued','running'} and str(j.get('operation','')).startswith('wechat') for j in self.studio.jobs.values()):
+                    if any(j['status'] in {'queued','running'} and (str(j.get('operation','')).startswith('wechat') or (j.get('operation')=='generate' and j.get('auto_draft'))) for j in self.studio.jobs.values()):
                         raise ValueError('公众号任务正在处理，请完成后再修改或检测连接。')
                     if path.endswith('/config'):self.studio.wechat.save(body)
                     else:self.studio.wechat.check()
@@ -513,7 +641,7 @@ class Handler(BaseHTTPRequestHandler):
                     self.studio.update(job_id, title=manifest['title'])
                 self.studio.submit(job_id, 'import', work)
                 return self.send({'id': job_id}, code=202)
-            match = re.fullmatch(r'/api/jobs/([0-9a-f]{32})/(generate|article|crop|figures|prompt|cancel|skill|paper-info|repair-crops|scan-media|import-media|wechat-options|wechat-fit|wechat-approve|wechat-revoke|wechat-submit|wechat-recheck|wechat-reset|library|refresh-identity|cover|scan-materials|accept-material)', path)
+            match = re.fullmatch(r'/api/jobs/([0-9a-f]{32})/(generate|article|crop|figures|prompt|cancel|skill|paper-info|repair-crops|scan-media|import-media|wechat-options|wechat-fit|wechat-approve|wechat-revoke|wechat-submit|wechat-recheck|wechat-reset|wechat-auto-prepare|wechat-auto-submit|library|refresh-identity|cover|scan-materials|accept-material|xhs-prepare|xhs-note|xhs-publish|xhs-reset)', path)
             if not match: return self.send({'error': 'Not found'}, code=404)
             job_id, action = match.groups()
             folder = self.studio.folder(job_id)
@@ -529,6 +657,31 @@ class Handler(BaseHTTPRequestHandler):
                     return self.send(generate_cover(folder, source, self.studio.load(job_id,'article.json'), body))
                 if self.studio.jobs[job_id].get('trashed'):
                     raise ValueError('请先从回收站恢复这篇作品。')
+                if action.startswith('xhs-'):
+                    if action == 'xhs-prepare':
+                        article = self.studio.load(job_id, 'article.json')
+                        def work(progress):
+                            progress('整理论文重点，生成小红书轮播图…')
+                            prepare_note(folder, article, source)
+                            record_source(folder)
+                        self.studio.submit(job_id, action, work)
+                        return self.send({'id': job_id}, code=202)
+                    if action == 'xhs-note':
+                        save_note(folder, self.studio.load(job_id, 'article.json'), source, body)
+                        return self.send(note_status(folder))
+                    if action == 'xhs-reset': return self.send(reset_xhs(folder, body.get('confirmed')))
+                    if not self.studio.desktop: raise ValueError('小红书发布仅在私有桌面版使用。')
+                    if body.get('publish') is not True: raise ValueError('请明确选择发布当前小红书笔记。')
+                    account_id = str(body.get('account_id', ''))
+                    identity = self.studio.xhs.status()
+                    if not account_id or not identity.get('logged_in') or (identity.get('account') or {}).get('id') != account_id:
+                        raise ValueError('请先登录并确认要发布的小红书账号。')
+                    require_publishable(folder)
+                    def work(progress):
+                        publish_note(folder, self.studio.xhs, account_id, progress,
+                                     lambda: self.studio.closing or self.studio.jobs[job_id].get('cancelled'))
+                    self.studio.submit(job_id, action, work)
+                    return self.send({'id': job_id}, code=202)
                 if action == 'refresh-identity':
                     def refresh(progress):
                         updated = refresh_identity(folder, source, progress)
@@ -537,6 +690,11 @@ class Handler(BaseHTTPRequestHandler):
                     return self.send({'id':job_id}, code=202)
                 if action.startswith('wechat-'):
                     if not self.studio.desktop:raise ValueError('公众号提交仅在私有桌面版中使用。')
+                    if action in {'wechat-auto-prepare','wechat-auto-submit'}:
+                        if body.get('options') is not None and not isinstance(body['options'],dict):
+                            raise ValueError('提交设置必须是对象。')
+                        self.studio.queue_delivery(job_id,action=='wechat-auto-submit',body.get('options'))
+                        return self.send({'id':job_id},code=202)
                     if action=='wechat-fit':
                         values,changes=adapt_fields(body,self.studio.load(job_id,'article.json'))
                         return self.send({'options':values,'field_adjustments':changes})
@@ -545,7 +703,10 @@ class Handler(BaseHTTPRequestHandler):
                         article=self.studio.load(job_id,'article.json')
                         fitted,changes=adapt_fields(body,article)
                         values=clean_options(fitted,article,source)
+                        previous=read_json(folder/'wechat-options.json',{})
                         write_json(folder/'wechat-options.json',values)
+                        if body.get('cover_explicit') is True or ('cover_id' in body and values['cover_id']!=previous.get('cover_id')):
+                            mark_manual_cover(folder,values['cover_id'])
                         previews=validated_adjustments(values,article,body.get('field_adjustments',[]))
                         record_adjustments(folder,previews+changes)
                     elif action=='wechat-approve':
@@ -630,13 +791,25 @@ class Handler(BaseHTTPRequestHandler):
                     self.studio.submit(job_id, 'skill', lambda progress: self.studio.format_skill(job_id, progress))
                     return self.send({'id': job_id}, code=202)
                 if action == 'generate':
+                    auto_draft = body.pop('auto_draft', False)
+                    delivery_options = body.pop('delivery_options', None)
+                    if type(auto_draft) is not bool or (delivery_options is not None and not isinstance(delivery_options,dict)):
+                        raise ValueError('自动投递设置格式不正确。')
+                    body['automatic_draft']=auto_draft
+                    account_snapshot = dict(self.studio.wechat.config) if auto_draft else {}
+                    if auto_draft and (not self.studio.desktop or not account_snapshot):
+                        raise ValueError('请在私有桌面版中配置目标公众号后启用生成并投递。')
                     if self.studio.desktop:
                         with self.studio.lock:
                             queued_base = self.studio.provider.get('base_url', '').rstrip('/')
                             queued_model = self.studio.provider.get('model', '')
                             queued_revision = self.studio.model_revision
                             body.update(output_tokens=self.studio.provider.get('output_tokens', 0),
-                                        thinking=self.studio.provider.get('thinking', 'high'))
+                                        thinking=self.studio.provider.get('thinking', 'high'),
+                                        request_timeout=self.studio.provider.get('request_timeout', 600),
+                                        response_mode=self.studio.provider.get('response_mode', 'stream'),
+                                        json_mode=self.studio.provider.get('json_mode', 'auto'))
+                            body.update({k:self.studio.provider.get(k) for k in PROFILE_FIELDS})
                         body.update(base_url=queued_base, model=queued_model)
                         body.pop('api_key', None)
                         body['_desktop'] = True
@@ -646,7 +819,7 @@ class Handler(BaseHTTPRequestHandler):
                             with self.studio.lock:
                                 current = self.studio.provider
                                 if not current or self.studio.model_revision != queued_revision or current.get('base_url', '').rstrip('/') != queued_base or current.get('model') != queued_model:
-                                    raise ValueError('模型设置已修改或清除；此任务已停止，请确认接收服务后重新生成。')
+                                    raise SafeModelError('模型设置已修改或清除；此任务已停止，请确认接收服务后重新生成。')
                                 body['api_key'] = current.get('api_key', '')
                         try:
                             article, notes, audit = generate_article(source, folder, body, progress,
@@ -654,8 +827,16 @@ class Handler(BaseHTTPRequestHandler):
                             self.studio.save_article(job_id, article)
                             write_json(folder / 'audit.json', audit)
                             write_json(folder / 'analysis-notes.json', notes)
+                            if auto_draft:
+                                # Server-owned continuation survives navigation; never run on partial/error output.
+                                try:
+                                    self.studio.run_delivery(job_id,account_snapshot,True,delivery_options,progress)
+                                except ValueError as exc:
+                                    raise SafeModelError(str(exc)) from None
                         finally:
                             body.pop('api_key', None)
+                    write_json(folder/'writing-options.json',{**{'style':'technical','length':4000,'brief':'','auto_figures':False,'vision':False},**{k:body[k] for k in ('style','length','brief','auto_figures','vision','figure_ids') if k in body}})
+                    self.studio.update(job_id,auto_draft=auto_draft)
                     self.studio.submit(job_id, 'generate', generate)
                     return self.send({'id': job_id}, code=202)
         except Exception as exc:

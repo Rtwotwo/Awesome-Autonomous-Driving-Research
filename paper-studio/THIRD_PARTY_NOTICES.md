@@ -15,6 +15,7 @@ Original Paper Studio code uses PolyForm Noncommercial 1.0.0. These restrictions
 | ReportLab (synthetic fixtures) | [BSD / upstream license](https://hg.reportlab.com/hg-public/reportlab/file/tip/LICENSE.txt) |
 | PyInstaller (build tool) | [GPL with bootloader exception](https://pyinstaller.org/en/stable/license.html) |
 | Bun (optional runtime) | [MIT and component notices](https://github.com/oven-sh/bun) |
+| xiaohongshu-mcp v2.5.5 (optional local companion) | [Apache-2.0](https://github.com/xpzouying/xiaohongshu-mcp/blob/v2.5.5/LICENSE); separate download, not vendored into this source tree |
 
 These are dependency references, not bundled binaries. Installed packages carry their own notices; preserve those and all bundled runtime/component licenses when distributing a binary. This table is not a replacement for full transitive dependency notices. The public PDF implementation no longer requires PyMuPDF.
 

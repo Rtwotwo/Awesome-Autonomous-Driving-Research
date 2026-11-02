@@ -5,7 +5,7 @@ from tests.test_sources import fixture_pdf
 from tests.test_writing import fixture_article
 from sources import extract_pdf
 from wechat_review import prepare,approve,CHECKS
-from wechat_api import Account,WechatError,TransportError,submit_draft,recheck,reset_submission,transport,verify_image_url,whitelist_ip
+from wechat_api import Account,WechatError,TransportError,submit_draft,recheck,reset_submission,transport,verify_image_url,whitelist_ip,verify_draft
 
 class FakeAPI:
     def __init__(self):self.calls=[];self.article=None;self.add_error=None;self.bad_read=False
@@ -109,6 +109,94 @@ class APITests(unittest.TestCase):
         self.api.article=copy.deepcopy(original);self.api.article['digest']='different digest'
         with self.assertRaises(ValueError):recheck(self.root/'paper',self.account)
         self.assertEqual(sum(x[0]=='draft/add' for x in self.api.calls),1)
+
+    def test_transient_readback_retries_only_existing_draft(self):
+        reads=0
+        def request(path,**kwargs):
+            nonlocal reads
+            result=self.api(path,**kwargs)
+            if path=='draft/get':
+                reads+=1
+                if reads<3:raise TransportError('FIXTURE_READBACK_DISCONNECTED')
+            return result
+        self.account.request=request
+        with patch('wechat_api.READBACK_RETRY_DELAYS',(0,0)):
+            record=submit_draft(self.root/'paper',self.p,self.account)
+        self.assertEqual(record['state'],'submitted')
+        self.assertEqual(record['verification']['attempts'],3)
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+        self.assertEqual(sum(path=='draft/get' for path,_ in self.api.calls),3)
+
+    def test_non_transient_readback_error_keeps_id_and_safe_error_code(self):
+        record=submit_draft(self.root/'paper',self.p,self.account)
+        def request(path,**kwargs):
+            result=self.api(path,**kwargs)
+            if path=='draft/get':raise WechatError(40007,'SECRET_ERROR_TEXT')
+            return result
+        self.account.request=request
+        before=len(self.api.calls)
+        record=recheck(self.root/'paper',self.account,allow_unverified=True)
+        self.assertEqual(record['state'],'submitted_unverified')
+        self.assertEqual(record['verification']['error_code'],40007)
+        self.assertEqual(record['verification']['attempts'],1)
+        self.assertEqual([path for path,_ in self.api.calls[before:]],['draft/get'])
+        self.assertIn('40007',record['message'])
+        self.assertNotIn('SECRET_ERROR_TEXT',json.dumps(record))
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+
+    def test_readback_normalizes_html_entities_placeholder_images_and_fragments(self):
+        content='<p>Fixture &amp; proof.</p><img src="https://mmbiz.qpic.cn/fixture/0?from=fixture&amp;wx_fmt=png">'
+        expected={'title':'Title','author':'Editor','digest':'Digest','content_source_url':'https://example.test/paper',
+                  'thumb_media_id':'FIXTURE_COVER','content':content}
+        variants=[content.replace('&amp; proof','&#38; proof'),content.replace('https:','http:'),
+                  content.replace('src=','data-src='),
+                  content.replace('src=','src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src='),
+                  content.replace('src=','src="about:blank" data-src='),
+                  content.replace('wx_fmt=png','wx_fmt=png#display')]
+        for actual in variants:
+            with self.subTest(actual=variants.index(actual)):
+                self.api.article={**expected,'content':actual}
+                record={'media_id':'FIXTURE_DRAFT','payload':expected}
+                verify_draft(self.account,record)
+                self.assertEqual(record['state'],'submitted')
+                checks=record['verification']
+                self.assertTrue(all(checks['field_matches'].values()))
+                self.assertTrue(checks['text_match'])
+                self.assertTrue(checks['image_count_match'])
+                self.assertTrue(checks['image_addresses_match'])
+                self.assertEqual(checks['expected_image_count'],1)
+                self.assertEqual(checks['actual_image_count'],1)
+        self.assertFalse(any(path=='draft/add' for path,_ in self.api.calls))
+
+    def test_readback_diagnostics_keep_meaningful_differences_and_no_contents(self):
+        content='<p>SECRET_BODY_MARKER</p><img src="https://mmbiz.qpic.cn/fixture/0?from=fixture&amp;wx_fmt=png">'
+        expected={'title':'SECRET_TITLE','author':'SECRET_AUTHOR','digest':'SECRET_DIGEST',
+                  'content_source_url':'https://example.test/SECRET_LINK',
+                  'thumb_media_id':'SECRET_COVER','content':content}
+        changes={**{key:{key:'changed'} for key in expected if key!='content'},
+            'text':{'content':content.replace('SECRET_BODY_MARKER','changed')},
+            'missing_image':{'content':'<p>SECRET_BODY_MARKER</p>'},
+            'image':{'content':content.replace('/fixture/','/different/')},
+            'host':{'content':content.replace('mmbiz.qpic.cn','evil.example')},
+            'query':{'content':content.replace('?from=fixture&amp;wx_fmt=png','')},
+            'visible_src':{'content':content.replace('src=','src="https://mmbiz.qpic.cn/different/0" data-src=')},
+            'unproven_data_placeholder':{'content':content.replace('src=','src="data:image/png;base64,UNKNOWN" data-src=')}}
+        for name,change in changes.items():
+            with self.subTest(change=name):
+                self.api.article={**expected,**change}
+                record={'media_id':'SECRET_DRAFT_ID','payload':expected}
+                with self.assertRaises(ValueError):verify_draft(self.account,record)
+                checks=record['verification']
+                self.assertEqual(checks['status'],'mismatch')
+                if name in expected:self.assertFalse(checks['field_matches'][name])
+                elif name=='text':self.assertFalse(checks['text_match'])
+                else:self.assertFalse(checks['image_addresses_match'])
+                if name=='missing_image':
+                    self.assertFalse(checks['image_count_match'])
+                    self.assertEqual(checks['actual_image_count'],0)
+                diagnostic=json.dumps(checks)
+                for private in ('SECRET_','https:','qpic.cn','example.test','SECRET_DRAFT_ID'):
+                    self.assertNotIn(private,diagnostic)
 
     def test_whitelist_error_keeps_only_official_validated_ip(self):
         import io

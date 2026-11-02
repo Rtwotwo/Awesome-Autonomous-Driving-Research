@@ -1,10 +1,14 @@
 """Evidence-first writing through a user-selected chat-completions provider."""
 import base64
+import copy
 import hashlib
+import http.client
 import json
+import math
 import os
 import re
 import socket
+import ssl
 import time
 import urllib.error
 import urllib.parse
@@ -12,7 +16,11 @@ import urllib.request
 from pathlib import Path
 from sources import write_json
 from publication import clean_article, validate_paper_info, paper_details
-from figure_plan import build_plan, coverage, adaptive_style
+from figure_plan import build_plan, coverage, adaptive_style, placement_prompt, apply_placements
+from model_transport import read_completion, checked_choice, ModelProtocolError, SafeModelError
+from diagnostics import save_failure
+from model_options import endpoint, extra_options, request_headers, request_budget
+from editorial_review import needs_section_review, make_plan, valid_state, review_prompt, apply_review, update_fragment_offsets
 
 STYLES = {
     'world': '世界模型与具身研读：解释表征、动作条件、时序预测、训练与执行的关系；结合真实可视化比较成功和失败案例，区分生成观感与下游收益。',
@@ -51,38 +59,66 @@ ARTICLE_SCHEMA = {
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
-        raise ValueError('模型 API 返回重定向。请填写最终 API 地址，避免密钥被转发。')
+        raise SafeModelError('模型 API 返回重定向。请填写最终 API 地址，避免密钥被转发。')
 
 
 def provider_config(values, use_environment=True):
     env = os.environ if use_environment and not values.get('_desktop') else {}
     configured_base = env.get('PAPER_STUDIO_API_BASE', 'https://api.openai.com/v1').strip().rstrip('/')
     base = str(values.get('base_url') or configured_base).strip().rstrip('/')
+    final_url = endpoint(base)
     model = str(values.get('model') or env.get('PAPER_STUDIO_MODEL', '')).strip()
     key = str(values.get('api_key') or (env.get('PAPER_STUDIO_API_KEY', '') if base == configured_base else '')).strip()
-    url = urllib.parse.urlsplit(base)
-    if url.scheme not in {'https', 'http'} or not url.hostname or url.username or url.password or url.query or url.fragment:
-        raise ValueError('模型 API 地址格式不正确。')
+    if any(ord(c) < 33 or ord(c) > 126 for c in key):
+        raise SafeModelError('API Key 含换行、空格或非 ASCII 字符，请重新粘贴密钥；不会显示密钥内容。')
+    if key.startswith('${'):
+        raise SafeModelError('API Key 仍是配置占位符，请在本机填写真实密钥。')
+    if any(ord(c) < 33 for c in base):
+        raise SafeModelError('模型 API 地址不能包含空格或控制字符。')
+    try:
+        url = urllib.parse.urlsplit(final_url)
+    except ValueError:
+        raise SafeModelError('模型 API 地址格式不正确。') from None
+    if url.scheme not in {'https', 'http'} or not url.hostname or url.username or url.password or url.fragment:
+        raise SafeModelError('模型 API 地址格式不正确。')
     if url.scheme == 'http' and url.hostname not in {'localhost', '127.0.0.1', '::1'}:
-        raise ValueError('远程模型 API 必须使用 HTTPS；本机服务可以使用 HTTP。')
+        raise SafeModelError('远程模型 API 必须使用 HTTPS；本机服务可以使用 HTTP。')
     if not model:
-        raise ValueError('请填写模型 ID。')
+        raise SafeModelError('请填写模型 ID。')
     if not key and url.hostname not in {'localhost', '127.0.0.1', '::1'}:
-        raise ValueError('请填写 API Key，或使用已配置环境变量的本地服务。')
+        raise SafeModelError('请填写 API Key，或使用已配置环境变量的本地服务。')
     official = url.hostname == 'api.deepseek.com' and model in {
         'deepseek-flash', 'deepseek-v4-pro', 'deepseek-v4-flash', 'deepseek-v4-flash-vision-exp'}
     try:
         output_tokens = int(values.get('output_tokens') or 0)
     except (ValueError, TypeError):
-        raise ValueError('输出 token 上限需要填写整数。') from None
+        raise SafeModelError('输出 token 上限需要填写整数。') from None
     if output_tokens != 0 and not 1024 <= output_tokens <= 393216:
-        raise ValueError('输出上限须为 1,024–393,216；留空或 0 使用自动设置。')
+        raise SafeModelError('输出上限须为 1,024–393,216；留空或 0 使用自动设置。')
     thinking = values.get('thinking') or 'high'
     if thinking not in {'high', 'low', 'disabled'}:
-        raise ValueError('请选择有效的 DeepSeek 思考模式。')
-    return {'url': base if base.endswith('/chat/completions') else base + '/chat/completions',
+        raise SafeModelError('请选择有效的 DeepSeek 思考模式。')
+    try:
+        request_timeout = int(values.get('request_timeout') or 600)
+    except (ValueError, TypeError):
+        raise SafeModelError('请求超时需要填写秒数。') from None
+    if not 30 <= request_timeout <= 1800:
+        raise SafeModelError('请求超时须为 30–1,800 秒。')
+    response_mode = values.get('response_mode') or 'stream'
+    json_mode = values.get('json_mode') or 'auto'
+    if response_mode not in {'stream', 'json'} or json_mode not in {'auto', 'enabled', 'disabled'}:
+        raise SafeModelError('请选择有效的接口响应格式。')
+    extras = extra_options(values)
+    if extras['max_output_tokens'] and output_tokens > extras['max_output_tokens']:
+        raise SafeModelError('请求输出额度超过此模型声明的最大输出容量。')
+    return {'url': final_url,
             'model': model, 'key': key, 'deepseek': official,
-            'output_tokens': output_tokens, 'thinking': thinking}
+            'output_tokens': output_tokens, 'thinking': thinking,
+            'request_timeout': request_timeout, 'response_mode': response_mode, 'json_mode': json_mode, **extras}
+
+
+class SchemaResponseError(SafeModelError):
+    """Completed model text with invalid JSON; eligible for schema feedback."""
 
 
 def parse_json_response(value):
@@ -92,30 +128,34 @@ def parse_json_response(value):
     try:
         parsed = json.loads(value)
     except json.JSONDecodeError:
-        raise ValueError('模型没有返回有效 JSON。原稿未被覆盖；可重试或从“导入成稿”导入。') from None
+        raise SchemaResponseError('模型没有返回有效 JSON。原稿未被覆盖。') from None
     if not isinstance(parsed, dict):
-        raise ValueError('模型返回的 JSON 必须是对象。')
+        raise SchemaResponseError('模型返回的 JSON 必须是对象。')
     return parsed
 
 
-class OutputLimitError(ValueError):
+class OutputLimitError(SafeModelError):
     """Safe diagnostics only; never include provider text, prompts or credentials."""
 
 
-def chat_json(config, prompt, images=None, max_tokens=10000, partial=None, cancelled=lambda:False):
+def chat_json(config, prompt, images=None, max_tokens=10000, partial=None, cancelled=lambda:False, event=lambda _:None):
+    if images and (config.get('vision_capability') is False or config['model'].lower() == 'deepseek-v4-flash-0731'):
+        raise SafeModelError('当前模型仅支持文本，请关闭“同时读取选中原图”；推文仍会插入论文图片。')
     content = prompt
     if images:
         content = [{'type': 'text', 'text': prompt}]
         for label, data in images:
             content.extend([{'type': 'text', 'text': label}, {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,' + base64.b64encode(data).decode(), 'detail': 'high'}}])
-    payload = {'model': config['model'], 'messages': [{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': content}], 'max_tokens': max_tokens}
+    payload = {'model': config['model'], 'messages': [{'role': 'system', 'content': SYSTEM}, {'role': 'user', 'content': content}], 'max_tokens': max_tokens,
+               'stream': config.get('response_mode', 'stream') == 'stream'}
     if config.get('deepseek'):
         mode = config.get('thinking', 'high')
-        payload.update(thinking={'type': 'disabled' if mode == 'disabled' else 'enabled'},
-                       response_format={'type': 'json_object'})
+        payload.update(thinking={'type': 'disabled' if mode == 'disabled' else 'enabled'})
         if mode != 'disabled': payload['reasoning_effort'] = mode
+    if config.get('json_mode', 'auto') == 'enabled' or (config.get('deepseek') and config.get('json_mode', 'auto') != 'disabled'):
+        payload['response_format'] = {'type':'json_object'}
     handlers = [NoRedirect()]
-    if urllib.parse.urlsplit(config['url']).hostname in {'localhost', '127.0.0.1', '::1'}:
+    if config.get('proxy_mode') == 'direct' or urllib.parse.urlsplit(config['url']).hostname in {'localhost', '127.0.0.1', '::1'}:
         # A local model must not send paper text or credentials through a system proxy.
         handlers.append(urllib.request.ProxyHandler({}))
     opener = urllib.request.build_opener(*handlers)
@@ -123,21 +163,21 @@ def chat_json(config, prompt, images=None, max_tokens=10000, partial=None, cance
     continuations = 0
     transient = 0
     while True:
-        if cancelled(): raise ValueError('任务已取消；已返回内容保留在本机。')
-        request = urllib.request.Request(config['url'], data=json.dumps(payload).encode(), headers={
-            'Content-Type':'application/json','Authorization':'Bearer '+config['key']},method='POST')
+        if cancelled(): raise SafeModelError('任务已取消；已返回内容保留在本机。')
+        actual_budget = request_budget(config, payload['messages'], max_tokens)
+        payload['max_tokens'] = actual_budget
+        request = urllib.request.Request(config['url'], data=json.dumps(payload).encode(), headers=request_headers(config),method='POST')
         try:
-            with opener.open(request, timeout=600 if config.get('deepseek') else 180) as response:
-                raw = response.read(8_000_001)
-            if len(raw) > 8_000_000:
-                raise ValueError('模型响应过大。')
-            result = json.loads(raw)
-            choice = result['choices'][0]
+            def stream_partial(text):
+                if partial:partial(''.join(fragments)+text, continuations, 'streaming')
+            with opener.open(request, timeout=config.get('request_timeout', 600)) as response:
+                result = read_completion(response, stream_partial, cancelled, event)
+            choice = checked_choice(result)
             fragment = (choice.get('message') or {}).get('content') or ''
-            if not isinstance(fragment,str): raise ValueError('模型正文不是文本。')
+            if not isinstance(fragment,str): raise SafeModelError('模型正文不是文本。')
             if fragment:
                 fragments.append(fragment)
-                if sum(len(x) for x in fragments)>4_000_000: raise ValueError('累计输出过大；已保留片段。')
+                if sum(len(x) for x in fragments)>4_000_000: raise SafeModelError('累计输出过大；已保留片段。')
                 if partial: partial(''.join(fragments),continuations,choice.get('finish_reason'))
             if choice.get('finish_reason') == 'length':
                 if fragment and continuations < 3:
@@ -151,19 +191,40 @@ def chat_json(config, prompt, images=None, max_tokens=10000, partial=None, cance
                 observed = usage.get('completion_tokens') if isinstance(usage, dict) else None
                 detail = f'，服务报告输出 {observed:,} token' if type(observed) is int else ''
                 thinking = bool((choice.get('message') or {}).get('reasoning_content'))
-                raise OutputLimitError(f'本次响应被截断（请求输出上限 {max_tokens:,} token{detail}'
+                raise OutputLimitError(f'本次响应被截断（请求输出上限 {actual_budget:,} token{detail}'
                                        + ('，包含思考输出' if thinking else '') + '）。')
+            if choice.get('finish_reason') in {'tool_calls','function_call','content_filter'}:
+                raise ModelProtocolError('unexpected_finish', '模型未正常完成文本输出（工具调用或内容过滤），当前片段已保留。')
+            if not fragment:
+                raise ModelProtocolError('empty_content', '模型返回空正文，可能仅输出了推理内容；请检查服务端思考配置与输出额度。')
             return parse_json_response(''.join(fragments))
         except urllib.error.HTTPError as exc:
-            if transient == 0 and exc.code in {429, 502, 503, 504}:
+            exc.close()
+            if transient < 2 and exc.code in {429, 502, 503, 504}:
                 transient += 1
-                time.sleep(3)
+                event(f'服务暂时不可用（HTTP {exc.code}），正在重试当前请求 {transient}/2…')
+                time.sleep(2 * transient)
                 continue
-            raise ValueError(f'模型请求失败（HTTP {exc.code}）。请检查 API 地址、模型 ID、额度及图像输入支持。密钥不会写入日志。') from None
-        except (urllib.error.URLError, TimeoutError, socket.timeout):
-            raise ValueError('模型连接超时或不可达。已保留论文材料与原稿；请重试或导出提示词。') from None
-        except (KeyError, IndexError, TypeError, json.JSONDecodeError):
-            raise ValueError('模型服务返回了不兼容的响应；需要 /chat/completions JSON 格式。') from None
+            hint = ('请检查该服务允许的 max_tokens、模型 ID；不支持流式时可在模型设置切换标准 JSON。' if exc.code in {400,422} else '请检查服务地址、授权与额度。')
+            raise ModelProtocolError(f'http_{exc.code}', f'模型请求失败（HTTP {exc.code}）。{hint}') from None
+        except (urllib.error.URLError, TimeoutError, socket.timeout, http.client.HTTPException, ConnectionError, ssl.SSLError) as exc:
+            from model_transport import network_failure
+            code = type(exc).__name__
+            diagnosis, hint, retryable = network_failure(exc, config.get('proxy_mode', 'system'))
+            if not retryable:
+                raise ModelProtocolError(diagnosis, hint) from None
+            if transient < 2:
+                transient += 1
+                event(f'{hint} 重试当前请求 {transient}/2…')
+                time.sleep(2 * transient)
+                continue
+            raise ModelProtocolError(diagnosis, f'{hint}（{code}；已重试 2 次）。配置的 {config.get("request_timeout",600)} 秒是超时上限，不是本次实际耗时。已保留完成阶段与当前片段。') from None
+        except SafeModelError:
+            raise
+        except ValueError:
+            raise ModelProtocolError('request_value', '模型请求参数或返回格式无效，请检查接口配置；敏感异常内容已隐藏。') from None
+        except (KeyError, IndexError, TypeError):
+            raise SafeModelError('模型服务返回了不兼容的响应；需要 /chat/completions JSON 格式。') from None
 
 
 def normalize(text):
@@ -189,12 +250,12 @@ def selected_figures(manifest, options):
     if ids is None:
         ids = [f['id'] for f in manifest['figures'] if f.get('selected')]
     if not isinstance(ids, list) or len(ids) > 12:
-        raise ValueError('每次生成最多选择 12 张图片。')
+        raise SafeModelError('每次生成最多选择 12 张图片。')
     known = {f['id']: f for f in manifest['figures']}
     if any(fid not in known for fid in ids):
-        raise ValueError('所选图片不存在，请刷新材料。')
-    if any(known[fid].get('crop_status')=='page_fallback' and not known[fid].get('reviewed') for fid in ids):
-        raise ValueError('有配图仍是整页回退。请先重裁，或确认确实需要整页后勾选“已核对”。')
+        raise SafeModelError('所选图片不存在，请刷新材料。')
+    if options.get('automatic_draft') is not True and any(known[fid].get('crop_status')=='page_fallback' and not known[fid].get('reviewed') for fid in ids):
+        raise SafeModelError('有配图仍是整页回退。请先重裁，或确认确实需要整页后勾选“已核对”。')
     return [known[fid] for fid in dict.fromkeys(ids)]
 
 
@@ -202,7 +263,7 @@ def editorial_instruction(manifest, options, figures):
     style = STYLES.get(adaptive_style(manifest)[0] if options.get('style')=='adaptive' else options.get('style'), STYLES['technical'])
     length = int(options.get('length', 4000))
     if length not in {0, 2000, 4000, 6500}:
-        raise ValueError('篇幅请选择自动、2000、4000 或 6500 字。')
+        raise SafeModelError('篇幅请选择自动、2000、4000 或 6500 字。')
     length_instruction = f'约 {length} 字' if length else '篇幅由论文的信息密度决定，不设字数目标；讲清核心机制、关键证据和边界即可，禁止凑字数'
     brief = str(options.get('brief', ''))[:2000]
     skill = (Path(__file__).resolve().parent / 'skills' / 'wechat-paper-editor' / 'SKILL.md').read_text(encoding='utf-8')
@@ -234,12 +295,14 @@ def prompt_pack(manifest, options):
 
 def validate_article(article, manifest):
     if not isinstance(article, dict) or not isinstance(article.get('title'), str) or not article['title'].strip():
-        raise ValueError('成稿必须包含非空 title。')
+        raise SafeModelError('成稿必须包含非空 title。')
     sections = article.get('sections')
     if not isinstance(sections, list) or not 1 <= len(sections) <= 30:
-        raise ValueError('成稿 sections 必须含 1–30 个章节。')
+        raise SafeModelError('成稿 sections 必须含 1–30 个章节。')
     issues, used, chars = [], set(), 0
-    if 'paper' in article: validate_paper_info(article['paper'])
+    if 'paper' in article:
+        try: validate_paper_info(article['paper'])
+        except ValueError as exc: raise SafeModelError(str(exc)) from None
     info = paper_details(article, manifest)
     for key, label in (('authors', '作者'), ('affiliations', '机构'), ('paper_url', '论文链接'), ('project_url', '项目主页'), ('code_url', '代码链接')):
         if not info.get(key): issues.append({'level': 'warning', 'message': label + '尚未核实，请在论文资料中补充；不会推测为未公开。'})
@@ -248,62 +311,64 @@ def validate_article(article, manifest):
     kinds = {'motivation', 'contributions', 'method', 'experiments', 'limitations', 'outlook'}
     def check_pages(values, site):
         if values is not None and not isinstance(values, list):
-            raise ValueError(site + ' pages 必须是页码列表，例如 [1, 2]。')
+            raise SafeModelError(site + ' pages 必须是页码列表，例如 [1, 2]。')
         if not isinstance(values, list) or not values or any(type(p) is not int or p not in pages for p in values):
             issues.append({'level': 'warning', 'message': site + '缺少有效原文页码。'})
     for key in ('lead', 'digest'):
-        if not isinstance(article.get(key, ''), str): raise ValueError(f'{key} 必须是文字。')
+        if not isinstance(article.get(key, ''), str): raise SafeModelError(f'{key} 必须是文字。')
     for key in ('title_options', 'takeaways', 'review_notes'):
         values = article.get(key, [])
         if not isinstance(values, list) or len(values) > 30 or not all(isinstance(v, str) for v in values):
-            raise ValueError(f'{key} 必须是文字列表。')
+            raise SafeModelError(f'{key} 必须是文字列表。')
     for i, section in enumerate(sections):
-        if not isinstance(section, dict) or not isinstance(section.get('heading'), str) or not isinstance(section.get('kind', ''), str): raise ValueError('每个章节必须包含文字 heading 和 kind。')
+        if not isinstance(section, dict) or not isinstance(section.get('heading'), str) or not isinstance(section.get('kind', ''), str): raise SafeModelError('每个章节必须包含文字 heading 和 kind。')
         paragraphs = section.get('paragraphs')
-        if not isinstance(paragraphs, list) or not paragraphs or len(paragraphs) > 50: raise ValueError('每章需要 1–50 个 paragraphs。')
+        if not isinstance(paragraphs, list) or not paragraphs or len(paragraphs) > 50: raise SafeModelError('每章需要 1–50 个 paragraphs。')
         for paragraph in paragraphs:
-            if not isinstance(paragraph, dict) or not isinstance(paragraph.get('text'), str): raise ValueError('段落需要 text 和 pages。')
+            if not isinstance(paragraph, dict) or not isinstance(paragraph.get('text'), str): raise SafeModelError('段落需要 text 和 pages。')
             chars += len(paragraph['text'])
             check_pages(paragraph.get('pages'), f'第 {i + 1} 章段落')
             if re.search(r'\d', paragraph['text']):
                 issues.append({'level': 'warning', 'message': f'第 {i + 1} 章含数字，请逐项核对指标、条件和证据卡；引句匹配不能证明这些数字正确。'})
+        if not isinstance(section.get('figures', []), list) or not isinstance(section.get('tables', []), list):
+            raise SafeModelError('章节 figures 和 tables 必须是数组；没有条目时使用 []。')
         for item in section.get('figures', []) + section.get('tables', []):
             if isinstance(item, dict) and 'after_paragraph' in item and (type(item['after_paragraph']) is not int or not 1 <= item['after_paragraph'] <= max(1,len(section['paragraphs']))):
-                raise ValueError('图表位置 after_paragraph 必须对应本章的段落序号（从 1 开始）。')
+                raise SafeModelError('图表位置 after_paragraph 必须对应本章的段落序号（从 1 开始）。')
         fs = section.get('figures', [])
-        if not isinstance(fs, list) or len(fs) > 12: raise ValueError('章节配图格式错误。')
+        if not isinstance(fs, list) or len(fs) > 12: raise SafeModelError('章节配图格式错误。')
         for f in fs:
-            if not isinstance(f, dict) or f.get('id') not in figures: raise ValueError('成稿引用了不存在的图片 ID。')
-            if not isinstance(f.get('caption', ''), str) or not isinstance(f.get('explanation', ''), str): raise ValueError('图注和图解必须是文字。')
+            if not isinstance(f, dict) or not isinstance(f.get('id'), str) or f['id'] not in figures: raise SafeModelError('成稿引用了不存在的图片 ID。')
+            if not isinstance(f.get('caption', ''), str) or not isinstance(f.get('explanation', ''), str): raise SafeModelError('图注和图解必须是文字。')
             if figures[f['id']].get('origin') == 'local_image':
                 values=f.get('pages',[])
-                if not isinstance(values,list):raise ValueError(f'{f["id"]} 图解 pages 必须是页码列表，未关联可用 []。')
+                if not isinstance(values,list):raise SafeModelError(f'{f["id"]} 图解 pages 必须是页码列表，未关联可用 []。')
                 if values:check_pages(values,f'{f["id"]} 图解')
             elif figures[f['id']].get('kind') != 'project_image':check_pages(f.get('pages'), f'{f["id"]} 图解')
             used.add(f['id'])
             if not figures[f['id']].get('reviewed'):
                 issues.append({'level': 'warning', 'message': f'{f["id"]} 尚未确认裁剪区域，请对照原页检查。'})
         tables = section.get('tables', [])
-        if not isinstance(tables, list) or len(tables) > 8: raise ValueError('每章最多 8 份结果摘要表。')
+        if not isinstance(tables, list) or len(tables) > 8: raise SafeModelError('每章最多 8 份结果摘要表。')
         for table in tables:
-            if not isinstance(table, dict): raise ValueError('结果摘要表必须是对象。')
+            if not isinstance(table, dict): raise SafeModelError('结果摘要表必须是对象。')
             columns, rows = table.get('columns'), table.get('rows')
             if not isinstance(columns, list) or not 2 <= len(columns) <= 6 or not all(isinstance(c, str) for c in columns):
-                raise ValueError('结果摘要表需要 2–6 个文字列名。')
+                raise SafeModelError('结果摘要表需要 2–6 个文字列名。')
             if not isinstance(rows, list) or not 1 <= len(rows) <= 50 or any(not isinstance(r, list) or len(r) != len(columns) or not all(isinstance(c, str) for c in r) for r in rows):
-                raise ValueError('结果摘要表每行必须与列数一致，单元格使用文字。')
+                raise SafeModelError('结果摘要表每行必须与列数一致，单元格使用文字。')
             for key in ('title', 'note', 'source_label'):
-                if not isinstance(table.get(key, ''), str): raise ValueError('结果摘要表说明格式不正确。')
+                if not isinstance(table.get(key, ''), str): raise SafeModelError('结果摘要表说明格式不正确。')
             check_pages(table.get('pages'), '结果摘要表')
     missing = kinds - {s.get('kind') for s in sections}
     if missing: issues.append({'level': 'warning', 'message': '还缺少以下分析层次：' + ', '.join(sorted(missing))})
     if chars < 1500: issues.append({'level': 'warning', 'message': '正文少于 1500 字，可能需要补充方法与实验细节。'})
     if not used and figures: issues.append({'level': 'warning', 'message': '正文尚未使用论文配图。'})
     claims = article.get('claims', [])
-    if not isinstance(claims, list) or len(claims) > 100: raise ValueError('claims 格式错误。')
+    if not isinstance(claims, list) or len(claims) > 100: raise SafeModelError('claims 格式错误。')
     evidence = []
     for claim in claims:
-        if not isinstance(claim, dict) or not isinstance(claim.get('claim'), str) or not isinstance(claim.get('quote'), str): raise ValueError('每条 claim 需要 claim、quote 与 page。')
+        if not isinstance(claim, dict) or not isinstance(claim.get('claim'), str) or not isinstance(claim.get('quote'), str): raise SafeModelError('每条 claim 需要 claim、quote 与 page。')
         page = claim.get('page')
         quote = normalize(claim.get('quote', ''))
         found = type(page) is int and page in pages and len(quote) >= 12 and quote in normalize(pages[page])
@@ -314,30 +379,146 @@ def validate_article(article, manifest):
             'note': '页码与引句匹配仅验证可追溯性，不证明结论正确；需人工复核数值、实验条件和图文对应。'}
 
 
+def _source_signature(manifest):
+    return hashlib.sha256(json.dumps(manifest, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def generation_fingerprint(manifest, options, config, chunks, instruction=None):
+    if instruction is None:
+        prior_options = dict(options)
+        if options.get('auto_figures'):
+            prior_options['figure_ids'] = build_plan(manifest, options['_figure_folder'])['ids']
+        instruction = editorial_instruction(manifest, prior_options, selected_figures(manifest, prior_options))
+    return hashlib.sha256(json.dumps({
+        'version': 2, 'chunk_lengths': [len(c) for c in chunks], 'manifest': manifest,
+        'instruction': instruction, 'vision': bool(options.get('vision')),
+        'model': config['model'], 'url': config['url']}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def _has_final_draft(saved):
+    """Old complete checkpoints held the pre-review draft, without generation metadata."""
+    draft = saved.get('draft')
+    generation = draft.get('generation') if isinstance(draft, dict) else None
+    return (saved.get('complete') is True and saved.get('review_complete') is True
+            and isinstance(generation, dict) and isinstance(generation.get('generated_at'), str))
+
+
+def read_generation_draft(folder, manifest):
+    """Read validated article fields only; never expose evidence/transport checkpoints.
+
+    This is a pending generation snapshot, not permission to replace an existing
+    article or deliver it. ``complete`` refers to the entire generation pipeline.
+    Legacy checkpoints without review metadata remain readable.
+    """
+    path = Path(folder) / 'generation-progress.json'
+    try:
+        if path.stat().st_size > 8_000_000:
+            return None
+        saved = json.loads(path.read_text(encoding='utf-8'))
+        if not isinstance(saved, dict) or not isinstance(saved.get('draft'), dict):
+            return None
+        if saved.get('source_signature') not in (None, _source_signature(manifest)):
+            return None
+        def public_fields(value, schema):
+            if isinstance(schema, dict):
+                return {key: public_fields(value[key], shape) for key, shape in schema.items() if key in value} if isinstance(value, dict) else None
+            if isinstance(schema, list):
+                return [public_fields(item, schema[0]) for item in value] if isinstance(value, list) else None
+            return value if type(value) is type(schema) else None
+        public_schema = dict(ARTICLE_SCHEMA, generation={'model': '', 'style': '', 'vision': False,
+                             'target_length': 0, 'generated_at': '', 'source_context': '', 'thinking': ''})
+        article = clean_article(public_fields(saved['draft'], public_schema))
+        validate_article(article, manifest)
+        review = saved.get('review')
+        valid_review = valid_state(review, article)
+        completed = len(review['completed']) if valid_review else int(saved.get('review_complete') is True)
+        total = len(review['units']) if valid_review else 1
+        reviewed = _has_final_draft(saved) or saved.get('review_complete') is True and (review is None or valid_review and completed == total)
+        complete = saved.get('complete') is True and reviewed
+        if complete:
+            stage = '生成完成'
+        elif reviewed:
+            stage = '图文补全' if saved.get('stage') == '图文补全' else '编辑复核完成'
+        else:
+            stage = '编辑复核'
+        timings = saved.get('timings', [])
+        elapsed = sum(t['elapsed_seconds'] for t in timings if isinstance(t, dict)
+                      and type(t.get('elapsed_seconds')) in (int, float)
+                      and math.isfinite(t['elapsed_seconds']) and t['elapsed_seconds'] >= 0) if isinstance(timings, list) else 0
+        return {'article': article, 'stage': stage, 'completed_units': completed, 'total_units': total,
+                'complete': complete, 'review_complete': reviewed, 'elapsed_seconds': round(elapsed, 2)}
+    except (OSError, ValueError, TypeError, KeyError, AttributeError):
+        return None
+
+
 def generate_article(manifest, folder, options, progress=lambda *_: None, cancelled=lambda: False):
     if not manifest['can_generate']:
-        raise ValueError('当前 PDF 的可读正文不足。请先使用 OCR 工具生成可检索 PDF。')
+        raise SafeModelError('当前 PDF 的可读正文不足。请先使用 OCR 工具生成可检索 PDF。')
     config = provider_config(options)
+    if options.get('vision') and (config.get('vision_capability') is False or config['model'].lower() == 'deepseek-v4-flash-0731'):
+        raise SafeModelError('当前模型仅支持文本，请关闭“同时读取选中原图”。论文配图仍可正常编排。')
     options=dict(options)
+    def asset_progress(message):
+        if cancelled(): raise SafeModelError('任务已取消，原稿保留。')
+        progress(message)
+    previous_manifest = None
     if options.get('auto_figures'):
+        migration_path = Path(folder) / 'generation-asset-migration.json'
+        try:
+            if migration_path.stat().st_size <= 8_000_000:
+                migration = json.loads(migration_path.read_text(encoding='utf-8'))
+                compatible = migration.get('compatible_signatures', [])
+                if migration.get('current_signature') == _source_signature(manifest) or (
+                        isinstance(compatible, list) and _source_signature(manifest) in compatible):
+                    previous_manifest = migration.get('previous_manifest')
+        except (OSError, ValueError, AttributeError):
+            pass
+        working_manifest = copy.deepcopy(manifest)
+        if not manifest.get('figures') and not manifest.get('caption_recovery_checked'):
+            from sources import repair_crops
+            repair_crops(folder, working_manifest, asset_progress, persist=False)
+            working_manifest['caption_recovery_checked'] = True
         from native_figures import improve_native_figures
-        improve_native_figures(manifest,folder,progress)
+        improve_native_figures(working_manifest,folder,asset_progress,persist=False)
+        if _source_signature(working_manifest) != _source_signature(manifest):
+            if cancelled(): raise SafeModelError('任务已取消，原稿保留。')
+            # A later asset upgrade may follow an already migrated checkpoint.
+            # Prefer that immediate parent when it is the current saved input.
+            try:
+                checkpoint_path = Path(folder) / 'generation-progress.json'
+                if checkpoint_path.stat().st_size <= 8_000_000:
+                    parent = json.loads(checkpoint_path.read_text(encoding='utf-8'))
+                    parent_chunks = source_chunks(manifest, size=60000 if config['deepseek'] or config.get('context_window', 0) >= 500000 else 18000)
+                    if parent.get('fingerprint') == generation_fingerprint(manifest, dict(options, _figure_folder=folder), config, parent_chunks):
+                        previous_manifest = copy.deepcopy(manifest)
+            except (OSError, ValueError, AttributeError):
+                pass
+            if previous_manifest is None: previous_manifest = copy.deepcopy(manifest)
+            # Both PDF crops and optional HTML upgrades belong to one durable
+            # transition. Write its receipt BEFORE replacing source.json.
+            write_json(migration_path, {'previous_manifest': previous_manifest,
+                                       'current_signature': _source_signature(working_manifest),
+                                       'compatible_signatures': [_source_signature(manifest), _source_signature(working_manifest)]})
+            write_json(Path(folder) / 'source.json', working_manifest)
+            manifest.clear(); manifest.update(working_manifest)
         options['figure_ids']=build_plan(manifest,folder)['ids']
     figures = selected_figures(manifest, options)
+    if options.get('automatic_draft') is True and any(f.get('crop_status') == 'page_fallback' and not f.get('reviewed') for f in figures):
+        progress('自动草稿将保留整页配图；裁剪状态仍标记为未核对，请在草稿中检查可读性。')
     plan=build_plan(manifest,folder,selected=[f['id'] for f in figures])
     write_json(Path(folder)/'figure-plan.json',plan)
     instruction = editorial_instruction(manifest, options, figures)
     # Large-context support is selected by BOTH the official host and known model ID.
-    chunks = source_chunks(manifest, size=60000 if config['deepseek'] else 18000)
+    chunks = source_chunks(manifest, size=60000 if config['deepseek'] or config.get('context_window', 0) >= 500000 else 18000)
     checkpoint = Path(folder) / 'generation-progress.json'
-    fingerprint = hashlib.sha256(json.dumps({
-        'version': 2, 'manifest': manifest, 'instruction': instruction, 'vision': bool(options.get('vision')),
-        'model': config['model'], 'url': config['url']}, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    fingerprint = generation_fingerprint(manifest, options, config, chunks, instruction)
+    previous_fingerprint = (generation_fingerprint(previous_manifest, dict(options, _figure_folder=folder), config, chunks)
+                            if isinstance(previous_manifest, dict) else None)
     saved = {}
-    if checkpoint.exists():
+    if checkpoint.exists() and options.get('force_regenerate') is not True:
         try:
             candidate = json.loads(checkpoint.read_text(encoding='utf-8'))
-            if candidate.get('fingerprint') == fingerprint and not candidate.get('complete'):
+            if candidate.get('fingerprint') in {fingerprint, previous_fingerprint} - {None}:
                 saved = candidate
         except (ValueError, OSError, AttributeError):
             pass
@@ -345,25 +526,92 @@ def generate_article(manifest, folder, options, progress=lambda *_: None, cancel
     if not isinstance(notes, list) or len(notes) > len(chunks) or not all(isinstance(n, dict) for n in notes):
         notes = []
     draft = saved.get('draft')
+    review = saved.get('review')
+    review_complete = saved.get('review_complete') is True
+    stage = saved.get('stage', '提取证据')
+    timings = saved.get('timings', [])
+    if not isinstance(timings, list):
+        timings = []
     def save_progress(complete=False):
-        write_json(checkpoint, {'fingerprint': fingerprint, 'notes': notes, 'draft': draft, 'complete': complete})
+        write_json(checkpoint, {'fingerprint': fingerprint, 'source_signature': _source_signature(manifest),
+                               'notes': notes, 'draft': draft, 'complete': complete, 'review': review,
+                               'review_complete': review_complete, 'stage': stage, 'timings': timings[-200:]})
         write_json(Path(folder) / 'analysis-notes.json', notes)
     def check_cancel():
-        if cancelled(): raise ValueError('任务已取消，原稿保留。')
-    def stage_request(label, prompt, images=None, evidence=False):
+        if cancelled(): raise SafeModelError('任务已取消，原稿保留。')
+    if _has_final_draft(saved) and saved.get('fingerprint') == fingerprint:
         check_cancel()
-        budget = config['output_tokens'] or (393216 if config['deepseek'] else (5000 if evidence else 14000))
+        article = clean_article(draft)
+        audit = validate_article(article, manifest)
+        audit['figure_coverage'] = {'missing': coverage(article, plan), 'plan': plan}
+        progress('恢复已完成的成稿，继续保存与后续处理；无需再次请求模型。')
+        return article, notes, audit
+    def stage_request(label, prompt, images=None, evidence=False):
+        nonlocal stage
+        check_cancel()
+        started = time.monotonic()
+        budget = config['output_tokens'] or (min(config.get('max_output_tokens') or 65536, 32768 if evidence else 65536) if config.get('max_output_tokens') else (393216 if config['deepseek'] else (5000 if evidence else 14000)))
+        # A bounded input unit still needs room for reasoning plus the final JSON.
+        # Honor the configured output ceiling; do not override it with a text-size estimate.
+        stage = label
+        save_progress()
         progress(f'{label} · 输出额度 {budget:,} token；已完成进度保存在本机…')
+        outcome = 'error'
         try:
             def partial(text,number,finish):
                 write_json(Path(folder)/'generation-partial.json',{'stage':label,'text':text,'continuations':number,'finish_reason':finish})
                 if finish=='length': progress(f'{label}输出中断，正在接续第 {number+1} 段；片段已保存…')
-            return chat_json(config, prompt, images, max_tokens=budget,partial=partial,cancelled=cancelled)
+            result = chat_json(config, prompt, images, max_tokens=budget,partial=partial,cancelled=cancelled,
+                               event=lambda message:progress(f'{label} · {message}；已用时 {time.monotonic()-started:.1f} 秒'))
+            outcome = 'received'
+            return result
+        except SchemaResponseError as exc:
+            save_failure(folder, 'generation-error.json', exc, label, started)
+            raise
         except OutputLimitError as exc:
+            save_failure(folder, 'generation-error.json', exc, label, started)
             check_cancel()
             suggestion = ('已使用官方最大输出额度，可改用轻量思考后继续。'
                           if config['deepseek'] and budget == 393216 else '可在模型设置提高输出上限后继续。')
-            raise ValueError(f'{label}：{exc} 已保留进度。{suggestion}') from None
+            raise SafeModelError(f'{label}：{exc} 本阶段实际用时 {time.monotonic()-started:.1f} 秒。已保留进度。{suggestion}') from None
+        except Exception as exc:
+            detail = save_failure(folder, 'generation-error.json', exc, label, started)
+            if isinstance(exc, SafeModelError):
+                raise SafeModelError(f'{label}：{exc} 本阶段实际用时 {detail["elapsed_seconds"]:.1f} 秒。') from None
+            raise SafeModelError(f'{label}未完成（{detail["error_type"]}；实际用时 {detail["elapsed_seconds"]:.1f} 秒）。原稿与已完成证据保留；错误类型已记录在 generation-error.json。') from None
+        finally:
+            elapsed = round(time.monotonic() - started, 2)
+            timings.append({'stage': label, 'elapsed_seconds': elapsed, 'status': outcome,
+                            'requested_output_tokens': budget})
+            save_progress()
+            progress(f'{label} · 本次实际用时 {elapsed:.1f} 秒；' + ('响应已收取。' if outcome == 'received' else '已保存完成的阶段。'))
+    def structured_request(label, prompt, validator, images=None):
+        feedback = ''
+        for attempt in range(3):
+            check_cancel()
+            error = None
+            try:
+                result = stage_request(label, feedback + prompt, images)
+            except SchemaResponseError as exc:
+                error = exc
+            else:
+                try:
+                    return validator(result)
+                except SafeModelError as exc:
+                    error = exc
+            check_cancel()
+            if attempt == 2:
+                raise SafeModelError(f'{label}：当前单元格式自动修复 2 次后仍未通过。{error} 已完成单元保留。') from None
+            progress(f'{label} · 正在自动修复当前单元的 JSON 格式（{attempt + 1}/2），已完成正文不变…')
+            feedback = ('上次响应未通过结构校验：' + str(error)[:300] + '\n'
+                '请重新处理下方原始单元，严格保持字段、段落数、图表数量和图片 ID。'
+                'figures/tables 必须是数组，没有条目时使用 []，不能用数字或 null；只返回指定 JSON 对象。\n')
+
+    def checked_article(result):
+        candidate = clean_article(result)
+        validate_article(candidate, manifest)
+        return candidate
+
     for index, chunk in enumerate(chunks):
         check_cancel()
         if index < len(notes):
@@ -386,11 +634,11 @@ def generate_article(manifest, folder, options, progress=lambda *_: None, cancel
     full_source = '\n'.join(source_chunks(manifest))
     # Conservative byte ceiling leaves room for evidence, figures, draft and output.
     # Every page is still read in the evidence pass when a very large PDF exceeds it.
-    full_context = config['deepseek'] and len(full_source.encode('utf-8')) <= 320000
+    full_context = (config['deepseek'] or config.get('context_window', 0) >= 500000) and len(full_source.encode('utf-8')) <= 320000
     if full_context:
         context = full_source
     elif len(context) > 100000:
-        raise ValueError('配图所在页超过 100,000 字符。请减少所选配图后重试；未截断原文或覆盖原稿。')
+        raise SafeModelError('配图所在页超过 100,000 字符。请减少所选配图后重试；未截断原文或覆盖原稿。')
     context_label = '完整论文原文（所有物理页）' if full_context else '配图所在页原文（其余页见分段证据）'
     context_text = '\n\n' + context_label + '：\n' + context
     if draft:
@@ -398,27 +646,70 @@ def generate_article(manifest, folder, options, progress=lambda *_: None, cancel
         progress('恢复已生成草稿，继续编辑复核…')
         article = draft
     else:
-        article = stage_request('完整写稿', instruction + '\n\n提取的论文证据（仍须核对）：\n' + json.dumps(notes, ensure_ascii=False) + context_text, image_payload)
+        article = structured_request('完整写稿', instruction + '\n\n提取的论文证据（仍须核对）：\n' + json.dumps(notes, ensure_ascii=False) + context_text, checked_article, image_payload)
     check_cancel()
     article = clean_article(article)
     audit = validate_article(article, manifest)
     draft = article
+    if review_complete and review is not None and (not valid_state(review, article) or len(review['completed']) != len(review['units'])):
+        review_complete = False
     save_progress()
-    progress('正在进行编辑复核：删去不受证据支持的表述，补足方法与局限…')
-    article = stage_request('编辑复核', instruction + '\n\n请审校并返回修改后的完整成稿 JSON。保留有证据的深入分析；不能靠重复或空泛概括凑字数。删除无法证实的数字/机构/开源/最优结论。\n原稿：' + json.dumps(article, ensure_ascii=False) + '\n来源证据：' + json.dumps(notes, ensure_ascii=False) + context_text + '\n机械核对提醒：' + json.dumps(audit['issues'], ensure_ascii=False), image_payload)
+    if review_complete:
+        progress('恢复已完成的编辑复核，继续图文检查…')
+    elif needs_section_review(article) or valid_state(review, article):
+        if not valid_state(review, article):
+            review = {'version': 1, 'units': make_plan(article), 'completed': []}
+        note_pages = [{int(p) for p in re.findall(r'\[PDF page (\d+)\]', chunk)} for chunk in chunks]
+        save_progress()
+        total = len(review['units'])
+        for index, unit in enumerate(review['units']):
+            check_cancel()
+            if index < len(review['completed']):
+                continue
+            prompt, ids, _ = review_prompt(article, unit, manifest, notes, note_pages)
+            images = [item for f, item in zip(figures, image_payload) if f['id'] in ids]
+            label = f'编辑复核 {index + 1}/{total}'
+            candidate = structured_request(label, prompt,
+                lambda result: checked_article(apply_review(article, unit, result,
+                    lambda value: validate_article(value, manifest))), images)
+            update_fragment_offsets(review, unit, article, candidate)
+            article = candidate
+            draft = article
+            review['completed'].append(unit['id'])
+            save_progress()
+            progress(f'{label} 已校验并保存；下次继续尚未完成的单元。')
+        check_cancel()
+        review_complete = True
+    else:
+        progress('正在进行编辑复核：删去不受证据支持的表述，补足方法与局限…')
+        article = structured_request('编辑复核', instruction + '\n\n请审校并返回修改后的完整成稿 JSON。保留有证据的深入分析；不能靠重复或空泛概括凑字数。删除无法证实的数字/机构/开源/最优结论。\n原稿：' + json.dumps(article, ensure_ascii=False) + '\n来源证据：' + json.dumps(notes, ensure_ascii=False) + context_text + '\n机械核对提醒：' + json.dumps(audit['issues'], ensure_ascii=False), checked_article, image_payload)
+        article = clean_article(article)
+        validate_article(article, manifest)
+        review_complete = True
+    draft = article
+    stage = '编辑复核完成'
+    save_progress()
     check_cancel()
     article = clean_article(article)
     audit = validate_article(article, manifest)
     missing=coverage(article,plan)
     if missing and options.get('auto_figures'):
         progress('正在补充遗漏的原图与图解…')
-        article=clean_article(stage_request('图文补全',instruction+'\n返回修订后的完整文章 JSON。保留已核实正文，修复下列漏图，不编造图解：'+json.dumps(missing,ensure_ascii=False)+'\n原稿：'+json.dumps(article,ensure_ascii=False)+context_text,image_payload))
-        audit=validate_article(article,manifest)
+        placed = {f['id']: f for s in article['sections'] for f in s.get('figures', [])}
+        pending_figures = [f for f in figures if f['id'] not in placed or
+                           not all(placed[f['id']].get(k, '').strip() for k in ('caption', 'explanation'))]
+        if pending_figures:
+            prompt = placement_prompt(article, pending_figures, manifest)
+            article = structured_request('图文补全', prompt,
+                lambda result: checked_article(apply_placements(article, pending_figures, result)), image_payload)
+            audit = validate_article(article, manifest)
     audit['figure_coverage']={'missing':coverage(article,plan),'plan':plan}
     article['generation'] = {'model': config['model'], 'style': options.get('style', 'technical'),
                              'vision': bool(options.get('vision')), 'target_length': options.get('length', 4000),
                              'generated_at': time.strftime('%Y-%m-%dT%H:%M:%S%z')}
     article['generation'].update(source_context='full-text' if full_context else 'all-page-evidence-and-figure-pages',
                                  thinking=config['thinking'] if config['deepseek'] else 'provider-default')
+    draft = article
+    stage = '生成完成'
     save_progress(complete=True)
     return article, notes, audit

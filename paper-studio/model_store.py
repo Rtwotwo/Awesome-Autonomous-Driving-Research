@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import uuid
+import time
 
 
 def crypt(data, decrypt=False):
@@ -61,7 +62,16 @@ class ModelStore:
                 stream.write(encrypted)
                 stream.flush()
                 os.fsync(stream.fileno())
-            os.replace(temp, self.path)
+            # Windows scanners can briefly lock the previous encrypted file.
+            # Retry only the atomic rename; never write a plaintext fallback.
+            for attempt in range(6):
+                try:
+                    os.replace(temp, self.path)
+                    break
+                except PermissionError:
+                    if attempt == 5:
+                        raise
+                    time.sleep(.1 * (attempt + 1))
         finally:
             temp.unlink(missing_ok=True)
 

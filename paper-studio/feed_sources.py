@@ -10,16 +10,10 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from sources import fetch_arxiv_bytes, parse_arxiv, write_json, MAX_BYTES
 from project_media import fetch_public
+from research_priority import priority, ranked
 
-TOPICS = {
-    'driving': ('自动驾驶', r'autonomous driving|self.driving|end.to.end driving'),
-    'world': ('世界模型', r'world model|world simulator|video generation.*action'),
-    'embodied': ('具身智能', r'embodied|vision.language.action|robot learning|robotic manipulation|humanoid'),
-    'infra': ('AI Infra', r'llm serving|inference engine|kv.cache|distributed training|model parallel|speculative decoding|gpu kernel|attention kernel'),
-    'foundation': ('基础大模型', r'large language model|foundation model|reasoning model|multimodal language|test.time scaling|recursive self.improvement'),
-    'agents': ('Agent 方法', r'(?:llm|language.model|reasoning|autonomous|multi)[ -]agents?|agentic|tool.use|tool.calling|agent planning'),
-    'rsi': ('RSI · 递归自我改进', r'recursive self.improv|self.improving (?:agent|model|system)|self.evolving (?:agent|model)|self.refin(?:e|ement)|self.training.*(?:agent|language model)'),
-}
+from categories import TOPICS, topic_labels
+
 QUERIES = [
     'ti:"autonomous driving" OR abs:"world model" OR ti:"self-driving"',
     'ti:"embodied" OR abs:"vision-language-action" OR ti:"robot learning" OR ti:"humanoid"',
@@ -27,18 +21,13 @@ QUERIES = [
     'ti:"large language model" OR ti:"foundation model" OR ti:"reasoning model" OR ti:"test-time scaling"',
     'ti:"agentic" OR ti:"LLM agent" OR ti:"multi-agent" OR ti:"tool use" OR ti:"agent planning"',
     'abs:"recursive self-improvement" OR ti:"self-improving" OR ti:"self-evolving" OR ti:"self-refinement"',
+    'ti:"video generation" OR ti:"text-to-video" OR ti:"image-to-video" OR ti:"video diffusion"',
+    'ti:"3D reconstruction" OR ti:"Gaussian splatting" OR ti:"neural radiance" OR ti:"novel view synthesis" OR ti:"scene reconstruction"',
 ]
 NS = '{http://www.w3.org/2005/Atom}'
 
 def stable_id(value):
     return re.sub(r'v\d+$', '', parse_arxiv(value.replace('http://arxiv.org/', 'https://arxiv.org/')))
-
-def topic_labels(title, abstract):
-    text = title + ' ' + abstract
-    result=[key for key, (_, pattern) in TOPICS.items() if re.search(pattern, text, re.I)]
-    if 'foundation' in result and not re.search(r'pre.train|post.train|training|reasoning|architect|transformer|scal|alignment|tokeniz|foundation|generalist|recursive|self.improv|language model.*(?:learn|general)',title,re.I):
-        result.remove('foundation')
-    return result
 
 def parse_feed(raw, now=None):
     now = now or datetime.now(timezone.utc)
@@ -56,21 +45,27 @@ def parse_feed(raw, now=None):
         abstract = ' '.join(e.findtext(NS+'summary', '').split())
         topics = topic_labels(title, abstract)
         if not topics: continue
-        records.append({'id':aid, 'arxiv_id':aid, 'title':title, 'abstract':abstract,
+        record={'id':aid, 'arxiv_id':aid, 'title':title, 'abstract':abstract,
                         'authors':[a.findtext(NS+'name','') for a in e.findall(NS+'author')],
-                        'published':published, 'topics':topics, 'url':'https://arxiv.org/abs/'+aid})
+                        'affiliations':list(dict.fromkeys(a.text.strip() for a in e.findall('.//{http://arxiv.org/schemas/atom}affiliation') if a.text and a.text.strip())),
+                        'published':published, 'topics':topics, 'url':'https://arxiv.org/abs/'+aid,
+                        'alphaxiv_url':'https://www.alphaxiv.org/abs/'+aid,
+                        'discovered_via':['arxiv'], 'metadata_source':'arxiv'}
+        record['priority']=priority(record)
+        records.append(record)
     return records
 
 def fetch_titles(url,limit):
     return fetch_arxiv_bytes(url,limit,timeout=15,attempts=1)
 
-def discover_recent(cache_dir, now=None, fetch=fetch_titles, sleep=time.sleep, on_update=lambda _:None, cancelled=lambda:False):
+def discover_recent(cache_dir, now=None, fetch=fetch_titles, sleep=time.sleep, on_update=lambda _:None, cancelled=lambda:False, sources=None, public_fetch=fetch_public):
+    sources = sources or ['arxiv']
     now = now or datetime.now(timezone.utc)
     cache_dir = Path(cache_dir); cache_dir.mkdir(parents=True, exist_ok=True)
     path = cache_dir/('arxiv-'+now.date().isoformat()+'.json')
     if path.exists():
         cached=json.loads(path.read_text(encoding='utf-8'))
-        if cached.get('queries')==QUERIES:
+        if cached.get('queries')==QUERIES and cached.get('sources',['arxiv'])==sources:
             on_update(dict(cached,cached=True,queries_done=len(QUERIES),queries_total=len(QUERIES)))
             return cached
     records = {}; errors = []
@@ -87,11 +82,37 @@ def discover_recent(cache_dir, now=None, fetch=fetch_titles, sleep=time.sleep, o
             errors.append('arXiv 查询 '+str(index+1)+' 暂时失败。')
         on_update({'items':list(records.values()),'errors':errors,'queries_done':index+1,'queries_total':len(QUERIES)})
         if cancelled():raise ValueError('论文检索已暂停；已取得的标题和链接保留。')
-    result = {'items':sorted(records.values(),key=lambda x:x['published'],reverse=True),
-              'errors':errors,'queries':QUERIES,'checked_at':now.isoformat(), 'coverage':f'最近七天；{len(QUERIES)} 组官方查询，每组最多 100 条，不代表穷尽全部研究。'}
+    arxiv_failed = len(errors)==len(QUERIES)
+    if 'alphaxiv' in sources:
+        if cancelled():raise ValueError('论文检索已暂停；已取得的标题和链接保留。')
+        try:
+            raw, mime, final = public_fetch('https://www.alphaxiv.org/', 4_000_000)
+            parser = Links(raw.decode('utf8',errors='replace'),final)
+            ids=[]
+            for link in parser.links:
+                p=urlsplit(link)
+                if p.hostname not in {'alphaxiv.org','www.alphaxiv.org'}:continue
+                try:aid=stable_id(link)
+                except ValueError:continue
+                if aid not in ids:ids.append(aid)
+                if len(ids)>=25:break
+            if ids:
+                sleep(3.1)
+                if cancelled():raise ValueError('论文检索已暂停；已取得的标题和链接保留。')
+                url='https://export.arxiv.org/api/query?'+urlencode({'id_list':','.join(ids),'max_results':25})
+                for item in parse_feed(fetch(url,4_000_000),now):
+                    item['discovered_via']=['arxiv','alphaxiv']
+                    records[item['id']]=item
+                on_update({'items':ranked(records.values()),'errors':errors,'queries_done':len(QUERIES),'queries_total':len(QUERIES),'source':'alphaxiv'})
+            else:errors.append('AlphaXiv 公开页暂无可解析的论文链接；arXiv 结果保留。')
+        except Exception:
+            if cancelled():raise ValueError('论文检索已暂停；已取得的标题和链接保留。')
+            errors.append('AlphaXiv 补充发现暂时不可用；arXiv 结果保留。')
+    result = {'items':ranked(records.values()),
+              'errors':errors,'queries':QUERIES,'sources':sources,'checked_at':now.isoformat(), 'coverage':f'最近七天；{len(QUERIES)} 组 arXiv 查询，每组最多 100 条；可选 AlphaXiv 公开页补充最多 25 个 ID，由 arXiv 元数据核对。不代表穷尽全部研究。'}
     # A partial outage must not become a permanent successful no-new result.
     if not errors: write_json(path,result)
-    if len(errors)==len(QUERIES): raise ValueError('arXiv 暂时不可达；本轮未生成文章，下次可重试。')
+    if arxiv_failed and not records: raise ValueError('论文元数据源暂时不可达；本轮未生成文章，下次可重试。')
     return result
 
 class Links(HTMLParser):

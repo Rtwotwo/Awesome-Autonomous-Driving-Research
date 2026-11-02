@@ -2,8 +2,9 @@ import unittest
 from unittest.mock import patch
 from tests import test_autofeed as af
 from tests.test_sources import fixture_pdf
+from tests.test_writing import fixture_article
 from wechat_api import TransportError
-from sources import write_json
+from sources import write_json,extract_pdf
 from urllib.error import URLError
 
 class DirectDraftTests(unittest.TestCase):
@@ -34,15 +35,15 @@ class DirectDraftTests(unittest.TestCase):
         result=self.execute([self.items[0]['url']]);job=result['id'];folder=self.studio.folder(job)
         (folder/'wechat-submission.json').unlink()
         options=self.studio.load(job,'wechat-options.json')
-        options.update(author='Rtwotwo',digest='研究使用共享表示连接视觉理解与动作输出，并进行同协议的结果比较。'+'其他细节在正文展开。'*15)
+        options.update(author='Paper Studio',digest='研究使用共享表示连接视觉理解与动作输出，并进行同协议的结果比较。'+'其他细节在正文展开。'*15)
         write_json(folder/'wechat-options.json',options)
         article_before=(folder/'article.json').read_bytes()
         self.execute([self.items[0]['url']],generation=lambda *a:(_ for _ in ()).throw(AssertionError('Must reuse article')))
         self.assertEqual((folder/'article.json').read_bytes(),article_before)
         saved=self.studio.load(job,'wechat-options.json')
-        self.assertEqual(saved['author'],'Rtwotwo');self.assertEqual(saved['cover_id'],options['cover_id'])
+        self.assertEqual(saved['author'],'Paper Studio');self.assertEqual(saved['cover_id'],options['cover_id'])
         self.assertLessEqual(len(saved['digest']),120)
-        self.assertEqual(self.api.article['author'],'Rtwotwo')
+        self.assertEqual(self.api.article['author'],'Paper Studio')
 
     def test_cancel_during_pdf_failure_does_not_retry_download(self):
         from sources import download_arxiv
@@ -77,6 +78,12 @@ class DirectDraftTests(unittest.TestCase):
         seen=[]
         def generate(source,folder,options,*args):
             seen.append(options)
+            saved=self.studio.load(source['id'],'writing-options.json')
+            expected={key:options[key] for key in ('style','length','brief','auto_figures','vision','figure_ids')}
+            self.assertEqual(saved,expected)
+            self.assertEqual(saved['brief'],'')
+            self.assertEqual(saved['length'],0)
+            self.assertTrue(options['automatic_draft'])
             return self.generation(source,folder,options,*args)
         self.execute([self.items[0]['url']],generation=generate)
         self.assertEqual(len(seen),1)
@@ -133,6 +140,97 @@ class DirectDraftTests(unittest.TestCase):
         result=self.execute(urls)
         self.assertTrue(result['existing']);self.assertEqual(self.events,[])
         self.assertEqual(sum(p=='draft/add' for p,_ in self.api.calls),1)
+
+    def test_direct_draft_with_only_unreviewed_images_needs_no_human_checks(self):
+        self.feed.pause()
+        url=self.items[0]['url'];job=self.feed.selected_job(url);folder=self.studio.folder(job)
+        source=extract_pdf(fixture_pdf(),folder,metadata={'arxiv_id':self.items[0]['id'],'url':url,
+            'title':'Synthetic Robot World Model','authors':['Fixture Author']})
+        for figure in source['figures']:
+            figure.update(origin='pdf_embedded',reviewed=False,crop_status='page_fallback')
+        write_json(folder/'source.json',source)
+        seen=[]
+        def generate(current,folder,options,*args):
+            seen.append(options)
+            return fixture_article(current),[],{}
+        result=self.execute([url],generation=generate)
+        self.assertEqual(result['id'],job)
+        self.assertFalse(seen[0]['auto_figures'])
+        self.assertTrue(seen[0]['figure_ids'])
+        self.assertEqual(self.studio.load(job,'wechat-submission.json')['state'],'submitted')
+        self.assertTrue(any('尚未人工核对' in w for w in self.studio.load(job,'delivery-checks.json')['warnings']))
+        self.assertTrue(self.studio.load(job,'automatic-checks.json')['warnings'])
+        self.assertTrue(all(not f['reviewed'] for f in self.studio.load(job)['figures']))
+        self.assertFalse((folder/'wechat-review.json').exists())
+        self.assertFalse(self.feed.config['enabled'])
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+
+    def test_real_generation_selects_unreviewed_fallback_in_automatic_draft_mode(self):
+        self.feed.pause()
+        url=self.items[0]['url'];job=self.feed.selected_job(url);folder=self.studio.folder(job)
+        source=extract_pdf(fixture_pdf(),folder,metadata={'arxiv_id':self.items[0]['id'],'url':url,
+            'title':'Synthetic Robot World Model','authors':['Fixture Author']})
+        for figure in source['figures']:
+            figure.update(origin='pdf_embedded',reviewed=False,crop_status='page_fallback')
+        write_json(folder/'source.json',source)
+        article=fixture_article(source)
+        # Keep generate_article and selected_figures real. Only model responses
+        # and the unrelated formatter are fixtures, so the internal flag is
+        # required to get through the production full-page selection gate.
+        with patch('writing.chat_json',side_effect=[{'facts':[]},article,article]) as model, \
+             patch.object(self.studio,'format_skill',side_effect=self.format), \
+             patch('autofeed.download_arxiv',side_effect=AssertionError('Source already exists')):
+            result=self.feed.start_links([url])
+            self.feed.future.result(timeout=60)
+        self.assertEqual(result['id'],job)
+        self.assertEqual(self.studio.jobs[job]['status'],'ready',self.studio.jobs[job]['message'])
+        self.assertEqual(model.call_count,3)
+        self.assertEqual(self.studio.load(job,'wechat-submission.json')['state'],'submitted')
+        saved=self.studio.load(job,'writing-options.json')
+        self.assertEqual(set(saved),{'style','length','brief','auto_figures','vision','figure_ids'})
+        self.assertEqual(saved['figure_ids'],[f['id'] for f in source['figures']][:8])
+        self.assertFalse(saved['auto_figures'])
+        self.assertFalse(saved['vision'])
+        self.assertEqual(saved['brief'],'')
+        self.assertTrue(all(not f['reviewed'] for f in self.studio.load(job)['figures']))
+        self.assertFalse((folder/'wechat-review.json').exists())
+        self.assertFalse(self.feed.config['enabled'])
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+
+    def test_created_unverified_direct_draft_rechecks_without_download_or_generation(self):
+        self.api.bad_read=True
+        url=self.items[0]['url'];result=self.execute([url]);job=result['id']
+        self.assertEqual(self.studio.jobs[job]['status'],'ready')
+        self.assertEqual(self.studio.load(job,'wechat-submission.json')['state'],'submitted_unverified')
+        self.assertEqual(self.feed.state['selected_queue']['state'],'stopped')
+        self.assertEqual(self.feed.state['selected_queue']['next'],0)
+        self.assertIn('草稿已创建',self.feed.state['message'])
+        before=len(self.api.calls)
+        self.api.bad_read=False
+        self.studio.provider={};self.studio.profiles={}
+        def forbidden(*args):raise AssertionError('Readback must not regenerate or download')
+        retried=self.execute([url],download=forbidden,generation=forbidden)
+        self.assertFalse(retried['existing'])
+        self.assertEqual([path for path,_ in self.api.calls[before:]],['draft/get'])
+        self.assertEqual(self.studio.load(job,'wechat-submission.json')['state'],'submitted')
+        self.assertEqual(self.feed.state['selected_queue']['state'],'complete')
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+
+    def test_queue_stays_on_unverified_draft_and_resume_only_rechecks_before_next_pdf(self):
+        self.api.bad_read=True
+        self.execute()
+        self.assertEqual(self.events,['download:2610.00001'])
+        self.assertEqual(self.feed.state['selected_queue']['next'],0)
+        before=len(self.api.calls)
+        self.execute(resume=True)
+        self.assertEqual(self.events,[])
+        self.assertEqual([path for path,_ in self.api.calls[before:]],['draft/get'])
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+        self.api.bad_read=False
+        self.execute(resume=True)
+        self.assertEqual(self.events,['download:2610.00002'])
+        self.assertEqual(self.feed.state['selected_queue']['state'],'complete')
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),2)
 
     def test_existing_saved_article_is_reused(self):
         urls=[self.items[0]['url']];r=self.execute(urls)

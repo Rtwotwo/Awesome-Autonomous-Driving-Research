@@ -5,7 +5,7 @@ from server import Studio
 from autofeed import today,automatic_checks
 from feed_sources import TOPICS
 from figure_plan import build_plan
-from sources import write_json
+from sources import write_json,extract_pdf
 from wechat_api import Account,TransportError,submit_draft,submit_automated_draft
 from wechat_review import render_content
 from formatting import layout_markdown
@@ -89,6 +89,58 @@ class AutoFeedTests(unittest.TestCase):
             return original(source,*args)
         self.generation=cancel_in_model
         self.run_batch(self.items[:1])
+        self.assertEqual(self.feed.status()['items'][0]['state'],'held')
+        self.assertFalse(self.api.calls)
+
+    def test_automatic_material_warnings_do_not_disable_technical_rejection(self):
+        folder=self.root/'check-fixture';source=extract_pdf(fixture_pdf(),folder)
+        source['paper_info']={'paper_url':'https://arxiv.org/abs/2610.00001','authors':['Fixture Author']}
+        for figure in source['figures']:
+            figure.update(origin='local_image',reviewed=False,crop_status='page_fallback')
+        article=fixture_article(source)
+        resources={'mode':'user_selected','paper_url':source['paper_info']['paper_url']}
+        check=automatic_checks(article,source,folder,resources)
+        self.assertTrue(check['passed'],check['problems'])
+        self.assertTrue(check['warnings'])
+        self.assertFalse(source['figures'][0]['reviewed'])
+        (folder/source['figures'][0]['image']).write_bytes(b'broken image')
+        check=automatic_checks(article,source,folder,resources)
+        self.assertFalse(check['passed'])
+        self.assertTrue(any('基本检查' in problem for problem in check['problems']))
+        self.assertFalse(self.api.calls)
+
+    def test_batch_keeps_created_unverified_status_and_stops_before_next_paper(self):
+        self.api.bad_read=True
+        self.run_batch(self.items[:2])
+        self.assertEqual(sum(path=='draft/add' for path,_ in self.api.calls),1)
+        item=self.feed.state['items'][self.items[0]['id']]
+        self.assertEqual(item['state'],'submitted_unverified')
+        self.assertEqual(self.studio.jobs[item['job_id']]['status'],'ready')
+        self.assertIn('草稿已创建',item['message'])
+        self.assertEqual(self.feed.state['items'][self.items[1]['id']]['state'],'candidate')
+        self.assertEqual(self.feed.status()['today_attempts'],1)
+
+    def test_batch_saves_complete_non_secret_options_before_generation_failure(self):
+        self.feed.config.update(style='systems',vision=True)
+        self.studio.profiles['p'].update(api_key='PRIVATE_MODEL_KEY',base_url='http://localhost:9999/private')
+        seen=[]
+        def fail(source,folder,options,*args):
+            saved=json.loads((folder/'writing-options.json').read_text(encoding='utf-8'))
+            seen.append(saved)
+            self.assertEqual(saved,{key:options[key] for key in ('style','length','brief','auto_figures','vision','figure_ids')})
+            self.assertEqual(saved['style'],'systems')
+            self.assertEqual(saved['length'],0)
+            self.assertEqual(saved['brief'],'')
+            self.assertTrue(saved['auto_figures'])
+            self.assertTrue(saved['vision'])
+            self.assertTrue(saved['figure_ids'])
+            self.assertTrue(options['automatic_draft'])
+            raise ValueError('Fixture interruption after options checkpoint')
+        self.generation=fail
+        self.run_batch(self.items[:1])
+        self.assertEqual(len(seen),1)
+        self.assertNotIn('PRIVATE_MODEL_KEY',json.dumps(seen))
+        self.assertNotIn('base_url',json.dumps(seen))
         self.assertEqual(self.feed.status()['items'][0]['state'],'held')
         self.assertFalse(self.api.calls)
 

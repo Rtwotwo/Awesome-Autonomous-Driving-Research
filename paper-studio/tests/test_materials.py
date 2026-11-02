@@ -13,6 +13,19 @@ def png(color='red'):
 
 
 class MaterialTests(unittest.TestCase):
+    def test_pipe_caption_extracts_real_region(self):
+        self.assertTrue(CAPTION.match('Figure 1 | Overall performance'))
+        self.assertTrue(CAPTION.match('Table 2 | Benchmark results'))
+        self.assertTrue(CAPTION.match('Figure 3 ｜ Pipeline'))
+        self.assertFalse(CAPTION.match('Figure 1 compares the two methods'))
+        with tempfile.TemporaryDirectory() as tmp, pdf.open() as doc:
+            page = doc.new_page()
+            page.draw_rect((70, 150, 510, 310))
+            page.insert_text((70, 335), 'Figure 1 | Overall performance on benchmarks')
+            manifest = extract_pdf(doc.tobytes(), tmp)
+            self.assertEqual(len(manifest['figures']), 1)
+            self.assertNotEqual(manifest['figures'][0]['crop_status'], 'page_fallback')
+
     def test_caption_no_punctuation_discovery_preserves_manual(self):
         self.assertTrue(CAPTION.match('Figure 1 Overview of our method'))
         self.assertFalse(CAPTION.match('Table 2 compares our results'))

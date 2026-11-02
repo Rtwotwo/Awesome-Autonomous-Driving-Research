@@ -6,6 +6,7 @@ from html import escape
 from pathlib import Path
 from publication import clean_article, paper_details, resource_url, layout_sections
 from sources import write_json
+from wechat_content import plan_parts
 
 CHECKS = ('facts', 'figures', 'attribution', 'final_read')
 THEMES = {'ink':'#234d43', 'orange':'#b9552e', 'blue':'#285ba5', 'baoyu':'#234d43'}
@@ -86,7 +87,21 @@ def render_content(article, source, options):
     return ''.join(out)
 
 
-def prepare(folder, article, source, values, account):
+def asset_review_warnings(prepared, source):
+    """Editorial reminders for automatic drafts, without changing review flags."""
+    figures={f['id']:f for f in source['figures']+source.get('covers',[])}
+    used=[figures[asset['id']] for asset in prepared['assets']]
+    imported=sum(f.get('origin') in {'local_image','pdf_embedded'} and not f.get('reviewed') for f in used)
+    fallback=sum(f.get('crop_status')=='page_fallback' and not f.get('reviewed') for f in used)
+    warnings=[]
+    if imported:
+        warnings.append(f'{imported} 张新导入或替换的素材尚未人工核对；自动投递保留原图，请在草稿箱对照原页复核。')
+    if fallback:
+        warnings.append(f'{fallback} 张整页回退图尚未人工核对；自动投递保留原图，请在草稿箱检查完整性。')
+    return warnings
+
+
+def prepare(folder, article, source, values, account, *, automatic=False):
     options=clean_options(values,article,source)
     if options['theme']=='baoyu':
         from formatting import current_baoyu
@@ -96,19 +111,18 @@ def prepare(folder, article, source, values, account):
     figures={f['id']:f for f in source['figures']+source.get('covers',[])}; assets=[]
     for ident in dict.fromkeys(used+[options['cover_id']]):
         figure=figures[ident]
-        if figure.get('origin') in {'local_image','pdf_embedded'} and not figure.get('reviewed'):
+        if not automatic and figure.get('origin') in {'local_image','pdf_embedded'} and not figure.get('reviewed'):
             raise ValueError('待提交图中有新导入或替换的素材，请在“原文与配图”对照原页核对完整性并勾选“已核对”。')
-        if figure.get('crop_status')=='page_fallback' and not figure.get('reviewed'):
+        if not automatic and figure.get('crop_status')=='page_fallback' and not figure.get('reviewed'):
             raise ValueError('待提交图中仍有未核对的整页回退，请在配图页重裁或明确核对后再审核。')
         path=asset_path(folder,figure['image']);stat=path.stat()
         assets.append({'id':ident,'image':figure['image'],'size':stat.st_size,'mtime_ns':stat.st_mtime_ns})
-    # Official docs have a contradictory 2 KB sentence alongside 20k characters/1 MB.
-    # Use the long-form limits and report any API rejection verbatim by numeric code.
-    if len(content)>=20000 or len(content.encode())>=1_000_000:
-        raise ValueError(f'公众号正文排版后为 {len(content):,} 字符，需少于 20,000；请减少正文或表格后重新审核。不会自动删减。')
-    return {'options':options,'content':content,'assets':assets,'inline_ids':used,
+    parts=plan_parts(content,options)
+    result={'options':options,'content':content,'assets':assets,'inline_ids':used,
             'account':{'appid':account.get('appid',''),'name':account.get('name','')},
             'video_count':sum(bool(m.get('selected',True)) for m in source.get('project_media',[]))}
+    if len(parts)>1:result['parts']=parts
+    return result
 
 
 def approve(folder, prepared, checks, reviewer=''):

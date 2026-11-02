@@ -138,9 +138,13 @@ class IllustratedWritingTests(unittest.TestCase):
             a=fixture_article(m);a['sections'][2]['figures'][0]['pages']=[1]
             missing=json.loads(json.dumps(a));missing['sections'][2]['figures']=[]
             opts={'base_url':'http://localhost:9999/v1','model':'test','auto_figures':True,'style':'adaptive','length':0}
-            with patch('writing.chat_json',side_effect=[{'facts':[]},a,missing,a]) as call:
+            placement={'placements':[{'id':f['id'],'section_index':2,'after_paragraph':1,
+                        'caption':'原论文架构','explanation':'基于原图注的架构说明。'}]}
+            with patch('writing.chat_json',side_effect=[{'facts':[]},a,missing,placement]) as call:
                 article,_,audit=generate_article(m,Path(tmp),opts)
             self.assertEqual(call.call_count,4);self.assertFalse(audit['figure_coverage']['missing'])
+            self.assertEqual(article['sections'][2]['paragraphs'],missing['sections'][2]['paragraphs'])
+            self.assertEqual(article['sections'][2]['figures'][0]['pages'],[1])
             self.assertIn('不设字数目标',editorial_instruction(m,opts,[f]))
             self.assertEqual(adaptive_style({'title':'KV cache inference engine'})[0],'systems')
 

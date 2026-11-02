@@ -147,6 +147,22 @@ class ModelStoreTests(unittest.TestCase):
                                               base_url='https://changed.example/v1', api_key=''))
         self.assertEqual(self.studio.provider['api_key'], 'SYNTHETIC_KEY_ONE')
 
+    def test_transport_controls_are_profile_specific_and_restored(self):
+        self.studio.configure_models({**self.first, 'request_timeout':900, 'response_mode':'json', 'json_mode':'enabled'})
+        first_id=self.studio.active_profile
+        self.studio.configure_models(self.second)
+        self.assertEqual(self.studio.model_session()['request_timeout'],600)
+        self.assertEqual(self.studio.model_session()['response_mode'],'stream')
+        self.studio.configure_models({'activate':first_id})
+        reopened=Studio(self.root/'data',config_path=self.config)
+        try:
+            session=reopened.model_session()
+            self.assertEqual(session['request_timeout'],900)
+            self.assertEqual(session['response_mode'],'json')
+            self.assertEqual(session['json_mode'],'enabled')
+            self.assertNotIn('SYNTHETIC_KEY',json.dumps(session))
+        finally:reopened.close()
+
     def test_opt_out_removes_encrypted_copy_and_failed_save_is_atomic(self):
         self.studio.configure_models(self.first)
         before = self.config.read_bytes()

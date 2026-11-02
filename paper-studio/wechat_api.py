@@ -1,5 +1,5 @@
 """Official WeChat draft API. Secrets never enter article files or error strings."""
-import io,json,re,secrets,time,ipaddress
+import base64,io,json,re,secrets,time,ipaddress
 import urllib.request,urllib.error
 from html import escape
 from html.parser import HTMLParser
@@ -11,6 +11,7 @@ from sources import write_json
 from wechat_review import asset_path,read_json,require_approved
 
 APPID=re.compile(r'wx[0-9a-fA-F]{16}')
+READBACK_RETRY_DELAYS=(0.25, 0.75)
 
 def whitelist_ip(message):
     """Extract only a validated IP from official 40164 errors, never echo raw errors."""
@@ -153,27 +154,108 @@ def verify_image_url(url):
     return str(url)
 
 
+def placeholder_image_src(value):
+    """Only accept empty URLs or a demonstrably transparent one-pixel image."""
+    if not value or value.lower()=='about:blank':return True
+    if len(value)>4096:return False
+    match=re.fullmatch(r'data:image/(?:png|gif);base64,([A-Za-z0-9+/=]+)',value,re.I)
+    if not match:return False
+    try:
+        with Image.open(io.BytesIO(base64.b64decode(match[1],validate=True))) as image:
+            return image.size==(1,1) and getattr(image,'n_frames',1)==1 and image.convert('RGBA').getpixel((0,0))[3]==0
+    except (ValueError,OSError):return False
+
+
 class Contents(HTMLParser):
     def __init__(self,s):
         super().__init__(convert_charrefs=True);self.text=[];self.images=[];self.feed(s)
     def handle_data(self,t):self.text.append(t)
     def handle_starttag(self,t,attrs):
         if t=='img':
-            value=dict(attrs).get('src') or dict(attrs).get('data-src') or ''
-            self.images.append(re.sub(r'^https?:','',value))
+            attrs=dict(attrs);value=attrs.get('src') or ''
+            # Lazy-loaded HTML may keep a data URI in src and the real image in
+            # data-src. A different non-placeholder src must still fail checks.
+            if placeholder_image_src(value):
+                value=attrs.get('data-src') or value
+            # A fragment is never sent to the image server. Keep paths and every
+            # query parameter: no observed evidence permits dropping CDN queries.
+            self.images.append(re.sub(r'^https?:','',value.split('#',1)[0],flags=re.I))
     def plain(self):return ''.join(''.join(self.text).split())
 
 
-def verify_draft(account,record,check_cancel=lambda:None):
-    r=account.call('draft/get',payload={'media_id':record['media_id']},check_cancel=check_cancel)
-    items=r.get('news_item',[])
-    if not isinstance(items,list) or not items:raise ValueError('草稿已提交，但读回内容为空；请到公众号后台检查。')
-    item=items[0];expected=record['payload'];actual=Contents(str(item.get('content','')));want=Contents(expected['content'])
+def compare_item(expected,item):
     fields=('title','author','digest','content_source_url','thumb_media_id')
-    if any(item.get(k,'')!=expected.get(k,'') for k in fields) or actual.plain()!=want.plain() or actual.images!=want.images:
+    want=Contents(expected['content']);content=str(item.get('content',''));actual=Contents(content)
+    return {'field_matches':{k:item.get(k,'')==expected.get(k,'') for k in fields},
+        'text_match':actual.plain()==want.plain(),'image_count_match':len(actual.images)==len(want.images),
+        'image_addresses_match':actual.images==want.images,'image_matches':[a==b for a,b in zip(actual.images,want.images)],
+        'expected_html_chars':len(expected['content']),'actual_html_chars':len(content),
+        'expected_text_chars':len(want.plain()),'actual_text_chars':len(actual.plain()),
+        'expected_image_count':len(want.images),'actual_image_count':len(actual.images)}
+
+
+def verify_draft(account,record,check_cancel=lambda:None):
+    expected=record.get('payloads') or [record['payload']]
+    fields=('title','author','digest','content_source_url','thumb_media_id')
+    verification={'checked_at':time.time(),'status':'reading',
+        'field_matches':{k:None for k in fields},'text_match':None,
+        'image_count_match':None,'image_addresses_match':None,'image_matches':[],
+        'expected_html_chars':sum(len(p['content']) for p in expected),'actual_html_chars':None,
+        'expected_text_chars':sum(len(Contents(p['content']).plain()) for p in expected),'actual_text_chars':None,
+        'expected_image_count':sum(len(Contents(p['content']).images) for p in expected),'actual_image_count':None,
+        'expected_part_count':len(expected),'actual_part_count':None,'part_count_match':None}
+    record['verification']=verification
+    try:
+        r=account.call('draft/get',payload={'media_id':record['media_id']},check_cancel=check_cancel)
+    except Exception as exc:
+        verification['status']='unavailable'
+        if isinstance(exc,WechatError):verification['error_code']=exc.code
+        raise
+    items=r.get('news_item',[])
+    if not isinstance(items,list) or not items or not all(isinstance(item,dict) for item in items):
+        verification['status']='empty_response'
+        raise ValueError('草稿已创建，但读回内容为空；可重新核对已有草稿，不会重复创建。')
+    checks=[compare_item(want,item) for want,item in zip(expected,items)]
+    verification.update(actual_part_count=len(items),part_count_match=len(items)==len(expected),
+        field_matches={k:all(c['field_matches'][k] for c in checks) for k in fields},
+        text_match=all(c['text_match'] for c in checks),image_count_match=all(c['image_count_match'] for c in checks),
+        image_addresses_match=all(c['image_addresses_match'] for c in checks),
+        image_matches=[m for c in checks for m in c['image_matches']],
+        actual_html_chars=sum(len(str(item.get('content',''))) for item in items),
+        actual_text_chars=sum(len(Contents(str(item.get('content',''))).plain()) for item in items),
+        actual_image_count=sum(len(Contents(str(item.get('content',''))).images) for item in items))
+    if len(expected)>1:verification['parts']=checks
+    if not verification['part_count_match'] or not all(verification['field_matches'].values()) or not verification['text_match'] or not verification['image_addresses_match']:
+        verification['status']='mismatch'
         raise ValueError('草稿已提交，但读回资料、正文或图片与提交稿不完全一致。请在公众号后台检查；不会自动重发。')
-    record.update(state='submitted',verified_at=time.time(),message='已提交公众号草稿箱并读回核对资料、正文文字、图片地址和封面。排版与正文外链仍请手机预览确认；尚未公开发表或群发。')
+    verification['status']='verified'
+    label=f'已将全文分为 {len(expected)} 篇，创建同一份多图文草稿并逐篇核对。' if len(expected)>1 else '已提交公众号草稿箱并读回核对资料、正文文字、图片地址和封面。'
+    record.update(state='submitted',verified_at=time.time(),message=label+'排版与正文外链仍请手机预览确认；尚未公开发表或群发。')
     return record
+
+
+def verify_with_retries(account,record,progress=lambda _:None):
+    """Only retry readback; a known media ID never enters draft/add again."""
+    attempts=len(READBACK_RETRY_DELAYS)+1
+    for attempt in range(1,attempts+1):
+        try:
+            return verify_draft(account,record,check_cancel=lambda:progress(f'草稿已创建，正在读回核对（{attempt}/{attempts}）…'))
+        except (TransportError,WechatError) as exc:
+            transient=isinstance(exc,TransportError) or exc.code in {40014,42001}
+            if not transient or attempt==attempts:raise
+            progress(f'草稿已创建，读回暂未完成；正在重试核对（{attempt+1}/{attempts}），不会重复创建…')
+            time.sleep(READBACK_RETRY_DELAYS[attempt-1])
+        finally:
+            if 'verification' in record:record['verification']['attempts']=attempt
+
+
+def readback_message(record,exc):
+    """Do not expose raw exception text, article contents, URLs or credentials."""
+    if record.get('verification',{}).get('status')=='mismatch':
+        return '草稿已创建，但读回资料、正文或图片存在差异；请查看核对结果。不会自动重发。'
+    if isinstance(exc,WechatError):
+        return f'草稿已创建；微信读回返回错误 {exc.code}，草稿编号已保留。可重新核对已有草稿，不会重复创建。'
+    return '草稿已创建，读回核对尚未完成；草稿编号已保留，可重新核对已有草稿，不会重复创建。'
 
 
 def submit_draft(folder,prepared,account,progress=lambda x:None):
@@ -188,10 +270,11 @@ def submit_automated_draft(folder,prepared,account,progress=lambda x:None):
     if (permit.get('mode')!='automatic_draft_only' or permit.get('checks_passed') is not True
             or permit.get('snapshot')!=prepared or time.time()-permit.get('created_at',0)>3600):
         raise ValueError('自动投递授权不存在、已过期或稿件已变更。请重新运行检查或走人工审核。')
-    return _submit_payload(folder,prepared,account,progress)
+    return _submit_payload(folder,prepared,account,progress,allow_unverified=True)
 
 
-def _submit_payload(folder,prepared,account,progress):
+def _submit_payload(folder,prepared,account,progress,*,allow_unverified=False):
+    from wechat_content import check_final_content
     if prepared['account']['appid']!=account.config.get('appid'):raise ValueError('目标公众号已改变，请重新审核。')
     state_path=folder/'wechat-submission.json';old=read_json(state_path,{})
     if old.get('state') in {'submitted','submitted_unverified','unknown'}:
@@ -201,28 +284,38 @@ def _submit_payload(folder,prepared,account,progress):
     try:
         # Prepare every image before remote changes, so over-limit images fail early.
         files={x['id']:image_file(asset_path(folder,x['image'])) for x in prepared['assets']}
-        content=prepared['content'];index={x['id']:x for x in prepared['assets']}
+        parts=prepared.get('parts') or [{'content':prepared['content'],'options':prepared['options']}]
+        contents=[part['content'] for part in parts];index={x['id']:x for x in prepared['assets']}
         for i,ident in enumerate(prepared['inline_ids'],1):
             progress(f'上传正文图片 {i}/{len(prepared["inline_ids"])}…')
             url=verify_image_url(account.call('media/uploadimg',file=files[ident],check_cancel=lambda:progress(f'上传正文图片 {i}/{len(prepared["inline_ids"])}…')).get('url'))
-            content=content.replace('src="'+escape(index[ident]['image'],quote=True)+'"','src="'+escape(url,quote=True)+'"')
+            contents=[content.replace('src="'+escape(index[ident]['image'],quote=True)+'"','src="'+escape(url,quote=True)+'"') for content in contents]
+        for content in contents:check_final_content(content)
         progress('上传封面…')
         cover=account.call('material/add_material',file=files[prepared['options']['cover_id']],check_cancel=lambda:progress('上传封面…')).get('media_id')
         if not isinstance(cover,str) or not cover or len(cover)>256:raise TransportError('微信未返回有效封面素材 ID。')
-        if len(content)>=20000 or len(content.encode())>=1_000_000:raise ValueError('替换微信图片链接后正文超过 20,000 字符，请精简文章后重新审核。')
-        o=prepared['options'];payload={'article_type':'news','title':o['title'],'author':o['author'],'digest':o['digest'],
-            'content':content,'content_source_url':o['source_url'],'thumb_media_id':cover,'need_open_comment':0,'only_fans_can_comment':0}
+        payloads=[]
+        for part,content in zip(parts,contents):
+            o=part['options'];payloads.append({'article_type':'news','title':o['title'],'author':o['author'],'digest':o['digest'],
+                'content':content,'content_source_url':o['source_url'],'thumb_media_id':cover,'need_open_comment':0,'only_fans_can_comment':0})
         # Before the only create call, persist uncertainty. Timeout/crash must not resend.
         def mark_creating():
-            record.update(state='unknown',payload=payload,message='已发起创建草稿；结果尚未确认，请勿重复提交。');write_json(state_path,record)
+            record.update(state='unknown',payload=payloads[0],message='已发起创建草稿；结果尚未确认，请勿重复提交。')
+            if len(payloads)>1:record['payloads']=payloads
+            write_json(state_path,record)
         progress('创建公众号草稿…')
-        response=account.call('draft/add',payload={'articles':[payload]},check_cancel=lambda:progress('创建公众号草稿…'),before_send=mark_creating);media=response.get('media_id')
+        response=account.call('draft/add',payload={'articles':payloads},check_cancel=lambda:progress('创建公众号草稿…'),before_send=mark_creating);media=response.get('media_id')
         if not isinstance(media,str) or not media or len(media)>256:raise TransportError('微信没有返回有效草稿 ID；请先检查公众号草稿箱。')
         record.update(state='submitted_unverified',media_id=media,message='草稿已创建，正在读回核对。');write_json(state_path,record)
         progress('读回核对标题、正文、图片和封面…')
-        verify_draft(account,record,check_cancel=lambda:progress('读回核对标题、正文、图片和封面…'));write_json(state_path,record)
+        verify_with_retries(account,record,progress);write_json(state_path,record)
         return record
     except Exception as exc:
+        if record.get('media_id') and record['state']=='submitted_unverified':
+            record['message']=readback_message(record,exc)
+            write_json(state_path,record)
+            if allow_unverified:return record
+            raise ValueError(record['message']) from None
         if record['state']=='uploading' or (record['state']=='unknown' and isinstance(exc,WechatError)):
             record['state']='failed'
         record['message']=str(exc) if isinstance(exc,ValueError) else '提交未完成，请检查公众号草稿箱后重试。'
@@ -230,14 +323,16 @@ def _submit_payload(folder,prepared,account,progress):
         raise ValueError(record['message']) from None
 
 
-def recheck(folder,account):
+def recheck(folder,account,progress=lambda _:None,*,allow_unverified=False):
     path=Path(folder)/'wechat-submission.json';record=read_json(path,{})
     if not record.get('media_id'):raise ValueError('没有已知草稿 ID，请先到公众号后台检查是否创建成功。')
     if record.get('account',{}).get('appid')!=account.config.get('appid'):raise ValueError('请切换回原提交公众号后核对。')
-    try:verify_draft(account,record)
+    try:verify_with_retries(account,record,progress)
     except Exception as exc:
-        record.update(state='submitted_unverified',message=str(exc) if isinstance(exc,ValueError) else '读回未完成，请在公众号后台检查。')
+        record.update(state='submitted_unverified',message=readback_message(record,exc))
+        record.pop('verified_at',None)
         write_json(path,record)
+        if allow_unverified:return record
         raise ValueError(record['message']) from None
     write_json(path,record);return record
 

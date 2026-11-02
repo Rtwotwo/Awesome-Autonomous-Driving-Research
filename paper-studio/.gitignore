@@ -17,6 +17,8 @@ data/
 settings/
 exports/
 automation/
+connectors/
+cookies.json
 archive/
 implement-stage*/
 desktop-install.json

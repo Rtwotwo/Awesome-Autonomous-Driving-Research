@@ -72,6 +72,9 @@ class DesktopActions:
             article = self.studio.load(job_id, 'article.json')
             fmt, theme = body.get('format'), body.get('theme', 'ink')
             if fmt == 'zip': data, filename = export_bundle(article, source, folder, theme), 'paper-article.zip'
+            elif fmt == 'xhs':
+                from xhs_notes import export_note
+                data, filename = export_note(folder), 'xiaohongshu-note.zip'
             elif fmt == 'md': data, filename = markdown(article, source).encode('utf-8'), 'article.md'
             elif fmt == 'html': data, filename = article_html(article, source, folder, theme, embed=True).encode('utf-8'), 'wechat.html'
             elif fmt == 'skill': data, filename = (folder / 'article.html').read_bytes(), 'article-baoyu.html'
@@ -216,8 +219,20 @@ def main():
                           'jobs': window.evaluate_js("document.getElementById('jobCount').textContent"), 'initial': initial}
                 result['model_settings_ready'] = bool(window.evaluate_js("Boolean(document.getElementById('modelProfiles') && document.getElementById('rememberModels') && document.getElementById('outputTokens').placeholder.includes('393216'))"))
                 result['ok'] = result['ok'] and result['model_settings_ready']
+                result['transport_settings_ready'] = bool(window.evaluate_js("Boolean(document.getElementById('responseMode')?.value === 'stream' && document.getElementById('requestTimeout')?.value === '600' && document.getElementById('jsonMode')?.value === 'auto')"))
+                result['ok'] = result['ok'] and result['transport_settings_ready']
                 result['wechat_review_ready'] = bool(window.evaluate_js("Boolean(document.querySelector('[data-tab=review]') && document.getElementById('wechatPreview') && document.getElementById('submitWechat') && document.getElementById('wechatSecret'))"))
                 result['ok'] = result['ok'] and result['wechat_review_ready']
+                result['delivery_desk_ready'] = bool(window.evaluate_js("Boolean(document.getElementById('autoPrepareWechat') && document.getElementById('autoSubmitWechat') && document.getElementById('deliverySocialCover') && document.getElementById('manualReviewPanel') && document.getElementById('generateAutoDraft'))"))
+                result['ok'] = result['ok'] and result['delivery_desk_ready']
+                result['categories_ready'] = bool(window.evaluate_js("Boolean(document.querySelectorAll('#libraryCategory option').length === 11 && document.getElementById('categoryDialog') && document.getElementById('editCategories') && document.getElementById('feedCategory'))"))
+                result['ok'] = result['ok'] and result['categories_ready']
+                result['xiaohongshu_ready'] = bool(window.evaluate_js("Boolean(document.getElementById('xhsPrepare') && document.getElementById('xhsPublish') && document.getElementById('xhsPreview') && document.getElementById('xhsLogin') && document.getElementById('xhsReceipt'))"))
+                result['ok'] = result['ok'] and result['xiaohongshu_ready']
+                xhs_status = studio.xhs.status()
+                if xhs_status.get('blocked'):
+                    result['xiaohongshu_security_hold'] = bool(window.evaluate_js("Boolean(document.getElementById('xhsConnect').disabled && document.getElementById('xhsLogin').disabled && document.getElementById('xhsCheck').disabled && document.getElementById('xhsPublish').disabled && document.getElementById('xhsConnectionMessage').textContent.includes('Windows Defender'))"))
+                    result['ok'] = result['ok'] and result['xiaohongshu_security_hold']
                 if args.activation_smoke:
                     command = [sys.executable] if getattr(sys, 'frozen', False) else [sys.executable, str(ROOT / 'desktop.py')]
                     for name, prepare in (('hidden', window.hide), ('minimized', window.minimize)):

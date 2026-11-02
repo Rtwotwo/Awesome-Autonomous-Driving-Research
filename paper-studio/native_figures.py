@@ -26,7 +26,7 @@ def label(text):
     m=re.search(r'\b(?:Figure|Fig\.)\s*(\d+)\b',text,re.I)
     return m.group(1) if m else ''
 
-def improve_native_figures(source,folder,progress=lambda x:None,fetch=None):
+def improve_native_figures(source,folder,progress=lambda x:None,fetch=None,persist=True):
     if not source.get('arxiv_id') or source.get('native_figures_checked'):return source
     folder=Path(folder)
     def check():progress('正在读取当前论文原图；停止后不会请求下一张素材。')
@@ -59,12 +59,15 @@ def improve_native_figures(source,folder,progress=lambda x:None,fetch=None):
                     # Preserve the old PDF render for manual comparison/recovery.
                     history=folder/'image-history';history.mkdir(exist_ok=True)
                     shutil.copyfile(folder/f['image'],history/(f['id']+'-'+uuid.uuid4().hex+'.png'))
-                    image.save(folder/f['image'])
-                f.update(origin='arxiv_html',source_url=url,bbox=[],crop_status='arxiv_original',selected=True)
+                    # Never overwrite an image still referenced by the durable
+                    # source manifest. Cancellation may leave an unused new file.
+                    image_path = 'images/' + f['id'] + '-arxiv-' + uuid.uuid4().hex + '.png'
+                    image.save(folder/image_path)
+                f.update(image=image_path,origin='arxiv_html',source_url=url,bbox=[],crop_status='arxiv_original',selected=True)
                 replaced.append(f['id'])
             except (ValueError,OSError):continue
         source['native_figures_checked']={'replaced':replaced,'note':'仅替换与 PDF 图号唯一对应的单图素材；多面板保留 PDF 布局。原始 PDF 裁图保存在 image-history。'}
-        write_json(folder/'source.json',source)
+        if persist: write_json(folder/'source.json',source)
     except Exception:
         # HTML is optional; retain existing figure source and retry on a later generation.
         pass

@@ -34,7 +34,9 @@ class ReviewTests(unittest.TestCase):
         self.options['title']='short';self.options['digest']='a'*121
         with self.assertRaises(ValueError):self.payload()
         self.options['digest']='short';self.article['lead']='长'*22000
-        with self.assertRaises(ValueError):self.payload()
+        planned=self.payload()
+        self.assertGreater(len(planned['parts']),1)
+        self.assertEqual(self.article['lead'],'长'*22000)
     def test_invalid_asset_and_unchecked_video_warning(self):
         with self.assertRaises(ValueError):asset_path(self.root,'../secret.png')
         self.source['project_media']=[{'selected':True,'caption':'演示','source_url':'https://example.com/demo.mp4'}]

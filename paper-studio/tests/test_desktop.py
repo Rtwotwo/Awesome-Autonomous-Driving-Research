@@ -118,7 +118,7 @@ class DesktopTests(unittest.TestCase):
         observed = []
         def intercept(handler, req):
             observed.append(req.host)
-            payload = json.dumps({'choices': [{'message': {'content': '{"ok":true}'}}]}).encode()
+            payload = json.dumps({'choices': [{'message': {'content': '{"ok":true}'}, 'finish_reason':'stop'}]}).encode()
             response = urllib.response.addinfourl(io.BytesIO(payload), {}, req.full_url, 200)
             response.msg = 'OK'
             return response

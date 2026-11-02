@@ -9,6 +9,9 @@
   <button id="openAutoFeed" class="nav-new">自动选题与投递 <span id="feedBadge">↗</span></button>
   <div class="side-heading">最近的论文 <span id="jobCount">0</span></div>
   <input id="librarySearch" class="library-search" aria-label="搜索作品" placeholder="搜索标题 / 作品名称">
+  <label class="category-filter-label" for="libraryCategory">研究方向 <span>支持交叉分类</span></label>
+  <select id="libraryCategory" class="library-category" aria-label="按研究方向筛选作品"><option value="">全部方向</option></select>
+  <p id="libraryMatchCount" class="category-count" aria-live="polite"></p>
   <div class="library-filter"><button id="showLibrary" class="text-button">作品</button><button id="showTrash" class="text-button">回收站</button></div>
   <div id="history" class="history"><p class="muted">导入后，论文与草稿会保存在本机。</p></div>
   <div class="side-bottom"><span class="local-dot"></span> 私有桌面空间<button id="openData" class="text-button" hidden>数据文件夹 ↗</button><button id="settingsButton" class="text-button">模型设置 ↗</button></div>
@@ -20,7 +23,7 @@
     <h1>把一篇论文，<br><em>讲清楚。</em></h1>
     <p class="intro">从 arXiv 或 PDF 出发，把研究问题、方法与实验证据，<br class="desktop">编排成一篇有深度、有原图、有出处的公众号推文。</p>
     <div class="import-box">
-      <label for="arxivUrl">粘贴 arXiv 链接</label>
+      <label for="arxivUrl">粘贴 arXiv / AlphaXiv 论文链接</label>
       <form id="arxivForm" class="url-row"><span aria-hidden="true">↗</span><input id="arxivUrl" type="text" placeholder="https://arxiv.org/abs/2212.10156" required autocomplete="off"><button id="arxivSubmit" class="primary" type="submit">解析论文 →</button></form>
       <label class="checkbox direct-option"><input id="arxivAutoDraft" type="checkbox"> 自动生成图文并投递公众号草稿箱</label>
       <p class="muted">勾选后使用当前模型与公众号，只处理这篇论文；不启用每日任务。新稿自动选择写作与排版风格，模型读取文本，原图用于配图。已有成稿会沿用，已提交的不会重复投递。未核实的项目和代码链接保留为空，由你在后台审核。</p>
@@ -33,13 +36,14 @@
   <section id="workspace" class="workspace" hidden>
     <div class="document-heading"><div><p class="eyebrow">CURRENT PAPER</p><h1 id="paperTitle"></h1><p id="sourceMeta" class="muted"></p></div><a id="openPdf" class="secondary" target="_blank" rel="noopener">查看原 PDF ↗</a></div>
     <div id="sourceWarnings" class="notice" hidden></div>
+    <div class="paper-category-row"><span class="category-eyebrow">研究方向</span><div id="paperCategories" class="topic-chips"></div><button id="editCategories" class="text-button">调整分类</button><small id="categoryMode"></small></div>
     <div class="button-row library-actions"><button id="renameJob" class="text-button">重命名作品</button><button id="pinJob" class="text-button">置顶</button><button id="trashJob" class="text-button">移入回收站</button><button id="refreshIdentity" class="text-button">重新识别论文资料</button></div>
     <details id="paperInfoPanel" class="brief-box paper-info"><summary>论文信息卡 · 英文标题、作者、机构与资源链接</summary><p class="muted">这些资料会展示在文章开头。请按论文或作者官网核对；未找到的链接留空，将显示“未核实”。</p><div class="paper-info-grid">
       <label>原始英文标题<input data-paper-info="title"></label><label>发表信息<input data-paper-info="venue" placeholder="例如 CVPR 2026（以正式记录为准）"></label>
       <label>完整作者（每行一位）<textarea data-paper-info="authors"></textarea></label><label>作者机构（每行一所）<textarea data-paper-info="affiliations"></textarea></label>
       <label>论文链接<input data-paper-info="paper_url" type="url"></label><label>项目主页<input data-paper-info="project_url" type="url"></label><label>代码仓库<input data-paper-info="code_url" type="url"></label><label>版本 / 核实说明<input data-paper-info="version_note"></label>
     </div><button id="savePaperInfo" class="secondary">保存论文资料</button></details>
-    <nav class="tabs" aria-label="工作区"><button data-tab="write" class="active">01 撰写与排版</button><button data-tab="figures">02 原文与配图 <span id="figureCount"></span></button><button data-tab="evidence">03 证据核对 <span id="issueCount"></span></button><button data-tab="review">04 人工审核与提交</button></nav>
+    <nav class="tabs" aria-label="工作区"><button data-tab="write" class="active"><b class="tab-number">01</b><span class="tab-label">撰写与排版<small>形成完整解读</small></span></button><button data-tab="figures"><b class="tab-number">02</b><span class="tab-label">原文与配图 <i id="figureCount"></i><small>论文原图与素材</small></span></button><button data-tab="evidence"><b class="tab-number">03</b><span class="tab-label">证据核对 <i id="issueCount"></i><small>关键结论可回查</small></span></button><button data-tab="review"><b class="tab-number">04</b><span class="tab-label">自动投递<small>整理 · 检查 · 入草稿箱</small></span><span id="deliveryTabStatus" class="tab-dot" hidden></span></button><button data-tab="xhs"><b class="tab-number">05</b><span class="tab-label">小红书笔记<small>设计 · 预览 · 发布</small></span></button></nav>
     <section id="tab-write" class="tab-panel">
       <div class="writing-controls">
         <label>写作侧重点<select id="style"><option value="adaptive">随论文类型调整</option><option value="technical">技术深读</option><option value="world">世界模型与具身研读</option><option value="systems">系统与 AI Infra</option><option value="benchmark">数据集与评测</option><option value="news">新闻解读</option><option value="reproduction">工程复现</option></select></label>
@@ -47,14 +51,15 @@
         <label>排版主题<select id="theme"><option value="ink">松墨 · 研究手记</option><option value="orange">赤陶 · 科技报道</option><option value="blue">深蓝 · 技术解读</option><option value="baoyu">宝玉 · 已保存排版</option></select></label>
         <button class="primary" id="generate">生成完整推文 <span>✧</span></button>
       </div>
-      <label class="checkbox"><input id="autoFigures" type="checkbox" checked>自动编排架构、结果与定性原图，复核后补全漏图（取消后沿用手动选图）</label>
+      <div class="generation-options"><label class="checkbox"><input id="autoFigures" type="checkbox" checked>自动编排架构、结果与定性原图，复核后补全漏图（取消后沿用手动选图）</label><label class="checkbox generation-delivery"><input id="generateAutoDraft" type="checkbox"><span>生成后自动投递草稿箱<small>自动选 overview 封面、整理署名并检查；离开本篇仍会继续，可通过任务栏停止。</small></span></label></div>
       <details class="brief-box"><summary>补充编辑要求与无 API 写作</summary><textarea id="brief" placeholder="例如：重点解释训练目标与推理过程；面向有机器学习基础的自动驾驶研究者。"></textarea><div class="button-row"><button id="exportPrompt" class="secondary">导出全文写作提示词</button><button id="importDraft" class="secondary">导入模型生成的 JSON</button></div><p class="muted">没有 API 时，可把提示词交给自己的模型，再导入成稿 JSON。图片 ID 与原页信息会保留。</p></details>
       <p class="privacy-note">点击生成会将论文文本发送到当前选中的模型服务；开启视觉理解时还会发送选中的原图。API Key 可在软件目录加密保存，也可仅在内存使用。软件与数据不连接 GitHub。</p>
+      <section id="generationNotice" class="generation-notice" hidden aria-live="polite"><div><strong id="generationNoticeTitle">草稿已保存在本机</strong><p id="generationNoticeText"></p><small id="generationElapsed"></small></div><div class="button-row"><a id="pendingPreview" class="secondary" target="_blank" rel="noopener" hidden>查看待复核草稿 ↗</a><button id="resumeGeneration" class="primary" hidden>继续生成</button></div></section>
       <div class="editor-layout">
         <div class="editor-pane"><div class="pane-heading"><h2>推文草稿</h2><span id="draftStats">等待成稿</span><button id="saveDraft" class="text-button" disabled>保存修改</button></div><div id="draftEditor" class="draft-editor"><div class="draft-empty"><span>Aa</span><h3>先读懂，再写好。</h3><p>选择写作侧重点，确认配图后生成文章。<br>正文将包括研究动机、贡献、方法拆解、<br>实验与消融、局限和研究启示。</p><button class="secondary" id="configureInline">配置写作模型</button></div></div></div>
         <div class="preview-pane"><div class="pane-heading"><h2>公众号预览</h2><div class="preview-sizes"><button id="mobilePreview" class="active" aria-label="手机预览">窄屏</button><button id="widePreview" aria-label="宽屏预览">宽屏</button></div></div><div class="phone-wrap"><iframe id="preview" title="公众号图文预览" sandbox="allow-same-origin"></iframe><div id="previewEmpty"><div class="skeleton-title"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div><div class="skeleton-picture">你的论文原图</div><div class="skeleton-line"></div><div class="skeleton-line"></div><p>完整文章将在这里呈现</p></div></div></div>
       </div>
-      <div class="export-bar"><div><strong>带着内容，去发布。</strong><small>应用排版 → 人工审核 → 自动上传正文、图片与封面到草稿箱。</small></div><div class="button-row"><button id="copyHtml" class="secondary" disabled>复制公众号正文</button><button id="exportMd" class="secondary" disabled>Markdown</button><button id="skillFormat" class="secondary" disabled>宝玉排版并预览</button><button id="exportZip" class="primary" disabled>下载图文包 ↓</button></div></div>
+      <div class="export-bar"><div><strong>带着内容，去发布。</strong><small>应用排版 → 自动检查 → 上传正文、图片与封面到草稿箱。</small></div><div class="button-row"><button id="copyHtml" class="secondary" disabled>复制公众号正文</button><button id="exportMd" class="secondary" disabled>Markdown</button><button id="skillFormat" class="secondary" disabled>宝玉排版并预览</button><button id="exportZip" class="primary" disabled>下载图文包 ↓</button></div></div>
     </section>
     <section id="tab-figures" class="tab-panel" hidden>
       <details id="materialsPanel" class="brief-box" open><summary>原始素材 · PDF 解包与本地图片</summary>
@@ -70,59 +75,90 @@
     </section>
     <section id="tab-evidence" class="tab-panel" hidden><div class="section-intro"><div><h2>好的解读，经得起回查。</h2><p>这里核对页码与原文引句。匹配成功不代表科学结论已经验证，仍需核查实验条件与推断边界。</p></div></div><div id="auditContent" class="audit-content"><p class="muted">成稿后显示逐条证据与编辑提醒。</p></div></section>
 
-    <section id="tab-review" class="tab-panel" hidden>
-      <div class="section-intro"><div><h2>由你审定，再送进草稿箱。</h2><p>正文、配图、封面、排版或目标公众号变化后，需要重新审核。提交只创建草稿，不公开发表或群发。</p></div><button id="wechatSettings" class="secondary">公众号设置</button></div>
-      <p id="wechatAccountLabel" class="notice">尚未配置公众号</p>
+    <section id="tab-review" class="tab-panel delivery-desk" hidden>
+      <header class="delivery-hero"><div><p class="eyebrow">THE DELIVERY DESK</p><h2>自动检查，<em>送入草稿箱。</em></h2><p>让论文原图、完整解读和排版一起就绪。你只需在公众号后台作最后审阅。</p></div><span id="deliveryStatus" class="status-chip" role="status">等待准备</span></header>
+      <div class="delivery-account"><span class="account-symbol" aria-hidden="true">↗</span><p id="wechatAccountLabel">正在读取公众号配置…</p><button id="wechatSettings" class="text-button">公众号设置</button></div>
+      <ol class="delivery-pipeline" aria-label="自动投递流程"><li id="deliveryStepPrepare"><span>01</span><div><b>整理投递稿</b><small>摘要适配 · overview 封面</small></div></li><li id="deliveryStepCheck"><span>02</span><div><b>检查与排版</b><small>正文完整 · 配图可用</small></div></li><li id="deliveryStepSubmit"><span>03</span><div><b>投递与回执</b><small>上传微信 · 防止重复</small></div></li></ol>
       <div class="review-layout">
         <div class="review-controls">
-          <label>公众号标题（最多 32 个字符）<input id="wechatTitle"><small id="wechatTitleCount" class="field-count"></small></label>
-          <label>文章署名（最多 16 字，可留空）<input id="wechatAuthor" maxlength="16" placeholder="公众号或编辑署名"></label>
-          <label>草稿卡片摘要（保存时自动适配）<textarea id="wechatDigest"></textarea><small id="wechatDigestCount" class="field-count"></small></label>
-          <button id="fitWechatFields" class="secondary">一键整理标题与摘要</button>
-          <p class="muted">原稿摘要可以自由写。这里是投递副本，软件暂以 120 字符为短摘要阈值，保存或自动投递时自行适配；字母、数字和标点也计数。原稿与正文保留，短版优先使用完整句子，不截断指标。</p>
-          <details id="wechatFieldAdjustments" class="brief-box" hidden><summary>已整理提交字段 · 查看原文与调整结果</summary><pre id="wechatFieldAdjustmentText" class="field-adjustments"></pre></details>
-          <label>封面图<select id="wechatCover"><option value="">请选择封面</option></select></label><img id="wechatCoverPreview" class="review-cover" alt="所选封面原图" hidden>
-          <p class="muted">微信展示时可能按封面比例裁切，请在后台手机预览确认。</p>
-          <details class="brief-box"><summary>根据文章设计封面</summary><p class="muted">本机生成横版与方形封面，不调用额外模型，不把设计元素当作论文实验图。</p><label>封面标题<input id="coverTitle" maxlength="100" placeholder="留空使用当前公众号标题"></label><label>栏目署名<input id="coverLabel" maxlength="50" placeholder="论文研读 · Paper Studio"></label><button id="generateCover" class="secondary">生成两种尺寸封面</button></details>
-          <label>排版主题<select id="wechatTheme"><option value="ink">松墨 · 研究手记</option><option value="orange">赤陶 · 科技报道</option><option value="blue">深蓝 · 技术解读</option><option value="baoyu">宝玉 · 已保存排版</option></select></label>
-          <label>阅读原文链接<input id="wechatSource" type="url" placeholder="论文或项目主页"></label>
-          <label>宝玉版式<select id="baoyuTheme"><option value="simple">Simple · 简洁技术</option><option value="default">Default · 经典图文</option><option value="grace">Grace · 图解卡片</option><option value="modern">Modern · 科技报道</option></select></label>
-          <button id="reviewBaoyu" class="secondary">应用 / 刷新宝玉排版</button><button id="saveWechatOptions" class="secondary">保存提交设置并更新预览</button>
+          <div class="delivery-summary"><article><span class="summary-icon">▧</span><small>封面来源</small><strong id="deliveryCoverLabel">论文 overview 优先</strong><p id="deliveryCoverNote">保留完整原图，自动适配横版封面。</p></article><article><span class="summary-icon">Aa</span><small>编辑署名</small><strong id="deliveryEditor">Paper Studio</strong><p>作为文章署名，不代表已完成人工审核。</p></article><article><span class="summary-icon">≡</span><small>推文版式</small><strong id="deliveryThemeLabel">松墨 · 研究手记</strong><p id="deliveryLayoutNote">保留当前排版与手动调整。</p></article></div>
+          <section class="delivery-action-card"><div class="action-heading"><div><h3>下一站，公众号草稿箱</h3><p id="deliveryActionHint">点击后自动整理、检查并上传。不会公开发表或群发。</p></div><span aria-hidden="true">↗</span></div><div class="delivery-buttons"><button id="autoSubmitWechat" class="primary">自动整理并投递草稿 <span aria-hidden="true">→</span></button><button id="autoPrepareWechat" class="secondary">只整理与检查</button></div><p class="delivery-action-note">可随时请求停止；上传已开始时先核对回执，避免重复创建草稿。</p></section>
+          <section id="deliveryReport" class="delivery-report" aria-live="polite"><div class="card-heading"><h3>自动检查</h3><span id="deliveryCheckedAt">尚未运行</span></div><div id="deliveryReportContent"><p class="muted">检查将覆盖提交字段、正文版式、封面和配图。科学结论与转载权限仍需在发布前核对。</p></div></section>
           <div id="wechatWarnings" class="notice"></div>
-          <div id="humanChecks" class="human-checks">
+          <section class="delivery-receipt"><div class="card-heading"><h3>投递回执</h3><span class="muted">每个版本有迹可循</span></div><div id="wechatSubmission" role="status">尚未提交。完成上传后，这里显示草稿编号与核对结果。</div><div class="button-row receipt-actions"><button id="recheckWechat" class="secondary" hidden>重新核对草稿</button><button id="resetWechat" class="text-button" hidden>已检查后台，准备重新提交</button><a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">打开公众号后台 ↗</a></div></section>
+          <details id="deliveryEditPanel" class="delivery-details"><summary><span><b>调整提交内容</b><small>标题、摘要、封面与排版 · 可选</small></span><span aria-hidden="true">＋</span></summary><div class="details-content">
+            <label>公众号标题（最多 32 个字符）<input id="wechatTitle"><small id="wechatTitleCount" class="field-count"></small></label>
+            <label>文章署名（最多 16 字，可留空）<input id="wechatAuthor" maxlength="16" placeholder="Paper Studio"></label>
+            <label>草稿卡片摘要（自动适配）<textarea id="wechatDigest"></textarea><small id="wechatDigestCount" class="field-count"></small></label>
+            <button id="fitWechatFields" class="secondary">整理标题与摘要</button><p class="muted">这是投递副本，原稿保留。软件会适配提交字段，短摘要优先使用完整句子，不截断指标。</p>
+            <details id="wechatFieldAdjustments" class="brief-box" hidden><summary>查看字段调整前后对照</summary><pre id="wechatFieldAdjustmentText" class="field-adjustments"></pre></details>
+            <label>封面图<select id="wechatCover"><option value="">自动选择 overview</option></select></label><img id="wechatCoverPreview" class="review-cover" alt="所选封面原图" hidden><p class="muted">自动封面优先保留 overview 全图。手动选择会继续沿用，请在微信手机预览确认展示。</p>
+            <details class="brief-box"><summary>另外设计一张封面</summary><p class="muted">本机生成横版与方形封面，不调用额外模型，不把设计元素当作论文实验图。</p><label>封面标题<input id="coverTitle" maxlength="100" placeholder="留空使用当前公众号标题"></label><label>栏目署名<input id="coverLabel" maxlength="50" placeholder="论文研读 · Paper Studio"></label><button id="generateCover" class="secondary">生成两种尺寸封面</button></details>
+            <label>排版主题<select id="wechatTheme"><option value="ink">松墨 · 研究手记</option><option value="orange">赤陶 · 科技报道</option><option value="blue">深蓝 · 技术解读</option><option value="baoyu">宝玉 · 已保存排版</option></select></label>
+            <label>阅读原文链接<input id="wechatSource" type="url" placeholder="论文或项目主页"></label>
+            <label>宝玉版式<select id="baoyuTheme"><option value="simple">Simple · 简洁技术</option><option value="default">Default · 经典图文</option><option value="grace">Grace · 图解卡片</option><option value="modern">Modern · 科技报道</option></select></label>
+            <div class="button-row"><button id="reviewBaoyu" class="secondary">应用 / 刷新宝玉排版</button><button id="saveWechatOptions" class="secondary">保存设置并更新预览</button></div>
+          </div></details>
+          <details id="manualReviewPanel" class="delivery-details"><summary><span><b>保留一份人工审核记录</b><small>可选 · 自动投递无需勾选</small></span><span aria-hidden="true">＋</span></summary><div class="details-content"><p class="muted">只有你主动确认下方项目，软件才记录人工审核。内容改变后，原审核失效。</p><div id="humanChecks" class="human-checks">
             <label class="checkbox"><input type="checkbox" data-review-check="facts">已核对论文身份、关键数字、实验条件与结论</label>
             <label class="checkbox"><input type="checkbox" data-review-check="figures">已检查图表完整性、图注、封面及定性展示</label>
             <label class="checkbox"><input type="checkbox" data-review-check="attribution">已确认图片与文字的来源署名和使用权限</label>
-            <label class="checkbox"><input type="checkbox" data-review-check="final_read">已通读右侧待提交稿，并确认视频需到微信后台插入</label>
-          </div>
-          <label>审核人（可选）<input id="wechatReviewer" maxlength="80"></label>
-          <div class="button-row"><button id="approveWechat" class="secondary">人工审核通过</button><button id="revokeWechat" class="text-button">撤销审核</button></div>
-          <p id="wechatReviewState" role="status"></p>
-          <button id="submitWechat" class="primary" disabled>一键提交公众号草稿</button>
-          <div id="wechatSubmission" class="notice" hidden></div>
-          <div class="button-row"><button id="recheckWechat" class="secondary" hidden>重新核对草稿</button><button id="resetWechat" class="text-button" hidden>已检查后台，准备重新提交</button><a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">打开公众号后台 ↗</a></div>
+            <label class="checkbox"><input type="checkbox" data-review-check="final_read">已通读待提交稿，并确认视频需到微信后台插入</label>
+          </div><label>人工审核人<input id="wechatReviewer" maxlength="80" value="Paper Studio"></label><div class="button-row"><button id="approveWechat" class="secondary">记录人工审核通过</button><button id="revokeWechat" class="text-button">撤销审核</button></div><p id="wechatReviewState" role="status"></p><button id="submitWechat" class="primary" disabled>提交人工审定稿</button></div></details>
         </div>
-        <div><div class="pane-heading"><h2>实际待上传版式</h2><span>手机阅读宽度</span></div><iframe id="wechatPreview" class="review-preview" title="审核提交稿" sandbox="allow-same-origin"></iframe></div>
+        <aside class="delivery-preview-column"><div class="pane-heading"><h2>读者会看到什么</h2><span>草稿卡片 · 正文预览</span></div><div class="delivery-phone"><div class="phone-caption"><span class="local-dot"></span><span id="deliveryPreviewAccount">公众号草稿</span><span>预览</span></div><article class="social-preview"><div class="social-cover"><img id="deliverySocialCover" alt="公众号封面预览" hidden><div id="deliveryCoverEmpty"><span>▧</span><p>论文 overview<br><small>整理时自动生成封面</small></p></div><span class="cover-tag">PAPER NOTES</span></div><div class="social-copy"><h3 id="deliverySocialTitle">一篇值得读懂的研究</h3><p id="deliverySocialDigest">成稿后，这里展示投稿标题、封面与摘要。</p><div><span id="deliverySocialAuthor">Paper Studio</span><span>查看全文 ↗</span></div></div></article><div class="preview-section-label">文章正文 <span>实际待上传版式</span></div><div class="delivery-article-preview"><iframe id="wechatPreview" class="review-preview" title="公众号待提交正文" sandbox="allow-same-origin"></iframe><div id="deliveryPreviewEmpty" class="delivery-preview-empty"><span>在这里，读一遍成稿。</span><p>生成文章后点击「只整理与检查」，<br>即可预览完整的投递版式。</p></div></div></div><p class="preview-footnote">自动检查不代替事实审阅。手机最终效果请以微信后台预览为准。</p></aside>
+      </div>
+    </section>
+    <section id="tab-xhs" class="tab-panel xhs-desk" hidden>
+      <header class="xhs-hero"><div><p class="eyebrow">RESEARCH, IN A DIFFERENT FORMAT</p><h2>让研究，<em>成为一组好看的笔记。</em></h2><p>从已保存的解读出发，用简洁文字与论文原图，设计可翻阅的图文笔记。</p></div><span class="xhs-channel-mark">小红书<span>IMAGE NOTES</span></span></header>
+      <div id="xhsConnection" class="xhs-connection"><span class="xhs-connection-icon" aria-hidden="true">↗</span><div><strong id="xhsConnectionTitle">连接你的发布账号</strong><p id="xhsConnectionMessage">通过本机发布组件连接小红书，扫码由你本人完成。</p></div><span id="xhsConnectionStatus" class="status-chip">尚未连接</span><button id="xhsConnect" class="secondary">启动连接</button><button id="xhsLogin" class="secondary">扫码登录</button><button id="xhsCheck" class="text-button">检查连接</button></div>
+      <details id="xhsConnectionHelp" class="xhs-connection-help"><summary>当前连接状态与手动发布</summary><p>当前 v2.5.5 连接器启动浏览器时释放的 leakless.exe 触发了 Windows Defender 告警。软件已暂停这版组件的安装、登录与发布；请勿选择“允许在设备上”、添加排除项或关闭防护。检测原因仍待确认，不将其判定为误报。</p><p>你可以继续设计笔记，点击“下载图文包”，解压后到小红书官方创作平台上传图片和文字。已有本机会话保留在私有目录，勿分享或上传。</p><div class="button-row"><button id="xhsStop" class="text-button">停止本机连接</button><a class="text-button" href="https://creator.xiaohongshu.com/" target="_blank" rel="noopener">打开官方创作平台 ↗</a></div></details>
+      <div class="xhs-layout">
+        <div class="xhs-controls">
+          <section class="xhs-design-card"><div class="xhs-card-heading"><span class="xhs-step">01</span><div><h3>从论文到笔记</h3><p>提炼已保存正文，编排 overview、方法与结果原图。</p></div></div><div class="button-row"><button id="xhsPrepare" class="primary">自动设计笔记 <span aria-hidden="true">✧</span></button><button id="xhsExport" class="secondary" disabled>下载图文包 ↓</button></div><p id="xhsPreparationHint" class="xhs-fine-print">先在第 01 节完成文章。这里独立保存笔记，不改变公众号原稿。</p></section>
+          <section id="xhsEditor" class="xhs-edit-card" hidden><div class="xhs-card-heading"><span class="xhs-step">02</span><div><h3>文字与图卡</h3><p>在这里调整，导出后可到官方创作平台发布。</p></div><span id="xhsSaveState" class="xhs-save-state">已保存</span></div>
+            <label for="xhsTitle">笔记标题 <span id="xhsTitleCount" class="field-count">0 / 20</span></label><input id="xhsTitle" placeholder="用一句话，说明这项研究的看点">
+            <label for="xhsContent">笔记正文 <span id="xhsContentCount" class="field-count">0 / 1,000 · 含话题</span></label><textarea id="xhsContent" placeholder="问题、方法与结果，用读者容易理解的语言讲清楚。"></textarea>
+            <label for="xhsTags">话题标签 <small>最多 10 个 · 空格分隔，无需输入 #</small></label><input id="xhsTags" placeholder="自动驾驶 论文分享 人工智能">
+            <div class="xhs-gallery-heading"><h4>图卡顺序 <span id="xhsImageCount">0 / 9</span></h4><span>第一张为封面 · 点击图卡预览</span></div><div id="xhsCards" class="xhs-card-grid"></div>
+            <button id="xhsSave" class="secondary">保存笔记修改</button>
+          </section>
+          <section id="xhsWarnings" class="xhs-notes" hidden aria-live="polite"></section>
+          <section class="xhs-publish-card"><div class="xhs-card-heading"><span class="xhs-step">03</span><div><h3>发布到小红书</h3><p id="xhsPublishTarget">登录后显示当前发布账号。</p></div></div><label for="xhsVisibility">谁可以看到<select id="xhsVisibility"><option value="公开可见">公开 · 所有人可见</option><option value="仅自己可见">仅自己可见</option></select></label><div class="xhs-publish-notice"><span aria-hidden="true">↗</span><p><strong id="xhsVisibilityNotice">会公开发布到当前小红书账号，不是草稿。</strong><span>与第 04 节公众号投递相互独立；不会加入每日自动任务。</span></p></div><button id="xhsPublish" class="primary" disabled>发布到小红书 <span aria-hidden="true">↗</span></button><p id="xhsPublishHint" class="xhs-fine-print">完成笔记设计并连接账号后即可发布。</p></section>
+          <section class="xhs-receipt-card"><div class="card-heading"><h3>发布回执</h3><span id="xhsReceiptState">尚未发布</span></div><div id="xhsReceipt" role="status">每次发布都会保留回执。结果不明时先在小红书后台核对，避免重复发布。</div><div class="button-row"><a id="xhsPublishedLink" class="text-button" target="_blank" rel="noopener" hidden>查看笔记 ↗</a><button id="xhsReset" class="text-button" hidden>已核对后台，允许重新发布</button></div></section>
+        </div>
+        <aside class="xhs-preview-column"><div class="pane-heading"><h2>翻一翻，看看读起来如何</h2><span>3:4 图卡 · 笔记预览</span></div><div id="xhsPreview" class="xhs-phone"><div class="xhs-phone-header"><span class="xhs-avatar">P<span>·</span></span><div><b id="xhsPreviewAccount">你的研究笔记</b><small>图文笔记预览</small></div><span aria-hidden="true">···</span></div><div class="xhs-carousel"><img id="xhsPreviewImage" alt="小红书图卡预览" hidden><div id="xhsPreviewEmpty" class="xhs-preview-empty"><span class="xhs-empty-ornament">P<span>·</span></span><p>一篇研究<br><em>一种新的读法</em></p><small>自动设计后，论文原图会在这里呈现。</small><span class="xhs-empty-footer">PAPER STUDIO / IMAGE NOTES</span></div><span id="xhsSlideCount" class="xhs-slide-count" hidden></span><button id="xhsPrev" class="xhs-slide-button prev" aria-label="上一张图卡" hidden>‹</button><button id="xhsNext" class="xhs-slide-button next" aria-label="下一张图卡" hidden>›</button></div><div id="xhsDots" class="xhs-dots" aria-label="图卡页码"></div><div class="xhs-preview-copy"><h3 id="xhsPreviewTitle">值得被看见的，不止是结论。</h3><p id="xhsPreviewContent">把研究问题、方法与证据，放进可以慢慢翻阅的图文笔记里。</p><p id="xhsPreviewTags" class="xhs-preview-tags">#论文研读 #研究分享</p><div class="xhs-preview-footer"><span id="xhsPreviewEditor">编辑 Paper Studio</span><span>本地预览</span></div></div></div><p class="preview-footnote">图卡保留原图比例。这里是本地效果预览，最终展示以小红书为准。</p></aside>
       </div>
     </section>
   </section>
   <div id="taskBanner" class="task-banner" hidden><span class="spinner"></span><div><strong id="taskTitle">正在处理</strong><p id="taskMessage"></p></div><button id="cancelTask" class="text-button">取消任务</button></div>
 </main>
+<dialog id="xhsLoginDialog"><div class="dialog-heading"><h2>连接小红书</h2><button type="button" class="close" data-close="xhsLoginDialog" aria-label="关闭扫码窗口">×</button></div><p>使用小红书 App 扫码，并在手机上确认登录。请勿将二维码分享给其他人。</p><div class="xhs-qr-wrap"><img id="xhsQr" alt="小红书登录二维码"></div><p id="xhsQrMessage" class="muted">扫码后，点击下方按钮检查登录状态。</p><button id="xhsLoginCheck" class="primary">我已扫码，检查登录</button></dialog>
 <dialog id="settingsDialog"><form id="settingsForm"><div class="dialog-heading"><h2>写作模型</h2><button type="button" class="close" data-close="settingsDialog" aria-label="关闭">×</button></div>
 <p>支持多个 Chat Completions 兼容服务及本机模型。生成只调用当前选中的配置，不会自动换服务。</p>
 <label>已保存的模型<select id="modelProfiles"><option value="">新增模型配置</option></select></label>
 <div class="button-row"><button id="newModel" class="secondary" type="button">＋ 新增模型</button><button id="deleteModel" class="text-button" type="button">删除此配置</button></div>
 <label>配置名称<input id="profileName" placeholder="例如：DeepSeek Flash · 论文深读" maxlength="80"></label>
-<label>API Base URL<input id="baseUrl" type="url" placeholder="https://api.deepseek.com" required></label>
+<label>API 地址（支持完整 Chat Completions URL）<input id="baseUrl" type="url" placeholder="https://api.example.com/v1/chat/completions" required></label>
 <label>模型 ID<input id="modelId" placeholder="例如 deepseek-flash" required autocomplete="off"></label>
 <label>API Key<input id="apiKey" type="password" autocomplete="off" placeholder="填写服务商提供的密钥"></label>
+<div class="settings-grid"><label>鉴权方式<select id="authMode"><option value="bearer">Authorization: Bearer</option><option value="x-api-key">x-api-key</option><option value="api-key">api-key</option></select></label>
+<label>网络连接<select id="proxyMode"><option value="system">使用系统代理设置</option><option value="direct">直连此模型服务</option></select></label>
+<label>上下文容量（服务商声明）<input id="contextWindow" type="number" min="1024" max="4000000" placeholder="留空表示未声明"></label>
+<label>模型最大输出容量<input id="modelMaxOutput" type="number" min="1024" max="393216" placeholder="留空表示未声明"></label>
+<label>图像输入能力<select id="visionCapability"><option value="">未声明</option><option value="true">支持图像</option><option value="false">仅文本</option></select></label>
+<label>工具调用能力<select id="toolCalling"><option value="">未声明</option><option value="true">支持</option><option value="false">不支持</option></select></label></div>
 <label>单次输出上限（token，留空自动）<input id="outputTokens" type="number" min="1024" max="393216" step="1" placeholder="DeepSeek 官方自动使用最大值 393216（384K）"></label>
 <label>DeepSeek 官方思考模式<select id="thinkingMode"><option value="high">深入思考（推荐）</option><option value="low">轻量思考</option><option value="disabled">关闭思考</option></select></label>
-<p id="budgetHint" class="muted">DeepSeek 官方 Flash / V4 Pro 默认使用最大输出额度 393,216 token（384K），写稿和复核可直接参考完整原文。额度不是固定消耗量；其他服务请按其文档设置。截断或超时后重试可恢复已完成的阶段。</p>
+<label>响应方式<select id="responseMode"><option value="stream">流式接收（推荐，持续保存片段）</option><option value="json">标准 JSON（服务不支持流式时使用）</option></select></label>
+<label>连接／读取超时（秒）<input id="requestTimeout" type="number" min="30" max="1800" step="1" value="600"></label>
+<label>结构化输出参数<select id="jsonMode"><option value="auto">自动（仅已识别的官方接口）</option><option value="enabled">启用 JSON 模式（服务须支持）</option><option value="disabled">关闭参数，仅用提示词要求 JSON</option></select></label>
+<p class="muted">输出上限须符合实际服务限制，最大值不代表更稳定。纯语言模型也能生成带论文原图的推文；下面的图像开关仅用于让模型读取图片。断线最多重试当前请求 2 次，重试可能产生额外用量。</p>
+<p id="budgetHint" class="muted">容量是服务商声明，并非连通性保证。长上下文配置可直接参考完整论文；自动额度按阶段分配，单次输出可手动提高至已声明容量。网络故障不会因为增加 token 而修复。</p>
 <label class="checkbox"><input id="vision" type="checkbox"> 模型支持图像输入，同时读取选中原图</label>
 <label class="checkbox" id="rememberRow"><input id="rememberModels" type="checkbox" checked> 在此电脑加密保存全部模型配置，重启后恢复</label>
 <p class="muted">桌面版使用当前 Windows 用户的 DPAPI 加密，配置存于软件目录 settings/models.dpapi。密钥不回显，不写入源码、浏览器存储或导出包，不上传 GitHub。取消勾选并保存会删除磁盘配置，仅在本次运行使用。</p>
-<div class="button-row"><button class="primary" type="submit">保存并使用</button><button id="clearKey" class="secondary" type="button">清除全部配置与密钥</button></div></form></dialog>
+<div class="button-row"><button class="primary" type="submit">保存并使用</button><button id="checkModel" class="secondary" type="button">保存并检测连接</button><button id="clearKey" class="text-button" type="button">清除全部配置与密钥</button></div><p id="modelConnectionState" class="muted" role="status"></p></form></dialog>
 <dialog id="wechatDialog"><form id="wechatForm"><div class="dialog-heading"><h2>连接公众号</h2><button type="button" class="close" data-close="wechatDialog">×</button></div>
 <p>AppID 与 AppSecret 用于调用微信官方草稿接口。请在微信开发平台查看实际权限，并配置当前网络的公网出口 IP 白名单；不需要把本机网站放到公网。</p>
 <label>公众号名称<input id="wechatName" maxlength="80" placeholder="例如：论文研读社"></label>
@@ -132,22 +168,28 @@
 <p class="muted">独立存入软件目录 settings/wechat.dpapi；密钥不回显，不进入源码、模型提示词或导出包。个人账号是否可用以微信接口返回为准；此功能不调用正式发表接口。</p>
 <div class="button-row"><button type="submit" class="primary">保存配置</button><button type="button" id="checkWechat" class="secondary">保存并检测连接</button><button type="button" id="clearWechat" class="text-button">清除公众号配置</button></div><p id="wechatConnectionState" role="status"></p>
 </form></dialog>
+<dialog id="categoryDialog" aria-labelledby="categoryDialogTitle"><div class="dialog-heading"><div><p class="eyebrow">RESEARCH DIRECTIONS</p><h2 id="categoryDialogTitle">整理这篇论文</h2></div><button type="button" class="close" data-close="categoryDialog" aria-label="关闭分类设置">×</button></div>
+<p id="categoryPaperName" class="category-paper-name"></p><p class="muted">可以选择多个方向。自动标签仅供整理参考，依据标题、摘要和具体学科线索；不代表质量评价。手动保存后将优先采用你的选择，全部取消则保留在“待分类”。</p>
+<fieldset id="categoryChoices" class="category-choices"><legend>选择研究方向</legend></fieldset>
+<div class="button-row"><button id="saveCategories" class="primary">保存分类</button><button id="resetCategories" class="secondary">恢复自动分类</button></div></dialog>
 <dialog id="jsonDialog"><div class="dialog-heading"><h2>导入成稿 JSON</h2><button class="close" data-close="jsonDialog" aria-label="关闭">×</button></div><p>粘贴依据“全文写作提示词”生成的完整 JSON。导入时会验证章节、页码与配图 ID。</p><textarea id="articleJson" spellcheck="false" placeholder='{"title":"…","sections":[…]}'></textarea><button id="confirmJson" class="primary">校验并导入</button></dialog>
-<dialog id="helpDialog"><div class="dialog-heading"><h2>从论文到推文，四步完成</h2><button class="close" data-close="helpDialog" aria-label="关闭">×</button></div><ol class="help-list"><li><b>导入论文。</b>输入 arXiv 链接或上传 PDF，等待文字与原图提取。</li><li><b>确认配图。</b>在“原文与配图”检查裁剪区域、图号与表格，勾选写作时使用的图片。</li><li><b>生成与编辑。</b>配置模型，选择侧重点和篇幅，生成后逐章调整文字并保存。没有 API 也能导出提示词、导入 JSON。</li><li><b>复核与导出。</b>查看“证据核对”，下载图文包。将正文粘贴到公众号编辑器，逐张上传图片并检查移动端效果。</li></ol><p class="muted">审核通过后可提交公众号草稿；公开发表与群发在微信后台完成。模型生成与作者观点均需人工复核；软件、源码和数据独立于 GitHub 仓库，均保存在本机。导入 arXiv 会联网下载论文；生成时会连接你指定的模型服务。</p></dialog>
+<dialog id="helpDialog"><div class="dialog-heading"><h2>从论文到推文，四步完成</h2><button class="close" data-close="helpDialog" aria-label="关闭">×</button></div><ol class="help-list"><li><b>导入论文。</b>输入 arXiv 链接或上传 PDF，等待文字与原图提取。</li><li><b>确认配图。</b>在“原文与配图”检查裁剪区域、图号与表格，勾选写作时使用的图片。</li><li><b>生成与编辑。</b>配置模型，选择侧重点和篇幅，生成后逐章调整文字并保存。没有 API 也能导出提示词、导入 JSON。</li><li><b>自动投递。</b>点击“自动整理并投递草稿”，软件将适配摘要、选择 overview 封面、检查素材并上传。人工审核仍可选，公开发布在微信后台完成。</li></ol><p class="muted">自动检查后可提交公众号草稿；公开发表与群发在微信后台完成。模型生成与作者观点均需人工复核；软件、源码和数据独立于 GitHub 仓库，均保存在本机。导入 arXiv 会联网下载论文；生成时会连接你指定的模型服务。</p></dialog>
 <dialog id="feedDialog" class="feed-dialog"><div class="dialog-heading"><div><p class="eyebrow">RESEARCH RADAR</p><h2>自动选题与投递</h2></div><button class="close" data-close="feedDialog" aria-label="关闭">×</button></div>
 <p>先看标题与链接，再选论文。列表检索只读 arXiv 元数据，不下载 PDF、不调用写作模型。所选论文逐篇完成图文与草稿投递，下一篇才会开始下载。</p>
 <div class="button-row"><button type="button" id="feedDiscover" class="primary">获取最新标题与链接</button><button type="button" id="feedCopy" class="secondary">复制标题与链接</button></div>
 <p id="feedStatus" class="notice" role="status"></p>
-<div class="feed-controls"><label>筛选标题或 arXiv ID<input id="feedSearch" type="search" placeholder="例如 world model、agent、2610…"></label><span id="feedCount" class="muted"></span></div>
+<div class="feed-controls"><label>筛选标题或 arXiv ID<input id="feedSearch" type="search" placeholder="例如 world model、agent、2610…"></label><label>研究方向<select id="feedCategory" aria-label="筛选候选论文研究方向"><option value="">全部方向</option></select></label><span id="feedCount" class="muted"></span></div><p class="category-help">此处只筛选列表，不修改每日选题范围。交叉论文可出现在多个类别中。</p>
 <div class="button-row feed-actions"><button type="button" id="feedSelected" class="primary">按顺序生成并投递所选</button><button type="button" id="feedPause" class="secondary">停止当前任务</button><button type="button" id="feedFinish" class="secondary">完成本篇后停止</button><button type="button" id="feedResume" class="text-button">继续未完成队列</button></div>
 <p id="feedSerial" class="muted">每次可选 1–5 篇；使用当前模型与公众号，新稿采用自适应写作与排版、文本分析加原图配图。当前网络请求结束后响应停止，后续 PDF 不会提前下载。编辑作品前请先停止队列。</p>
 <div id="feedQueue" class="feed-queue"></div>
 <details class="brief-box"><summary>每日自动选题设置（独立于上面的手动选题）</summary>
 <form id="feedForm"><div class="feed-grid"><label>定时写作模型<select id="feedModel"></select></label><label>每日最多生成<input id="feedMax" type="number" min="1" max="5" value="5"></label><label>文章风格<select id="feedStyle"><option value="adaptive">随论文类型调整</option><option value="technical">技术深读</option><option value="world">世界模型与具身</option><option value="systems">AI Infra</option><option value="benchmark">数据集与评测</option><option value="news">科技报道</option><option value="reproduction">工程复现</option></select></label></div>
 <div id="feedTopics" class="feed-topics"></div>
+<label class="checkbox"><input id="feedAlphaXiv" type="checkbox" checked> 在 arXiv 检索之外，补充 AlphaXiv 公开论文发现</label>
+<p class="muted">优先级结合方向匹配、摘要中的方法/评测信息、代码线索和明确的作者机构。机构缺失不会排除；提到知名模型不等于作者来自该机构。此排序不是科学质量评分。</p>
 <label class="checkbox"><input id="feedVision" type="checkbox">该模型支持图像输入，允许同时读取论文原图</label>
 <label class="checkbox"><input id="feedEnabled" type="checkbox">启用自动生成并投递到当前公众号草稿箱</label>
-<p id="feedBinding" class="muted"></p><p class="muted">定时任务已暂停。如需恢复，须同时在 Codex 自动任务中启用。无人值守选题仍要求项目与代码核实；当前篇未满足条件或处理失败即停止本轮，不连续下载其他候选。手动选择不消耗每日自动额度。</p>
+<p id="feedBinding" class="muted"></p><p class="muted">每天 09:00（北京时间）由 Codex 本地自动任务触发；电脑需开机且 Codex 可运行。无人值守每天最多 5 次生成尝试，无新论文则跳过。先刷新标题，只有轮到当前篇才下载 PDF；完成一篇再开始下一篇。无人值守仍核实项目和公开实现；失败保留进度并停止本轮。手动入口继续保留；手动选择不计此无人值守额度。</p>
 <div class="button-row"><button type="submit" class="primary" id="feedSave">保存自动配置</button><button type="button" id="feedRun" class="secondary">运行严格选题一轮</button></div></form></details>
 <p class="muted">待处理文章可以打开后手动编辑、补图、审核并提交。自动检查不能证明事实、裁剪完整性或转载权限；请在发布前核对。模型与公众号密钥只从本机加密配置读取。</p></dialog>
 <div id="toast" class="toast" role="status" hidden></div>

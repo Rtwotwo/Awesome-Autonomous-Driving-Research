@@ -28,12 +28,35 @@ Review the identity card, mechanism, experimental conditions, comparisons, quali
 
 1. Enter AppID/AppSecret locally. Confirm material and draft permissions in the official WeChat developer console.
 2. Allowlist the actual public egress IP. VPNs, proxies, and network changes can change it.
-3. Choose a cover and inspect title, byline, digest, source link, and formatted body in the upload preview.
-4. Use field preparation for oversized card fields. It preserves the original article and records adjustments.
-5. Complete review checks, approve the current version, and submit. Retain the receipt.
+3. Open stage 04, **Automatic checks and delivery**. Choose **Prepare and check only** for a local preview, or **Automatically prepare and deliver** for the complete draft-box workflow.
+4. Missing upload fields are prepared automatically. The default byline is Paper Studio. An eligible overview/architecture figure is fitted into a wide cover without cutting away labels. Existing custom fields and cover selections remain intact.
+5. Inspect the result and receipt. Expand the editing panel to customize title, byline, digest, cover or layout. The optional human-review panel retains the previous checkbox/approval workflow, but is not required for automatic delivery.
 6. Check the official draft box, add videos where needed, send a phone preview, and publish there.
 
 The upload adapter conservatively uses a 32-character title, 16-character byline, and 120-character card digest. These are application policies, not manuscript limits. The short digest is separate from the body summary. HTML markup counts toward the body budget: the application can compact it, but does not silently delete article content.
+
+Automatic checks cover article structure, referenced assets, cover availability,
+upload limits and target-account readiness. Evidence-matching and coverage
+warnings remain visible; they do not become a claim that a person reviewed the
+paper. Paper Studio is the default editor, not a fabricated human sign-off. An
+unreviewed imported image or uncertain whole-page crop may still require a
+manual correction before upload. Previously submitted or ambiguous deliveries
+must be checked through their receipt before any resend.
+
+Use the writing panel's generation-and-delivery option to chain a completed
+generation into the same automatic workflow. When an account is configured,
+this clearly labelled option starts checked on application launch; uncheck it
+for local-only writing during the current session. Once started, the server
+keeps the selected workflow running while you browse other papers. Opening a
+paper or changing a setting does not itself submit it. A failed or cancelled
+generation does not deliver a partial article. Restarting the application does
+not automatically retry an interrupted delivery. Existing arXiv direct-delivery and serial queues remain
+available; this feature does not turn on a paused daily schedule.
+
+Automatic covers are refreshed when their title or source figure changes;
+explicit cover choices are preserved. A valid saved Baoyu layout is reused.
+If it is absent or stale and the formatter cannot run, the workflow selects the
+built-in ink theme and records the fallback in the check report.
 
 ## Direct and batch modes
 
