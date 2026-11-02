@@ -1,8 +1,8 @@
 # Awesome Autonomous Driving Research
 
-A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **375 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
+A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **379 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
 
-Last updated: 2026-10-30. Verify paper metadata against the latest arXiv or publisher version before citation.
+Last updated: 2026-11-02. Verify paper metadata against the latest arXiv or publisher version before citation.
 
 [Paper Studio](paper-studio/README.md) is the companion local paper-to-WeChat workspace, available under a separate **noncommercial source license**.
 
@@ -195,13 +195,14 @@ _97 papers; 56 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_111 papers; 54 with a verified public code link._
+_112 papers; 54 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **Q-Adaptive Guidance**<br><sub>How Much Should a VLA Trust Its Reasoning? Step-Level Guidance as a Measured Action-Value Function</sub> | 2026 | `Reasoning-Action Coupling` · `Classifier-Free Guidance` · `Trajectory Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.40002-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.40002) |
 | **Reasoning-Action Coupling**<br><sub>Measuring the Reasoning-Action Coupling in Driving Vision-Language-Action Models through Counterfactuals</sub> | 2026 | `Counterfactual evaluation` · `Reasoning faithfulness` · `Explainability` · `Driving VLA` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30953-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30953) |
 | **Perceives but Doesn't Brake**<br><sub>Perceives but Doesn't Brake: A Perception-Action Binding Gap in Reasoning Driving VLAs</sub> | 2026 | `Safety diagnosis` · `Perception-action alignment` · `Inference-time guidance` · `Flow matching` | [![arXiv](https://img.shields.io/badge/arXiv-2610.28184-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.28184) [🌐](https://matcercola18.github.io/pbdb/ "Official project page")<br><sub>Project URL supplied by the paper; page unavailable at this check.</sub> |
 | **Cartender**<br><sub>Cartender: Verifiable Language-Conditioned Driving by Learning the Drives Not Taken</sub> | 2026 | `Instruction following` · `Counterfactual supervision` · `Flow matching` · `GRPO` | [![arXiv](https://img.shields.io/badge/arXiv-2610.26390-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.26390) |
@@ -350,13 +351,14 @@ _111 papers; 54 with a verified public code link._
 
 ### Driving World Models
 
-_103 papers; 54 with a verified public code link._
+_104 papers; 54 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **GATS**<br><sub>Let LiDAR Decide Where to Look: Geometry-Measured Token Selection for Efficient Sparse Latent World Models</sub> | 2026 | `Token Selection` · `Latent Dynamics` · `Sensor Fusion` | [![arXiv](https://img.shields.io/badge/arXiv-2610.40935-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.40935) |
 | **DriveUniTok**<br><sub>DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models</sub> | 2026 | `World-Action Model` · `Multimodal Tokenizer` · `Diffusion` · `Planning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.35044-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.35044) |
 | **Dream2Assist**<br><sub>Dream to Assist: Intent-Conditioned World Models for Shared Vehicle Control</sub> | 2026 | `World Model` · `Model-Based RL` · `Shared Control` · `Human Intent` | [![arXiv](https://img.shields.io/badge/arXiv-2610.34650-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.34650)<br><sub>The earlier Dream2Assist repository was not verified as implementing this 2026 extension.</sub> |
 | **CADRE**<br><sub>Rethinking Video Autoencoders for Interactive World Models</sub> | 2026 | `World Model` · `Video Autoencoder` · `Action-Conditioned Generation` · `Real-Time Simulation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30129-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30129) [💻](https://github.com/kyutai-labs/cadre-autoencoders-and-world-models "Paper-related code repository") [🌐](https://kyutai.org/blog/2026-10-22-cadre/ "Official project page") |
@@ -577,13 +579,15 @@ _28 papers; 10 with a verified public code link._
 
 ### Perception & Other Driving Research
 
-_36 papers; 12 with a verified public code link._
+_38 papers; 13 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | 🔗 **Resources** |
 |---|---|---|:---:|
+| **Mechanistic Interpretability for E2E Driving**<br><sub>Mechanistic Interpretability for End-to-End Self-Driving</sub> | CoRL 2026 | `Mechanistic Interpretability` · `Sparse Autoencoders` · `Counterfactual Evaluation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.41185-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.41185) [💻](https://github.com/mgagvani/mech-interp-e2e-driving "Paper-related code repository") [🌐](https://mgagvani.github.io/mechanistic-interpretability-for-e2e-driving/ "Official project page") |
+| **Learned Terminal Costs for Trucks**<br><sub>Learned Terminal Costs for Short-Horizon Model Predictive Control of Autonomous Trucks in Interactive Highway Traffic</sub> | 2026 | `Truck Planning` · `Model Predictive Control` · `Reinforcement Learning` | [![arXiv](https://img.shields.io/badge/arXiv-2610.40257-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.40257) |
 | **SRP**<br><sub>Structured Representation Probing for Risk Anticipation in End-to-End Autonomous Driving</sub> | 2026 | `Risk Anticipation` · `Runtime Monitoring` · `Representation Probing` · `End-to-End Driving` | [![arXiv](https://img.shields.io/badge/arXiv-2610.37299-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.37299) |
 | **Road Infrastructure Perception Survey**<br><sub>Road Infrastructure Perception for Autonomous Driving: Taxonomy, Representations, Tasks, and Challenges</sub> | 2026 | `Survey` · `Road Infrastructure` · `Online Mapping` · `Planning-Oriented Evaluation` | [![arXiv](https://img.shields.io/badge/arXiv-2610.33758-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.33758) |
 | **Foundation4D**<br><sub>Foundation4D: Towards a unified perception and reconstruction model for autonomous vehicles</sub> | 2026 | `Unified Perception` · `3D Reconstruction` · `Semantic Occupancy` · `Multi-Camera Video` | [![arXiv](https://img.shields.io/badge/arXiv-2610.30340-b31b1b?style=flat-square)](https://arxiv.org/abs/2610.30340) |

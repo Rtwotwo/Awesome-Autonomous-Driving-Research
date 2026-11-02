@@ -3097,6 +3097,38 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2610-40002",
+    "name": "Q-Adaptive Guidance",
+    "title": "How Much Should a VLA Trust Its Reasoning? Step-Level Guidance as a Measured Action-Value Function",
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Reasoning-Action Coupling",
+      "Classifier-Free Guidance",
+      "Trajectory Planning"
+    ],
+    "datasets": [
+      "Alpasim",
+      "Waymo End-to-End Driving"
+    ],
+    "paper": "https://arxiv.org/abs/2610.40002",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "A lightweight critic adjusts how strongly a frozen driving policy uses its reasoning trace at each decoding step. The authors measure action values by completing plans under fixed noise and evaluate adaptive guidance in Alpasim and on the Waymo end-to-end driving benchmark.",
+    "codeCheckedAt": "2026-11-02",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-02",
+    "citationURL": null
+  },
+  {
     "id": "2610-30953",
     "name": "Reasoning-Action Coupling",
     "title": "Measuring the Reasoning-Action Coupling in Driving Vision-Language-Action Models through Counterfactuals",
@@ -6707,6 +6739,38 @@
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
     "codeCheckedAt": "2026-10-09"
+  },
+  {
+    "id": "2610-40935",
+    "name": "GATS",
+    "title": "Let LiDAR Decide Where to Look: Geometry-Measured Token Selection for Efficient Sparse Latent World Models",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Token Selection",
+      "Latent Dynamics",
+      "Sensor Fusion"
+    ],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
+    "paper": "https://arxiv.org/abs/2610.40935",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "GATS projects LiDAR and radar measurements into the camera view to select patches before visual encoding. A latent world model predicts the future features and motion of the retained tokens. The paper compares planning accuracy and compute at different token budgets on nuScenes and NAVSIM.",
+    "codeCheckedAt": "2026-11-02",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-02",
+    "citationURL": null
   },
   {
     "id": "2610-35044",
@@ -10929,6 +10993,68 @@
     "githubRepoRole": null,
     "githubStarsCheckedAt": null,
     "codeCheckedAt": "2026-10-09"
+  },
+  {
+    "id": "2610-41185",
+    "name": "Mechanistic Interpretability for E2E Driving",
+    "title": "Mechanistic Interpretability for End-to-End Self-Driving",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "CoRL 2026",
+    "tags": [
+      "Mechanistic Interpretability",
+      "Sparse Autoencoders",
+      "Counterfactual Evaluation"
+    ],
+    "datasets": [
+      "Waymo Open Dataset"
+    ],
+    "paper": "https://arxiv.org/abs/2610.41185",
+    "code": "https://github.com/mgagvani/mech-interp-e2e-driving",
+    "project": "https://mgagvani.github.io/mechanistic-interpretability-for-e2e-driving/",
+    "openSource": true,
+    "codeStatus": "released",
+    "stars": null,
+    "summary": "The authors fit sparse autoencoders to a single-camera planner and intervene on individual features to test their effect on braking and path curvature. Counterfactual image edits connect some features to traffic cues, and a small adapter uses the features to improve trajectory selection.",
+    "codeCheckedAt": "2026-11-02",
+    "githubRepo": "https://github.com/mgagvani/mech-interp-e2e-driving",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-02",
+    "citationURL": null
+  },
+  {
+    "id": "2610-40257",
+    "name": "Learned Terminal Costs for Trucks",
+    "title": "Learned Terminal Costs for Short-Horizon Model Predictive Control of Autonomous Trucks in Interactive Highway Traffic",
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-10",
+    "venue": "2026",
+    "tags": [
+      "Truck Planning",
+      "Model Predictive Control",
+      "Reinforcement Learning"
+    ],
+    "datasets": [],
+    "paper": "https://arxiv.org/abs/2610.40257",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "stars": null,
+    "summary": "A learned terminal cost gives a short-horizon truck planner an estimate of what happens beyond its optimization window. Experiments in simulated reactive highway traffic compare the hybrid controller with pure reinforcement learning, zero terminal cost and a rollout-based cost.",
+    "codeCheckedAt": "2026-11-02",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-02",
+    "citationURL": null
   },
   {
     "id": "2610-37299",

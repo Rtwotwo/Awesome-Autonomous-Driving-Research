@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-09",
   "scope": "Per-paper repository identity and release-availability audit. Repository roots and README release statements were inspected; implementations were not executed. A no-match result is not proof that no public implementation exists. Third-party paper lists and same-name repositories were not treated as author code.",
   "coverage": {
-    "papers": 375,
+    "papers": 379,
     "repositoryNameSearches": 85,
     "identifierFileSearches": 78,
     "repositoryRootChecks": 166,
@@ -10035,53 +10035,90 @@
         "\"CoGaussian\" code github",
         "\"CoGaussian\" github"
       ]
+    },
+    "2610-41185": {
+      "checkedAt": "2026-11-02",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/mgagvani/mech-interp-e2e-driving",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The project links the repository containing the SAE training implementation.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.41185",
+        "https://arxiv.org/html/2610.41185v1",
+        "https://mgagvani.github.io/mechanistic-interpretability-for-e2e-driving/",
+        "https://github.com/mgagvani/mech-interp-e2e-driving",
+        "https://github.com/mgagvani/mech-interp-e2e-driving/blob/main/src/train_sae.py"
+      ],
+      "implementationFiles": [
+        "https://github.com/mgagvani/mech-interp-e2e-driving/blob/main/src/train_sae.py"
+      ],
+      "firstSubmitted": "2026-10-30"
+    },
+    "2610-40935": {
+      "checkedAt": "2026-11-02",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was identified in the paper or targeted code search.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.40935",
+        "https://arxiv.org/html/2610.40935v1"
+      ],
+      "implementationFiles": [],
+      "firstSubmitted": "2026-10-29"
+    },
+    "2610-40257": {
+      "checkedAt": "2026-11-02",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was identified in the paper or targeted code search.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.40257",
+        "https://arxiv.org/html/2610.40257v1"
+      ],
+      "implementationFiles": [],
+      "firstSubmitted": "2026-10-29"
+    },
+    "2610-40002": {
+      "checkedAt": "2026-11-02",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was identified in the paper or targeted code search.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.40002",
+        "https://arxiv.org/html/2610.40002v1"
+      ],
+      "implementationFiles": [],
+      "firstSubmitted": "2026-10-29"
     }
   },
   "lastIncrementalUpdate": {
-    "date": "2026-10-30",
+    "date": "2026-11-02",
     "added": [
-      "SRP",
-      "CLAP-AD",
-      "Model-Aware Safety-Critical Scenes",
-      "VITAL",
-      "SDPAD",
-      "Reasoning-Action Coupling",
-      "Cartender",
-      "Language2Drive",
-      "DriveUniTok",
-      "Dream2Assist",
-      "TerraTransfer++",
-      "CADRE",
-      "SHRED",
-      "UncArms",
-      "Road Infrastructure Perception Survey",
-      "Foundation4D",
-      "CoGaussian"
+      "Mechanistic Interpretability for E2E Driving",
+      "GATS",
+      "Learned Terminal Costs for Trucks",
+      "Q-Adaptive Guidance"
     ],
     "releaseStatusUpdated": [],
     "counts": {
-      "added": 17,
-      "total": 375,
-      "byTrack": {
-        "e2e": 4,
-        "vla": 3,
-        "world-model": 3,
-        "rsi": 3,
-        "perception-other": 4
-      },
-      "totalsByTrack": {
-        "e2e": 97,
-        "vla": 111,
-        "world-model": 103,
-        "rsi": 28,
-        "perception-other": 36
-      },
-      "released": 3,
-      "partial": 1,
-      "pending": 2,
-      "notFound": 12
+      "added": 4,
+      "total": 379,
+      "released": 1,
+      "notFound": 3
     },
-    "note": "Incremental search through 2026-10-30, prioritizing late-October submissions and several missed October papers. Only the added entries were checked; previous records and observation dates are preserved. Primary arXiv papers and author sources support the additions. Generic self-play, simulation or evaluation does not imply general recursive self-modification. No claim of exhaustive coverage or ADFeed endorsement is made."
+    "discoveryNote": "The public ADFeed index still displayed older posts. These October 29 and 30 submissions were located independently on arXiv.",
+    "discoveryURL": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1"
   },
   "incrementalAudit": {
     "checkedAt": "2026-10-25",
@@ -10091,5 +10128,53 @@
     ],
     "source": "adfeed-audit.json",
     "note": "Earlier records and their observation dates are preserved; old search counters describe the earlier audit only."
-  }
+  },
+  "previousIncrementalUpdates": [
+    {
+      "date": "2026-10-30",
+      "added": [
+        "SRP",
+        "CLAP-AD",
+        "Model-Aware Safety-Critical Scenes",
+        "VITAL",
+        "SDPAD",
+        "Reasoning-Action Coupling",
+        "Cartender",
+        "Language2Drive",
+        "DriveUniTok",
+        "Dream2Assist",
+        "TerraTransfer++",
+        "CADRE",
+        "SHRED",
+        "UncArms",
+        "Road Infrastructure Perception Survey",
+        "Foundation4D",
+        "CoGaussian"
+      ],
+      "releaseStatusUpdated": [],
+      "counts": {
+        "added": 17,
+        "total": 375,
+        "byTrack": {
+          "e2e": 4,
+          "vla": 3,
+          "world-model": 3,
+          "rsi": 3,
+          "perception-other": 4
+        },
+        "totalsByTrack": {
+          "e2e": 97,
+          "vla": 111,
+          "world-model": 103,
+          "rsi": 28,
+          "perception-other": 36
+        },
+        "released": 3,
+        "partial": 1,
+        "pending": 2,
+        "notFound": 12
+      },
+      "note": "Incremental search through 2026-10-30, prioritizing late-October submissions and several missed October papers. Only the added entries were checked; previous records and observation dates are preserved. Primary arXiv papers and author sources support the additions. Generic self-play, simulation or evaluation does not imply general recursive self-modification. No claim of exhaustive coverage or ADFeed endorsement is made."
+    }
+  ]
 }

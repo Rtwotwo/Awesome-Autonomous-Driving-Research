@@ -6172,6 +6172,38 @@
       "checkedAt": "2026-10-30",
       "status": "unavailable",
       "note": "Not queried during this metadata/code-release update; no citation count is inferred."
+    },
+    "2610-41185": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-02",
+      "status": "unavailable",
+      "note": "Citation counts were not queried in this update."
+    },
+    "2610-40935": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-02",
+      "status": "unavailable",
+      "note": "Citation counts were not queried in this update."
+    },
+    "2610-40257": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-02",
+      "status": "unavailable",
+      "note": "Citation counts were not queried in this update."
+    },
+    "2610-40002": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-02",
+      "status": "unavailable",
+      "note": "Citation counts were not queried in this update."
     }
   },
   "failures": []
