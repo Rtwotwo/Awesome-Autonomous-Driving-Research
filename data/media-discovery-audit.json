@@ -1,0 +1,552 @@
+{
+  "checkedAt": "2026-11-15",
+  "searchWindow": {
+    "from": "2026-10-26",
+    "to": "2026-11-15"
+  },
+  "policy": "Media posts are discovery leads only. Deduplicate by arXiv ID and title; verify facts against primary sources. Preserve original paper dates, including earlier papers recently covered. Omit missing links.",
+  "catalogBefore": 398,
+  "catalogAfter": 403,
+  "addedPapers": 5,
+  "sources": [
+    {
+      "source": "量子位",
+      "checkedAt": "2026-11-15",
+      "coverage": {
+        "completeAccountHistory": false,
+        "pages": [
+          "https://www.qbitai.com/tag/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6",
+          "https://tech.sinsc.com/media/rss-mp-lzl",
+          "https://tech.sinsc.com/media/rss-mp-lzl/page/2",
+          "https://tech.sinsc.com/media/rss-mp-lzl/page/3"
+        ],
+        "limitations": [
+          "Recent account-attributed index pages and targeted web searches were checked; this is not a complete export of the account.",
+          "Some qbitai pages timed out and the direct WeChat article was inaccessible. Attributed public reposts supplied discovery leads; paper facts were checked against arXiv and the authors' project/repository.",
+          "The media date is distinct from the paper's first submission date. Motion Forcing was first submitted in March and revised in September, then covered in November."
+        ]
+      },
+      "duplicates": [
+        {
+          "paperId": "2609-20377",
+          "name": "MM-Future",
+          "url": "https://www.qbitai.com/2026/09/496834.html",
+          "reason": "Already in the catalog; not added again."
+        }
+      ],
+      "excluded": [
+        {
+          "name": "ApolloWorld",
+          "url": "https://www.qbitai.com/2026/11/507647.html",
+          "reason": "Industry announcement; no primary research paper identified in the checked article."
+        },
+        {
+          "name": "AgentGarten",
+          "url": "https://www.qbitai.com/2026/10/502096.html",
+          "reason": "Lead remained unresolved: article retrieval timed out and a sufficiently grounded driving-paper entry was not established in this pass."
+        }
+      ]
+    },
+    {
+      "source": "物理AI之心（含明确迁移前身：自动驾驶之心）",
+      "checkedAt": "2026-11-15",
+      "duplicates": [
+        {
+          "name": "DriveVLA-M0",
+          "id": "2608-10413",
+          "dateLabel": "4 天前",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0"
+        },
+        {
+          "name": "ViRA",
+          "id": "2610-09695",
+          "dateLabel": "1 周前",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0"
+        },
+        {
+          "name": "SimVTA",
+          "id": "2610-13781",
+          "dateLabel": "1 周前",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0"
+        },
+        {
+          "name": "DriveTeach-VLA",
+          "id": "2607-01658",
+          "dateLabel": "1 月前",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+        },
+        {
+          "name": "BehaviorWorldGen",
+          "id": "2608-22187",
+          "dateLabel": "1 月前",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+        },
+        {
+          "name": "WA-JEPA",
+          "id": "2608-20974",
+          "dateLabel": "1 月前",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+        },
+        {
+          "name": "BrainWAM",
+          "id": "2608-12854",
+          "dateLabel": "2 月前",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+        }
+      ],
+      "coverage": {
+        "deduplicatedAgainst": "E:\\DataAPPs\\VScode\\work_autodrive\\data\\papers.json (398 records)",
+        "accessibleArchives": [
+          "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+        ],
+        "migrationEvidence": "The predecessor archive explicitly states permanent migration and links to the new 物理AI之心 archive.",
+        "unavailablePages": [
+          "https://www.jintiankansha.com/column/KoaJGso2E0?page=2",
+          "https://www.jintiankansha.com/column/SRQSJLMVTf?page=2",
+          "https://www.jintiankansha.com/column/SRQSJLMVTf?page=3"
+        ],
+        "limits": [
+          "Public archive views expose headlines and relative labels, not verified absolute publication dates or direct article links. Cached relative labels are retained without date arithmetic.",
+          "Next-page requests returned cache misses or inaccessible-tool errors; bounded discovery therefore covers two accessible first pages, not the full history.",
+          "One new-archive missing paper and three explicitly older predecessor-archive backfills were verified. These must not all be described as November first submissions.",
+          "The headline 只有视频，没有动作，WAM怎么训练？ could not be tied uniquely to a primary paper and is excluded.",
+          "Other older visible leads OccAnyScene, G2DP and VectorReLoc were not pursued in this bounded recent update."
+        ]
+      }
+    },
+    {
+      "shard_id": "adfeed",
+      "sourceAccount": "ADFeed (AI DevFeed)",
+      "checkedAt": "2026-11-15",
+      "requestedWindow": {
+        "from": "2026-10-26",
+        "to": "2026-11-15"
+      },
+      "coverage": {
+        "completeAccountHistory": false,
+        "verifiedRecentPostsInRequestedWindow": 0,
+        "publicArchivePagesRead": 4,
+        "publicArchiveTitlesRead": 80,
+        "archiveUrls": [
+          "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+          "https://www.jintiankansha.me/column/HW4Hx23mHq?page=2",
+          "https://www.jintiankansha.me/column/HW4Hx23mHq?page=3",
+          "https://www.jintiankansha.me/column/HW4Hx23mHq?page=4"
+        ],
+        "priorAudit": "data/adfeed-audit.json (2026-10-25; 19 pages, 380 titles, 81 prior additions)",
+        "finding": "The public archive still starts with the same May 2026 driving papers present in the prior audit and current 398-paper catalog. No verified missing paper attributable to a new ADFeed post was identified.",
+        "searchQueries": [
+          "ADFeed 2026 11",
+          "ADFeed 11月 自动驾驶",
+          "ADFeed 自动驾驶 2026",
+          "ADFeed 2026-11",
+          "ADFeed 2026 论文",
+          "ADFeed site:aitntnews.com 自动驾驶",
+          "ADFeed Fast-dDrive",
+          "ADFeed 2026-10",
+          "ADFeed CARE-Drive",
+          "ADFeed 驾驶 最新",
+          "ADFeed site:mp.weixin.qq.com/s/",
+          "AI DevFeed driving 2026",
+          "老A看看 驾驶 2026"
+        ],
+        "limitations": [
+          "The public archive exposes titles but no exact article dates or individual article URLs for these entries; no Oct 26-Nov 15 post date could be verified.",
+          "The visible latest titles correspond to papers first submitted in May 2026, and the first two pages match the prior audit inventory. The index may be stale and is not proof that the account published nothing recently.",
+          "Search results were dominated by unrelated ADFeed names, old explicitly attributed reposts, and this repository's own mirrors. Repository mirrors were excluded as independent discovery evidence.",
+          "No access controls were bypassed. Only public archive HTML titles and publicly indexed search results were read.",
+          "No new papers were added merely to satisfy a quantity target; prior ambiguous descriptor-only matches remain unresolved."
+        ]
+      },
+      "notableDuplicates": [
+        {
+          "name": "Fast-dDrive",
+          "dedup_key": "2605.23163",
+          "paper": "https://arxiv.org/abs/2605.23163",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "Fast-dDrive：\"填空式\"块扩散方法让自动驾驶大模型写得少、想得全、跑得快",
+            "date": null
+          }
+        },
+        {
+          "name": "LVDrive",
+          "dedup_key": "2605.22089",
+          "paper": "https://arxiv.org/abs/2605.22089",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "LVDrive：潜在视觉增强让AI学会“看未来”的端到端驾驶新框架",
+            "date": null
+          }
+        },
+        {
+          "name": "HorizonDrive",
+          "dedup_key": "2605.11596",
+          "paper": "https://arxiv.org/abs/2605.11596",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "HorizonDrive：让自动驾驶仿真自我纠错走进“分钟级长镜头”时代",
+            "date": null
+          }
+        },
+        {
+          "name": "DeepSight",
+          "dedup_key": "2605.10564",
+          "paper": "https://arxiv.org/abs/2605.10564",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "DeepSight：让自动驾驶学会\"看本质、想长远\"的语义世界模型",
+            "date": null
+          }
+        },
+        {
+          "name": "PointForward",
+          "dedup_key": "2605.11594",
+          "paper": "https://arxiv.org/abs/2605.11594",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "PointForward：用\"点云对齐\"实现又快又稳的街景还原让自动驾驶三维重建告别\"重影\"",
+            "date": null
+          }
+        },
+        {
+          "name": "CoWorld-VLA",
+          "dedup_key": "2605.10426",
+          "paper": "https://arxiv.org/abs/2605.10426",
+          "paperMonthFromCatalog": "2026-05",
+          "source": {
+            "account": "ADFeed",
+            "type": "archive",
+            "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "title": "CoWorld-VLA：用多专家潜推理打通世界想象与轨迹规划让自动驾驶学会\"一心四用\"",
+            "date": null
+          }
+        }
+      ]
+    }
+  ],
+  "additions": [
+    {
+      "dedup_key": "2603.10408",
+      "name": "Motion Forcing",
+      "title": "Motion Forcing: A Decoupled Framework for Robust Video Generation in Motion Dynamics",
+      "alternateTitles": [
+        "Motion Forcing: Decoupling Ego and Object Motion via Sparse Inputs for Structured Video Generation"
+      ],
+      "authors": [
+        "Tianshuo Xu",
+        "Zhifei Chen",
+        "Leyi Wu",
+        "Hao Lu",
+        "Ying-cong Chen"
+      ],
+      "submitted": "2026-03-11",
+      "revised": "2026-09-26",
+      "track": "world-model",
+      "venue": "NeurIPS 2026",
+      "tags": [
+        "Sparse Motion Control",
+        "Depth-Guided Generation",
+        "Ego-Object Motion Decoupling"
+      ],
+      "datasets": [
+        "Waymo",
+        "Driving Dojo",
+        "Physion",
+        "Jaco Play"
+      ],
+      "paper": "https://arxiv.org/abs/2603.10408",
+      "code": "https://github.com/Tianshuo-Xu/Motion-Forcing",
+      "project": "https://tianshuo-xu.github.io/Motion-Forcing/",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "codeNote": "Inference code, Gradio demo and checkpoint are released; data processing and training code remain marked coming soon.",
+      "summary": "Converts sparse object trajectories and camera motion into dynamic depth before rendering RGB video. Masked trajectory recovery supports motion completion; driving evaluation includes controlled traffic interactions.",
+      "evidence": [
+        "https://arxiv.org/abs/2603.10408",
+        "https://arxiv.org/html/2603.10408v2",
+        "https://tianshuo-xu.github.io/Motion-Forcing/",
+        "https://github.com/Tianshuo-Xu/Motion-Forcing"
+      ],
+      "discovery": {
+        "source": "量子位",
+        "type": "attributed-repost",
+        "date": "2026-11-10",
+        "title": "一图生成不穿模的驾驶视频，物理合理性Waymo实测第一丨港科广新框架已开源",
+        "url": "https://tech.sinsc.com/items/vimwyiu88v27w6gn966jx3evk",
+        "originalUrl": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw%3D%3D&idx=3&mid=2247942445&sn=daa8c5e19b4475029e89910f836ad72a",
+        "corroboratingRepost": "https://ainrk.com/article/article-31127"
+      },
+      "metadataNote": "arXiv abstract page, project and repository retain the original title; v2 HTML uses the alternate title. Both refer to the same arXiv ID."
+    },
+    {
+      "dedup_key": "arxiv:2610.18866",
+      "name": "AutoAgent0",
+      "title": "AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving",
+      "authors": [
+        "Jiageng Liu",
+        "Seth Z. Zhao",
+        "Zewei Zhou",
+        "Alejandro Huerta",
+        "Aidan Bayer-Calvert",
+        "Yuxin Bao",
+        "Haotian Lin",
+        "Robert Spataru",
+        "Zijun Cui",
+        "Yining Hong",
+        "Bolei Zhou",
+        "Jiaqi Ma"
+      ],
+      "submitted": "2026-10-13",
+      "track": "e2e",
+      "venue": "arXiv 2026",
+      "tags": [
+        "Runtime Assurance",
+        "Agentic Recovery",
+        "Trajectory Verification"
+      ],
+      "datasets": [
+        "Fail2Drive",
+        "NavSafe-∞"
+      ],
+      "paper": "https://arxiv.org/abs/2610.18866",
+      "code": "https://github.com/jiagengliu02/AutoAgent0",
+      "project": "https://jiagengliu02.github.io/AutoAgent0/",
+      "codeStatus": "available",
+      "codeScope": "Runtime implementation, checkpoints and CARLA evaluation",
+      "codeNote": "Public runtime modules, adapters, configurations and evaluation scripts; quickstart documents checkpoints and Fail2Drive evaluation. This is test-time recovery without retraining the underlying policies.",
+      "summary": "Wraps driving experts with independent scene assessment, rule-based trajectory verification and feedback-driven recovery planning, iteratively refining action primitives when nominal plans fail.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2610.18866",
+          "supports": "Exact title, authors, v1 date, benchmarks and no-retraining runtime formulation."
+        },
+        {
+          "url": "https://jiagengliu02.github.io/AutoAgent0/",
+          "supports": "Official project links the paper and code repository."
+        },
+        {
+          "url": "https://github.com/jiagengliu02/AutoAgent0/blob/main/docs/quickstart.md",
+          "supports": "Installation, checkpoints, runtime configurations and evaluation commands are public."
+        }
+      ],
+      "discovery": [
+        {
+          "outlet": "物理AI之心",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "title": "Agentic System 如何破解自动驾驶的长尾困局？ UCLA 等团队提出 AutoAgent...",
+          "date": null,
+          "dateLabel": "1 周前",
+          "observedAt": "2026-11-15",
+          "note": "Public archive headline is truncated. Matching to AutoAgent0 is inferred from the unique method prefix, UCLA attribution and driving-runtime topic, then verified against primary sources. Absolute article date is unavailable."
+        }
+      ]
+    },
+    {
+      "dedup_key": "arxiv:2606.29020",
+      "name": "WeatherCrafter",
+      "title": "Semantic-Aware, Physics-Informed, Geometry-Grounded Weather Video Synthesis",
+      "authors": [
+        "Chenghao Qian",
+        "Nedko Savov",
+        "Lingdong Kong",
+        "Yeying Jin",
+        "Rui Song",
+        "Wenjing Li",
+        "Zhun Zhong",
+        "Jiaqi Ma",
+        "Gustav Markkula",
+        "Luc Van Gool"
+      ],
+      "submitted": "2026-06-27",
+      "track": "world-model",
+      "venue": "ECCV 2026",
+      "tags": [
+        "Weather Synthesis",
+        "Video Diffusion",
+        "Physics Guidance"
+      ],
+      "datasets": [
+        "DAVIS",
+        "DL3DV-10k",
+        "PandaSet",
+        "nuScenes",
+        "ACDC",
+        "MUSES"
+      ],
+      "paper": "https://arxiv.org/abs/2606.29020",
+      "code": "https://github.com/Jumponthemoon/WeatherCrafter",
+      "project": null,
+      "codeStatus": "available",
+      "codeScope": "Training-free weather synthesis pipeline",
+      "codeNote": "Official repository announces August 2026 code release and contains weathercrafter modules, installation instructions and synthesis commands. The official project URL https://jumponthemoon.github.io/w-crafter/ is linked by arXiv and the repository and remains search-indexed, but two direct fetches returned 404; omit its icon pending availability verification.",
+      "summary": "Combines semantic appearance anchors, simulated weather-particle dynamics and scene geometry to steer a pretrained video editor, generating adverse-weather driving data for robust semantic segmentation.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2606.29020",
+          "supports": "Exact title, authors, v1 date, official project identity and driving relevance."
+        },
+        {
+          "url": "https://arxiv.org/html/2606.29020v1",
+          "supports": "Section 4.2 lists synthesis and downstream driving datasets."
+        },
+        {
+          "url": "https://github.com/Jumponthemoon/WeatherCrafter",
+          "supports": "ECCV 2026 acceptance, August code release, source modules and runnable synthesis pipeline."
+        }
+      ],
+      "discovery": [
+        {
+          "outlet": "自动驾驶之心（物理AI之心迁移前身）",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent",
+          "title": "ECCV’26的工作｜WeatherCrafter：语义、物理与几何协同，实现可控恶劣天气视频生成",
+          "date": null,
+          "dateLabel": "1 月前",
+          "observedAt": "2026-11-15",
+          "note": "Older-paper backfill from the predecessor archive; relative label is preserved and not converted to an absolute date."
+        }
+      ]
+    },
+    {
+      "dedup_key": "arxiv:2603.06576",
+      "name": "BEVLM",
+      "title": "BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations",
+      "authors": [
+        "Thomas Monninger",
+        "Shaoyuan Xie",
+        "Qi Alfred Chen",
+        "Sihao Ding"
+      ],
+      "submitted": "2026-03-06",
+      "track": "vla",
+      "venue": "ECCV 2026",
+      "tags": [
+        "Semantic Distillation",
+        "BEV Representation",
+        "Spatial Reasoning"
+      ],
+      "datasets": [
+        "nuScenes",
+        "DriveLM-nuScenes",
+        "Ego3D",
+        "NeuroNCAP"
+      ],
+      "paper": "https://arxiv.org/abs/2603.06576",
+      "code": null,
+      "project": "https://sites.google.com/view/secure-safe-ai/bevlm",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "codeNote": "No official implementation link verified in the paper, author publication page or project page. The similarly named BEVLM/DrivingWithLanguage repository is a different paper and is excluded.",
+      "summary": "Distills language-model semantics into spatially consistent BEV features, improving cross-view reasoning and transferring the resulting encoder into UniAD and VAD for safety-critical closed-loop driving.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2603.06576",
+          "supports": "Exact title, authors, first-submission date and ECCV 2026 acceptance."
+        },
+        {
+          "url": "https://arxiv.org/html/2603.06576v2",
+          "supports": "Method and benchmark definitions, including DriveLM-nuScenes, Ego3D and NeuroNCAP."
+        },
+        {
+          "url": "https://daniel-xsy.github.io/",
+          "supports": "Coauthor publication list links the verified project page, with no code link for BEVLM."
+        },
+        {
+          "url": "https://sites.google.com/view/secure-safe-ai/bevlm",
+          "supports": "Official project identity, ECCV venue, method and demonstrations; no implementation link visible."
+        }
+      ],
+      "discovery": [
+        {
+          "outlet": "自动驾驶之心（物理AI之心迁移前身）",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent",
+          "title": "ECCV 2026｜奔驰 × 加州大学提出 BEVLM：融合语义与空间信息，闭环安全提升 28.2%",
+          "date": null,
+          "dateLabel": "1 月前",
+          "observedAt": "2026-11-15",
+          "note": "Older-paper backfill from the predecessor archive; media label is separate from the March paper date."
+        }
+      ]
+    },
+    {
+      "dedup_key": "arxiv:2606.27504",
+      "name": "ReWorld",
+      "title": "ReWorld: Representation Learning for World Action Models",
+      "authors": [
+        "Tianze Xia",
+        "Lijun Zhou",
+        "Kaixin Xiong",
+        "Jingfeng Yao",
+        "Zhenxin Zhu",
+        "Haiyang Sun",
+        "Bing Wang",
+        "Guang Chen",
+        "Wenyu Liu",
+        "Hangjun Ye",
+        "Xinggang Wang"
+      ],
+      "submitted": "2026-06-25",
+      "track": "world-model",
+      "venue": "arXiv 2026",
+      "tags": [
+        "World Action Model",
+        "Representation Learning",
+        "Hard Negatives"
+      ],
+      "datasets": [
+        "nuScenes",
+        "nuPlan",
+        "NAVSIM",
+        "UCF-101"
+      ],
+      "paper": "https://arxiv.org/abs/2606.27504",
+      "code": "https://github.com/xiaomi-research/reworld",
+      "project": "https://xiaomi-research.github.io/reworld/",
+      "codeStatus": "available",
+      "codeScope": "Training, inference and evaluation with released weights",
+      "codeNote": "Official repository announces code and weights released on 2026-08-25 and includes training/inference scripts, configurations and source modules. Metadata uses the current v2 title and author list while preserving the June v1 submission date.",
+      "summary": "Improves world-action representations using intermediate future prediction, video-action feature alignment and repulsion from nearby unsafe trajectories, connecting learned scene dynamics to driving plans.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2606.27504",
+          "supports": "Current v2 title and authors, original June 25 submission date, method and benchmarks."
+        },
+        {
+          "url": "https://xiaomi-research.github.io/reworld/",
+          "supports": "Official paper, code and weights links; dataset and model descriptions."
+        },
+        {
+          "url": "https://github.com/xiaomi-research/reworld",
+          "supports": "Public implementation, train/inference scripts and August 25 code/weights release announcement."
+        }
+      ],
+      "discovery": [
+        {
+          "outlet": "自动驾驶之心（物理AI之心迁移前身）",
+          "url": "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent",
+          "title": "不堆WAM架构！华科&小米提出ReWorld：表征学习让世界知识真正变成规划能力",
+          "date": null,
+          "dateLabel": "2 月前",
+          "observedAt": "2026-11-15",
+          "note": "Older backfill visible on the accessible predecessor archive page. This is outside the intended recent-media window; no absolute media date inferred."
+        }
+      ]
+    }
+  ]
+}

@@ -76,7 +76,7 @@ for (const category of datasetCategories) readme = readme.replace('- [Public Eva
 for (const category of benchmarkCategories) readme = readme.replace('- [Leaderboard]', `  - [${category}](#${anchor(category)})\n- [Leaderboard]`);
 readme += '## Papers\n\n';
 readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Hover for release details. Missing links are omitted.\n\n';
-readme += 'One primary track per paper; newest first. RSI covers explicit iterative improvement loops. [Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json).\n\n';
+readme += 'One primary track per paper; newest first. RSI covers explicit iterative improvement loops. [Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json).\n\n';
 
 for (const [track, title] of tracks) {
   const trackPapers = papers.filter((item) => item.track === track);

@@ -357,6 +357,56 @@
     "citationURL": null
   },
   {
+    "id": "2610-18866",
+    "name": "AutoAgent0",
+    "title": "AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving",
+    "authors": [
+      "Jiageng Liu",
+      "Seth Z. Zhao",
+      "Zewei Zhou",
+      "Alejandro Huerta",
+      "Aidan Bayer-Calvert",
+      "Yuxin Bao",
+      "Haotian Lin",
+      "Robert Spataru",
+      "Zijun Cui",
+      "Yining Hong",
+      "Bolei Zhou",
+      "Jiaqi Ma"
+    ],
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-10",
+    "submitted": "2026-10-13",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Runtime Assurance",
+      "Agentic Recovery",
+      "Trajectory Verification"
+    ],
+    "datasets": [
+      "Fail2Drive",
+      "NavSafe-∞"
+    ],
+    "paper": "https://arxiv.org/abs/2610.18866",
+    "code": "https://github.com/jiagengliu02/AutoAgent0",
+    "project": "https://jiagengliu02.github.io/AutoAgent0/",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Public runtime modules, adapters, configurations and evaluation scripts; quickstart documents checkpoints and Fail2Drive evaluation. This is test-time recovery without retraining the underlying policies.",
+    "stars": null,
+    "summary": "Wraps driving experts with independent scene assessment, rule-based trajectory verification and feedback-driven recovery planning, iteratively refining action primitives when nominal plans fail.",
+    "codeCheckedAt": "2026-11-15",
+    "githubRepo": "https://github.com/jiagengliu02/AutoAgent0",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-15",
+    "citationURL": null
+  },
+  {
     "id": "2610-18167",
     "name": "DIVA",
     "title": "Beyond Planning: Differentiable Control-in-the-loop End-to-End Autonomous Driving",
@@ -4969,6 +5019,49 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2603-06576",
+    "name": "BEVLM",
+    "title": "BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations",
+    "authors": [
+      "Thomas Monninger",
+      "Shaoyuan Xie",
+      "Qi Alfred Chen",
+      "Sihao Ding"
+    ],
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-03",
+    "submitted": "2026-03-06",
+    "venue": "ECCV 2026",
+    "tags": [
+      "Semantic Distillation",
+      "BEV Representation",
+      "Spatial Reasoning"
+    ],
+    "datasets": [
+      "nuScenes",
+      "DriveLM-nuScenes",
+      "Ego3D",
+      "NeuroNCAP"
+    ],
+    "paper": "https://arxiv.org/abs/2603.06576",
+    "project": "https://sites.google.com/view/secure-safe-ai/bevlm",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation link verified in the paper, author publication page or project page. The similarly named BEVLM/DrivingWithLanguage repository is a different paper and is excluded.",
+    "stars": null,
+    "summary": "Distills language-model semantics into spatially consistent BEV features, improving cross-view reasoning and transferring the resulting encoder into UniAD and VAD for safety-critical closed-loop driving.",
+    "codeCheckedAt": "2026-11-15",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-15",
+    "citationURL": null
+  },
+  {
     "id": "2603-06049",
     "name": "Curious-VLA",
     "title": "Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models",
@@ -8481,6 +8574,108 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2606-29020",
+    "name": "WeatherCrafter",
+    "title": "Semantic-Aware, Physics-Informed, Geometry-Grounded Weather Video Synthesis",
+    "authors": [
+      "Chenghao Qian",
+      "Nedko Savov",
+      "Lingdong Kong",
+      "Yeying Jin",
+      "Rui Song",
+      "Wenjing Li",
+      "Zhun Zhong",
+      "Jiaqi Ma",
+      "Gustav Markkula",
+      "Luc Van Gool"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-06",
+    "submitted": "2026-06-27",
+    "venue": "ECCV 2026",
+    "tags": [
+      "Weather Synthesis",
+      "Video Diffusion",
+      "Physics Guidance"
+    ],
+    "datasets": [
+      "DAVIS",
+      "DL3DV-10k",
+      "PandaSet",
+      "nuScenes",
+      "ACDC",
+      "MUSES"
+    ],
+    "paper": "https://arxiv.org/abs/2606.29020",
+    "code": "https://github.com/Jumponthemoon/WeatherCrafter",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Official repository announces August 2026 code release and contains weathercrafter modules, installation instructions and synthesis commands. The official project URL https://jumponthemoon.github.io/w-crafter/ is linked by arXiv and the repository and remains search-indexed, but two direct fetches returned 404; omit its icon pending availability verification.",
+    "stars": null,
+    "summary": "Combines semantic appearance anchors, simulated weather-particle dynamics and scene geometry to steer a pretrained video editor, generating adverse-weather driving data for robust semantic segmentation.",
+    "codeCheckedAt": "2026-11-15",
+    "githubRepo": "https://github.com/Jumponthemoon/WeatherCrafter",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-15",
+    "citationURL": null
+  },
+  {
+    "id": "2606-27504",
+    "name": "ReWorld",
+    "title": "ReWorld: Representation Learning for World Action Models",
+    "authors": [
+      "Tianze Xia",
+      "Lijun Zhou",
+      "Kaixin Xiong",
+      "Jingfeng Yao",
+      "Zhenxin Zhu",
+      "Haiyang Sun",
+      "Bing Wang",
+      "Guang Chen",
+      "Wenyu Liu",
+      "Hangjun Ye",
+      "Xinggang Wang"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-06",
+    "submitted": "2026-06-25",
+    "venue": "arXiv 2026",
+    "tags": [
+      "World Action Model",
+      "Representation Learning",
+      "Hard Negatives"
+    ],
+    "datasets": [
+      "nuScenes",
+      "nuPlan",
+      "NAVSIM",
+      "UCF-101"
+    ],
+    "paper": "https://arxiv.org/abs/2606.27504",
+    "code": "https://github.com/xiaomi-research/reworld",
+    "project": "https://xiaomi-research.github.io/reworld/",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Official repository announces code and weights released on 2026-08-25 and includes training/inference scripts, configurations and source modules. Metadata uses the current v2 title and author list while preserving the June v1 submission date.",
+    "stars": null,
+    "summary": "Improves world-action representations using intermediate future prediction, video-action feature alignment and repulsion from nearby unsafe trajectories, connecting learned scene dynamics to driving plans.",
+    "codeCheckedAt": "2026-11-15",
+    "githubRepo": "https://github.com/xiaomi-research/reworld",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-15",
+    "citationURL": null
+  },
+  {
     "id": "2606-15869",
     "name": "Metis",
     "title": "Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation",
@@ -9128,6 +9323,55 @@
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
     "codeCheckedAt": "2026-10-09"
+  },
+  {
+    "id": "2603-10408",
+    "name": "Motion Forcing",
+    "title": "Motion Forcing: A Decoupled Framework for Robust Video Generation in Motion Dynamics",
+    "authors": [
+      "Tianshuo Xu",
+      "Zhifei Chen",
+      "Leyi Wu",
+      "Hao Lu",
+      "Ying-cong Chen"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-03",
+    "submitted": "2026-03-11",
+    "venue": "NeurIPS 2026",
+    "tags": [
+      "Sparse Motion Control",
+      "Depth-Guided Generation",
+      "Ego-Object Motion Decoupling"
+    ],
+    "datasets": [
+      "Waymo",
+      "Driving Dojo",
+      "Physion",
+      "Jaco Play"
+    ],
+    "paper": "https://arxiv.org/abs/2603.10408",
+    "alternateTitles": [
+      "Motion Forcing: Decoupling Ego and Object Motion via Sparse Inputs for Structured Video Generation"
+    ],
+    "code": "https://github.com/Tianshuo-Xu/Motion-Forcing",
+    "project": "https://tianshuo-xu.github.io/Motion-Forcing/",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Inference code, Gradio demo and checkpoint are released; data processing and training code remain marked coming soon.",
+    "stars": null,
+    "summary": "Converts sparse object trajectories and camera motion into dynamic depth before rendering RGB video. Masked trajectory recovery supports motion completion; driving evaluation includes controlled traffic interactions.",
+    "codeCheckedAt": "2026-11-15",
+    "githubRepo": "https://github.com/Tianshuo-Xu/Motion-Forcing",
+    "githubRepoRole": "partial-release",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-15",
+    "citationURL": null,
+    "codeScope": "partial"
   },
   {
     "id": "2602-10884",

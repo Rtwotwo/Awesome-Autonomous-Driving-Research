@@ -6375,6 +6375,51 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2603-10408": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2610-18866": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2606-29020": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2603-06576": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2606-27504": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
     }
   },
   "failures": []
