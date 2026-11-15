@@ -6204,6 +6204,177 @@
       "checkedAt": "2026-11-02",
       "status": "unavailable",
       "note": "Citation counts were not queried in this update."
+    },
+    "2611-16727": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-15360": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-13790": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-10632": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-08631": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-05072": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-01283": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-00718": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-16579": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-11516": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-08111": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-07939": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-07912": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-02526": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-01677": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2610-08761": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-15217": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-03942": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2610-41772": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-15",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
     }
   },
   "failures": []

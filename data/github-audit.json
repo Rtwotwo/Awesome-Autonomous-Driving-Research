@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-09",
   "scope": "Per-paper repository identity and release-availability audit. Repository roots and README release statements were inspected; implementations were not executed. A no-match result is not proof that no public implementation exists. Third-party paper lists and same-name repositories were not treated as author code.",
   "coverage": {
-    "papers": 379,
+    "papers": 398,
     "repositoryNameSearches": 85,
     "identifierFileSearches": 78,
     "repositoryRootChecks": 166,
@@ -10100,6 +10100,316 @@
       ],
       "implementationFiles": [],
       "firstSubmitted": "2026-10-29"
+    },
+    "2611-16727": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.16727",
+        "https://arxiv.org/html/2611.16727v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-15360": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/marshal12138/CARE-Drive",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official paper links this repository. Training, inference and evaluation entry points and checkpoints are released; README states full-data validation of the portable release is not yet complete.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.15360",
+        "https://arxiv.org/html/2611.15360v1",
+        "https://github.com/marshal12138/CARE-Drive",
+        "https://raw.githubusercontent.com/marshal12138/CARE-Drive/main/README.md"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-13790": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.13790",
+        "https://arxiv.org/html/2611.13790v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-10632": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.10632",
+        "https://arxiv.org/html/2611.10632v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-08631": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.08631",
+        "https://arxiv.org/html/2611.08631v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-05072": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.05072",
+        "https://arxiv.org/html/2611.05072v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-01283": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.01283",
+        "https://arxiv.org/html/2611.01283v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-00718": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link verified in the checked primary sources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.00718",
+        "https://arxiv.org/html/2611.00718v1",
+        "https://x-up-lab.github.io/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-16579": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/adept-thu/ActWorld-JEPA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Inference code, configurations, model artifacts and benchmark guides are public; the repository explicitly excludes a complete from-scratch training recipe.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.16579",
+        "https://github.com/adept-thu/ActWorld-JEPA"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-11516": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/zihaosheng/NWM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public release contains inference.py, model code, configurations, example input and trained weights; no training pipeline was verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.11516",
+        "https://zihaosheng.github.io/NWM/",
+        "https://github.com/zihaosheng/NWM"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-08111": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/Zizizi-hao/NegWAM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Repository contains NAVSIM code, data caching and inference/evaluation scripts; released weights are linked on the author's Hugging Face. Complete training and HUGSIM release was not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.08111",
+        "https://github.com/Zizizi-hao/NegWAM",
+        "https://huggingface.co/Zizizi-hao/NegWAM"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-07939": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Official project page has Code and Hugging Face labels but no actionable resource links; omit the GitHub icon.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.07939",
+        "https://fudan-generative-vision.github.io/WAM-Sim/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-07912": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code or project link verified from arXiv and title-specific searches.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.07912"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-02526": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official code or project link verified from arXiv and title-specific searches.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.02526"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-01677": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "Official project page and technical report are public; no implementation repository linked on the project page.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.01677",
+        "https://xiaomiautoworldmodel.github.io/CausalWorldModel/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2610-08761": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/NVlabs/alpajudge",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Project's Code link points to the AlpaJudge inference package; repository explicitly excludes training code and data pipelines. This is a component release, not the complete VeriFine loop.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.08761",
+        "https://veri-fine.github.io/",
+        "https://github.com/NVlabs/alpajudge"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-15217": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "ROADVIEW project homepage verified from the paper; no paper-specific implementation verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.15217",
+        "https://arxiv.org/html/2611.15217v1",
+        "https://roadview-project.eu/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-03942": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Kavinchandra/crlfusion",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository includes model, loss, dataset, training, testing and evaluation files.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.03942",
+        "https://arxiv.org/html/2611.03942v1",
+        "https://github.com/Kavinchandra/crlfusion"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2610-41772": {
+      "checkedAt": "2026-11-15",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/cvims/WorkIng",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "Official repository currently contains only LICENSE and README.md; implementation is not released.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.41772",
+        "https://github.com/cvims/WorkIng"
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
@@ -10175,6 +10485,46 @@
         "notFound": 12
       },
       "note": "Incremental search through 2026-10-30, prioritizing late-October submissions and several missed October papers. Only the added entries were checked; previous records and observation dates are preserved. Primary arXiv papers and author sources support the additions. Generic self-play, simulation or evaluation does not imply general recursive self-modification. No claim of exhaustive coverage or ADFeed endorsement is made."
+    }
+  ],
+  "catalogUpdates": [
+    {
+      "checkedAt": "2026-11-15",
+      "added": [
+        "2611-16727",
+        "2611-16579",
+        "2611-15360",
+        "2611-15217",
+        "2611-13790",
+        "2611-11516",
+        "2611-10632",
+        "2611-08631",
+        "2611-08111",
+        "2611-07939",
+        "2611-07912",
+        "2611-05072",
+        "2611-02526",
+        "2611-03942",
+        "2611-01677",
+        "2611-01283",
+        "2611-00718",
+        "2610-41772",
+        "2610-08761"
+      ],
+      "scope": "Primary arXiv metadata and author-linked resources; implementation availability inspected, not executed. Existing records retain their original audit dates.",
+      "excluded": [
+        {
+          "id": "2611-02076",
+          "reason": "Withdrawn on 2026-11-09",
+          "evidence": "https://arxiv.org/abs/2611.02076"
+        }
+      ],
+      "sources": [
+        "arXiv",
+        "author project pages",
+        "official GitHub repositories"
+      ],
+      "limitations": "No local PDF library or arxiv_fetch.py helper available; web retrieval used. Citation and star counts were not refreshed."
     }
   ]
 }

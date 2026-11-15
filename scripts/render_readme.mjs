@@ -36,13 +36,27 @@ const dash = '\u2014';
 const esc = (value) => String(value ?? '').replaceAll('|', '\\|');
 const html = (value) => esc(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const icon = (emoji, url, title) => url ? `[${emoji}](${url} "${title}")` : dash;
-const badgeLink = (alt, badgeUrl, targetUrl) => targetUrl ? `[![${alt}](${badgeUrl})](${targetUrl})` : dash;
-const paperBadge = (url) => {
-  if (!url) return dash;
-  const arxivId = url.match(/arxiv\.org\/abs\/([^/?#]+)/i)?.[1]?.replace(/v\d+$/, '');
-  const label = arxivId ? `arXiv-${arxivId}` : 'Paper-Open';
-  const color = arxivId ? 'b31b1b' : '2457a7';
-  return badgeLink(arxivId ? 'arXiv' : 'Paper', `https://img.shields.io/badge/${label}-${color}?style=flat-square`, url);
+const attr = (value) => html(value).replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+const resourceIcon = (name, url, title) => url
+  ? `<a href="${attr(url)}" title="${attr(title)}"><img src="assets/icons/${name}.svg" alt="${attr(title)}" width="28" height="24"></a>`
+  : '';
+const paperResources = (paper) => {
+  const repo = paper.githubRepo || paper.code;
+  const state = paper.codeStatus === 'pending' ? 'pending'
+    : paper.codeScope === 'partial' ? 'partial'
+    : paper.codeStatus === 'released' ? 'released' : 'project-only';
+  const glyph = state === 'pending' ? 'github-pending'
+    : state === 'partial' ? 'github-partial' : 'github';
+  const description = {
+    pending: 'GitHub — code pending', partial: 'GitHub — partial code release',
+    released: 'GitHub — code released', 'project-only': 'GitHub — project repository; no verified implementation'
+  }[state];
+  const repoTitle = [description, paper.codeNote].filter(Boolean).join(': ');
+  const canonical = (url) => (url || '').replace(/\/$/, '').toLowerCase();
+  const project = paper.project && canonical(paper.project) !== canonical(repo) ? paper.project : null;
+  return [resourceIcon('paper', paper.paper, 'Read paper'),
+    resourceIcon(glyph, repo, repoTitle), resourceIcon('project', project, 'Official project page')]
+    .filter(Boolean).join(' ');
 };
 const resources = (item) => [
   icon(iconText.dataset, item.homepage, 'Dataset homepage'),
@@ -61,10 +75,8 @@ readme += '- [Public Datasets](#public-datasets)\n- [Public Evaluation Benchmark
 for (const category of datasetCategories) readme = readme.replace('- [Public Evaluation Benchmarks]', `  - [${category}](#${anchor(category)})\n- [Public Evaluation Benchmarks]`);
 for (const category of benchmarkCategories) readme = readme.replace('- [Leaderboard]', `  - [${category}](#${anchor(category)})\n- [Leaderboard]`);
 readme += '## Papers\n\n';
-readme += 'Tags were checked against paper titles, abstracts, and method descriptions. GitHub repositories were checked against paper titles, arXiv identifiers, official project pages, and repository contents. **Code pending** marks an announced implementation that is not yet available; **Partial code** identifies a limited release such as inference or data tools. Project-only repositories are identified in the resource notes. Missing links mean no matching implementation was verified as of the audit date. The per-paper evidence and search coverage are recorded in [data/github-audit.json](data/github-audit.json).\n\n';
-readme += 'The RSI track groups autonomous-driving research with an explicit iterative improvement loop. Papers may describe this as self-improving, self-evolving, safe online learning, or agentic evolution; inclusion does not imply that a fully general recursively self-modifying system has been demonstrated.\n\n';
-readme += 'Perception & Other Driving Research covers perception, reconstruction, motion prediction, safety testing, and surveys that do not fit the four model-focused tracks. Each paper is listed once, in its primary research track.\n\n';
-readme += 'The [ADFeed discovery audit](data/adfeed-audit.json) records the 2026-10-25 additions, matched titles, primary sources, duplicates, and unresolved leads. It covers publicly accessible archive pages and attributed reposts; it is not a complete export of the account history.\n\n';
+readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Hover for release details. Missing links are omitted.\n\n';
+readme += 'One primary track per paper; newest first. RSI covers explicit iterative improvement loops. [Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json).\n\n';
 
 for (const [track, title] of tracks) {
   const trackPapers = papers.filter((item) => item.track === track);
@@ -80,13 +92,7 @@ for (const [track, title] of tracks) {
       const yearVenue = paper.venue === String(paper.year) ? String(paper.year) : esc(paper.venue);
       const methodTitle = `**${esc(paper.name)}**<br><sub>${html(paper.title)}</sub>`;
       const tags = paper.tags.map((tag) => `\`${esc(tag)}\``).join(' · ');
-      const project = paper.project ? icon(iconText.project, paper.project, 'Official project page') : dash;
-      const github = (paper.githubRepo || paper.code) ? icon(iconText.github, paper.githubRepo || paper.code, paper.code ? 'Paper-related code repository' : 'Official GitHub project repository; implementation not released') : dash;
-      const resources = [paperBadge(paper.paper), github, project].filter(item => item !== dash).join(' ');
-      const codeLabel = paper.code ? (paper.codeScope === 'partial' ? 'Partial code' : paper.codeStatus === 'pending' ? 'Code pending' : 'Code released') : paper.codeStatus === 'pending' ? 'Code pending' : '';
-      const codeNotes = [paper.codeStatus === 'pending' || paper.codeScope === 'partial' ? codeLabel : '', paper.codeNote].filter(Boolean);
-      const codeBadge = codeNotes.length ? `<br><sub>${html(codeNotes.join(': '))}</sub>` : '';
-      readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${resources}${codeBadge} |\n`;
+      readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${paperResources(paper)} |\n`;
     }
     readme += '\n</details>\n\n';
   }
