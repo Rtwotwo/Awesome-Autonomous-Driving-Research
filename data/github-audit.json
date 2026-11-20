@@ -2,7 +2,7 @@
   "checkedAt": "2026-10-09",
   "scope": "Per-paper repository identity and release-availability audit. Repository roots and README release statements were inspected; implementations were not executed. A no-match result is not proof that no public implementation exists. Third-party paper lists and same-name repositories were not treated as author code.",
   "coverage": {
-    "papers": 403,
+    "papers": 412,
     "repositoryNameSearches": 85,
     "identifierFileSearches": 78,
     "repositoryRootChecks": 166,
@@ -10536,6 +10536,228 @@
       "readmeMatch": "paper-linked",
       "rootFiles": [],
       "searches": []
+    },
+    "2611-26294": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The paper mentions weight release but no official implementation link was verified.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.26294",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.26294v1",
+          "supports": "Sections 4.2–4.4 list the public forecasting, odometry, risk, and planning benchmarks. PAI-644 and PAI-100c are grouped under PhysicalAI-AV."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-24876": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was verified in the paper or author resources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.24876",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.24876v1",
+          "supports": "Evaluation uses simulated test cases on two maps. No named dataset is identified."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-24840": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/binayksingh/does-action-matter",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The paper links a public repository with training, evaluation, and intervention scripts.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.24840",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.24840v1",
+          "supports": "The abstract and experiments identify Cityscapes and BDD100K."
+        },
+        {
+          "url": "https://github.com/binayksingh/does-action-matter",
+          "supports": "Official implementation with training and evaluation scripts."
+        }
+      ],
+      "readmeMatch": "paper-linked",
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-24051": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was verified in the paper or author resources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.24051",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/pdf/2611.24051",
+          "supports": "The evaluation uses procedurally generated driving scenes with no named evaluation dataset."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-22880": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The project identifies the NeurIPS venue and shows a disabled Code button. No implementation URL was verified.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.22880",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.22880v1",
+          "supports": "Section 4.1 identifies nuScenes for open-loop planning and Bench2Drive for closed-loop driving."
+        },
+        {
+          "url": "https://arxiv.org/pdf/2611.22880",
+          "supports": "Official paper PDF identifies the project URL."
+        },
+        {
+          "url": "https://agentworld-ad.github.io/",
+          "supports": "Official project page and public resource links."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-22691": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was verified in the paper or author resources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.22691",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.22691v1",
+          "supports": "Section 4.1 identifies INTERACTION and nuPlan for policy training and NAVSIM failure scenarios from nuPlan logs for evaluation."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-21851": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The authors’ project page marks code as coming soon. Its example GitHub link is a template placeholder.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.21851",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.21851v1",
+          "supports": "Sections 5.1 and 5.5 identify NAVSIM v1, NAVSIM v2, and zero-shot nuScenes evaluation."
+        },
+        {
+          "url": "https://arxiv.org/pdf/2611.21851",
+          "supports": "Official paper PDF identifies the project URL."
+        },
+        {
+          "url": "https://baitingluo.github.io/ar-wam/",
+          "supports": "Official project page and public resource links."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-19969": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was verified in the paper or author resources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.19969",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.19969v1",
+          "supports": "The experiments use an unsignalized-intersection simulation. No named dataset is identified."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-14815": {
+      "checkedAt": "2026-11-21",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation was verified in the paper or author resources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.14815",
+          "supports": "Title, authors, and original submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.14815v1",
+          "supports": "Section 4.1 evaluates on a PhysicalAI-Autonomous-Vehicles subset and nuScenes."
+        },
+        {
+          "url": "https://research.nvidia.com/labs/sil/projects/birddreams/",
+          "supports": "Official project page and public resource links."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
@@ -10664,6 +10886,23 @@
       "scope": "Incremental media-led discovery from 物理AI之心, ADFeed and 量子位; primary papers and author resources verify catalog facts. Existing audit dates are retained.",
       "discoveryAudit": "data/media-discovery-audit.json",
       "limitations": "Public account indexes may lag and do not provide complete account histories. Media dates are not paper submission dates. No citation/star refresh or implementation execution."
+    },
+    {
+      "checkedAt": "2026-11-21",
+      "added": [
+        "2611-26294",
+        "2611-24876",
+        "2611-24840",
+        "2611-24051",
+        "2611-22880",
+        "2611-22691",
+        "2611-21851",
+        "2611-19969",
+        "2611-14815"
+      ],
+      "scope": "Recent driving papers, with named experimental datasets and author resources checked. Existing dataset metadata supplies the new README column.",
+      "discoveryAudit": "data/media-discovery-audit.json",
+      "limitations": "Public outlet indexes are partial. Existing dataset fields were not comprehensively re-audited."
     }
   ]
 }

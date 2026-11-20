@@ -548,5 +548,228 @@
         }
       ]
     }
+  ],
+  "updates": [
+    {
+      "checkedAt": "2026-11-21",
+      "searchWindow": {
+        "from": "2026-11-15",
+        "to": "2026-11-21"
+      },
+      "catalogBefore": 403,
+      "catalogAfter": 412,
+      "sources": [
+        {
+          "source": "物理AI之心",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "finding": "Cached public index covered already-listed DriveVLA-M0, ViRA, AutoAgent0, and SimVTA. No new verified lead."
+        },
+        {
+          "source": "ADFeed",
+          "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+          "finding": "Front page could not be fetched. Older indexed pages and targeted searches produced no new verified lead."
+        },
+        {
+          "source": "量子位",
+          "urls": [
+            "https://tech.sinsc.com/media/rss-mp-lzl",
+            "https://tech.sinsc.com/media/rss-mp-lzl/page/2",
+            "https://tech.sinsc.com/media/rss-mp-lzl/page/3",
+            "https://www.qbitai.com/2026/11/507647.html"
+          ],
+          "finding": "Public index and tagged search produced no new paper; Apollo World coverage is a product announcement."
+        },
+        {
+          "source": "智驾具身数据挖掘",
+          "url": "https://www.gairdao.com/app/articles/cypbpypv",
+          "finding": "Attributed public repost identified SafeDriveVLA (2610-20609), already listed. Account history is not fully accessible."
+        },
+        {
+          "source": "arXiv",
+          "url": "https://arxiv.org/list/cs.CV/recent?show=250",
+          "finding": "Primary paper search and recent listings yielded eight new papers and one November 10 backfill (BirdDreams)."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-26294",
+          "name": "BADAS-3.0",
+          "submitted": "2026-11-19",
+          "paper": "https://arxiv.org/abs/2611.26294",
+          "datasetEvidence": "https://arxiv.org/html/2611.26294v1"
+        },
+        {
+          "id": "2611-24876",
+          "name": "Agent-Relative Self-Play",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24876",
+          "datasetEvidence": "https://arxiv.org/html/2611.24876v1"
+        },
+        {
+          "id": "2611-24840",
+          "name": "Does the Action Matter?",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24840",
+          "datasetEvidence": "https://arxiv.org/html/2611.24840v1"
+        },
+        {
+          "id": "2611-24051",
+          "name": "Attention Is Not Relevance",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24051",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.24051"
+        },
+        {
+          "id": "2611-22880",
+          "name": "AgentWorld",
+          "submitted": "2026-11-17",
+          "paper": "https://arxiv.org/abs/2611.22880",
+          "datasetEvidence": "https://arxiv.org/html/2611.22880v1"
+        },
+        {
+          "id": "2611-22691",
+          "name": "Closed-Loop Interactive World Model",
+          "submitted": "2026-11-17",
+          "paper": "https://arxiv.org/abs/2611.22691",
+          "datasetEvidence": "https://arxiv.org/html/2611.22691v1"
+        },
+        {
+          "id": "2611-21851",
+          "name": "AR-WAM",
+          "submitted": "2026-11-16",
+          "paper": "https://arxiv.org/abs/2611.21851",
+          "datasetEvidence": "https://arxiv.org/html/2611.21851v1"
+        },
+        {
+          "id": "2611-19969",
+          "name": "Value and Policy Calibration",
+          "submitted": "2026-11-15",
+          "paper": "https://arxiv.org/abs/2611.19969",
+          "datasetEvidence": "https://arxiv.org/html/2611.19969v1"
+        },
+        {
+          "id": "2611-14815",
+          "name": "BirdDreams",
+          "submitted": "2026-11-10",
+          "paper": "https://arxiv.org/abs/2611.14815",
+          "datasetEvidence": "https://arxiv.org/html/2611.14815v1"
+        }
+      ],
+      "datasetBackfills": [
+        {
+          "id": "2611-16727",
+          "datasets": [
+            "nuScenes",
+            "OmniDrive",
+            "nuInstruct",
+            "NAVSIM",
+            "MMMU",
+            "MMStar",
+            "POPE",
+            "OCRBench",
+            "ScienceQA"
+          ],
+          "url": "https://arxiv.org/html/2611.16727v1",
+          "note": "Tables 1–5 list driving and general multimodal benchmarks."
+        },
+        {
+          "id": "2611-15217",
+          "datasets": [
+            "REHEARSE",
+            "ROADVIEW Snowy Scenes"
+          ],
+          "url": "https://arxiv.org/html/2611.15217v1",
+          "note": "Sections IV and VI describe validation on REHEARSE and Fig. 16 analyzes ROADVIEW Snowy Scenes."
+        }
+      ],
+      "removedNonDatasetLabels": {
+        "2609-31383": [
+          "AlpaSim"
+        ],
+        "2609-09650": [
+          "Unsignalized Intersection Simulation"
+        ],
+        "2609-01609": [
+          "CARLA"
+        ],
+        "2610-40002": [
+          "Alpasim"
+        ],
+        "2610-28184": [
+          "CARLA",
+          "AlpaSim"
+        ],
+        "2610-26390": [
+          "CARLA"
+        ],
+        "2610-24590": [
+          "CARLA"
+        ],
+        "2609-04070": [
+          "AlpaSim"
+        ],
+        "2606-18112": [
+          "Object Navigation"
+        ],
+        "2512-24426": [
+          "Proprietary driving dataset"
+        ],
+        "2510-00060": [
+          "Proprietary cross-vehicle driving data"
+        ],
+        "2503-09594": [
+          "CARLA"
+        ],
+        "2611-11516": [
+          "Real-World Pedestrian Dummy Crossing"
+        ],
+        "2611-07939": [
+          "Self-Collected Driving Data"
+        ],
+        "2610-34650": [
+          "CARLA"
+        ],
+        "2510-06209": [
+          "Waymo curated driving segments (not identified as a public dataset)"
+        ],
+        "2610-17799": [
+          "MetaDrive / SafeMetaDriveEnv",
+          "UGV experiments"
+        ],
+        "2610-08640": [
+          "Urban navigation"
+        ],
+        "2609-36851": [
+          "In-House Dataset"
+        ],
+        "2511-13297": [
+          "In-house driving dataset"
+        ],
+        "2510-06038": [
+          "MetaDrive",
+          "Real-world UGV"
+        ],
+        "2506-03568": [
+          "MetaDrive",
+          "Real-world UGV"
+        ],
+        "2502-03349": [
+          "CARLA"
+        ],
+        "2512-23585": [
+          "Naturalistic driving data"
+        ],
+        "2509-19789": [
+          "Zoox proprietary urban-driving scenarios"
+        ],
+        "2508-06534": [
+          "CARLA",
+          "Physical vehicle testbed"
+        ],
+        "2506-02554": [
+          "Real-world urban/highway fusion dataset"
+        ]
+      }
+    }
   ]
 }

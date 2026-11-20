@@ -1,5 +1,55 @@
 [
   {
+    "id": "2611-26294",
+    "name": "BADAS-3.0",
+    "title": "BADAS-3.0: Real-Time Driving Perception and Planning from One Camera",
+    "authors": [
+      "Roni Goldshmidt",
+      "Hamish Scott",
+      "Lorenzo Niccolini"
+    ],
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-19",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Single-Camera Planning",
+      "Collision Anticipation",
+      "Ego-Motion"
+    ],
+    "datasets": [
+      "nuScenes",
+      "Argoverse 2 Sensor",
+      "Argoverse 2 TbV",
+      "Waymo Open Dataset",
+      "PhysicalAI-AV",
+      "KITTI",
+      "Nexar Public",
+      "DAD",
+      "DoTA",
+      "DADA-2000",
+      "DCA-Bench",
+      "Euro NCAP benchmark",
+      "NAVSIM"
+    ],
+    "paper": "https://arxiv.org/abs/2611.26294",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "The paper mentions weight release but no official implementation link was verified.",
+    "stars": null,
+    "summary": "A shared camera encoder predicts speed, ego motion, collision risk, and candidate trajectories. The authors evaluate camera transfer and introduce two open-loop collision-avoidance benchmarks.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
     "id": "2611-13790",
     "name": "RiSE-Drive",
     "title": "RiSE-Drive: Risk-Sensitive Long-Horizon Candidate Evaluation for End-to-End Autonomous Driving",
@@ -619,8 +669,7 @@
       "Control Feasibility"
     ],
     "datasets": [
-      "HUGSIM",
-      "AlpaSim"
+      "HUGSIM"
     ],
     "paper": "https://arxiv.org/abs/2609.31383",
     "openSource": false,
@@ -778,9 +827,7 @@
       "Policy Uncertainty",
       "Control Barrier Functions"
     ],
-    "datasets": [
-      "Unsignalized Intersection Simulation"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2609.09650",
     "openSource": false,
     "codeStatus": "not-found",
@@ -943,9 +990,7 @@
       "Risk-Aware Diffusion",
       "Candidate Ranking"
     ],
-    "datasets": [
-      "CARLA"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2609.01609",
     "openSource": false,
     "codeStatus": "not-found",
@@ -3358,6 +3403,47 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2611-22880",
+    "name": "AgentWorld",
+    "title": "Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving",
+    "authors": [
+      "Guoqing Wang",
+      "Pin Tang",
+      "Xiangxuan Ren",
+      "Chao Ma"
+    ],
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-17",
+    "venue": "NeurIPS 2026",
+    "tags": [
+      "Agent Tokens",
+      "Geometric Grounding",
+      "Trajectory Planning"
+    ],
+    "datasets": [
+      "nuScenes",
+      "Bench2Drive"
+    ],
+    "paper": "https://arxiv.org/abs/2611.22880",
+    "project": "https://agentworld-ad.github.io/",
+    "openSource": false,
+    "codeStatus": "pending",
+    "codeNote": "The project identifies the NeurIPS venue and shows a disabled Code button. No implementation URL was verified.",
+    "stars": null,
+    "summary": "Represents surrounding traffic participants as discrete tokens grounded in geometry and motion, then uses them for reasoning and trajectory planning in a driving VLA.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
     "id": "2611-16727",
     "name": "Triplet Incremental Training",
     "title": "From Foundation VLM to Versatile Driving VLM: A Triplet Incremental Training Approach",
@@ -3380,7 +3466,17 @@
       "Depth Distillation",
       "Incremental VLM Training"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "OmniDrive",
+      "nuInstruct",
+      "NAVSIM",
+      "MMMU",
+      "MMStar",
+      "POPE",
+      "OCRBench",
+      "ScienceQA"
+    ],
     "paper": "https://arxiv.org/abs/2611.16727",
     "openSource": false,
     "codeStatus": "not-found",
@@ -3498,7 +3594,6 @@
       "Trajectory Planning"
     ],
     "datasets": [
-      "Alpasim",
       "Waymo End-to-End Driving"
     ],
     "paper": "https://arxiv.org/abs/2610.40002",
@@ -3566,9 +3661,7 @@
     ],
     "datasets": [
       "NVIDIA PhysicalAI-Autonomous-Vehicles",
-      "CARLA",
       "Fail2Drive",
-      "AlpaSim",
       "NuRec"
     ],
     "paper": "https://arxiv.org/abs/2610.28184",
@@ -3603,8 +3696,7 @@
       "GRPO"
     ],
     "datasets": [
-      "WOD-E2E",
-      "CARLA"
+      "WOD-E2E"
     ],
     "paper": "https://arxiv.org/abs/2610.26390",
     "openSource": false,
@@ -3675,8 +3767,7 @@
       "Closed-loop"
     ],
     "datasets": [
-      "Bench2Drive",
-      "CARLA"
+      "Bench2Drive"
     ],
     "paper": "https://arxiv.org/abs/2610.24590",
     "code": "https://github.com/yang-luvu/Scene-Adaptive-VLA",
@@ -4092,8 +4183,7 @@
       "Planning"
     ],
     "datasets": [
-      "nuScenes",
-      "AlpaSim"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2609.04070",
     "openSource": false,
@@ -4554,8 +4644,7 @@
       "Cross-Domain Navigation"
     ],
     "datasets": [
-      "VLN-CE",
-      "Object Navigation"
+      "VLN-CE"
     ],
     "paper": "https://arxiv.org/abs/2606.18112",
     "openSource": false,
@@ -5644,9 +5733,7 @@
       "Counterfactual reasoning",
       "Self-reflection"
     ],
-    "datasets": [
-      "Proprietary driving dataset"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2512.24426",
     "code": "https://github.com/pengzhenghao/cfvla",
     "project": "https://pengzhenghao.github.io/cfvla/",
@@ -6096,8 +6183,7 @@
       "Waypoint generation"
     ],
     "datasets": [
-      "nuScenes",
-      "Proprietary cross-vehicle driving data"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2510.00060",
     "code": null,
@@ -6632,7 +6718,6 @@
       "Action Dreaming"
     ],
     "datasets": [
-      "CARLA",
       "Bench2Drive"
     ],
     "paper": "https://arxiv.org/abs/2503.09594",
@@ -7172,6 +7257,206 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2611-24876",
+    "name": "Agent-Relative Self-Play",
+    "title": "Learning to Interact in Multi-Agent Self-Play for Controllable Autonomous Driving Scenario Generation",
+    "authors": [
+      "Beyazit Yalcinkaya",
+      "Ethan Pronovost",
+      "Maximilian Naumann",
+      "Marcell Vazquez-Chanlatte"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-18",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Multi-Agent Self-Play",
+      "Dynamic Goals",
+      "Scenario Generation"
+    ],
+    "datasets": [],
+    "paper": "https://arxiv.org/abs/2611.24876",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation was verified in the paper or author resources.",
+    "stars": null,
+    "summary": "Conditions simulated drivers on goals relative to other agents, allowing specific interactions such as cut-ins or lane following to emerge from policy rollouts.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
+    "id": "2611-24840",
+    "name": "Does the Action Matter?",
+    "title": "Does the Action Matter? Probing Action-Conditioned Semantic Forecasting as a World Model for Autonomous Driving",
+    "authors": [
+      "Binay Kumar Singh",
+      "Niels Da Vitoria Lobo"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-18",
+    "venue": "WAM-AD @ WACV 2027",
+    "tags": [
+      "Semantic Forecasting",
+      "Action Conditioning",
+      "Counterfactual Evaluation"
+    ],
+    "datasets": [
+      "Cityscapes",
+      "BDD100K"
+    ],
+    "paper": "https://arxiv.org/abs/2611.24840",
+    "code": "https://github.com/binayksingh/does-action-matter",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "The paper links a public repository with training, evaluation, and intervention scripts.",
+    "stars": null,
+    "summary": "Changes the ego-action input at test time to measure how strongly semantic forecasts depend on that action. Compares feature-level conditioning, input-level conditioning, and an action-free baseline.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": "https://github.com/binayksingh/does-action-matter",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
+    "id": "2611-22691",
+    "name": "Closed-Loop Interactive World Model",
+    "title": "Making the World React Realistically: A Closed-Loop Interactive World Model for Autonomous Driving",
+    "authors": [
+      "Jia Hu",
+      "Yang Chang",
+      "Panqu Wang",
+      "Zhijun Fu",
+      "Chang Liu",
+      "Changjian Yu",
+      "Jintao Lai"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-17",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Interactive Simulation",
+      "3D Gaussian Splatting",
+      "Traffic Behavior"
+    ],
+    "datasets": [
+      "INTERACTION",
+      "nuPlan",
+      "NAVSIM"
+    ],
+    "paper": "https://arxiv.org/abs/2611.22691",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation was verified in the paper or author resources.",
+    "stars": null,
+    "summary": "Trains background drivers against an image-driven ego planner and refines vehicle rendering for newly exposed viewpoints and signal lights in interactive simulation.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
+    "id": "2611-21851",
+    "name": "AR-WAM",
+    "title": "AR-WAM: efficient streaming world-action modeling for autonomous driving",
+    "authors": [
+      "Baiting Luo",
+      "Shatadal Mishra",
+      "Ahmadreza Moradipari",
+      "Nejib Ammar"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-16",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Streaming Inference",
+      "Future Features",
+      "Reward Refinement"
+    ],
+    "datasets": [
+      "NAVSIM v1",
+      "NAVSIM v2",
+      "nuScenes"
+    ],
+    "paper": "https://arxiv.org/abs/2611.21851",
+    "project": "https://baitingluo.github.io/ar-wam/",
+    "openSource": false,
+    "codeStatus": "pending",
+    "codeNote": "The authors’ project page marks code as coming soon. Its example GitHub link is a template placeholder.",
+    "stars": null,
+    "summary": "Caches visual history in a causal video backbone and conditions trajectory planning on a single forward pass of future features. Driving rewards refine the trajectory expert.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
+    "id": "2611-19969",
+    "name": "Value and Policy Calibration",
+    "title": "Value and Policy Calibration from Execution Feedback for Socially Compatible Driving",
+    "authors": [
+      "Sen Shen",
+      "Ning Liu",
+      "Xiangrui Kong",
+      "Yingwei Li",
+      "Dongkun Han"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-15",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Model-Based Reinforcement Learning",
+      "Execution Feedback",
+      "Intersection Driving"
+    ],
+    "datasets": [],
+    "paper": "https://arxiv.org/abs/2611.19969",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation was verified in the paper or author resources.",
+    "stars": null,
+    "summary": "Uses an interaction-aware latent model for imagined driving and execution feedback to update both the value estimator and policy for socially compatible intersection behavior.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
     "id": "2611-16579",
     "name": "ActWorld-JEPA",
     "title": "ActWorld-JEPA: Action-Conditioned JEPA World Models Meet Latent Planning for End-to-End Autonomous Driving",
@@ -7226,6 +7511,49 @@
     "codeScope": "partial"
   },
   {
+    "id": "2611-14815",
+    "name": "BirdDreams",
+    "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+    "authors": [
+      "Junyoung Seo",
+      "Jaewoo Seo",
+      "Seungryong Kim",
+      "Laura Leal-Taixé",
+      "Xiuming Zhang",
+      "Seung Wook Kim"
+    ],
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-10",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Joint Video Generation",
+      "Bird’s-Eye View",
+      "Ego Trajectory Control"
+    ],
+    "datasets": [
+      "PhysicalAI-AV",
+      "nuScenes"
+    ],
+    "paper": "https://arxiv.org/abs/2611.14815",
+    "project": "https://research.nvidia.com/labs/sil/projects/birddreams/",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation was verified in the paper or author resources.",
+    "stars": null,
+    "summary": "Jointly generates perspective and bird’s-eye driving videos. The predicted layout provides a geometric interface for conditioning on the ego trajectory while predicting surrounding traffic motion.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
     "id": "2611-11516",
     "name": "NWM",
     "title": "Breaking survivorship bias in driving world models",
@@ -7252,8 +7580,7 @@
     ],
     "datasets": [
       "NAVSIM",
-      "nuScenes",
-      "Real-World Pedestrian Dummy Crossing"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2611.11516",
     "code": "https://github.com/zihaosheng/NWM",
@@ -7347,8 +7674,7 @@
       "Long-Horizon Simulation"
     ],
     "datasets": [
-      "nuScenes",
-      "Self-Collected Driving Data"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2611.07939",
     "project": "https://fudan-generative-vision.github.io/WAM-Sim/",
@@ -7594,7 +7920,6 @@
       "Human Intent"
     ],
     "datasets": [
-      "CARLA",
       "GRIP"
     ],
     "paper": "https://arxiv.org/abs/2610.34650",
@@ -9981,9 +10306,7 @@
       "Video generation",
       "Data augmentation"
     ],
-    "datasets": [
-      "Waymo curated driving segments (not identified as a public dataset)"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2510.06209",
     "code": null,
     "project": "https://waymo.com/intl/zh-cn/research/drive-gen-co-evaluating/",
@@ -11163,10 +11486,7 @@
       "Flow policy",
       "CBF-MPC"
     ],
-    "datasets": [
-      "MetaDrive / SafeMetaDriveEnv",
-      "UGV experiments"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2610.17799",
     "code": "https://github.com/lzqw/SOAR-Flow",
     "project": "https://lzqw.github.io/SOAR-Flow/",
@@ -11246,9 +11566,7 @@
       "World-Policy Co-Adaptation",
       "Urban Navigation"
     ],
-    "datasets": [
-      "Urban navigation"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2610.08640",
     "openSource": false,
     "codeStatus": "not-found",
@@ -11278,8 +11596,7 @@
       "Action-Faithful Rollouts"
     ],
     "datasets": [
-      "nuScenes",
-      "In-House Dataset"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2609.36851",
     "openSource": false,
@@ -11633,8 +11950,7 @@
       "World models"
     ],
     "datasets": [
-      "nuScenes",
-      "In-house driving dataset"
+      "nuScenes"
     ],
     "paper": "https://arxiv.org/abs/2511.13297",
     "code": null,
@@ -11668,10 +11984,7 @@
       "Proxy value propagation",
       "Safe exploration"
     ],
-    "datasets": [
-      "MetaDrive",
-      "Real-world UGV"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2510.06038",
     "code": "https://github.com/lzqw/H-DSAC",
     "project": null,
@@ -11763,10 +12076,7 @@
       "Safe exploration",
       "Self-improvement"
     ],
-    "datasets": [
-      "MetaDrive",
-      "Real-world UGV"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2506.03568",
     "code": "https://github.com/lzqw/C-HAC",
     "project": null,
@@ -11828,7 +12138,6 @@
       "Large-Scale Simulation"
     ],
     "datasets": [
-      "CARLA",
       "nuPlan",
       "Waymo Open Motion Dataset"
     ],
@@ -11969,6 +12278,41 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2611-24051",
+    "name": "Attention Is Not Relevance",
+    "title": "Attention Is Not Relevance: Challenging the Causality of Attention in Autonomous Driving",
+    "authors": [
+      "Luca Lusvarghi",
+      "Javier Gozalvez"
+    ],
+    "track": "perception-other",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-18",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Interpretability",
+      "Counterfactual Analysis",
+      "Object Relevance"
+    ],
+    "datasets": [],
+    "paper": "https://arxiv.org/abs/2611.24051",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No official implementation was verified in the paper or author resources.",
+    "stars": null,
+    "summary": "Compares attention-derived object relevance against interventions on PlanT 2.0 inputs. The analysis finds that attention becomes less reliable in complex traffic scenes.",
+    "codeCheckedAt": "2026-11-21",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-21",
+    "citationURL": null
+  },
+  {
     "id": "2611-15217",
     "name": "Snow-tonomous Driving",
     "title": "Are We Ready for Snow-tonomous Driving? Challenges Toward Robust Automated Driving in Extreme Weather",
@@ -12013,7 +12357,10 @@
       "Multimodal Perception",
       "Real-World Validation"
     ],
-    "datasets": [],
+    "datasets": [
+      "REHEARSE",
+      "ROADVIEW Snowy Scenes"
+    ],
     "paper": "https://arxiv.org/abs/2611.15217",
     "project": "https://roadview-project.eu/",
     "openSource": false,
@@ -12386,9 +12733,7 @@
       "Anomaly detection",
       "Data curation"
     ],
-    "datasets": [
-      "Naturalistic driving data"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2512.23585",
     "code": null,
     "project": null,
@@ -12773,9 +13118,7 @@
       "Efficient planning",
       "Scene understanding"
     ],
-    "datasets": [
-      "Zoox proprietary urban-driving scenarios"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2509.19789",
     "code": null,
     "project": null,
@@ -12840,10 +13183,7 @@
       "Simulation",
       "Human-in-the-loop"
     ],
-    "datasets": [
-      "CARLA",
-      "Physical vehicle testbed"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2508.06534",
     "code": null,
     "project": null,
@@ -13368,9 +13708,7 @@
       "Transformer",
       "Sensor fusion"
     ],
-    "datasets": [
-      "Real-world urban/highway fusion dataset"
-    ],
+    "datasets": [],
     "paper": "https://arxiv.org/abs/2506.02554",
     "code": "https://github.com/rst-tu-dortmund/HiLO",
     "project": null,

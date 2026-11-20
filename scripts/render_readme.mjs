@@ -51,11 +51,10 @@ const paperResources = (paper) => {
     pending: 'GitHub — code pending', partial: 'GitHub — partial code release',
     released: 'GitHub — code released', 'project-only': 'GitHub — project repository; no verified implementation'
   }[state];
-  const repoTitle = [description, paper.codeNote].filter(Boolean).join(': ');
   const canonical = (url) => (url || '').replace(/\/$/, '').toLowerCase();
   const project = paper.project && canonical(paper.project) !== canonical(repo) ? paper.project : null;
   return [resourceIcon('paper', paper.paper, 'Read paper'),
-    resourceIcon(glyph, repo, repoTitle), resourceIcon('project', project, 'Official project page')]
+    resourceIcon(glyph, repo, description), resourceIcon('project', project, 'Official project page')]
     .filter(Boolean).join(' ');
 };
 const resources = (item) => [
@@ -75,7 +74,7 @@ readme += '- [Public Datasets](#public-datasets)\n- [Public Evaluation Benchmark
 for (const category of datasetCategories) readme = readme.replace('- [Public Evaluation Benchmarks]', `  - [${category}](#${anchor(category)})\n- [Public Evaluation Benchmarks]`);
 for (const category of benchmarkCategories) readme = readme.replace('- [Leaderboard]', `  - [${category}](#${anchor(category)})\n- [Leaderboard]`);
 readme += '## Papers\n\n';
-readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Hover for release details. Missing links are omitted.\n\n';
+readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Missing links are omitted.\n\n';
 readme += 'One primary track per paper; newest first. RSI covers explicit iterative improvement loops. [Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json).\n\n';
 
 for (const [track, title] of tracks) {
@@ -86,13 +85,14 @@ for (const [track, title] of tracks) {
   const years = [...new Set(trackPapers.map((paper) => paper.year))].sort((a, b) => b - a);
   for (const year of years) {
     readme += `<details open>\n<summary>${year}</summary>\n\n`;
-    readme += `| ${iconText.method} **Method** | ${iconText.year} **Year / Venue** | ${iconText.tags} **Tags** | 🔗 **Resources** |\n`;
-    readme += '|---|---|---|:---:|\n';
+    readme += `| ${iconText.method} **Method** | ${iconText.year} **Year / Venue** | ${iconText.tags} **Tags** | **Datasets** | 🔗 **Resources** |\n`;
+    readme += '|---|---|---|---|:---:|\n';
     for (const paper of trackPapers.filter((item) => item.year === year)) {
       const yearVenue = paper.venue === String(paper.year) ? String(paper.year) : esc(paper.venue);
       const methodTitle = `**${esc(paper.name)}**<br><sub>${html(paper.title)}</sub>`;
       const tags = paper.tags.map((tag) => `\`${esc(tag)}\``).join(' · ');
-      readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${paperResources(paper)} |\n`;
+      const datasetNames = (paper.datasets ?? []).map(html).join(', ');
+      readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${datasetNames} | ${paperResources(paper)} |\n`;
     }
     readme += '\n</details>\n\n';
   }
