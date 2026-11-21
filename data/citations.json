@@ -6501,6 +6501,78 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-24719": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-23813": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-23719": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-19922": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-19857": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-19138": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-11532": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2610-35850": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-22",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
     }
   },
   "failures": []

@@ -10758,6 +10758,253 @@
       "readmeMatch": null,
       "rootFiles": [],
       "searches": []
+    },
+    "2611-24719": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/drift-e2e/DRIFT",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "The author project labels code as coming soon. The official repository contains a README but no implementation.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.24719",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.24719",
+          "supports": "Section IV uses LEAD training data, evaluates Bench2Drive and AlpaSim, and uses the NAVSIM splits for real-world planning."
+        },
+        {
+          "url": "https://drift-e2e.github.io/",
+          "supports": "Author project page and resource links."
+        },
+        {
+          "url": "https://github.com/drift-e2e/DRIFT",
+          "supports": "The author project labels code as coming soon. The official repository contains a README but no implementation."
+        }
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        "README.md"
+      ],
+      "searches": []
+    },
+    "2611-23813": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was verified in the checked sources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.23813",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.23813",
+          "supports": "Abstract and experiments report NAVSIM, Bench2Drive, Waymo E2E and nuScenes planning evaluations."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-23719": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No official implementation or project link was verified in the checked sources.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.23719",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.23719",
+          "supports": "The experiments use internal real-world expert segments and takeover logs, including a reconstruction benchmark built from held-out logs. No dataset name is given."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-19922": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The paper states code will be released after review. No implementation URL was verified. The upstream openpilot repository is a dependency.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.19922",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.19922",
+          "supports": "Sections IV and V document rollouts on the PhysicalAI-AV AlpaSim track and evaluation on HUGSIM, Odyssey and NAVSIM."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-19857": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/AIGeeksGroup/PanDWM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Official repository includes implementations for panoramic generation, long-horizon rollouts and 4D decoding.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.19857",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.19857",
+          "supports": "The paper and official repository describe nuScenes panoramas for training and evaluation; other datasets listed for baseline pretraining are excluded."
+        },
+        {
+          "url": "https://aigeeksgroup.github.io/PanDWM/",
+          "supports": "Author project page and resource links."
+        },
+        {
+          "url": "https://github.com/AIGeeksGroup/PanDWM",
+          "supports": "Official repository includes implementations for panoramic generation, long-horizon rollouts and 4D decoding."
+        }
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        "LICENSE",
+        "README.md",
+        "pandwm_code",
+        "requirements.txt"
+      ],
+      "searches": []
+    },
+    "2611-19138": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/GuobaPei/SuperGlance",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The official repository contains model code, training and evaluation scripts, configurations and tests.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.19138",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.19138",
+          "supports": "Section 4 and appendices A and D identify the main driving training sources and five driving evaluation protocols. General-purpose QA mixtures are omitted from the driving catalog."
+        },
+        {
+          "url": "https://guobapei.github.io/SuperGlance/",
+          "supports": "Author project page and resource links."
+        },
+        {
+          "url": "https://github.com/GuobaPei/SuperGlance",
+          "supports": "The official repository contains model code, training and evaluation scripts, configurations and tests."
+        }
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        "LICENSE",
+        "README.md",
+        "configs",
+        "scripts",
+        "superglance",
+        "tests"
+      ],
+      "searches": []
+    },
+    "2611-11532": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": "https://github.com/Xiaomi-EV/Xiaomi-Drive-o1",
+      "repositoryRole": "pending-implementation",
+      "stars": null,
+      "note": "The official repository documents the method and marks implementation as a future release.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.11532",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/pdf/2611.11532",
+          "supports": "Sections 4.1 and 4.2 and Tables 8 and 9 evaluate NVIDIA PhysicalAI-Autonomous-Vehicles in open loop and AlpaSim in closed loop."
+        },
+        {
+          "url": "https://xiaomi-ev.github.io/Xiaomi-Drive-o1/",
+          "supports": "Author project page and resource links."
+        },
+        {
+          "url": "https://github.com/Xiaomi-EV/Xiaomi-Drive-o1",
+          "supports": "The official repository documents the method and marks implementation as a future release."
+        }
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        ".gitignore",
+        "README.md",
+        "docs"
+      ],
+      "searches": []
+    },
+    "2610-35850": {
+      "checkedAt": "2026-11-22",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/PolyU-VCLab/OSWAM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The author repository contains the OSWAM implementation, privileged teacher training, distillation and evaluation.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2610.35850",
+          "supports": "Paper identity, authors and first submission date."
+        },
+        {
+          "url": "https://arxiv.org/html/2610.35850",
+          "supports": "Section 4.1 evaluates NAVSIM and RoboTwin 2.0. The appendix reports NAVSIM v2 results."
+        },
+        {
+          "url": "https://gwenzhang.github.io/OSWAM/",
+          "supports": "Author project page and resource links."
+        },
+        {
+          "url": "https://github.com/PolyU-VCLab/OSWAM",
+          "supports": "The author repository contains the OSWAM implementation, privileged teacher training, distillation and evaluation."
+        },
+        {
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "supports": "Account-attributed OSWAM headline in the public 物理AI之心 archive. The index has a relative date label."
+        }
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        "LICENSE",
+        "README.md",
+        "configs",
+        "navsim",
+        "navsim_v2",
+        "scripts",
+        "src",
+        "tests"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {

@@ -770,6 +770,118 @@
           "Real-world urban/highway fusion dataset"
         ]
       }
+    },
+    {
+      "checkedAt": "2026-11-22",
+      "searchWindow": {
+        "from": "2026-11-15",
+        "to": "2026-11-22"
+      },
+      "catalogBefore": 412,
+      "catalogAfter": 420,
+      "sources": [
+        {
+          "source": "物理AI之心",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "finding": "Public index identified OSWAM as a catalog backfill. The more recent WAM-Sim headline refers to WAM-Sim0.1, which is already indexed. Relative archive labels do not establish exact post dates."
+        },
+        {
+          "source": "ADFeed",
+          "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+          "finding": "Visible recent-index entries are several months old. Fast-dDrive, LVDrive and HorizonDrive are already in the catalog. No new attributable paper was verified from the public results."
+        },
+        {
+          "source": "量子位",
+          "urls": [
+            "https://www.qbitai.com/tag/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6",
+            "https://tech.sinsc.com/media/rss-mp-lzl",
+            "https://tech.sinsc.com/media/rss-mp-lzl/page/2",
+            "https://tech.sinsc.com/media/rss-mp-lzl/page/3"
+          ],
+          "finding": "Public tag and recent attributed indices were checked. Motion Forcing is already listed, and recent general industry or robotics coverage did not establish a new driving paper."
+        },
+        {
+          "source": "智驾具身数据挖掘",
+          "url": "https://www.gairdao.com/app/articles/cypbpypv",
+          "finding": "The attributed SafeDriveVLA repost links to arXiv:2610.20609, which is already listed. Public search does not cover the full account history."
+        },
+        {
+          "source": "新智元",
+          "finding": "Targeted public WeChat and attributed repost searches found no verifiable new driving paper in the search window. Full account history was unavailable."
+        },
+        {
+          "source": "arXiv",
+          "url": "https://export.arxiv.org/api/query",
+          "finding": "The official API and scholarly search supplied recent candidates. SuperGlance is a November 14 submission revised November 18. DriveFoundry is a November 8 catalog backfill without a verified attribution to a monitored account."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-24719",
+          "name": "DRIFT",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24719",
+          "datasetEvidence": "https://arxiv.org/html/2611.24719",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-23813",
+          "name": "SWIFT",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.23813",
+          "datasetEvidence": "https://arxiv.org/html/2611.23813",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-23719",
+          "name": "Improving While Deployed",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.23719",
+          "datasetEvidence": "https://arxiv.org/html/2611.23719",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-19922",
+          "name": "Lao Siji",
+          "submitted": "2026-11-15",
+          "paper": "https://arxiv.org/abs/2611.19922",
+          "datasetEvidence": "https://arxiv.org/html/2611.19922",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-19857",
+          "name": "PanDWM",
+          "submitted": "2026-11-15",
+          "paper": "https://arxiv.org/abs/2611.19857",
+          "datasetEvidence": "https://arxiv.org/html/2611.19857",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-19138",
+          "name": "SuperGlance",
+          "submitted": "2026-11-14",
+          "paper": "https://arxiv.org/abs/2611.19138",
+          "datasetEvidence": "https://arxiv.org/html/2611.19138",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2611-11532",
+          "name": "DriveFoundry",
+          "submitted": "2026-11-08",
+          "paper": "https://arxiv.org/abs/2611.11532",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.11532",
+          "discovery": "arXiv"
+        },
+        {
+          "id": "2610-35850",
+          "name": "OSWAM",
+          "submitted": "2026-10-26",
+          "paper": "https://arxiv.org/abs/2610.35850",
+          "datasetEvidence": "https://arxiv.org/html/2610.35850",
+          "discovery": "物理AI之心",
+          "discoveryUrl": "https://www.jintiankansha.com/column/KoaJGso2E0"
+        }
+      ]
     }
   ]
 }
