@@ -55,7 +55,7 @@ const paperResources = (paper) => {
   const project = paper.project && canonical(paper.project) !== canonical(repo) ? paper.project : null;
   return [resourceIcon('paper', paper.paper, 'Read paper'),
     resourceIcon(glyph, repo, description), resourceIcon('project', project, 'Official project page')]
-    .filter(Boolean).join(' ');
+    .filter(Boolean).join('&nbsp;');
 };
 const resources = (item) => [
   icon(iconText.dataset, item.homepage, 'Dataset homepage'),
@@ -63,21 +63,28 @@ const resources = (item) => [
   icon(iconText.github, item.code, 'Dataset, download, or code')
 ].filter((value) => value !== dash).join(' ');
 
-let readme = '<p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research" width="560"></p>\n\n';
-readme += '# Awesome Autonomous Driving Research\n\n';
-readme += '<p align="center"><strong>自动驾驶交流群 2026</strong><br>论文分享 · 技术讨论 · 研究交流<br><a href="assets/branding/wechat-group-20261124.png"><img src="assets/branding/wechat-group-20261124.png" alt="自动驾驶交流群二维码，图片注明 2026 年 12 月 1 日前有效" width="220"></a><br><sub>微信扫码加入 · 点击查看原图 · 二维码注明 2026 年 12 月 1 日前有效，过期后请等待更新。</sub></p>\n\n';
-readme += `A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **${papers.length} papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.\n\n`;
 const reviewDate = process.env.CATALOG_REVIEW_DATE || new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
-readme += `Last updated: ${reviewDate}. Verify paper metadata against the latest arXiv or publisher version before citation.\n\n`;
-readme += '[Paper Studio](paper-studio/README.md) is the companion local paper-to-WeChat workspace, available under a separate **noncommercial source license**.\n\n';
-readme += '## Table of Contents\n\n- [Papers](#papers)\n';
-for (const [, title] of tracks) readme += `  - [${title}](#${title.toLowerCase().replace(/&/g, '').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '')})\n`;
-readme += '- [Public Datasets](#public-datasets)\n- [Public Evaluation Benchmarks](#public-evaluation-benchmarks)\n- [Leaderboard](#leaderboard)\n- [License](#license)\n\n';
-for (const category of datasetCategories) readme = readme.replace('- [Public Evaluation Benchmarks]', `  - [${category}](#${anchor(category)})\n- [Public Evaluation Benchmarks]`);
-for (const category of benchmarkCategories) readme = readme.replace('- [Leaderboard]', `  - [${category}](#${anchor(category)})\n- [Leaderboard]`);
+const trackAnchor = (title) => title.toLowerCase().replace(/&/g, '').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
+let readme = '<p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research — Awesome Autonomous Driving Research" width="360"></p>\n\n';
+readme += '<p align="center"><strong>自动驾驶前沿论文与开源资源</strong><br><sub>A curated collection of autonomous driving research.</sub></p>\n\n';
+readme += `<p align="center"><strong>${papers.length}</strong> papers &nbsp;·&nbsp; <strong>${datasets.length}</strong> datasets &nbsp;·&nbsp; <strong>${benchmarks.length}</strong> benchmarks<br><sub>Updated ${reviewDate} · Verified paper &amp; author links</sub></p>\n\n`;
+readme += '<p align="center"><a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
+readme += '<details>\n<summary><strong>加入自动驾驶交流群</strong> · 论文分享与技术讨论（展开二维码）</summary>\n\n';
+readme += '<p align="center"><a href="assets/branding/wechat-group-20261124.png"><img src="assets/branding/wechat-group-20261124.png" alt="自动驾驶交流群 2026 微信二维码" width="280"></a><br><sub>点击图片查看原图 · 本二维码于 2026 年 12 月 1 日前有效</sub></p>\n\n</details>\n\n';
+readme += '## Research Tracks\n\n';
+const trackLabels = ['E2E','VLA','World Models','RSI','Perception'];
+readme += '| ' + tracks.map(([,title],i)=>`[**${trackLabels[i]}**](#${trackAnchor(title)})`).join(' | ') + ' |\n';
+readme += '|:---:|:---:|:---:|:---:|:---:|\n';
+readme += '| ' + tracks.map(([track])=>`${papers.filter(p=>p.track===track).length} papers`).join(' | ') + ' |\n\n';
+readme += '<details>\n<summary>More resources · 数据集分类、评测协议与工具</summary>\n\n';
+readme += 'E2E: end-to-end driving. VLA: vision-language-action models. RSI: explicit iterative self-improvement loops. Perception includes supporting driving research.\n\n';
+readme += '**Datasets** · ' + datasetCategories.map(title=>`[${title}](#${anchor(title)})`).join(' · ') + '\n\n';
+readme += '**Benchmarks** · ' + benchmarkCategories.map(title=>`[${title}](#${anchor(title)})`).join(' · ') + '\n\n';
+readme += '[Paper Studio](paper-studio/README.md) · Local paper-to-WeChat workspace ([noncommercial source license](paper-studio/LICENSE)).\n\n';
+readme += '[Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json) · [License](#license)\n\n</details>\n\n';
 readme += '## Papers\n\n';
 readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Missing links are omitted.\n\n';
-readme += 'One primary track per paper; newest first. RSI covers explicit iterative improvement loops. [Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json).\n\n';
+readme += '<sub>Newest first · Older years folded · Dataset names verified against papers; unknowns left blank.</sub>\n\n';
 
 for (const [track, title] of tracks) {
   const trackPapers = papers.filter((item) => item.track === track);
@@ -86,13 +93,13 @@ for (const [track, title] of tracks) {
   readme += `_${trackPapers.length} papers; ${codeCount} with a verified public code link._\n\n`;
   const years = [...new Set(trackPapers.map((paper) => paper.year))].sort((a, b) => b - a);
   for (const year of years) {
-    readme += `<details open>\n<summary>${year}</summary>\n\n`;
-    readme += `| ${iconText.method} **Method** | ${iconText.year} **Year / Venue** | ${iconText.tags} **Tags** | **Datasets** | 🔗 **Resources** |\n`;
+    readme += `<details${year === years[0] ? ' open' : ''}>\n<summary><strong>${year}</strong> · ${trackPapers.filter(p=>p.year===year).length} papers</summary>\n\n`;
+    readme += '| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |\n';
     readme += '|---|---|---|---|:---:|\n';
     for (const paper of trackPapers.filter((item) => item.year === year)) {
       const yearVenue = paper.venue === String(paper.year) ? String(paper.year) : esc(paper.venue);
-      const methodTitle = `**${esc(paper.name)}**<br><sub>${html(paper.title)}</sub>`;
-      const tags = paper.tags.map((tag) => `\`${esc(tag)}\``).join(' · ');
+      const methodTitle = `**${esc(paper.name)}**` + (paper.name === paper.title ? '' : `<br><sub>${html(paper.title)}</sub>`);
+      const tags = `<sub>${paper.tags.map(html).join(' · ')}</sub>`;
       const datasetNames = (paper.datasets ?? []).map(html).join(', ');
       readme += `| ${methodTitle} | ${yearVenue} | ${tags} | ${datasetNames} | ${paperResources(paper)} |\n`;
     }
