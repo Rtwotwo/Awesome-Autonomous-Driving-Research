@@ -6609,6 +6609,141 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2609-36438": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2606-30537": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2605-21372": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2609-33854": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2610-13409": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2610-20160": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2603-24587": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2610-23886": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2611-00596": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2504-10485": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2611-12382": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2610-17540": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2608-13395": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2611-27515": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "hugcl-2026": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
     }
   },
   "failures": []

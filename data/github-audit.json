@@ -11121,6 +11121,284 @@
           "query": "Old-School Planners Drive (Sometimes) Better Than Learned Ones github"
         }
       ]
+    },
+    "2609-36438": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/World4Scorer/World4Scorer",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public NAVSIM and Bench2Drive implementations, training scripts and checkpoints are available.",
+      "evidence": [
+        "https://arxiv.org/abs/2609.36438",
+        "https://world4scorer.github.io/",
+        "https://github.com/World4Scorer/World4Scorer"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "navsim",
+        "bench2drive",
+        "scripts",
+        "tools"
+      ],
+      "searches": []
+    },
+    "2606-30537": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Engibacter/R2LPL",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public planner, model, configuration and rollout-learning scripts are available.",
+      "evidence": [
+        "https://arxiv.org/abs/2606.30537",
+        "https://github.com/Engibacter/R2LPL"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "lpl_planner",
+        "run",
+        "setup.py"
+      ],
+      "searches": []
+    },
+    "2605-21372": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2605.21372"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2609-33854": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2609.33854"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2610-13409": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/wyh-autonomy/maneuverflow",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public release covers the ManeuverFlow-TF main model on NAVSIM v1; broader benchmark implementations were not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.13409",
+        "https://github.com/wyh-autonomy/maneuverflow"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "navsim",
+        "scripts",
+        "checkpoints",
+        "tests"
+      ],
+      "searches": []
+    },
+    "2610-20160": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.20160",
+        "https://fantasy-amap.github.io/OneLA"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2603-24587": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/pengxuanyang/DreamerAD",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public models, training scripts, NAVSIM integration and checkpoints are available.",
+      "evidence": [
+        "https://arxiv.org/abs/2603.24587",
+        "https://github.com/pengxuanyang/DreamerAD"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "models",
+        "training",
+        "scripts",
+        "navsim"
+      ],
+      "searches": []
+    },
+    "2610-23886": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.23886"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-00596": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.00596",
+        "https://xworld16.github.io"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2504-10485": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation was verified in the paper and available official resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2504.10485"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-12382": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/ShivaTeam/AutoVLA-D",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public release includes codebook construction, data-engine pipelines and SFT configurations; a complete evaluation stack was not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.12382",
+        "https://github.com/ShivaTeam/AutoVLA-D"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "codebook",
+        "data_engine",
+        "sft",
+        "deepspeed"
+      ],
+      "searches": []
+    },
+    "2610-17540": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The official project page says Code soon; its AlpaSim link is a dependency, not a TacitVLA implementation.",
+      "evidence": [
+        "https://arxiv.org/abs/2610.17540",
+        "https://tacitvla.github.io"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2608-13395": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/forever-free1/FIRE-VLA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public failure routing, distillation modules, configurations and evaluation scripts are available.",
+      "evidence": [
+        "https://arxiv.org/abs/2608.13395",
+        "https://github.com/forever-free1/FIRE-VLA"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "fire_vla",
+        "configs",
+        "evaluation",
+        "scripts"
+      ],
+      "searches": []
+    },
+    "2611-27515": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/Rtwotwo/DriveSTA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public model, training, inference, evaluation and data-preparation code is available.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.27515",
+        "https://rtwotwo.github.io/DriveSTA",
+        "https://github.com/Rtwotwo/DriveSTA"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "navsim",
+        "scripts",
+        "tools",
+        "tests"
+      ],
+      "searches": []
+    },
+    "hugcl-2026": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/yhh-IV/HugCL",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Author-linked Zenodo archive confirms this repository. Public software covers simulation inference, deployment and result analysis; full training reproduction was not verified.",
+      "evidence": [
+        "https://doi.org/10.1038/s41467-026-77370-x",
+        "https://github.com/yhh-IV/HugCL",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13661605/",
+        "https://zenodo.org/records/20834824"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "Framework",
+        "Deployment",
+        "Statistics"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {

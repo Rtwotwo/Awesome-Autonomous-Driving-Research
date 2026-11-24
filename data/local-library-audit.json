@@ -1,0 +1,209 @@
+{
+  "checkedAt": "2026-11-24",
+  "source": "User-provided Autonomous Driving.bib export",
+  "scope": "Supplement missing papers using verified primary sources; no local PDF files or private filesystem paths are published.",
+  "entries": 231,
+  "duplicatesWithinExport": 11,
+  "matchedInitially": 202,
+  "resolvedExisting": [
+    {
+      "localTitle": "RADV1 & ResAD: Normalized Residual Trajectory Modeling",
+      "existingPaper": "https://arxiv.org/abs/2510.08562",
+      "reason": "Renamed version of existing ResAD record."
+    },
+    {
+      "localTitle": "NeoAD: Drive Like Humans, Plan Like Machines",
+      "existingName": "NeoAD",
+      "reason": "Existing record under a revised title."
+    }
+  ],
+  "added": [
+    {
+      "id": "2609-36438",
+      "name": "World4Scorer",
+      "title": "World4Scorer: Outcome-Grounded World Modeling for Autonomous Driving",
+      "paper": "https://arxiv.org/abs/2609.36438",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2",
+        "Bench2Drive"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2609.36438",
+      "note": "Dataset list records the directly relevant driving experiments."
+    },
+    {
+      "id": "2606-30537",
+      "name": "R2LPL",
+      "title": "Learning from Mistakes: Rollout-Retrieval Lifelong Policy Learning for Autonomous Driving",
+      "paper": "https://arxiv.org/abs/2606.30537",
+      "datasets": [
+        "nuPlan"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2606.30537",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2605-21372",
+      "name": "AutoScale",
+      "title": "Closed Loop Dynamic Driving Data Mixture for Real-Synthetic Co-Training",
+      "paper": "https://arxiv.org/abs/2605.21372",
+      "datasets": [
+        "NAVSIM v2",
+        "SimScale"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2605.21372",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2609-33854",
+      "name": "ReDrive",
+      "title": "ReDrive: Shaping Representations with World Modeling for End-to-End Driving",
+      "paper": "https://arxiv.org/abs/2609.33854",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2",
+        "nuScenes",
+        "nuPlan",
+        "PhysicalAI-Autonomous-Vehicles"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2609.33854",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2610-13409",
+      "name": "ManeuverFlow",
+      "title": "ManeuverFlow: Maneuver Hypothesis Generation with Future Evidence for Trajectory Evaluation and Refinement in End-to-End Autonomous Driving",
+      "paper": "https://arxiv.org/abs/2610.13409",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2",
+        "WorldEngine"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2610.13409",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2610-20160",
+      "name": "OneLA",
+      "title": "OneLA: Learning Many Worlds from Latent Actions",
+      "paper": "https://arxiv.org/abs/2610.20160",
+      "datasets": [
+        "nuScenes",
+        "PhysicalAI-Autonomous-Vehicles"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2610.20160",
+      "note": "Dataset list records the directly relevant driving experiments."
+    },
+    {
+      "id": "2603-24587",
+      "name": "DreamerAD",
+      "title": "DreamerAD: Efficient Reinforcement Learning via Latent World Model for Autonomous Driving",
+      "paper": "https://arxiv.org/abs/2603.24587",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2603.24587",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2610-23886",
+      "name": "EvoAD",
+      "title": "EvoAD: Self-Evolving Autonomous Driving via Latent World-Model Guided Post-hoc Reflection",
+      "paper": "https://arxiv.org/abs/2610.23886",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2610.23886",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2611-00596",
+      "name": "X-World 1.6",
+      "title": "X-World 1.6: Building Controllable Virtual Cities with World Models",
+      "paper": "https://arxiv.org/abs/2611.00596",
+      "datasets": [],
+      "datasetEvidence": "https://arxiv.org/html/2611.00596",
+      "note": "No named public training or evaluation dataset was confirmed; the dataset cell is intentionally empty."
+    },
+    {
+      "id": "2504-10485",
+      "name": "Nexus",
+      "title": "Decoupled Diffusion Sparks Adaptive Scene Generation",
+      "paper": "https://arxiv.org/abs/2504.10485",
+      "datasets": [
+        "nuPlan",
+        "Waymo Open Dataset",
+        "Nexus-Data"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2504.10485",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2611-12382",
+      "name": "AutoVLA-D",
+      "title": "AutoVLA-D: Learn a Trajectory-Geometric Condition from Reasoning for Autonomous Driving VLA",
+      "paper": "https://arxiv.org/abs/2611.12382",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2",
+        "nuScenes",
+        "NeuroNCAP"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2611.12382",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2610-17540",
+      "name": "TacitVLA",
+      "title": "TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency",
+      "paper": "https://arxiv.org/abs/2610.17540",
+      "datasets": [
+        "PhysicalAI-AV"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2610.17540",
+      "note": "Dataset list records the directly relevant driving experiments."
+    },
+    {
+      "id": "2608-13395",
+      "name": "FIRE-VLA",
+      "title": "FIRE-VLA: Failure-Informed Self-Evolution for Vision-Language-Action Models in Autonomous Driving",
+      "paper": "https://arxiv.org/abs/2608.13395",
+      "datasets": [
+        "nuScenes"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2608.13395",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "2611-27515",
+      "name": "DriveSTA",
+      "title": "Beyond a Single Human Demonstration: Learning from Scored Trajectory Alternatives for End-to-End Driving",
+      "paper": "https://arxiv.org/abs/2611.27515",
+      "datasets": [
+        "NAVSIM v1",
+        "NAVSIM v2",
+        "HUGSIM"
+      ],
+      "datasetEvidence": "https://arxiv.org/html/2611.27515",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    },
+    {
+      "id": "hugcl-2026",
+      "name": "HugCL",
+      "title": "Human-guided continual learning for multifaceted improvement of self-driving vehicles",
+      "paper": "https://doi.org/10.1038/s41467-026-77370-x",
+      "datasets": [
+        "CARLA"
+      ],
+      "datasetEvidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13661605/",
+      "note": "Dataset names checked against experimental settings in the primary paper."
+    }
+  ],
+  "unresolved": [
+    {
+      "title": "Unity in Diversity: Low-Rank Multirelational Test-Time Adaptation for 3D Point Cloud Recognition",
+      "reason": "No independently verifiable public primary paper was found. Not added."
+    }
+  ]
+}

@@ -63,7 +63,9 @@ const resources = (item) => [
   icon(iconText.github, item.code, 'Dataset, download, or code')
 ].filter((value) => value !== dash).join(' ');
 
-let readme = '# Awesome Autonomous Driving Research\n\n';
+let readme = '<p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research" width="560"></p>\n\n';
+readme += '# Awesome Autonomous Driving Research\n\n';
+readme += '<p align="center"><strong>自动驾驶交流群 2026</strong><br>论文分享 · 技术讨论 · 研究交流<br><a href="assets/branding/wechat-group-20261124.png"><img src="assets/branding/wechat-group-20261124.png" alt="自动驾驶交流群二维码，图片注明 2026 年 12 月 1 日前有效" width="220"></a><br><sub>微信扫码加入 · 点击查看原图 · 二维码注明 2026 年 12 月 1 日前有效，过期后请等待更新。</sub></p>\n\n';
 readme += `A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **${papers.length} papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.\n\n`;
 const reviewDate = process.env.CATALOG_REVIEW_DATE || new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString().slice(0, 10);
 readme += `Last updated: ${reviewDate}. Verify paper metadata against the latest arXiv or publisher version before citation.\n\n`;
