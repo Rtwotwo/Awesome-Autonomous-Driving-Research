@@ -1,17 +1,14 @@
 <p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research — Awesome Autonomous Driving Research" width="360"></p>
 
-<p align="center"><strong>自动驾驶前沿论文与开源资源</strong><br><sub>A curated collection of autonomous driving research.</sub></p>
+<p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>
 
-<p align="center"><strong>439</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-24 · Verified paper &amp; author links</sub></p>
+<p align="center"><strong>439</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
 
 <p align="center"><a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
-<details>
-<summary><strong>加入自动驾驶交流群</strong> · 论文分享与技术讨论（展开二维码）</summary>
-
-<p align="center"><a href="assets/branding/wechat-group-20261124.png"><img src="assets/branding/wechat-group-20261124.png" alt="自动驾驶交流群 2026 微信二维码" width="280"></a><br><sub>点击图片查看原图 · 本二维码于 2026 年 12 月 1 日前有效</sub></p>
-
-</details>
+> **Community** · [Join our WeChat group](assets/branding/wechat-group-20261124.png) for paper discussions and research exchange.
+>
+> <sub>Open the invitation image and scan it in WeChat. Valid before December 1, 2026.</sub>
 
 ## Research Tracks
 
@@ -20,7 +17,7 @@
 | 110 papers | 123 papers | 128 papers | 35 papers | 43 papers |
 
 <details>
-<summary>More resources · 数据集分类、评测协议与工具</summary>
+<summary><strong>Resource Guide</strong> · Datasets, evaluation protocols, and tools</summary>
 
 E2E: end-to-end driving. VLA: vision-language-action models. RSI: explicit iterative self-improvement loops. Perception includes supporting driving research.
 
