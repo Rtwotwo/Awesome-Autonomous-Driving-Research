@@ -1,8 +1,8 @@
 # Awesome Autonomous Driving Research
 
-A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **420 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
+A curated research collection for end-to-end autonomous driving, driving world models, vision-language-action models, recursive self-improvement, perception, and related driving research. The catalog currently contains **424 papers** across five research tracks, alongside public datasets and reproducible evaluation benchmarks.
 
-Last updated: 2026-11-22. Verify paper metadata against the latest arXiv or publisher version before citation.
+Last updated: 2026-11-24. Verify paper metadata against the latest arXiv or publisher version before citation.
 
 [Paper Studio](paper-studio/README.md) is the companion local paper-to-WeChat workspace, available under a separate **noncommercial source license**.
 
@@ -201,13 +201,15 @@ _107 papers; 57 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_119 papers; 56 with a verified public code link._
+_121 papers; 56 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | **Datasets** | 🔗 **Resources** |
 |---|---|---|---|:---:|
+| **GAC**<br><sub>Generalist Action Critic: Harnessing Frontier Models in Autonomous Driving</sub> | arXiv 2026 | `Action Critic` · `Trajectory Reselection` · `Inference-Time Reasoning` | HUGSIM, HUGSIM-160, NAVSIM v1 | <a href="https://arxiv.org/abs/2611.27804" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://yanyunn.github.io/GAC/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **TuringPAI**<br><sub>TuringPAI: A Foundation for On-Device Physical AI</sub> | arXiv 2026 | `On-Device VLA` · `Visual Token Compression` · `Driving Foundation Model` | XPeng in-house driving dataset, XPeng CCES simulation suite, nuScenes | <a href="https://arxiv.org/abs/2611.25474" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **AgentWorld**<br><sub>Learning Agent-Centric Vision-Language-Action World Models for Autonomous Driving</sub> | NeurIPS 2026 | `Agent Tokens` · `Geometric Grounding` · `Trajectory Planning` | nuScenes, Bench2Drive | <a href="https://arxiv.org/abs/2611.22880" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://agentworld-ad.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **SuperGlance**<br><sub>SuperGlance: Driving at a Glance with a Vision-Language Model</sub> | arXiv 2026 | `Single-Pass VLA` · `Candidate Trajectory Scoring` · `Driving Question Answering` | DriveLM, NAVSIM v1.1, Waymo Open Dataset E2E, PhysicalAI-AV, AlpaSim, Language2Drive | <a href="https://arxiv.org/abs/2611.19138" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://github.com/GuobaPei/SuperGlance" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> <a href="https://guobapei.github.io/SuperGlance/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **Triplet Incremental Training**<br><sub>From Foundation VLM to Versatile Driving VLM: A Triplet Incremental Training Approach</sub> | CoRL 2026 | `Geometric Supervision` · `Depth Distillation` · `Incremental VLM Training` | nuScenes, OmniDrive, nuInstruct, NAVSIM, MMMU, MMStar, POPE, OCRBench, ScienceQA | <a href="https://arxiv.org/abs/2611.16727" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
@@ -364,13 +366,14 @@ _119 papers; 56 with a verified public code link._
 
 ### Driving World Models
 
-_123 papers; 63 with a verified public code link._
+_124 papers; 63 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | **Datasets** | 🔗 **Resources** |
 |---|---|---|---|:---:|
+| **ReactDrive**<br><sub>ReactDrive: Self-Reactive Driving World Model</sub> | arXiv 2026 | `Reactive World Model` · `Agent Dynamics` · `Video Generation` | Waymo Open Dataset, nuPlan, NAVSIM | <a href="https://arxiv.org/abs/2611.27024" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://reactdrive.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **Agent-Relative Self-Play**<br><sub>Learning to Interact in Multi-Agent Self-Play for Controllable Autonomous Driving Scenario Generation</sub> | arXiv 2026 | `Multi-Agent Self-Play` · `Dynamic Goals` · `Scenario Generation` |  | <a href="https://arxiv.org/abs/2611.24876" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Does the Action Matter?**<br><sub>Does the Action Matter? Probing Action-Conditioned Semantic Forecasting as a World Model for Autonomous Driving</sub> | WAM-AD @ WACV 2027 | `Semantic Forecasting` · `Action Conditioning` · `Counterfactual Evaluation` | Cityscapes, BDD100K | <a href="https://arxiv.org/abs/2611.24840" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://github.com/binayksingh/does-action-matter" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **SWIFT**<br><sub>SWIFT: Slow World, Instant Freshness, and Timely Action for Asynchronous Autonomous Driving</sub> | arXiv 2026 | `Asynchronous World Modeling` · `Freshness Conditioning` · `World-Action Planning` | NAVSIM, Bench2Drive, Waymo Open Dataset E2E, nuScenes | <a href="https://arxiv.org/abs/2611.23813" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
@@ -612,13 +615,14 @@ _29 papers; 11 with a verified public code link._
 
 ### Perception & Other Driving Research
 
-_42 papers; 14 with a verified public code link._
+_43 papers; 14 with a verified public code link._
 
 <details open>
 <summary>2026</summary>
 
 | 🧠 **Method** | 🗓️ **Year / Venue** | 🏷️ **Tags** | **Datasets** | 🔗 **Resources** |
 |---|---|---|---|:---:|
+| **Old-School Planners**<br><sub>Old-School Planners Drive (Sometimes) Better Than Learned Ones</sub> | arXiv 2026 | `Classical Planning` · `Controlled Comparison` · `Closed-Loop Evaluation` | nuScenes, nuPlan, HUGSIM | <a href="https://arxiv.org/abs/2611.25138" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Attention Is Not Relevance**<br><sub>Attention Is Not Relevance: Challenging the Causality of Attention in Autonomous Driving</sub> | arXiv 2026 | `Interpretability` · `Counterfactual Analysis` · `Object Relevance` |  | <a href="https://arxiv.org/abs/2611.24051" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Snow-tonomous Driving**<br><sub>Are We Ready for Snow-tonomous Driving? Challenges Toward Robust Automated Driving in Extreme Weather</sub> | arXiv 2026 | `Adverse Weather` · `Multimodal Perception` · `Real-World Validation` | REHEARSE, ROADVIEW Snowy Scenes | <a href="https://arxiv.org/abs/2611.15217" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://roadview-project.eu/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **DSTS**<br><sub>Camera Radar LiDAR Fusion via Point-Cloud Projection for Multi-Task Learning</sub> | IEEE SiPS 2026 | `Camera-Radar-LiDAR Fusion` · `Point-Cloud Projection` · `Multi-Task Perception` | RADIal | <a href="https://arxiv.org/abs/2611.03942" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> <a href="https://github.com/Kavinchandra/crlfusion" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |

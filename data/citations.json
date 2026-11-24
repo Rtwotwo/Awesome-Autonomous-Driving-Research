@@ -6573,6 +6573,42 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-27804": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-27024": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-25474": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
+    },
+    "2611-25138": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-24",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed in this catalog update; null is not zero."
     }
   },
   "failures": []

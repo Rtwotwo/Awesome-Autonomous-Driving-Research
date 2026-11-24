@@ -882,6 +882,87 @@
           "discoveryUrl": "https://www.jintiankansha.com/column/KoaJGso2E0"
         }
       ]
+    },
+    {
+      "checkedAt": "2026-11-24",
+      "searchWindow": {
+        "from": "2026-11-17",
+        "to": "2026-11-24"
+      },
+      "catalogBefore": 420,
+      "catalogAfter": 424,
+      "sources": [
+        {
+          "source": "物理AI之心",
+          "url": "https://www.jintiankansha.com/column/KoaJGso2E0",
+          "finding": "Existing public entry was inaccessible in this run; targeted public search did not establish an attributable new paper."
+        },
+        {
+          "source": "ADFeed",
+          "url": "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+          "finding": "Existing public entry was inaccessible in this run; no new paper attributed to this account without an identifiable article."
+        },
+        {
+          "source": "量子位",
+          "urls": [
+            "https://www.qbitai.com/tag/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6",
+            "https://tech.sinsc.com/media/rss-mp-lzl"
+          ],
+          "finding": "Official tag timed out. Attributed index updated November 22 was accessible; inspected recent results did not establish a new driving paper. Account history coverage is incomplete."
+        },
+        {
+          "source": "智驾具身数据挖掘",
+          "url": "https://www.gairdao.com/app/articles/cypbpypv",
+          "finding": "Existing attributed repost could not be retrieved; targeted public search yielded no verified new attributable article."
+        },
+        {
+          "source": "新智元",
+          "url": "https://www.sina.cn/media/5703921756",
+          "finding": "Public attributed index/search exposed industry news but did not establish a new original driving paper. Full account coverage is unavailable."
+        },
+        {
+          "source": "arXiv",
+          "finding": "Four missing papers verified against official abstracts/full text and available author project pages. BADAS-3.0 and AR-WAM were already cataloged and excluded."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-27804",
+          "name": "GAC",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.27804",
+          "datasetEvidence": "https://arxiv.org/html/2611.27804v1",
+          "discovery": "arXiv",
+          "datasetVerification": "Section 4.1 evaluates the full HUGSIM set, the HUGSIM-160 subset, and NAVSIM v1 navtest. Simulator time waits for critic decisions."
+        },
+        {
+          "id": "2611-27024",
+          "name": "ReactDrive",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.27024",
+          "datasetEvidence": "https://arxiv.org/html/2611.27024v1",
+          "discovery": "arXiv",
+          "datasetVerification": "Section 4.1 trains on Waymo Open Dataset and nuPlan training splits; downstream planning uses the official NAVSIM splits."
+        },
+        {
+          "id": "2611-25474",
+          "name": "TuringPAI",
+          "submitted": "2026-11-19",
+          "paper": "https://arxiv.org/abs/2611.25474",
+          "datasetEvidence": "https://arxiv.org/html/2611.25474v1",
+          "discovery": "arXiv",
+          "datasetVerification": "Driving-specific resources: Sections 3.2.1-3.2.2 use XPeng internal recordings, a held-out validation split, and the internal CCES simulation suite. Table 3 also evaluates spatial localization on nuScenes. This column lists driving-relevant resources rather than all general VLM/robotics benchmarks."
+        },
+        {
+          "id": "2611-25138",
+          "name": "Old-School Planners",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.25138",
+          "datasetEvidence": "https://arxiv.org/html/2611.25138v1",
+          "discovery": "arXiv",
+          "datasetVerification": "Section IV uses nuScenes for open-loop evaluation and tuning, nuPlan Val14/Test14-hard for closed-loop evaluation, and HUGSIM with frozen UniAD perception."
+        }
+      ]
     }
   ]
 }

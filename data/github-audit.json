@@ -11005,6 +11005,122 @@
         "tests"
       ],
       "searches": []
+    },
+    "2611-27804": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author-linked implementation was verified in the paper, available author resources, or targeted title search; missing code links are omitted.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.27804",
+          "supports": "Title, authors and first arXiv submission date; not a media publication date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.27804v1",
+          "supports": "Section 4.1 evaluates the full HUGSIM set, the HUGSIM-160 subset, and NAVSIM v1 navtest. Simulator time waits for critic decisions."
+        },
+        {
+          "url": "https://yanyunn.github.io/GAC/",
+          "supports": "Author project linked by the paper; no implementation release verified."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": [
+        {
+          "type": "web-title",
+          "query": "Generalist Action Critic: Harnessing Frontier Models in Autonomous Driving github"
+        }
+      ]
+    },
+    "2611-27024": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author-linked implementation was verified in the paper, available author resources, or targeted title search; missing code links are omitted.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.27024",
+          "supports": "Title, authors and first arXiv submission date; not a media publication date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.27024v1",
+          "supports": "Section 4.1 trains on Waymo Open Dataset and nuPlan training splits; downstream planning uses the official NAVSIM splits."
+        },
+        {
+          "url": "https://reactdrive.github.io/",
+          "supports": "Author project linked by the paper; no implementation release verified."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": [
+        {
+          "type": "web-title",
+          "query": "ReactDrive: Self-Reactive Driving World Model github"
+        }
+      ]
+    },
+    "2611-25474": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author-linked implementation was verified in the paper, available author resources, or targeted title search; missing code links are omitted.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.25474",
+          "supports": "Title, authors and first arXiv submission date; not a media publication date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.25474v1",
+          "supports": "Driving-specific resources: Sections 3.2.1-3.2.2 use XPeng internal recordings, a held-out validation split, and the internal CCES simulation suite. Table 3 also evaluates spatial localization on nuScenes. This column lists driving-relevant resources rather than all general VLM/robotics benchmarks."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": [
+        {
+          "type": "web-title",
+          "query": "TuringPAI: A Foundation for On-Device Physical AI github"
+        }
+      ]
+    },
+    "2611-25138": {
+      "checkedAt": "2026-11-24",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author-linked implementation was verified in the paper, available author resources, or targeted title search; missing code links are omitted.",
+      "evidence": [
+        {
+          "url": "https://arxiv.org/abs/2611.25138",
+          "supports": "Title, authors and first arXiv submission date; not a media publication date."
+        },
+        {
+          "url": "https://arxiv.org/html/2611.25138v1",
+          "supports": "Section IV uses nuScenes for open-loop evaluation and tuning, nuPlan Val14/Test14-hard for closed-loop evaluation, and HUGSIM with frozen UniAD perception."
+        }
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": [
+        {
+          "type": "web-title",
+          "query": "Old-School Planners Drive (Sometimes) Better Than Learned Ones github"
+        }
+      ]
     }
   },
   "lastIncrementalUpdate": {
