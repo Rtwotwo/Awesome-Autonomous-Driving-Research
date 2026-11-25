@@ -2,7 +2,7 @@
 
 <p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>
 
-<p align="center"><strong>462</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
+<p align="center"><strong>464</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
 
 <p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
@@ -13,11 +13,11 @@
 ## Industry Research News
 
 <details open>
-<summary><strong>Company technical reports</strong> · 7 reports</summary>
+<summary><strong>Company technical reports</strong> · 13 reports</summary>
 
 **On our radar** · Xiaomi · XPeng · NIO · Momenta · Horizon Robotics · ByteDance · Alibaba · Li Auto · ZYT
 
-<sub>Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>
+<sub>Since 2026-01-01 · Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>
 
 | Date | Company | Research highlight | Links |
 |:---|:---|:---|:---:|
@@ -28,6 +28,12 @@
 | 2026-09-18 | **ZYT** | [**ZYT-World**](#driving-world-models)<br><sub>One-step seven-camera simulation with controllable traffic and memory across revisits.</sub> | <a href="https://arxiv.org/abs/2609.21712" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://zyt-aim.github.io/ZYT-World/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | 2026-09-05 | **Xiaomi** | [**DriveZero**](#recursive-self-improvement-for-autonomous-driving)<br><sub>Closed-loop reinforcement learning and teacher distillation beyond human driving demonstrations.</sub> | <a href="https://arxiv.org/abs/2609.06055" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/XiaomiAutoL3/DriveZero" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautol3.github.io/DriveZero/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | 2026-08-31 | **Alibaba** | [**Qwen-Drive-1.0**](#vision-language-action-models)<br><sub>Unified 3D perception, driving question answering and planning.</sub> | <a href="https://arxiv.org/abs/2609.00111" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/QwenLM/Qwen-Drive-1.0" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| 2026-08-11 | **XPeng** | [**XCoT-VLA**](#vision-language-action-models)<br><sub>Executable reasoning tokens directly condition efficient driving trajectory generation.</sub> | <a href="https://arxiv.org/abs/2608.10976" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-06-27 | **XPeng** | [**X-Mind**](#vision-language-action-models)<br><sub>Compact visual reasoning rolls out future scenes before planning driving actions.</sub> | <a href="https://arxiv.org/abs/2606.28758" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xp-x-mind.github.io/en/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-05-24 | **XPeng** | [**X-Foresight**](#driving-world-models)<br><sub>Joint future-video and driving-action forecasting embeds predictive world knowledge in VLA.</sub> | <a href="https://arxiv.org/abs/2605.24892" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-05-18 | **Xiaomi** | [**Xiaomi EV World Model**](#driving-world-models)<br><sub>Joint reconstruction and generation for consistent multi-view driving simulation.</sub> | <a href="https://arxiv.org/abs/2605.18137" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-04-22 | **XPeng** | [**X-Cache**](#driving-world-models)<br><sub>Cross-chunk block caching accelerates few-step autoregressive driving world models.</sub> | <a href="https://arxiv.org/abs/2604.20289" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-03-20 | **XPeng** | [**X-World**](#driving-world-models)<br><sub>Controllable multi-camera world simulation for closed-loop driving development.</sub> | <a href="https://arxiv.org/abs/2603.19979" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 
 <sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>
 
@@ -37,7 +43,7 @@
 
 | [**E2E**](#end-to-end-autonomous-driving) | [**VLA**](#vision-language-action-models) | [**World Models**](#driving-world-models) | [**RSI**](#recursive-self-improvement-for-autonomous-driving) | [**Perception**](#perception--other-driving-research) |
 |:---:|:---:|:---:|:---:|:---:|
-| 117 papers | 129 papers | 133 papers | 37 papers | 46 papers |
+| 117 papers | 131 papers | 133 papers | 37 papers | 46 papers |
 
 <details>
 <summary><strong>Resource Guide</strong> · Datasets, evaluation protocols, and tools</summary>
@@ -207,10 +213,10 @@ _117 papers; 60 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_129 papers; 59 with a verified public code link._
+_131 papers; 59 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 78 papers</summary>
+<summary><strong>2026</strong> · 80 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
@@ -256,6 +262,7 @@ _129 papers; 59 with a verified public code link._
 | **DriveVLA-M0**<br><sub>DriveVLA-M0: Failure-Aware Memory Augmentation for Autonomous Driving</sub> | 2026 | <sub>Failure Memory · Retrieval Augmentation · Distribution Shift</sub> |  | <a href="https://arxiv.org/abs/2608.10413" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/ZebinX/DriveVLA-M0" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **FactorDrive**<br><sub>FactorDrive: Adaptive Multi-Step Reasoning Driven by Planning-Critical Factors for End-to-End Autonomous Driving</sub> | 2026 | <sub>Spatial Reasoning · Reasoning Optimization · Trajectory Planning</sub> |  | <a href="https://arxiv.org/abs/2608.09591" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **DEFT-RLVR**<br><sub>Deferred Exposure of Future Trajectories for Verifiable Reasoning in Autonomous Driving VLMs</sub> | 2026 | <sub>Reinforcement Learning with Verifiable Rewards · Reasoning Supervision</sub> |  | <a href="https://arxiv.org/abs/2608.01755" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/hzx122/DEFT-RLVR" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| **XCoT-VLA**<br><sub>XCoT-VLA: Executable Chain-of-Thought for Vision-Language-Action Driving</sub> | Technical Report 2026 | <sub>Executable Reasoning · Vision-Language-Action</sub> |  | <a href="https://arxiv.org/abs/2608.10976" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **WorkDrive**<br><sub>WorkDrive: Roadwork Chain of Causation for Autonomous Driving</sub> | 2026 | <sub>Work-Zone Reasoning · VLM Planning · Robustness</sub> |  | <a href="https://arxiv.org/abs/2607.14727" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Post-Training Survey**<br><sub>Post-Training in End-to-End Autonomous Driving</sub> | 2026 | <sub>Survey · Post-Training · Policy Optimization</sub> |  | <a href="https://arxiv.org/abs/2607.08072" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/RYNing/Awesome-Post-Training-In-Autonomous-Driving-Papers" title="GitHub — project repository; no verified implementation"><img src="assets/icons/github.svg" alt="GitHub — project repository; no verified implementation" width="28" height="24"></a> |
 | **LingBot-VLA 2.0**<br><sub>From Foundation to Application: Improving VLA Models in Practice</sub> | 2026 | <sub>Generalist VLA · Data Scaling · Real-World Deployment</sub> |  | <a href="https://arxiv.org/abs/2607.06403" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/robbyant/lingbot-vla-v2" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://technology.robbyant.com/lingbot-vla-v2" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
@@ -264,6 +271,7 @@ _129 papers; 59 with a verified public code link._
 | **WVM**<br><sub>World Value Models for Robotic Manipulation</sub> | 2026 | <sub>Cross-Domain Robotics · World-Value Modeling</sub> |  | <a href="https://arxiv.org/abs/2606.24742" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Qwen-RobotNav**<br><sub>Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System</sub> | 2026 | <sub>Agentic Navigation · Configurable Visual Context · Cross-Domain Navigation</sub> | VLN-CE | <a href="https://arxiv.org/abs/2606.18112" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/QwenLM/Qwen-RobotNav" title="GitHub — project repository; no verified implementation"><img src="assets/icons/github.svg" alt="GitHub — project repository; no verified implementation" width="28" height="24"></a> |
 | **DriveReward**<br><sub>DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving</sub> | 2026 | <sub>Reward Modeling · Trajectory Selection · Data Scaling</sub> |  | <a href="https://arxiv.org/abs/2606.08525" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **X-Mind**<br><sub>X-Mind: Efficient Visual Chain-of-Thought via Predictive World Model for End-to-End Driving</sub> | Technical Report 2026 | <sub>Visual Chain-of-Thought · Predictive World Modeling</sub> |  | <a href="https://arxiv.org/abs/2606.28758" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xp-x-mind.github.io/en/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **ChainFlow-VLA**<br><sub>ChainFlow-VLA: Causal Flow Planning with Vision-Language Models</sub> | 2026 | <sub>Causal Flow Matching · Trajectory Generation · Global Consistency</sub> |  | <a href="https://arxiv.org/abs/2605.23270" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/AFARI-Research/ChainFlow-VLA" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **IKN**<br><sub>Grounding Driving VLA via Inverse Kinematics</sub> | 2026 | <sub>Inverse Kinematics · Future-State Grounding · Trajectory Recovery</sub> |  | <a href="https://arxiv.org/abs/2605.21061" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **CRAFT**<br><sub>CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies</sub> | 2026 | <sub>Counterfactual Learning · Interactive Reinforcement Learning · Policy Fine-Tuning</sub> |  | <a href="https://arxiv.org/abs/2605.04470" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/CurryChen77/CraftPolicy" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://currychen77.github.io/CRAFT" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |

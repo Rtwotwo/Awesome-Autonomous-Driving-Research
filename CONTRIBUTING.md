@@ -21,6 +21,8 @@ Use one primary track per paper: `e2e`, `vla`, `world-model`, `rsi`, or `percept
 
 ## Maintaining Industry Research News
 
+Backfill company reports from **January 1, 2026** onward (`coverageStart: "2026-01-01"`), not only the last seven days. The rolling seven-day window is for fresh discovery; also check earlier unselected reports within this coverage period. Keep the earliest paper submission date distinct from a later company announcement. Record backfill sources and unresolved coverage gaps in `backfillRuns`; do not claim exhaustive coverage when evidence is incomplete.
+
 Maintain `data/industry-news.json` alongside the paper catalog. Prioritize Xiaomi, XPeng, NIO, Momenta, Horizon Robotics, ByteDance and Alibaba, and other automotive research teams. Add only driving-related papers already verified in `data/papers.json`; reference their IDs instead of duplicating paper metadata or resource links.
 
 Use the first arXiv submission date shown by the primary record (`dateType: "arxiv-first-submission"`), not the discovery date, media report date or a later revision. Record `checkedAt` separately. Each company needs primary affiliation evidence from the paper or an official author/company resource. A model being used as a backbone, a sponsorship, or a similarly named method is not sufficient affiliation evidence.

@@ -218,6 +218,172 @@
           "note": "The system report is signed Qwen Team; the contribution statement separates core team contributors and external university advisors. The paper links the QwenLM release repository."
         }
       ]
+    },
+    {
+      "paperId": "2608-10976",
+      "date": "2026-08-11",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Executable reasoning tokens directly condition efficient driving trajectory generation.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2608.10976",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://arxiv.org/html/2608.10976",
+          "note": "The report is signed Foundation Model Team, XPeng Inc. The company technical-research page also announces XCoT as the team technical report."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://arxiv.org/html/2608.10976",
+          "note": "The report is signed Foundation Model Team, XPeng Inc. The company technical-research page also announces XCoT as the team technical report."
+        }
+      ]
+    },
+    {
+      "paperId": "2606-28758",
+      "date": "2026-06-27",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Compact visual reasoning rolls out future scenes before planning driving actions.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2606.28758",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5616.html",
+          "note": "XPeng formally announces X-Mind as its team framework; the paper and project identify PWM Team, XPeng Inc. This is an official team report, not inferred from an individual contributor affiliation."
+        },
+        {
+          "company": "XPeng",
+          "url": "https://xp-x-mind.github.io/en/",
+          "note": "The author-linked project explicitly labels PWM Team, XPeng Inc., Technical Report and names project leadership."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5616.html",
+          "note": "XPeng formally announces X-Mind as its team framework; the paper and project identify PWM Team, XPeng Inc. This is an official team report, not inferred from an individual contributor affiliation."
+        },
+        {
+          "company": "XPeng",
+          "url": "https://xp-x-mind.github.io/en/",
+          "note": "The author-linked project explicitly labels PWM Team, XPeng Inc., Technical Report and names project leadership."
+        }
+      ]
+    },
+    {
+      "paperId": "2605-24892",
+      "date": "2026-05-24",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Joint future-video and driving-action forecasting embeds predictive world knowledge in VLA.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2605.24892",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5614.html",
+          "note": "XPeng formally introduces X-Foresight and links the full technical report and official project."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5614.html",
+          "note": "XPeng formally introduces X-Foresight and links the full technical report and official project."
+        }
+      ]
+    },
+    {
+      "paperId": "2605-18137",
+      "date": "2026-05-18",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Xiaomi"
+      ],
+      "highlight": "Joint reconstruction and generation for consistent multi-view driving simulation.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2605.18137",
+      "affiliationEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://jointwm.github.io/",
+          "note": "The paper-linked project is signed Xiaomi Auto WorldModel Team and explicitly publishes its technical report."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://jointwm.github.io/",
+          "note": "The paper-linked project is signed Xiaomi Auto WorldModel Team and explicitly publishes its technical report."
+        }
+      ]
+    },
+    {
+      "paperId": "2604-20289",
+      "date": "2026-04-22",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Cross-chunk block caching accelerates few-step autoregressive driving world models.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2604.20289",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/news/company_news/5555.html",
+          "note": "The official company announcement explicitly identifies X-Cache as an XPeng technical report deployed in X-World."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/news/company_news/5555.html",
+          "note": "The official company announcement explicitly identifies X-Cache as an XPeng technical report deployed in X-World."
+        }
+      ]
+    },
+    {
+      "paperId": "2603-19979",
+      "date": "2026-03-20",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Controllable multi-camera world simulation for closed-loop driving development.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2603.19979",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5612.html",
+          "note": "XPeng formally announces the X-World technical report and its use in simulation, reinforcement learning and data generation."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://www.xiaopeng.com/tech_research/5612.html",
+          "note": "XPeng formally announces the X-World technical report and its use in simulation, reinforcement learning and data generation."
+        }
+      ]
     }
   ],
   "excludedEntries": [
@@ -300,6 +466,43 @@
       ],
       "reviewedAt": "2026-11-25",
       "exclusionReason": "Company affiliation was verified, but the reviewed sources do not establish an official company-team technical report. Retained in the main paper catalog; no inference about author internship status."
+    }
+  ],
+  "coverageStart": "2026-01-01",
+  "backfillRuns": [
+    {
+      "checkedAt": "2026-11-25",
+      "fromDate": "2026-01-01",
+      "throughDate": "2026-11-25",
+      "scope": "Existing five-track catalog and public company/team technical-report sources; not an exhaustive publication census.",
+      "addedNewsIds": [
+        "2603-19979",
+        "2604-20289",
+        "2605-18137",
+        "2605-24892",
+        "2606-28758",
+        "2608-10976"
+      ],
+      "addedPaperIds": [
+        "2608-10976",
+        "2606-28758"
+      ],
+      "sources": [
+        "https://www.xiaopeng.com/tech_research/5612.html",
+        "https://www.xiaopeng.com/news/company_news/5555.html",
+        "https://jointwm.github.io/",
+        "https://www.xiaopeng.com/tech_research/5614.html",
+        "https://www.xiaopeng.com/tech_research/5616.html",
+        "https://arxiv.org/html/2608.10976",
+        "https://www.xiaopeng.com/tech_research",
+        "https://arxiv.org/abs/2608.10976",
+        "https://arxiv.org/abs/2606.28758"
+      ],
+      "limitations": [
+        "No qualifying January-February addition was verified in this pass; this is a coverage gap, not evidence of no company reports.",
+        "NIO, Momenta, Horizon Robotics and ByteDance remain on watch; business announcements and affiliation-only papers are insufficient.",
+        "The Alpamayo CES January 2026 announcement refers to a report first submitted in 2025; its announcement date was not substituted for a 2026 paper date."
+      ]
     }
   ]
 }

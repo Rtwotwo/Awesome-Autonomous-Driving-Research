@@ -6951,6 +6951,24 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2608-10976": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-25",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "2606-28758": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-25",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
     }
   },
   "failures": []

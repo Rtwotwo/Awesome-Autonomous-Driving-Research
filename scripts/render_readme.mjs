@@ -73,7 +73,7 @@ readme += '> **Community** · [Join our WeChat group](assets/branding/wechat-gro
 readme += '## Industry Research News\n\n';
 readme += `<details open>\n<summary><strong>Company technical reports</strong> · ${industryNews.entries.length} reports</summary>\n\n`;
 readme += '**On our radar** · ' + industryNews.watchlist.map(html).join(' · ') + '\n\n';
-readme += '<sub>Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>\n\n';
+readme += `<sub>Since ${html(industryNews.coverageStart)} · Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>\n\n`;
 const newsPapers = new Map(papers.map(p => [p.id, p]));
 const newsItems = [...industryNews.entries].sort((a, b) => b.date.localeCompare(a.date) || a.paperId.localeCompare(b.paperId));
 const newsTable = (items) => {

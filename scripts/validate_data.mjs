@@ -43,11 +43,13 @@ const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.te
   && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 if (!Array.isArray(industryNews.watchlist) || !industryNews.watchlist.length) errors.push('industry news: watchlist required');
 if (!Array.isArray(industryNews.entries)) errors.push('industry news: entries must be an array');
+if (!validDate(industryNews.coverageStart)) errors.push('industry news: valid coverageStart required');
 for (const item of industryNews.entries || []) {
   const label = `industry news ${item.paperId}`;
   if (!paperIds.has(item.paperId) || newsIds.has(item.paperId)) errors.push(`${label}: unknown or duplicate paper`);
   newsIds.add(item.paperId);
   if (!validDate(item.date) || !validDate(item.checkedAt) || item.date > item.checkedAt) errors.push(`${label}: invalid dates`);
+  if (validDate(industryNews.coverageStart) && item.date < industryNews.coverageStart) errors.push(`${label}: date precedes coverageStart`);
   if (item.dateType !== 'arxiv-first-submission') errors.push(`${label}: date basis must be explicit`);
   if (item.publicationType !== 'company-technical-report') errors.push(`${label}: company technical report required`);
   if (!Array.isArray(item.reportEvidence) || !item.reportEvidence.length

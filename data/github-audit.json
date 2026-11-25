@@ -11826,6 +11826,39 @@
         "docs/REPRODUCIBILITY.md"
       ],
       "searches": []
+    },
+    "2608-10976": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the primary report and official project resources. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2608.10976",
+        "https://arxiv.org/html/2608.10976"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2606-28758": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the primary report and official project resources. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2606.28758",
+        "https://arxiv.org/html/2606.28758",
+        "https://xp-x-mind.github.io/en/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
