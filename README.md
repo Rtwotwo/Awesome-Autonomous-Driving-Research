@@ -12,22 +12,26 @@
 
 ## Industry Research News
 
-**On our radar** · Xiaomi · XPeng · NIO · Momenta · Horizon Robotics · ByteDance · Alibaba · Li Auto
+<details open>
+<summary><strong>Company technical reports</strong> · 7 reports</summary>
 
-<sub>Selected driving papers · Dates: first arXiv submission, as recorded by arXiv · Companies: verified author affiliations or official research teams, including collaborations.</sub>
+**On our radar** · Xiaomi · XPeng · NIO · Momenta · Horizon Robotics · ByteDance · Alibaba · Li Auto · ZYT
+
+<sub>Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>
 
 | Date | Company | Research highlight | Links |
 |:---|:---|:---|:---:|
-| 2026-11-21 | **Li Auto** | **FastWorld**<br><sub>Compact future prediction and selective trajectory verification.</sub> | <a href="https://arxiv.org/abs/2611.28779" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/MoyangSensei/FastWorld" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
-| 2026-11-19 | **XPeng** | **TuringPAI**<br><sub>A compact vision-language foundation for onboard driving.</sub> | <a href="https://arxiv.org/abs/2611.25474" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-| 2026-11-08 | **Xiaomi** | **DriveFoundry**<br><sub>Co-evolving driving data and Xiaomi-Drive-o1 with adaptive reasoning.</sub> | <a href="https://arxiv.org/abs/2611.11532" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Xiaomi-EV/Xiaomi-Drive-o1" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-ev.github.io/Xiaomi-Drive-o1/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| 2026-11-01 | **Xiaomi** | **Xiaomi Auto World Model 2.0**<br><sub>Streaming multi-view simulation with persistent 3D scene context.</sub> | <a href="https://arxiv.org/abs/2611.01677" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautoworldmodel.github.io/CausalWorldModel/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| 2026-10-09 | **NIO** | **FPD-Drive**<br><sub>Distilling future-aware teachers into deployable driving policies.</sub> | <a href="https://arxiv.org/abs/2610.13232" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-| 2026-08-31 | **Alibaba** | **Qwen-Drive-1.0**<br><sub>Unified 3D perception, driving question answering and planning.</sub> | <a href="https://arxiv.org/abs/2609.00111" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/QwenLM/Qwen-Drive-1.0" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-| 2026-06-25 | **Xiaomi** | **ReWorld**<br><sub>Learning world-to-action representations for future prediction and planning.</sub> | <a href="https://arxiv.org/abs/2606.27504" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/xiaomi-research/reworld" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-research.github.io/reworld/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| 2026-05-12 | **Horizon Robotics** | **HorizonDrive**<br><sub>Self-corrective world-model rollouts for long-horizon driving simulation.</sub> | <a href="https://arxiv.org/abs/2605.11596" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/zcliangyue/HorizonDrive" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| 2026-11-19 | **XPeng** | [**TuringPAI**](#vision-language-action-models)<br><sub>Draft report: a compact vision-language foundation for onboard driving.</sub> | <a href="https://arxiv.org/abs/2611.25474" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-11-08 | **Xiaomi** | [**DriveFoundry**](#vision-language-action-models)<br><sub>Draft report: co-evolving driving data and Xiaomi-Drive-o1 with adaptive reasoning.</sub> | <a href="https://arxiv.org/abs/2611.11532" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Xiaomi-EV/Xiaomi-Drive-o1" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-ev.github.io/Xiaomi-Drive-o1/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-11-01 | **Xiaomi** | [**Xiaomi Auto World Model 2.0**](#driving-world-models)<br><sub>Streaming multi-view simulation with persistent 3D scene context.</sub> | <a href="https://arxiv.org/abs/2611.01677" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautoworldmodel.github.io/CausalWorldModel/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-10-31 | **XPeng** | [**X-World 1.6**](#driving-world-models)<br><sub>Controllable virtual cities with multi-camera consistency and long-rollout generation.</sub> | <a href="https://arxiv.org/abs/2611.00596" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xworld16.github.io" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-09-18 | **ZYT** | [**ZYT-World**](#driving-world-models)<br><sub>One-step seven-camera simulation with controllable traffic and memory across revisits.</sub> | <a href="https://arxiv.org/abs/2609.21712" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://zyt-aim.github.io/ZYT-World/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-09-05 | **Xiaomi** | [**DriveZero**](#recursive-self-improvement-for-autonomous-driving)<br><sub>Closed-loop reinforcement learning and teacher distillation beyond human driving demonstrations.</sub> | <a href="https://arxiv.org/abs/2609.06055" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/XiaomiAutoL3/DriveZero" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautol3.github.io/DriveZero/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-08-31 | **Alibaba** | [**Qwen-Drive-1.0**](#vision-language-action-models)<br><sub>Unified 3D perception, driving question answering and planning.</sub> | <a href="https://arxiv.org/abs/2609.00111" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/QwenLM/Qwen-Drive-1.0" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 
 <sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>
+
+</details>
 
 ## Research Tracks
 
@@ -54,7 +58,7 @@ E2E: end-to-end driving. VLA: vision-language-action models. RSI: explicit itera
 
 ![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Missing links are omitted.
 
-<sub>Newest first · Older years folded · Dataset names verified against papers; unknowns left blank.</sub>
+<sub>Newest first · 2024 and earlier grouped together · Dataset names verified against papers; unknowns left blank.</sub>
 
 ### End-to-End Autonomous Driving
 
@@ -176,7 +180,7 @@ _117 papers; 60 with a verified public code link._
 </details>
 
 <details>
-<summary><strong>2024</strong> · 5 papers</summary>
+<summary><strong>2024 and earlier</strong> · 18 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
@@ -185,48 +189,16 @@ _117 papers; 60 with a verified public code link._
 | **Hydra-MDP**<br><sub>Hydra-MDP: End-to-end Multimodal Planning with Multi-target Hydra-Distillation</sub> | CVPR 2024 | <sub>Knowledge Distillation · Multi-Teacher Learning · Trajectory Selection</sub> |  | <a href="https://arxiv.org/abs/2406.06978" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/NVlabs/Hydra-MDP" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
 | **SparseDrive**<br><sub>SparseDrive: End-to-End Autonomous Driving via Sparse Scene Representation</sub> | 2024 | <sub>Sparse Scene Representation · Multi-Task Learning · End-to-End Planning</sub> |  | <a href="https://arxiv.org/abs/2405.19620" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/swc-17/SparseDrive" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **VADv2**<br><sub>VADv2: End-to-End Vectorized Autonomous Driving via Probabilistic Planning</sub> | 2024 | <sub>Vectorized Scene Representation · End-to-End Planning</sub> |  | <a href="https://arxiv.org/abs/2402.13243" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/hustvl/VAD" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://hgao-cv.github.io/VADv2" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2023</strong> · 2 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **BEV-Planner**<br><sub>Is Ego Status All You Need for Open-Loop End-to-End Autonomous Driving?</sub> | CVPR 2024 | <sub>BEV Representation · Trajectory Planning</sub> |  | <a href="https://arxiv.org/abs/2312.03031" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/NVlabs/BEV-Planner" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **VAD**<br><sub>VAD: Vectorized Scene Representation for Efficient Autonomous Driving</sub> | ICCV 2023 | <sub>Vectorized Scene Representation · End-to-End Planning</sub> |  | <a href="https://arxiv.org/abs/2303.12077" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/hustvl/VAD" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2022</strong> · 3 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **UniAD**<br><sub>Planning-oriented Autonomous Driving</sub> | CVPR 2023 | <sub>Unified Autonomous Driving · Planning-Oriented Learning</sub> |  | <a href="https://arxiv.org/abs/2212.10156" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenDriveLab/UniAD" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://opendrivelab.github.io/UniAD/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **ST-P3**<br><sub>ST-P3: End-to-end Vision-based Autonomous Driving via Spatial-Temporal Feature Learning</sub> | ECCV 2022 | <sub>Spatial-Temporal Learning · End-to-End Planning · Closed-Loop Evaluation</sub> |  | <a href="https://arxiv.org/abs/2207.07601" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenDriveLab/ST-P3" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **TransFuser**<br><sub>TransFuser: Imitation with Transformer-Based Sensor Fusion for Autonomous Driving</sub> | 2022 | <sub>Sensor Fusion · Imitation Learning · End-to-End Driving</sub> |  | <a href="https://arxiv.org/abs/2205.15997" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/autonomousvision/transfuser" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2021</strong> · 5 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **NEAT**<br><sub>NEAT: Neural Attention Fields for End-to-End Autonomous Driving</sub> | ICCV 2021 | <sub>Neural Attention Fields · Bird’s-Eye View · Imitation Learning</sub> |  | <a href="https://arxiv.org/abs/2109.04456" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/autonomousvision/neat" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Roach**<br><sub>End-to-End Urban Driving by Imitating a Reinforcement Learning Coach</sub> | ICCV 2021 | <sub>Imitation Learning · Reinforcement Learning · CARLA</sub> |  | <a href="https://arxiv.org/abs/2108.08265" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/zhejz/carla-roach" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **IVMP**<br><sub>Learning Interpretable End-to-End Vision-Based Motion Planning for Autonomous Driving with Optical Flow Distillation</sub> | ICRA 2021 | <sub>Vision-Based Planning · Optical Flow Distillation · Interpretability</sub> |  | <a href="https://arxiv.org/abs/2104.12861" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://sites.google.com/view/ivmp" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **TransFuser**<br><sub>Multi-Modal Fusion Transformer for End-to-End Autonomous Driving</sub> | CVPR 2021 | <sub>Transformer · Sensor Fusion · Imitation Learning</sub> |  | <a href="https://arxiv.org/abs/2104.09224" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/autonomousvision/transfuser" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **MP3**<br><sub>MP3: A Unified Model to Map, Perceive, Predict and Plan</sub> | CVPR 2021 | <sub>Mapless Driving · Online Mapping · Neural Planning</sub> |  | <a href="https://arxiv.org/abs/2101.06806" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2020</strong> · 3 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **P3**<br><sub>Perceive, Predict, and Plan: Safe Motion Planning Through Interpretable Semantic Representations</sub> | ECCV 2020 | <sub>Semantic Occupancy · Joint Planning · Interpretability</sub> |  | <a href="https://arxiv.org/abs/2008.05930" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Data Aggregation**<br><sub>Exploring Data Aggregation in Policy Learning for Vision-Based Urban Autonomous Driving</sub> | CVPR 2020 | <sub>DAgger · Imitation Learning · Policy Generalization</sub> |  | <a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Prakash_Exploring_Data_Aggregation_in_Policy_Learning_for_Vision-Based_Urban_Autonomous_CVPR_2020_paper.html" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/autonomousvision/data_aggregation" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Implicit Affordances**<br><sub>End-to-End Model-Free Reinforcement Learning for Urban Driving Using Implicit Affordances</sub> | CVPR 2020 | <sub>Reinforcement Learning · Implicit Affordances · Urban Driving</sub> |  | <a href="https://arxiv.org/abs/1911.10868" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/valeoai/LearningByCheating" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://valeoai.github.io/publications/e2e-rl-driving/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
@@ -367,7 +339,7 @@ _129 papers; 59 with a verified public code link._
 </details>
 
 <details>
-<summary><strong>2024</strong> · 11 papers</summary>
+<summary><strong>2024 and earlier</strong> · 16 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
@@ -376,32 +348,16 @@ _129 papers; 59 with a verified public code link._
 | **DriveVLM**<br><sub>DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models</sub> | CoRL 2024 | <sub>Vision-Language Models · Hierarchical Planning · Hybrid Driving System</sub> |  | <a href="https://arxiv.org/abs/2402.12289" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Tsinghua-MARS-Lab/DriveVLM" title="GitHub — project repository; no verified implementation"><img src="assets/icons/github.svg" alt="GitHub — project repository; no verified implementation" width="28" height="24"></a>&nbsp;<a href="https://tsinghua-mars-lab.github.io/DriveVLM/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **VLP**<br><sub>VLP: Vision Language Planning for Autonomous Driving</sub> | CVPR 2024 | <sub>Vision-Language Planning · Long-Tail Reasoning · Motion Planning</sub> |  | <a href="https://arxiv.org/abs/2401.05577" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **DriveLM**<br><sub>DriveLM: Driving with Graph Visual Question Answering</sub> | ECCV 2024 | <sub>Graph VQA · Driving Reasoning · End-to-End Planning</sub> |  | <a href="https://arxiv.org/abs/2312.14150" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenDriveLab/DriveLM" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://opendrivelab.com/DriveLM/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **DriveMLM**<br><sub>DriveMLM: Aligning Multi-Modal Large Language Models with Behavioral Planning States for Autonomous Driving</sub> | 2023 | <sub>Multimodal LLM · Behavior Planning · Closed-Loop Driving</sub> |  | <a href="https://arxiv.org/abs/2312.09245" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenGVLab/DriveMLM" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
 | **LMDrive**<br><sub>LMDrive: Closed-Loop End-to-End Driving with Large Language Models</sub> | CVPR 2024 | <sub>Language-Guided Driving · Closed-Loop Control · Instruction Following</sub> |  | <a href="https://arxiv.org/abs/2312.07488" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/opendilab/LMDrive" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Dolphins**<br><sub>Dolphins: Multimodal Language Model for Driving</sub> | ECCV 2024 | <sub>Vision-Language Model · Driving Instruction Tuning · In-Context Learning</sub> |  | <a href="https://arxiv.org/abs/2312.00438" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/SaFo-Lab/Dolphins" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://vlm-driver.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **On the Road with GPT-4V**<br><sub>On the Road with GPT-4V(ision): Early Explorations of Visual-Language Model on Autonomous Driving</sub> | ICLR 2024 | <sub>Vision-Language Models · Driving Reasoning · Open-World Scenarios</sub> |  | <a href="https://arxiv.org/abs/2311.05332" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/PJLab-ADG/GPT4V-AD-Exploration" title="GitHub — project repository; no verified implementation"><img src="assets/icons/github.svg" alt="GitHub — project repository; no verified implementation" width="28" height="24"></a> |
+| **LanguageMPC**<br><sub>LanguageMPC: Large Language Models as Decision Makers for Autonomous Driving</sub> | 2023 | <sub>Large Language Models · Motion Planning · Decision Making</sub> |  | <a href="https://arxiv.org/abs/2310.03026" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://sites.google.com/view/llm-mpc" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **LLM-Driver**<br><sub>Driving with LLMs: Fusing Object-Level Vector Modality for Explainable Autonomous Driving</sub> | ICRA 2024 | <sub>Large Language Models · Vectorized Scene Inputs · Explainable Driving</sub> |  | <a href="https://arxiv.org/abs/2310.01957" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/wayveai/Driving-with-LLMs" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| **GPT-Driver**<br><sub>GPT-Driver: Learning to Drive with GPT</sub> | NeurIPS 2023 Workshop | <sub>Large Language Models · Trajectory Planning · Numerical Reasoning</sub> |  | <a href="https://arxiv.org/abs/2310.01415" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/PointsCoder/GPT-Driver" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://pointscoder.github.io/projects/gpt_driver/index.html" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **DriveGPT4**<br><sub>DriveGPT4: Interpretable End-to-End Autonomous Driving via Large Language Model</sub> | IEEE RA-L 2024 | <sub>Multimodal LLM · End-to-End Control · Driving Explanations</sub> |  | <a href="https://arxiv.org/abs/2310.01412" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://cloud.tsinghua.edu.cn/d/adbc8fa3a2fc420ca7bc/" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://tonyxuqaq.github.io/projects/DriveGPT4/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **DiLu**<br><sub>DiLu: A Knowledge-Driven Approach to Autonomous Driving with Large Language Models</sub> | ICLR 2024 | <sub>Large Language Models · Knowledge and Memory · Self-Evolving Driving</sub> |  | <a href="https://arxiv.org/abs/2309.16292" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/PJLab-ADG/DiLu" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://pjlab-adg.github.io/DiLu/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2023</strong> · 4 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
-| **DriveMLM**<br><sub>DriveMLM: Aligning Multi-Modal Large Language Models with Behavioral Planning States for Autonomous Driving</sub> | 2023 | <sub>Multimodal LLM · Behavior Planning · Closed-Loop Driving</sub> |  | <a href="https://arxiv.org/abs/2312.09245" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenGVLab/DriveMLM" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
-| **LanguageMPC**<br><sub>LanguageMPC: Large Language Models as Decision Makers for Autonomous Driving</sub> | 2023 | <sub>Large Language Models · Motion Planning · Decision Making</sub> |  | <a href="https://arxiv.org/abs/2310.03026" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://sites.google.com/view/llm-mpc" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| **GPT-Driver**<br><sub>GPT-Driver: Learning to Drive with GPT</sub> | NeurIPS 2023 Workshop | <sub>Large Language Models · Trajectory Planning · Numerical Reasoning</sub> |  | <a href="https://arxiv.org/abs/2310.01415" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/PointsCoder/GPT-Driver" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://pointscoder.github.io/projects/gpt_driver/index.html" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **Drive as You Speak**<br><sub>Drive as You Speak: Enabling Human-Like Interaction with Large Language Models in Autonomous Vehicles</sub> | 2023 | <sub>Large Language Models · Human-Vehicle Interaction · Decision Making</sub> |  | <a href="https://arxiv.org/abs/2309.10228" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2022</strong> · 1 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **DOROTHIE**<br><sub>DOROTHIE: Spoken Dialogue for Handling Unexpected Situations in Interactive Autonomous Driving Agents</sub> | Findings of EMNLP 2022 | <sub>Spoken Dialogue · Interactive Driving · Human-Agent Collaboration</sub> |  | <a href="https://arxiv.org/abs/2210.12511" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/sled-group/DOROTHIE" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://sled.eecs.umich.edu/publication/ma-2022-emnlp-dorothie/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 
 </details>
@@ -457,7 +413,7 @@ _133 papers; 67 with a verified public code link._
 | **DreamStream**<br><sub>DreamStream: Towards Policy-Oriented Generative Simulation for End-to-End Driving</sub> | CoRL 2026 | <sub>Generative Simulation · Closed-Loop Evaluation · Policy-Oriented Fidelity</sub> | nuScenes, NAVSIM | <a href="https://arxiv.org/abs/2609.26792" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/VAIL-UCLA/DreamStream" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://vail-ucla.github.io/DreamStream/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **ForeDrive**<br><sub>ForeDrive: Foresight-Guided End-to-End Autonomous Driving with a Planning-Relevant Latent World Model</sub> | 2026 | <sub>Latent World Model · JEPA · Future-Conditioned Planning</sub> | NAVSIM | <a href="https://arxiv.org/abs/2609.26299" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **DriveReferee**<br><sub>DriveReferee: Geometric Safety Verdicts Need Not Be Learned for Driving World-Action Models</sub> | 2026 | <sub>World action model · Analytic safety verification · Preference distillation · Occupancy</sub> | NAVSIM | <a href="https://arxiv.org/abs/2609.22762" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/ffengc/drivereferee" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://ffengc.github.io/drivereferee/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| **ZYT-World**<br><sub>ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation</sub> | 2026 | <sub>Driving World Model · Controllable Simulation</sub> |  | <a href="https://arxiv.org/abs/2609.21712" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **ZYT-World**<br><sub>ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation</sub> | 2026 | <sub>Driving World Model · Controllable Simulation</sub> |  | <a href="https://arxiv.org/abs/2609.21712" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://zyt-aim.github.io/ZYT-World/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **MM-Future**<br><sub>MM-Future: Multi-Mode Joint World-Action Modeling for Autonomous Driving</sub> | 2026 | <sub>Multimodal Future Prediction · World Modeling</sub> |  | <a href="https://arxiv.org/abs/2609.20377" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **SV-WAM**<br><sub>SV-WAM: An Efficient Surround-View World-Action Model for End-to-End Autonomous Driving</sub> | 2026 | <sub>World-Action Model · Semantic Video Representation</sub> |  | <a href="https://arxiv.org/abs/2609.03602" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **VATIX**<br><sub>How Far Can 5,500 Hours of Driving Take You? A Scaling Law Analysis of Video Diffusion Models</sub> | 2026 | <sub>Video Diffusion · Driving Data Scaling · World Generation</sub> |  | <a href="https://arxiv.org/abs/2608.28404" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/valeoai/VATIX" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
@@ -544,7 +500,7 @@ _133 papers; 67 with a verified public code link._
 </details>
 
 <details>
-<summary><strong>2024</strong> · 10 papers</summary>
+<summary><strong>2024 and earlier</strong> · 16 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
@@ -556,36 +512,12 @@ _133 papers; 67 with a verified public code link._
 | **GenAD**<br><sub>Generalized Predictive Model for Autonomous Driving</sub> | CVPR 2024 | <sub>Driving Video Prediction · Large-Scale Pretraining · Zero-Shot Generalization</sub> |  | <a href="https://arxiv.org/abs/2403.09630" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/OpenDriveLab/DriveAGI" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
 | **WoVoGen**<br><sub>WoVoGen: World Volume-aware Diffusion for Controllable Multi-camera Driving Scene Generation</sub> | ECCV 2024 | <sub>World Volume · Multi-Camera Generation · Diffusion Model</sub> |  | <a href="https://arxiv.org/abs/2312.02934" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/fudan-zvg/WoVoGen" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Drive-WM**<br><sub>Driving into the Future: Multiview Visual Forecasting and Planning with World Model for Autonomous Driving</sub> | CVPR 2024 | <sub>Multi-View Forecasting · Counterfactual Planning · World Model</sub> |  | <a href="https://arxiv.org/abs/2311.17918" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/BraveGroup/Drive-WM" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://drive-wm.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| **DrivingDiffusion**<br><sub>DrivingDiffusion: Layout-Guided multi-view driving scene video generation with latent diffusion model</sub> | ECCV 2024 | <sub>Latent Diffusion · Multi-View Video · Layout Control</sub> |  | <a href="https://arxiv.org/abs/2310.07771" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/shalfun/DrivingDiffusion" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
-| **DriveDreamer**<br><sub>DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving</sub> | ECCV 2024 | <sub>Diffusion World Model · Real-World Driving · Controllable Generation</sub> |  | <a href="https://arxiv.org/abs/2309.09777" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/JeffWang987/DriveDreamer" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2023</strong> · 3 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **OccWorld**<br><sub>OccWorld: Learning a 3D Occupancy World Model for Autonomous Driving</sub> | 2023 | <sub>Occupancy World Model · 3D Scene Forecasting · Planning</sub> |  | <a href="https://arxiv.org/abs/2311.16038" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/wzzheng/OccWorld" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **ADriver-I**<br><sub>ADriver-I: A General World Model for Autonomous Driving</sub> | 2023 | <sub>Vision-Action Modeling · Autoregressive Prediction · Driving Control</sub> |  | <a href="https://arxiv.org/abs/2311.13549" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **DrivingDiffusion**<br><sub>DrivingDiffusion: Layout-Guided multi-view driving scene video generation with latent diffusion model</sub> | ECCV 2024 | <sub>Latent Diffusion · Multi-View Video · Layout Control</sub> |  | <a href="https://arxiv.org/abs/2310.07771" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/shalfun/DrivingDiffusion" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
 | **GAIA-1**<br><sub>GAIA-1: A Generative World Model for Autonomous Driving</sub> | 2023 | <sub>Generative World Model · Video Prediction · Action Conditioning</sub> |  | <a href="https://arxiv.org/abs/2309.17080" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2022</strong> · 1 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
+| **DriveDreamer**<br><sub>DriveDreamer: Towards Real-world-driven World Models for Autonomous Driving</sub> | ECCV 2024 | <sub>Diffusion World Model · Real-World Driving · Controllable Generation</sub> |  | <a href="https://arxiv.org/abs/2309.09777" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/JeffWang987/DriveDreamer" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **MILE**<br><sub>Model-Based Imitation Learning for Urban Driving</sub> | NeurIPS 2022 | <sub>Latent Dynamics · Model-Based Imitation · Urban Driving</sub> |  | <a href="https://arxiv.org/abs/2210.07729" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/wayveai/mile" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2021</strong> · 2 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **World on Rails**<br><sub>Learning to Drive from a World on Rails</sub> | ICCV 2021 | <sub>Factorized World Model · Model-Based Imitation · CARLA</sub> |  | <a href="https://arxiv.org/abs/2105.00636" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/dotchen/WorldOnRails" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://dotchen.github.io/world_on_rails/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **DriveGAN**<br><sub>DriveGAN: Towards a Controllable High-Quality Neural Simulation</sub> | CVPR 2021 | <sub>Controllable Simulation · Action-Conditioned Generation · Neural World Model</sub> |  | <a href="https://arxiv.org/abs/2104.15060" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/nv-tlabs/DriveGAN_code" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 
@@ -613,7 +545,7 @@ _37 papers; 15 with a verified public code link._
 | **EvoAD**<br><sub>EvoAD: Self-Evolving Autonomous Driving via Latent World-Model Guided Post-hoc Reflection</sub> | arXiv 2026 | <sub>EvoAD · Policy Improvement</sub> | NAVSIM v1, NAVSIM v2 | <a href="https://arxiv.org/abs/2610.23886" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **RoXDrive**<br><sub>RoXDrive: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving via Action-Faithful Rollouts</sub> | 2026 | <sub>World-Model Feedback · Closed-Loop Policy Improvement · Action-Faithful Rollouts</sub> | nuScenes | <a href="https://arxiv.org/abs/2609.36851" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Hongbin98/RoXDrive" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://hongbin98.github.io/RoXDrive/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **OPTED**<br><sub>OPTED: On-Policy Fine-Tuning for End-to-End Driving using a Render-Free Teacher</sub> | 2026 | <sub>On-Policy Fine-Tuning · Privileged Teacher · Reinforcement Learning</sub> |  | <a href="https://arxiv.org/abs/2609.20756" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://01dami23.github.io/opted/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
-| **DriveZero**<br><sub>DriveZero: End-to-End Driving Beyond Human Demonstrations</sub> | 2026 | <sub>Self-Play · Closed-Loop Reinforcement Learning · Teacher Distillation</sub> | nuPlan, NAVSIM, HUGSIM | <a href="https://github.com/XiaomiAutoL3/DriveZero" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautol3.github.io/DriveZero/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **DriveZero**<br><sub>DriveZero: End-to-End Driving Beyond Human Demonstrations</sub> | 2026 | <sub>Self-Play · Closed-Loop Reinforcement Learning · Teacher Distillation</sub> | nuPlan, NAVSIM, HUGSIM | <a href="https://arxiv.org/abs/2609.06055" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/XiaomiAutoL3/DriveZero" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautol3.github.io/DriveZero/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **CounterPlay**<br><sub>CounterPlay: Counterfactual Post-Training for Self-Play Driving Policies</sub> | 2026 | <sub>Self-play · Failure-driven improvement · Counterfactual retries · Policy distillation</sub> | BehaviorBench, PufferDrive | <a href="https://arxiv.org/abs/2609.21617" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **FIRE-VLA**<br><sub>FIRE-VLA: Failure-Informed Self-Evolution for Vision-Language-Action Models in Autonomous Driving</sub> | arXiv 2026 | <sub>FIRE-VLA · Policy Improvement</sub> | nuScenes | <a href="https://arxiv.org/abs/2608.13395" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/forever-free1/FIRE-VLA" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Self-Improving Autonomous Vehicles**<br><sub>Self-Improving Autonomous Vehicles via Real-World Reinforcement Learning</sub> | IJCAI 2026 | <sub>Real-World Reinforcement Learning · Informative Scenario Collection · Safety-Aware Exploration</sub> |  | <a href="https://www.ijcai.org/proceedings/2026/493" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
@@ -645,28 +577,12 @@ _37 papers; 15 with a verified public code link._
 </details>
 
 <details>
-<summary><strong>2024</strong> · 1 papers</summary>
+<summary><strong>2024 and earlier</strong> · 4 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
 | **Human Feedback for Intelligent Driving**<br><sub>Human Feedback Enhanced Autonomous Intelligent Systems: A Perspective from Intelligent Driving</sub> | Autonomous Intelligent Systems 2024 | <sub>Human Feedback · Self-Evolving Intelligent Driving · Interactive Reinforcement Learning</sub> |  | <a href="https://doi.org/10.1007/s43684-024-00071-z" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2023</strong> · 1 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **DCARL**<br><sub>Continuous Improvement of Self-Driving Cars Using Dynamic Confidence-Aware Reinforcement Learning</sub> | Nat. Mach. Intell. 2023 | <sub>Confidence-Aware Reinforcement Learning · Continuous Policy Improvement · Real-World Driving</sub> |  | <a href="https://doi.org/10.1038/s42256-023-00610-y" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/dcarl-opensource/DCARL" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
-
-</details>
-
-<details>
-<summary><strong>2022</strong> · 2 papers</summary>
-
-| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
-|---|---|---|---|:---:|
 | **Self-Improving Safety RL**<br><sub>Self-Improving Safety Performance of Reinforcement Learning Based Driving with Black-Box Verification Algorithms</sub> | arXiv 2022 | <sub>Black-Box Verification · Failure-Driven Policy Updates · Safety-Critical Scenarios</sub> |  | <a href="https://arxiv.org/abs/2210.16575" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/data-and-decision-lab/self-improving-RL" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **Trustworthy Improvement RL**<br><sub>Trustworthy Safety Improvement for Autonomous Driving Using Reinforcement Learning</sub> | Transp. Res. Part C 2022 | <sub>Trustworthy Reinforcement Learning · Baseline-Guarded Improvement · Highway Safety</sub> |  | <a href="https://doi.org/10.1016/j.trc.2022.103656" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 

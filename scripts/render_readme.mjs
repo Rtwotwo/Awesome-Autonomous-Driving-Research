@@ -71,8 +71,9 @@ readme += `<p align="center"><strong>${papers.length}</strong> papers &nbsp;·&n
 readme += '<p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
 readme += '> **Community** · [Join our WeChat group](assets/branding/wechat-group-20261124.png) for paper discussions and research exchange.\n>\n> <sub>Open the invitation image and scan it in WeChat. Valid before December 1, 2026.</sub>\n\n';
 readme += '## Industry Research News\n\n';
+readme += `<details open>\n<summary><strong>Company technical reports</strong> · ${industryNews.entries.length} reports</summary>\n\n`;
 readme += '**On our radar** · ' + industryNews.watchlist.map(html).join(' · ') + '\n\n';
-readme += '<sub>Selected driving papers · Dates: first arXiv submission, as recorded by arXiv · Companies: verified author affiliations or official research teams, including collaborations.</sub>\n\n';
+readme += '<sub>Official company-team reports selected from the five tracks below; titles link to their track. Dates: first arXiv submission. Company affiliation alone does not qualify.</sub>\n\n';
 const newsPapers = new Map(papers.map(p => [p.id, p]));
 const newsItems = [...industryNews.entries].sort((a, b) => b.date.localeCompare(a.date) || a.paperId.localeCompare(b.paperId));
 const newsTable = (items) => {
@@ -80,15 +81,15 @@ const newsTable = (items) => {
   for (const item of items) {
     const paper = newsPapers.get(item.paperId);
     if (!paper) throw new Error(`Industry news references unknown paper: ${item.paperId}`);
-    table += `| ${item.date} | **${item.companies.map(html).join(' · ')}** | **${html(paper.name)}**<br><sub>${html(item.highlight)}</sub> | ${paperResources(paper)} |\n`;
+    const trackTitle = tracks.find(([id]) => id === paper.track)?.[1];
+    if (!trackTitle) throw new Error(`Industry news references unknown track: ${paper.track}`);
+    table += `| ${item.date} | **${item.companies.map(html).join(' · ')}** | [**${html(paper.name)}**](#${trackAnchor(trackTitle)})<br><sub>${html(item.highlight)}</sub> | ${paperResources(paper)} |\n`;
   }
   return table + '\n';
 };
-readme += newsTable(newsItems.slice(0, 8));
-if (newsItems.length > 8) {
-  readme += '<details>\n<summary>Earlier industry research</summary>\n\n' + newsTable(newsItems.slice(8)) + '</details>\n\n';
-}
+readme += newsTable(newsItems);
 readme += '<sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>\n\n';
+readme += '</details>\n\n';
 readme += '## Research Tracks\n\n';
 const trackLabels = ['E2E','VLA','World Models','RSI','Perception'];
 readme += '| ' + tracks.map(([,title],i)=>`[**${trackLabels[i]}**](#${trackAnchor(title)})`).join(' | ') + ' |\n';
@@ -102,19 +103,22 @@ readme += '[Paper Studio](paper-studio/README.md) · Local paper-to-WeChat works
 readme += '[Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json) · [License](#license)\n\n</details>\n\n';
 readme += '## Papers\n\n';
 readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Missing links are omitted.\n\n';
-readme += '<sub>Newest first · Older years folded · Dataset names verified against papers; unknowns left blank.</sub>\n\n';
+readme += '<sub>Newest first · 2024 and earlier grouped together · Dataset names verified against papers; unknowns left blank.</sub>\n\n';
 
 for (const [track, title] of tracks) {
   const trackPapers = papers.filter((item) => item.track === track);
   const codeCount = trackPapers.filter((paper) => paper.openSource && paper.code).length;
   readme += `### ${title}\n\n`;
   readme += `_${trackPapers.length} papers; ${codeCount} with a verified public code link._\n\n`;
-  const years = [...new Set(trackPapers.map((paper) => paper.year))].sort((a, b) => b - a);
-  for (const year of years) {
-    readme += `<details${year === years[0] ? ' open' : ''}>\n<summary><strong>${year}</strong> · ${trackPapers.filter(p=>p.year===year).length} papers</summary>\n\n`;
+  const years = [...new Set(trackPapers.filter(p => p.year > 2024).map(p => p.year))].sort((a, b) => b - a);
+  const groups = years.map(year => ({ label: String(year), items: trackPapers.filter(p => p.year === year), open: year === years[0] }));
+  const earlier = trackPapers.filter(p => p.year <= 2024);
+  if (earlier.length) groups.push({ label: '2024 and earlier', items: earlier, open: false });
+  for (const group of groups) {
+    readme += `<details${group.open ? ' open' : ''}>\n<summary><strong>${group.label}</strong> · ${group.items.length} papers</summary>\n\n`;
     readme += '| **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |\n';
     readme += '|---|---|---|---|:---:|\n';
-    for (const paper of trackPapers.filter((item) => item.year === year)) {
+    for (const paper of group.items) {
       const yearVenue = paper.venue === String(paper.year) ? String(paper.year) : esc(paper.venue);
       const methodTitle = `**${esc(paper.name)}**` + (paper.name === paper.title ? '' : `<br><sub>${html(paper.title)}</sub>`);
       const tags = `<sub>${paper.tags.map(html).join(' · ')}</sub>`;

@@ -49,6 +49,10 @@ for (const item of industryNews.entries || []) {
   newsIds.add(item.paperId);
   if (!validDate(item.date) || !validDate(item.checkedAt) || item.date > item.checkedAt) errors.push(`${label}: invalid dates`);
   if (item.dateType !== 'arxiv-first-submission') errors.push(`${label}: date basis must be explicit`);
+  if (item.publicationType !== 'company-technical-report') errors.push(`${label}: company technical report required`);
+  if (!Array.isArray(item.reportEvidence) || !item.reportEvidence.length
+      || item.reportEvidence.some(e => !https(e.url) || !e.note || !item.companies?.includes(e.company))
+      || item.companies?.some(c => !item.reportEvidence.some(e => e.company === c))) errors.push(`${label}: official company report evidence required; affiliation alone is insufficient`);
   if (!Array.isArray(item.companies) || !item.companies.length || item.companies.some(c => !industryNews.watchlist?.includes(c))) errors.push(`${label}: company must be in watchlist`);
   if (typeof item.highlight !== 'string' || item.highlight.length < 20 || item.highlight.length > 180) errors.push(`${label}: highlight must be 20-180 characters`);
   if (!https(item.dateSource) || !Array.isArray(item.affiliationEvidence) || !item.affiliationEvidence.length
