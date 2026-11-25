@@ -8,6 +8,7 @@ const papers = await readJson('data/papers.json');
 const citationCache = await readJson('data/citations.json');
 const starCache = await readJson('data/github-stars.json');
 const githubAudit = await readJson('data/github-audit.json');
+const industryNews = await readJson('data/industry-news.json');
 const starRecords = new Map(Object.entries(starCache.repositories).map(([name, record]) => [name.toLowerCase(), record]));
 const datasets = await readJson('data/datasets.json');
 const benchmarks = await readJson('data/benchmarks.json');
@@ -36,6 +37,24 @@ function unique(items, label) {
 }
 
 unique(papers, 'papers'); unique(datasets, 'datasets'); unique(benchmarks, 'benchmarks'); unique(leaderboard, 'leaderboard');
+const newsIds = new Set();
+const paperIds = new Set(papers.map(p => p.id));
+const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+  && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+if (!Array.isArray(industryNews.watchlist) || !industryNews.watchlist.length) errors.push('industry news: watchlist required');
+if (!Array.isArray(industryNews.entries)) errors.push('industry news: entries must be an array');
+for (const item of industryNews.entries || []) {
+  const label = `industry news ${item.paperId}`;
+  if (!paperIds.has(item.paperId) || newsIds.has(item.paperId)) errors.push(`${label}: unknown or duplicate paper`);
+  newsIds.add(item.paperId);
+  if (!validDate(item.date) || !validDate(item.checkedAt) || item.date > item.checkedAt) errors.push(`${label}: invalid dates`);
+  if (item.dateType !== 'arxiv-first-submission') errors.push(`${label}: date basis must be explicit`);
+  if (!Array.isArray(item.companies) || !item.companies.length || item.companies.some(c => !industryNews.watchlist?.includes(c))) errors.push(`${label}: company must be in watchlist`);
+  if (typeof item.highlight !== 'string' || item.highlight.length < 20 || item.highlight.length > 180) errors.push(`${label}: highlight must be 20-180 characters`);
+  if (!https(item.dateSource) || !Array.isArray(item.affiliationEvidence) || !item.affiliationEvidence.length
+      || item.affiliationEvidence.some(e => !https(e.url) || !e.note || !item.companies?.includes(e.company))
+      || item.companies?.some(c => !item.affiliationEvidence.some(e => e.company === c))) errors.push(`${label}: primary date and company evidence required`);
+}
 const benchmarkIds = new Set(benchmarks.map((item) => item.id));
 for (const paper of papers) {
   const repository = paper.githubRepo?.match(/^https:\/\/github\.com\/([^/]+\/[^/#?]+)\/?$/i)?.[1];

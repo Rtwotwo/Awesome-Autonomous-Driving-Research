@@ -19,6 +19,14 @@ An eligible paper must:
 
 Use one primary track per paper: `e2e`, `vla`, `world-model`, `rsi`, or `perception-other`. Keep each track newest first and do not add topic subcategories. A promised release can be `pending` without a repository URL; mark a release as `released` only after verifying actual implementation files. Scope-limited releases use `codeScope: "partial"` with a short explanation. Discovery articles are leads; cite primary paper and author sources for catalog facts.
 
+## Maintaining Industry Research News
+
+Maintain `data/industry-news.json` alongside the paper catalog. Prioritize Xiaomi, XPeng, NIO, Momenta, Horizon Robotics, ByteDance and Alibaba, and other automotive research teams. Add only driving-related papers already verified in `data/papers.json`; reference their IDs instead of duplicating paper metadata or resource links.
+
+Use the first arXiv submission date shown by the primary record (`dateType: "arxiv-first-submission"`), not the discovery date, media report date or a later revision. Record `checkedAt` separately. Each company needs primary affiliation evidence from the paper or an official author/company resource. A model being used as a backbone, a sponsorship, or a similarly named method is not sufficient affiliation evidence. Joint academic-industry papers qualify, without implying sole company ownership.
+
+Keep the highlight in English and under 180 characters. Preserve older entries: the README shows the latest eight and folds the rest. Watchlist companies without a verified paper remain in the watchlist; do not invent entries or substitute business announcements. Record coverage limitations in the data file. Run `npm run readme` and `npm run validate` after changes.
+
 ## Adding a Benchmark
 
 Edit `data/benchmarks.json` and specify the evaluation setting, data scale, primary metric, and `higherIsBetter`. Clearly distinguish open-loop, non-reactive simulation, reactive simulation, and interactive closed-loop evaluation.

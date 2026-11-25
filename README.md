@@ -4,11 +4,30 @@
 
 <p align="center"><strong>462</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
 
-<p align="center"><a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
+<p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
 > **Community** · [Join our WeChat group](assets/branding/wechat-group-20261124.png) for paper discussions and research exchange.
 >
 > <sub>Open the invitation image and scan it in WeChat. Valid before December 1, 2026.</sub>
+
+## Industry Research News
+
+**On our radar** · Xiaomi · XPeng · NIO · Momenta · Horizon Robotics · ByteDance · Alibaba · Li Auto
+
+<sub>Selected driving papers · Dates: first arXiv submission, as recorded by arXiv · Companies: verified author affiliations or official research teams, including collaborations.</sub>
+
+| Date | Company | Research highlight | Links |
+|:---|:---|:---|:---:|
+| 2026-11-21 | **Li Auto** | **FastWorld**<br><sub>Compact future prediction and selective trajectory verification.</sub> | <a href="https://arxiv.org/abs/2611.28779" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/MoyangSensei/FastWorld" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
+| 2026-11-19 | **XPeng** | **TuringPAI**<br><sub>A compact vision-language foundation for onboard driving.</sub> | <a href="https://arxiv.org/abs/2611.25474" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-11-08 | **Xiaomi** | **DriveFoundry**<br><sub>Co-evolving driving data and Xiaomi-Drive-o1 with adaptive reasoning.</sub> | <a href="https://arxiv.org/abs/2611.11532" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Xiaomi-EV/Xiaomi-Drive-o1" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-ev.github.io/Xiaomi-Drive-o1/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-11-01 | **Xiaomi** | **Xiaomi Auto World Model 2.0**<br><sub>Streaming multi-view simulation with persistent 3D scene context.</sub> | <a href="https://arxiv.org/abs/2611.01677" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://xiaomiautoworldmodel.github.io/CausalWorldModel/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-10-09 | **NIO** | **FPD-Drive**<br><sub>Distilling future-aware teachers into deployable driving policies.</sub> | <a href="https://arxiv.org/abs/2610.13232" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-08-31 | **Alibaba** | **Qwen-Drive-1.0**<br><sub>Unified 3D perception, driving question answering and planning.</sub> | <a href="https://arxiv.org/abs/2609.00111" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/QwenLM/Qwen-Drive-1.0" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| 2026-06-25 | **Xiaomi** | **ReWorld**<br><sub>Learning world-to-action representations for future prediction and planning.</sub> | <a href="https://arxiv.org/abs/2606.27504" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/xiaomi-research/reworld" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-research.github.io/reworld/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| 2026-05-12 | **Horizon Robotics** | **HorizonDrive**<br><sub>Self-corrective world-model rollouts for long-horizon driving simulation.</sub> | <a href="https://arxiv.org/abs/2605.11596" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/zcliangyue/HorizonDrive" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+
+<sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>
 
 ## Research Tracks
 

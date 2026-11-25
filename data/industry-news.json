@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-11-25",
+  "policy": "Selected autonomous-driving research with primary company attribution. Dates are first arXiv submission dates as displayed by arXiv, not media dates, revision dates or catalog discovery dates. Company labels include verified collaborators and do not imply exclusive ownership. Resource links and release status are reused from the paper catalog.",
+  "watchlist": [
+    "Xiaomi",
+    "XPeng",
+    "NIO",
+    "Momenta",
+    "Horizon Robotics",
+    "ByteDance",
+    "Alibaba",
+    "Li Auto"
+  ],
+  "coverage": [
+    {
+      "company": "Momenta",
+      "checkedAt": "2026-11-25",
+      "status": "watching",
+      "note": "No attributable driving research paper was verified for this initial selection. Business announcements and unrelated papers named MOMENTA were excluded. This is not an exhaustive publication audit.",
+      "sources": [
+        "https://www.momenta.ai/en/news.html",
+        "https://momenta.cn/en/technology.html"
+      ]
+    },
+    {
+      "company": "ByteDance",
+      "checkedAt": "2026-11-25",
+      "status": "watching",
+      "note": "No attributable driving research paper was verified for this initial selection. General video models, model usage by other teams and business rumors were excluded. This is not evidence that the company has no driving research.",
+      "sources": []
+    }
+  ],
+  "entries": [
+    {
+      "paperId": "2611-28779",
+      "date": "2026-11-21",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Li Auto"
+      ],
+      "highlight": "Compact future prediction and selective trajectory verification.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2611.28779",
+      "affiliationEvidence": [
+        {
+          "company": "Li Auto",
+          "url": "https://arxiv.org/html/2611.28779",
+          "note": "Author affiliations identify Xiaoshuai Hao with Li Auto Inc.; joint work with university researchers."
+        }
+      ]
+    },
+    {
+      "paperId": "2611-25474",
+      "date": "2026-11-19",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "A compact vision-language foundation for onboard driving.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2611.25474",
+      "affiliationEvidence": [
+        {
+          "company": "XPeng",
+          "url": "https://arxiv.org/html/2611.25474",
+          "note": "The report identifies the Foundation Model Team, XPeng Inc."
+        }
+      ]
+    },
+    {
+      "paperId": "2611-11532",
+      "date": "2026-11-08",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Xiaomi"
+      ],
+      "highlight": "Co-evolving driving data and Xiaomi-Drive-o1 with adaptive reasoning.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2611.11532",
+      "affiliationEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://github.com/Xiaomi-EV/Xiaomi-Drive-o1",
+          "note": "The author-linked Xiaomi-EV repository identifies DriveFoundry and Xiaomi-Drive-o1 as its project."
+        }
+      ]
+    },
+    {
+      "paperId": "2611-01677",
+      "date": "2026-11-01",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Xiaomi"
+      ],
+      "highlight": "Streaming multi-view simulation with persistent 3D scene context.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2611.01677",
+      "affiliationEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://arxiv.org/html/2611.01677",
+          "note": "The primary technical report identifies Xiaomi Auto World Model 2.0 and links its official project."
+        }
+      ]
+    },
+    {
+      "paperId": "2610-13232",
+      "date": "2026-10-09",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "NIO"
+      ],
+      "highlight": "Distilling future-aware teachers into deployable driving policies.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2610.13232",
+      "affiliationEvidence": [
+        {
+          "company": "NIO",
+          "url": "https://arxiv.org/html/2610.13232",
+          "note": "The author block lists NIO affiliations alongside HKUST and USTC."
+        }
+      ]
+    },
+    {
+      "paperId": "2609-00111",
+      "date": "2026-08-31",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Alibaba"
+      ],
+      "highlight": "Unified 3D perception, driving question answering and planning.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2609.00111",
+      "affiliationEvidence": [
+        {
+          "company": "Alibaba",
+          "url": "https://github.com/QwenLM/Qwen-Drive-1.0",
+          "note": "Official author repository identifies Qwen Team and HUST. Alibaba identifies Qwen as its own research organization."
+        },
+        {
+          "company": "Alibaba",
+          "url": "https://www.alibabacloud.com/en/press-room/alibaba-positions-for-accelerated-ai-growth-in-sec",
+          "note": "Official Alibaba release identifies Qwen Business Unit and Tongyi Laboratory within Alibaba Token Hub."
+        }
+      ]
+    },
+    {
+      "paperId": "2606-27504",
+      "date": "2026-06-25",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Xiaomi"
+      ],
+      "highlight": "Learning world-to-action representations for future prediction and planning.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2606.27504",
+      "affiliationEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://arxiv.org/html/2606.27504",
+          "note": "The author biographies identify Xiaomi EV researchers; the paper links xiaomi-research/ReWorld."
+        }
+      ]
+    },
+    {
+      "paperId": "2605-11596",
+      "date": "2026-05-12",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Horizon Robotics"
+      ],
+      "highlight": "Self-corrective world-model rollouts for long-horizon driving simulation.",
+      "checkedAt": "2026-11-25",
+      "dateSource": "https://arxiv.org/abs/2605.11596",
+      "affiliationEvidence": [
+        {
+          "company": "Horizon Robotics",
+          "url": "https://arxiv.org/html/2605.11596",
+          "note": "The author block explicitly lists multiple Horizon Robotics affiliations, with university collaborators."
+        }
+      ]
+    }
+  ]
+}

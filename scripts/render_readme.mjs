@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('.', import.meta.url)), '..');
 const readJson = async (name) => JSON.parse(await readFile(join(root, 'data', name), 'utf8'));
-const [papers, datasets, benchmarks] = await Promise.all([
-  readJson('papers.json'), readJson('datasets.json'), readJson('benchmarks.json')
+const [papers, datasets, benchmarks, industryNews] = await Promise.all([
+  readJson('papers.json'), readJson('datasets.json'), readJson('benchmarks.json'), readJson('industry-news.json')
 ]);
 
 const tracks = [
@@ -68,8 +68,27 @@ const trackAnchor = (title) => title.toLowerCase().replace(/&/g, '').replace(/ /
 let readme = '<p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research — Awesome Autonomous Driving Research" width="360"></p>\n\n';
 readme += '<p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>\n\n';
 readme += `<p align="center"><strong>${papers.length}</strong> papers &nbsp;·&nbsp; <strong>${datasets.length}</strong> datasets &nbsp;·&nbsp; <strong>${benchmarks.length}</strong> benchmarks<br><sub>Updated ${reviewDate} · Verified paper &amp; author links</sub></p>\n\n`;
-readme += '<p align="center"><a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
+readme += '<p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
 readme += '> **Community** · [Join our WeChat group](assets/branding/wechat-group-20261124.png) for paper discussions and research exchange.\n>\n> <sub>Open the invitation image and scan it in WeChat. Valid before December 1, 2026.</sub>\n\n';
+readme += '## Industry Research News\n\n';
+readme += '**On our radar** · ' + industryNews.watchlist.map(html).join(' · ') + '\n\n';
+readme += '<sub>Selected driving papers · Dates: first arXiv submission, as recorded by arXiv · Companies: verified author affiliations or official research teams, including collaborations.</sub>\n\n';
+const newsPapers = new Map(papers.map(p => [p.id, p]));
+const newsItems = [...industryNews.entries].sort((a, b) => b.date.localeCompare(a.date) || a.paperId.localeCompare(b.paperId));
+const newsTable = (items) => {
+  let table = '| Date | Company | Research highlight | Links |\n|:---|:---|:---|:---:|\n';
+  for (const item of items) {
+    const paper = newsPapers.get(item.paperId);
+    if (!paper) throw new Error(`Industry news references unknown paper: ${item.paperId}`);
+    table += `| ${item.date} | **${item.companies.map(html).join(' · ')}** | **${html(paper.name)}**<br><sub>${html(item.highlight)}</sub> | ${paperResources(paper)} |\n`;
+  }
+  return table + '\n';
+};
+readme += newsTable(newsItems.slice(0, 8));
+if (newsItems.length > 8) {
+  readme += '<details>\n<summary>Earlier industry research</summary>\n\n' + newsTable(newsItems.slice(8)) + '</details>\n\n';
+}
+readme += '<sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>\n\n';
 readme += '## Research Tracks\n\n';
 const trackLabels = ['E2E','VLA','World Models','RSI','Perception'];
 readme += '| ' + tracks.map(([,title],i)=>`[**${trackLabels[i]}**](#${trackAnchor(title)})`).join(' | ') + ' |\n';
