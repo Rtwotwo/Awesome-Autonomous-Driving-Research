@@ -963,6 +963,268 @@
           "datasetVerification": "Section IV uses nuScenes for open-loop evaluation and tuning, nuPlan Val14/Test14-hard for closed-loop evaluation, and HUGSIM with frozen UniAD perception."
         }
       ]
+    },
+    {
+      "checkedAt": "2026-11-25",
+      "searchWindow": {
+        "from": "2026-11-18",
+        "to": "2026-11-25"
+      },
+      "catalogBefore": 439,
+      "catalogAfter": 462,
+      "sources": [
+        {
+          "source": "Physical AI Heart",
+          "urls": [
+            "https://www.jintiankansha.com/column/KoaJGso2E0",
+            "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+          ],
+          "finding": "Current public index could not be accessed. The accessible predecessor index says it has migrated and stopped updating; its visible items are old. No attributable recent article was verified."
+        },
+        {
+          "source": "ADFeed (AI DevFeed)",
+          "urls": [
+            "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "https://www.jintiankansha.com/column/HW4Hx23mHq"
+          ],
+          "finding": "Existing public entry points could not be accessed. Targeted public searches did not establish an attributable article in the requested window; coverage remains incomplete."
+        },
+        {
+          "source": "QbitAI",
+          "urls": [
+            "https://www.qbitai.com/tag/%E8%87%AA%E5%8A%A8%E9%A9%B6",
+            "https://tech.sinsc.com/media/rss-mp-lzl"
+          ],
+          "finding": "The official driving tag timed out. The attributed public feed was accessible with a November 24 update, but inspected recent items did not provide a verified new driving research paper."
+        },
+        {
+          "source": "Intelligent Driving and Embodied Data Mining",
+          "url": "https://www.gairdao.com/app/articles/cypbpypv",
+          "finding": "The existing attributed public repost entry was inaccessible. No attributable recent article was verified through public search."
+        },
+        {
+          "source": "Xinzhiyuan",
+          "urls": [
+            "https://www.sina.cn/media/5703921756",
+            "https://hub-assets-cache.baai.ac.cn/?tag_id=6"
+          ],
+          "finding": "Attributed public indexes had November 24 updates. The recent driving item concerned product/industry news without an identifiable research paper and was excluded."
+        },
+        {
+          "source": "arXiv",
+          "url": "https://arxiv.org/list/cs.RO/recent?show=2000",
+          "finding": "Primary-source fallback from the recent robotics list and paper pages. Additions preserve first submission dates; no media publication date or account attribution is inferred."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-30918",
+          "name": "CoSel",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30918",
+          "datasetEvidence": "https://arxiv.org/html/2611.30918",
+          "discovery": "arXiv",
+          "datasetVerification": "The experimental protocol evaluates V2Xverse-85 and the InterDrive, Interaction and V2XPnP subsets of MDrive."
+        },
+        {
+          "id": "2611-30739",
+          "name": "P2-TTA",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30739",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.30739",
+          "discovery": "arXiv",
+          "datasetVerification": "The abstract verifies the driving task and method. Full-text dataset names could not be confirmed because the PDF text service rejected its size; the dataset field is deliberately empty."
+        },
+        {
+          "id": "2611-30438",
+          "name": "ROSE-Drive",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30438",
+          "datasetEvidence": "https://arxiv.org/html/2611.30438",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper reports evaluation on both Bench2Drive versions and Fail2Drive, plus held-out Longest6 transfer."
+        },
+        {
+          "id": "2611-30389",
+          "name": "AgentMoT",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30389",
+          "datasetEvidence": "https://arxiv.org/html/2611.30389",
+          "discovery": "arXiv",
+          "datasetVerification": "Both Bench2Drive versions are explicitly used for closed-loop evaluation in the paper."
+        },
+        {
+          "id": "2611-30007",
+          "name": "One Latent World",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30007",
+          "datasetEvidence": "https://arxiv.org/html/2611.30007",
+          "discovery": "arXiv",
+          "datasetVerification": "The dataset paragraph identifies KITTI-360 sequences and nuScenes training and validation splits."
+        },
+        {
+          "id": "2611-29947",
+          "name": "SAGE-Drive",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.29947",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.29947",
+          "discovery": "arXiv",
+          "datasetVerification": "PDF Experimental Setup identifies paired-planning examples constructed from nuReasoning, with driving-log and clip counts."
+        },
+        {
+          "id": "2611-29800",
+          "name": "Role-Typed STL Scenarios",
+          "submitted": "2026-11-22",
+          "paper": "https://arxiv.org/abs/2611.29800",
+          "datasetEvidence": "https://arxiv.org/html/2611.29800",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper explicitly evaluates generated safety-critical scenarios on nuScenes and CommonRoad."
+        },
+        {
+          "id": "2611-29294",
+          "name": "RSLaA",
+          "submitted": "2026-11-22",
+          "paper": "https://arxiv.org/abs/2611.29294",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.29294",
+          "discovery": "arXiv",
+          "datasetVerification": "Supplementary Experiment Sites and Co-simulation Tool sections identify KITTI-360 and WHU-Urban3D geometry as the substrate of the benchmark and experiments."
+        },
+        {
+          "id": "2611-29205",
+          "name": "DriveTTO",
+          "submitted": "2026-11-22",
+          "paper": "https://arxiv.org/abs/2611.29205",
+          "datasetEvidence": "https://arxiv.org/html/2611.29205",
+          "discovery": "arXiv",
+          "datasetVerification": "The evaluation protocol uses Navtest PDMS/EPDMS, Navhard two-stage EPDMS and 345 HUGSIM scenarios; the author resource identifies NAVSIM v1 and v2."
+        },
+        {
+          "id": "2611-29123",
+          "name": "PlanNudge",
+          "submitted": "2026-11-22",
+          "paper": "https://arxiv.org/abs/2611.29123",
+          "datasetEvidence": "https://arxiv.org/html/2611.29123",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper evaluates the learned correction policy on nuPlan in six settings."
+        },
+        {
+          "id": "2611-28720",
+          "name": "ProMo-CoOp",
+          "submitted": "2026-11-21",
+          "paper": "https://arxiv.org/abs/2611.28720",
+          "datasetEvidence": "https://arxiv.org/html/2611.28720",
+          "discovery": "arXiv",
+          "datasetVerification": "The experimental paragraph identifies the Rhinehart et al. CARLA Town01 trajectory dataset and its training, validation and test splits; CARLA here denotes the collected dataset, not merely the simulator."
+        },
+        {
+          "id": "2611-28509",
+          "name": "AlpaSafe",
+          "submitted": "2026-11-21",
+          "paper": "https://arxiv.org/abs/2611.28509",
+          "datasetEvidence": "https://arxiv.org/html/2611.28509",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper reports selector evaluation on 525 AlpaSim scenes."
+        },
+        {
+          "id": "2611-31240",
+          "name": "MoOP",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.31240",
+          "datasetEvidence": "https://arxiv.org/html/2611.31240",
+          "discovery": "arXiv",
+          "datasetVerification": "Evaluation protocol and Appendix A identify PhysicalAI-AV calibration/Test500/OOD-Val262, AlpaSim Origin150/Hard100 and LingoQA."
+        },
+        {
+          "id": "2611-29275",
+          "name": "DriveOddsBench",
+          "submitted": "2026-11-22",
+          "paper": "https://arxiv.org/abs/2611.29275",
+          "datasetEvidence": "https://arxiv.org/html/2611.29275",
+          "discovery": "arXiv",
+          "datasetVerification": "The benchmark evaluates eleven world models on 200 held-out Argoverse 2 histories using DriveOddsBench protocols."
+        },
+        {
+          "id": "2611-28779",
+          "name": "FastWorld",
+          "submitted": "2026-11-21",
+          "paper": "https://arxiv.org/abs/2611.28779",
+          "datasetEvidence": "https://arxiv.org/html/2611.28779",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper reports NAVSIM v1 and v2 planning evaluation and nuScenes trajectory metrics; the current public implementation covers only NAVSIM v1 and nuScenes inference."
+        },
+        {
+          "id": "2611-28177",
+          "name": "Geographic Overlap in Driving",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.28177",
+          "datasetEvidence": "https://arxiv.org/html/2611.28177",
+          "discovery": "arXiv",
+          "datasetVerification": "The study constructs and evaluates geographic splits for NAVSIM v1 and nuScenes."
+        },
+        {
+          "id": "2611-27638",
+          "name": "Seeing Is Not Steering",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.27638",
+          "datasetEvidence": "https://arxiv.org/html/2611.27638",
+          "discovery": "arXiv",
+          "datasetVerification": "The experimental limitations explicitly restrict evaluation to NAVSIM v2 with navtest and navhard."
+        },
+        {
+          "id": "2611-27447",
+          "name": "Mechanism Parity",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.27447",
+          "datasetEvidence": "https://arxiv.org/html/2611.27447",
+          "discovery": "arXiv",
+          "datasetVerification": "The empirical protocol uses a deterministic exact-geometry KITTI and Virtual KITTI 2 subset, ten generators and three frozen perception systems."
+        },
+        {
+          "id": "2611-27226",
+          "name": "Trailblazer-F",
+          "submitted": "2026-11-20",
+          "paper": "https://arxiv.org/abs/2611.27226",
+          "datasetEvidence": "https://arxiv.org/html/2611.27226",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper trains the drafter on navtrain and evaluates all 12,146 NAVSIM v1 navtest scenes; vehicle hardware is not listed as a dataset."
+        },
+        {
+          "id": "2611-26242",
+          "name": "FastRoverVLA",
+          "submitted": "2026-11-19",
+          "paper": "https://arxiv.org/abs/2611.26242",
+          "datasetEvidence": "https://arxiv.org/html/2611.26242",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper evaluates trajectory error and request-processing cost on ORAD-3D and RELLIS-3D."
+        },
+        {
+          "id": "2611-25604",
+          "name": "PAD",
+          "submitted": "2026-11-19",
+          "paper": "https://arxiv.org/abs/2611.25604",
+          "datasetEvidence": "https://arxiv.org/html/2611.25604",
+          "discovery": "arXiv",
+          "datasetVerification": "Experimental setup uses NAVSIM v2 navtrain, held-out calibration and NavTest/NavHard evaluation, plus the SimScale synthetic demonstration pool."
+        },
+        {
+          "id": "2611-24376",
+          "name": "Counterfactual Reasoning Revisited",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24376",
+          "datasetEvidence": "https://arxiv.org/html/2611.24376",
+          "discovery": "arXiv",
+          "datasetVerification": "Appendix C.1 explicitly integrates accident-video datasets cited as references 15, 16 and 17. References 16 and 17 identify Nexar Dashcam Collision Prediction and COOOL; other dataset names are left unlisted where not independently resolved."
+        },
+        {
+          "id": "2611-24192",
+          "name": "TrajWAM",
+          "submitted": "2026-11-18",
+          "paper": "https://arxiv.org/abs/2611.24192",
+          "datasetEvidence": "https://arxiv.org/html/2611.24192",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper evaluates all 220 Bench2Drive routes against a schedule-matched planning-only baseline."
+        }
+      ]
     }
   ]
 }

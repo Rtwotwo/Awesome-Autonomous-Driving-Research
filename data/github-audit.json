@@ -11399,6 +11399,433 @@
         "Statistics"
       ],
       "searches": []
+    },
+    "2611-30918": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30918",
+        "https://arxiv.org/html/2611.30918"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-30739": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30739",
+        "https://arxiv.org/pdf/2611.30739"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-30438": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30438",
+        "https://arxiv.org/html/2611.30438"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-30389": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30389",
+        "https://arxiv.org/html/2611.30389"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-30007": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The paper promises an open-source release and links an author project page. No implementation repository was verified; OpenDWM is a baseline, not this method.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30007",
+        "https://arxiv.org/html/2611.30007",
+        "https://minwoo0611.github.io/OneLatentWorld"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-29947": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29947",
+        "https://arxiv.org/pdf/2611.29947"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-29800": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29800",
+        "https://arxiv.org/html/2611.29800"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-29294": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/yangma93/RSLaA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The PDF links this author repository. Public source includes LiDAR simulation, surrogate metrics, MPC and MAPPO controllers, training and evaluation; implementation files were inspected but not executed.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29294",
+        "https://arxiv.org/pdf/2611.29294",
+        "https://github.com/yangma93/RSLaA"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "src/lidarsim",
+        "src/rslaa/mpc_controller.py",
+        "src/rslaa/marl_trainer.py",
+        "src/rslaa_bench",
+        "checkpoints"
+      ],
+      "searches": []
+    },
+    "2611-29205": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": "https://github.com/Rtwotwo/DriveTTO",
+      "repositoryRole": "project-page",
+      "stars": null,
+      "note": "The author-linked repository contains a project website, demonstration assets and website/video tools. No driving-method implementation was found in its inspected tree; no implementation release is claimed.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29205",
+        "https://arxiv.org/html/2611.29205",
+        "https://github.com/Rtwotwo/DriveTTO",
+        "https://rtwotwo.github.io/DriveTTO"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "README.md",
+        "docs",
+        "assets",
+        "tools"
+      ],
+      "searches": []
+    },
+    "2611-29123": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The paper links this author project page. No author implementation repository was verified in the inspected resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29123",
+        "https://arxiv.org/html/2611.29123",
+        "https://zerlinwang.github.io/plannudge/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-28720": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.28720",
+        "https://arxiv.org/html/2611.28720"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-28509": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.28509",
+        "https://arxiv.org/html/2611.28509"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-31240": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/cvlab-kaist/MoOP",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public pruning implementation, importance recipes and evaluation scripts were inspected. Reproduction requires separately obtained upstream model weights and datasets.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.31240",
+        "https://arxiv.org/html/2611.31240",
+        "https://github.com/cvlab-kaist/MoOP",
+        "https://cvlab-kaist.github.io/MoOP"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "moop/slim.py",
+        "moop/importance.py",
+        "scripts/compute_importance.py",
+        "scripts/eval_lingoqa.py",
+        "recipes"
+      ],
+      "searches": []
+    },
+    "2611-29275": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/hhjj233/DriveOddsBench",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Benchmark construction, measurement/analysis code and generation kits are present. The release checklist still lists generated futures and measurement records as outstanding.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.29275",
+        "https://arxiv.org/html/2611.29275",
+        "https://github.com/hhjj233/DriveOddsBench",
+        "https://hhjj233.github.io/DriveOddsBench-page/"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "scripts/make_benchmark_windows.py",
+        "generation",
+        "instrument_config",
+        "data",
+        "FROZEN_MANIFEST.md"
+      ],
+      "searches": []
+    },
+    "2611-28779": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/MoyangSensei/FastWorld",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Released inference code and checkpoints cover NAVSIM v1 and nuScenes. Training and NAVSIM v2 reproduction are outside the documented public release.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.28779",
+        "https://arxiv.org/html/2611.28779",
+        "https://github.com/MoyangSensei/FastWorld"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "src/fastworld/agent.py",
+        "src/fastworld/planner.py",
+        "fastworld_nus/infer.py",
+        "scripts",
+        "configs"
+      ],
+      "searches": []
+    },
+    "2611-28177": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.28177",
+        "https://arxiv.org/html/2611.28177"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-27638": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.27638",
+        "https://arxiv.org/html/2611.27638"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-27447": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.27447",
+        "https://arxiv.org/html/2611.27447"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-27226": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/DanileHaibo/Trailblazer-F",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public inference and acceptance modules, drafter checkpoints and evaluation commands were inspected. Drafter training entry points and the complete vehicle experiment pipeline were not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.27226",
+        "https://arxiv.org/html/2611.27226",
+        "https://github.com/DanileHaibo/Trailblazer-F"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "src/trailblazer_f/acceptance.py",
+        "src/trailblazer_f/runtime.py",
+        "checkpoints",
+        "configs",
+        "tests"
+      ],
+      "searches": []
+    },
+    "2611-26242": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/ADEPT-ORG/FastRoverVLA",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Execution core and numerical replay subset are released. The README excludes backbone weights, raw datasets and the original multi-backbone GPU inference runtime.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.26242",
+        "https://arxiv.org/html/2611.26242",
+        "https://github.com/ADEPT-ORG/FastRoverVLA",
+        "https://adept-org.github.io/FastRoverVLA/"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "src/fastrovervla/execution.py",
+        "src/fastrovervla/refresh.py",
+        "scripts/reproduce.py",
+        "data/benchmark"
+      ],
+      "searches": []
+    },
+    "2611-25604": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.25604",
+        "https://arxiv.org/html/2611.25604"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-24376": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation link was verified in the inspected primary paper and linked resources as of 2026-11-25. This is not proof that no public implementation exists.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.24376",
+        "https://arxiv.org/html/2611.24376"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-24192": {
+      "checkedAt": "2026-11-25",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/FangWD520/TrajWAM",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Public release provides closed-loop evaluation runtime and checkpoint resources. Training and auxiliary future-prediction entry points are explicitly outside this release.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.24192",
+        "https://arxiv.org/html/2611.24192",
+        "https://github.com/FangWD520/TrajWAM"
+      ],
+      "readmeMatch": "method-name",
+      "rootFiles": [
+        "src/wam",
+        "bench2drive",
+        "scripts/evaluate_multigpu.py",
+        "docs/REPRODUCIBILITY.md"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {

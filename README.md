@@ -2,7 +2,7 @@
 
 <p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>
 
-<p align="center"><strong>439</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
+<p align="center"><strong>462</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-25 · Verified paper &amp; author links</sub></p>
 
 <p align="center"><a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
@@ -14,7 +14,7 @@
 
 | [**E2E**](#end-to-end-autonomous-driving) | [**VLA**](#vision-language-action-models) | [**World Models**](#driving-world-models) | [**RSI**](#recursive-self-improvement-for-autonomous-driving) | [**Perception**](#perception--other-driving-research) |
 |:---:|:---:|:---:|:---:|:---:|
-| 110 papers | 123 papers | 128 papers | 35 papers | 43 papers |
+| 117 papers | 129 papers | 133 papers | 37 papers | 46 papers |
 
 <details>
 <summary><strong>Resource Guide</strong> · Datasets, evaluation protocols, and tools</summary>
@@ -39,13 +39,20 @@ E2E: end-to-end driving. VLA: vision-language-action models. RSI: explicit itera
 
 ### End-to-End Autonomous Driving
 
-_110 papers; 59 with a verified public code link._
+_117 papers; 60 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 55 papers</summary>
+<summary><strong>2026</strong> · 62 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **CoSel**<br><sub>CoSel: Cooperation as Selection for End-to-End Driving</sub> | arXiv 2026 | <sub>Cooperative Driving · Trajectory Selection</sub> | V2Xverse, MDrive | <a href="https://arxiv.org/abs/2611.30918" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **P2-TTA**<br><sub>Coordinating Perception and Planning for Test-Time Adaptation in End-to-End Driving under Distribution Shifts</sub> | arXiv 2026 | <sub>Test-Time Adaptation · Distribution Shift</sub> |  | <a href="https://arxiv.org/abs/2611.30739" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **AgentMoT**<br><sub>AgentMoT: An Agentic Mixture-of-Transformers for End-to-End Autonomous Driving</sub> | arXiv 2026 | <sub>Mixture of Experts · Adaptive Computation</sub> | Bench2Drive v0.0.3, Bench2Drive v0.0.4 | <a href="https://arxiv.org/abs/2611.30389" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **DriveTTO**<br><sub>DriveTTO: Understanding Search and Selection in Test-Time Trajectory Optimization for End-to-End Driving</sub> | arXiv 2026 | <sub>Test-Time Optimization · Trajectory Selection</sub> | NAVSIM v1, NAVSIM v2, HUGSIM | <a href="https://arxiv.org/abs/2611.29205" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Rtwotwo/DriveTTO" title="GitHub — project repository; no verified implementation"><img src="assets/icons/github.svg" alt="GitHub — project repository; no verified implementation" width="28" height="24"></a>&nbsp;<a href="https://rtwotwo.github.io/DriveTTO" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **PlanNudge**<br><sub>Your Diffusion-Based Driving Planner Only Needs a Nudge</sub> | arXiv 2026 | <sub>Residual Planning · Reinforcement Learning</sub> | nuPlan | <a href="https://arxiv.org/abs/2611.29123" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://zerlinwang.github.io/plannudge/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **Geographic Overlap in Driving**<br><sub>Don't Test Where You Trained: Geographic Overlap Inflates End-to-End Driving Scores</sub> | arXiv 2026 | <sub>Geographic Generalization · Evaluation Leakage</sub> | NAVSIM v1, nuScenes | <a href="https://arxiv.org/abs/2611.28177" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **Trailblazer-F**<br><sub>Trailblazer-F: Speculative Action-Flow Inference for Autonomous Driving</sub> | arXiv 2026 | <sub>Speculative Inference · Efficient Planning</sub> | NAVSIM v1 | <a href="https://arxiv.org/abs/2611.27226" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/DanileHaibo/Trailblazer-F" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
 | **DriveSTA**<br><sub>Beyond a Single Human Demonstration: Learning from Scored Trajectory Alternatives for End-to-End Driving</sub> | arXiv 2026 | <sub>DriveSTA · End-to-End Planning</sub> | NAVSIM v1, NAVSIM v2, HUGSIM | <a href="https://arxiv.org/abs/2611.27515" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Rtwotwo/DriveSTA" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://rtwotwo.github.io/DriveSTA" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **BADAS-3.0**<br><sub>BADAS-3.0: Real-Time Driving Perception and Planning from One Camera</sub> | arXiv 2026 | <sub>Single-Camera Planning · Collision Anticipation · Ego-Motion</sub> | nuScenes, Argoverse 2 Sensor, Argoverse 2 TbV, Waymo Open Dataset, PhysicalAI-AV, KITTI, Nexar Public, DAD, DoTA, DADA-2000, DCA-Bench, Euro NCAP benchmark, NAVSIM | <a href="https://arxiv.org/abs/2611.26294" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **DRIFT**<br><sub>DRIFT: Detachable Reasoning for Runtime-Flexible and Efficient End-to-End Driving</sub> | arXiv 2026 | <sub>Detachable Reasoning · Reasoning Distillation · Closed-Loop Planning</sub> | LEAD, Bench2Drive, NAVSIM, AlpaSim | <a href="https://arxiv.org/abs/2611.24719" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/drift-e2e/DRIFT" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a>&nbsp;<a href="https://drift-e2e.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
@@ -209,13 +216,19 @@ _110 papers; 59 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_123 papers; 57 with a verified public code link._
+_129 papers; 59 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 72 papers</summary>
+<summary><strong>2026</strong> · 78 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **SAGE-Drive**<br><sub>SAGE-Drive: Benefit-Aware Adaptive Reasoning for Autonomous Driving Planning</sub> | arXiv 2026 | <sub>Adaptive Reasoning · Compute Allocation</sub> | nuReasoning | <a href="https://arxiv.org/abs/2611.29947" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **MoOP**<br><sub>Pruning Autonomous Driving VLAs: What to Preserve for Reasoning and Action</sub> | arXiv 2026 | <sub>Structured Pruning · Reasoning Preservation</sub> | PhysicalAI-AV, AlpaSim, LingoQA | <a href="https://arxiv.org/abs/2611.31240" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/cvlab-kaist/MoOP" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://cvlab-kaist.github.io/MoOP" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **AlpaSafe**<br><sub>AlpaSafe: Risk-Aware Trajectory Selection for Vision-Language-Action Models in Autonomous Driving</sub> | arXiv 2026 | <sub>Risk-Aware Selection · Frozen VLA</sub> | AlpaSim | <a href="https://arxiv.org/abs/2611.28509" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **Seeing Is Not Steering**<br><sub>Seeing Is Not Steering: Where Verifiable Reasoning Can Enter an End-to-End Driving Planner</sub> | arXiv 2026 | <sub>Verifiable Reasoning · Planner Auditing</sub> | NAVSIM v2 | <a href="https://arxiv.org/abs/2611.27638" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **FastRoverVLA**<br><sub>FastRoverVLA: Fast Vision-Language-Action Execution for Off-Road Autonomous Driving</sub> | arXiv 2026 | <sub>Off-Road Driving · Plan Reuse</sub> | ORAD-3D, RELLIS-3D | <a href="https://arxiv.org/abs/2611.26242" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/ADEPT-ORG/FastRoverVLA" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://adept-org.github.io/FastRoverVLA/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **Counterfactual Reasoning Revisited**<br><sub>Teaching VLMs What to Say, Not How to Reason: Rethinking Counterfactual Reasoning in Autonomous Driving</sub> | arXiv 2026 | <sub>Counterfactual Reasoning · Causal Grounding</sub> | Nexar Dashcam Collision Prediction, COOOL | <a href="https://arxiv.org/abs/2611.24376" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **AutoVLA-D**<br><sub>AutoVLA-D: Learn a Trajectory-Geometric Condition from Reasoning for Autonomous Driving VLA</sub> | NeurIPS 2026 | <sub>AutoVLA-D · Vision-Language-Action</sub> | NAVSIM v1, NAVSIM v2, nuScenes, NeuroNCAP | <a href="https://arxiv.org/abs/2611.12382" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/ShivaTeam/AutoVLA-D" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
 | **GAC**<br><sub>Generalist Action Critic: Harnessing Frontier Models in Autonomous Driving</sub> | arXiv 2026 | <sub>Action Critic · Trajectory Reselection · Inference-Time Reasoning</sub> | HUGSIM, HUGSIM-160, NAVSIM v1 | <a href="https://arxiv.org/abs/2611.27804" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://yanyunn.github.io/GAC/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **TuringPAI**<br><sub>TuringPAI: A Foundation for On-Device Physical AI</sub> | arXiv 2026 | <sub>On-Device VLA · Visual Token Compression · Driving Foundation Model</sub> | XPeng in-house driving dataset, XPeng CCES simulation suite, nuScenes | <a href="https://arxiv.org/abs/2611.25474" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
@@ -376,13 +389,18 @@ _123 papers; 57 with a verified public code link._
 
 ### Driving World Models
 
-_128 papers; 64 with a verified public code link._
+_133 papers; 67 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 84 papers</summary>
+<summary><strong>2026</strong> · 89 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **One Latent World**<br><sub>One Latent World for Heterogeneous LiDARs: A Scan Pattern Agnostic 4D World Model via Direct Ray Decoding</sub> | arXiv 2026 | <sub>LiDAR World Model · Ray Decoding</sub> | KITTI-360, nuScenes | <a href="https://arxiv.org/abs/2611.30007" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://minwoo0611.github.io/OneLatentWorld" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **Role-Typed STL Scenarios**<br><sub>Generating Safety-Critical Driving Scenarios from Role-Typed Signal Temporal Logic Specifications Drafted by Large Language Models</sub> | arXiv 2026 | <sub>Scenario Generation · Temporal Logic</sub> | nuScenes, CommonRoad | <a href="https://arxiv.org/abs/2611.29800" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **DriveOddsBench**<br><sub>DriveOddsBench: Are Driving Video World Models Aligned with Real-World Odds?</sub> | arXiv 2026 | <sub>World Model Evaluation · Calibration</sub> | Argoverse 2, DriveOddsBench | <a href="https://arxiv.org/abs/2611.29275" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/hhjj233/DriveOddsBench" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://hhjj233.github.io/DriveOddsBench-page/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
+| **FastWorld**<br><sub>Imagine Smarter, Drive Faster: Efficient World Modeling for Decision-Aware Autonomous Driving</sub> | arXiv 2026 | <sub>Efficient World Model · Future-Aware Planning</sub> | NAVSIM v1, NAVSIM v2, nuScenes | <a href="https://arxiv.org/abs/2611.28779" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/MoyangSensei/FastWorld" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
+| **TrajWAM**<br><sub>TrajWAM: Trajectory-Conditioned Future Learning for Vision-Language Driving</sub> | arXiv 2026 | <sub>World Action Model · Auxiliary Future Learning</sub> | Bench2Drive | <a href="https://arxiv.org/abs/2611.24192" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/FangWD520/TrajWAM" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
 | **ReactDrive**<br><sub>ReactDrive: Self-Reactive Driving World Model</sub> | arXiv 2026 | <sub>Reactive World Model · Agent Dynamics · Video Generation</sub> | Waymo Open Dataset, nuPlan, NAVSIM | <a href="https://arxiv.org/abs/2611.27024" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://reactdrive.github.io/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **Agent-Relative Self-Play**<br><sub>Learning to Interact in Multi-Agent Self-Play for Controllable Autonomous Driving Scenario Generation</sub> | arXiv 2026 | <sub>Multi-Agent Self-Play · Dynamic Goals · Scenario Generation</sub> |  | <a href="https://arxiv.org/abs/2611.24876" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Does the Action Matter?**<br><sub>Does the Action Matter? Probing Action-Conditioned Semantic Forecasting as a World Model for Autonomous Driving</sub> | WAM-AD @ WACV 2027 | <sub>Semantic Forecasting · Action Conditioning · Counterfactual Evaluation</sub> | Cityscapes, BDD100K | <a href="https://arxiv.org/abs/2611.24840" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/binayksingh/does-action-matter" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
@@ -556,13 +574,15 @@ _128 papers; 64 with a verified public code link._
 
 ### Recursive Self-Improvement for Autonomous Driving
 
-_35 papers; 15 with a verified public code link._
+_37 papers; 15 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 23 papers</summary>
+<summary><strong>2026</strong> · 25 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **ROSE-Drive**<br><sub>ROSE-Drive: Runtime Orchestration and System Evolution for Autonomous Driving</sub> | arXiv 2026 | <sub>System Evolution · Runtime Orchestration</sub> | Bench2Drive v0.0.3, Bench2Drive v0.0.4, Fail2Drive, Longest6 | <a href="https://arxiv.org/abs/2611.30438" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **PAD**<br><sub>PAD: Policy-Aware Data Valuation for Autonomous Driving</sub> | arXiv 2026 | <sub>Policy Improvement · Data Valuation</sub> | NAVSIM v2, SimScale | <a href="https://arxiv.org/abs/2611.25604" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **TerraTransfer++**<br><sub>TerraTransfer++: Demonstration-Free End-to-End Planner</sub> | 2026 | <sub>Self-Play · Policy Distillation · End-to-End Driving · Flow Matching</sub> | nuPlan, InterPlan, WOSAC, HUGSim, NAVSIM | <a href="https://arxiv.org/abs/2610.30319" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **GRID-Planner**<br><sub>GRID-Planner: Graph-Structured Relational Reward Shaping for Diffusion Planning</sub> | ACM MM 2026 | <sub>Diffusion Planning · Relational Reward Shaping · On-Policy Self-Distillation</sub> | nuPlan, interPlan | <a href="https://arxiv.org/abs/2610.21984" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/yangzhaojason/GRID-Planner" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **SHRED**<br><sub>SHRED: Self-Play for Heterogeneous Road-Users without Expert Demonstrations</sub> | 2026 | <sub>Self-Play · Multi-Agent RL · Traffic Simulation · Planning</sub> | nuPlan, WOSAC, InterPlan | <a href="https://arxiv.org/abs/2610.20866" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
@@ -635,13 +655,16 @@ _35 papers; 15 with a verified public code link._
 
 ### Perception & Other Driving Research
 
-_43 papers; 14 with a verified public code link._
+_46 papers; 15 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 13 papers</summary>
+<summary><strong>2026</strong> · 16 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **RSLaA**<br><sub>RSLaA: Self-Reconfiguring Roadside LiDARs as Agents for 3D Traffic Perception</sub> | arXiv 2026 | <sub>Roadside LiDAR · Adaptive Sensing</sub> | KITTI-360, WHU-Urban3D | <a href="https://arxiv.org/abs/2611.29294" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/yangma93/RSLaA" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
+| **ProMo-CoOp**<br><sub>Data-Driven Trajectory Prediction via Probabilistic Modes and Constrained Optimization</sub> | arXiv 2026 | <sub>Motion Prediction · Constrained Optimization</sub> | CARLA trajectory dataset | <a href="https://arxiv.org/abs/2611.28720" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **Mechanism Parity**<br><sub>Mechanism Parity for Simulation-Based Validation of Autonomous-Driving Perception</sub> | arXiv 2026 | <sub>Simulation Validation · Perception Diagnostics</sub> | KITTI, Virtual KITTI 2 | <a href="https://arxiv.org/abs/2611.27447" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Old-School Planners**<br><sub>Old-School Planners Drive (Sometimes) Better Than Learned Ones</sub> | arXiv 2026 | <sub>Classical Planning · Controlled Comparison · Closed-Loop Evaluation</sub> | nuScenes, nuPlan, HUGSIM | <a href="https://arxiv.org/abs/2611.25138" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Attention Is Not Relevance**<br><sub>Attention Is Not Relevance: Challenging the Causality of Attention in Autonomous Driving</sub> | arXiv 2026 | <sub>Interpretability · Counterfactual Analysis · Object Relevance</sub> |  | <a href="https://arxiv.org/abs/2611.24051" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **Snow-tonomous Driving**<br><sub>Are We Ready for Snow-tonomous Driving? Challenges Toward Robust Automated Driving in Extreme Weather</sub> | arXiv 2026 | <sub>Adverse Weather · Multimodal Perception · Real-World Validation</sub> | REHEARSE, ROADVIEW Snowy Scenes | <a href="https://arxiv.org/abs/2611.15217" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://roadview-project.eu/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
