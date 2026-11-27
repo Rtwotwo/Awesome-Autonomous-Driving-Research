@@ -4,9 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('.', import.meta.url)), '..');
 const readJson = async (name) => JSON.parse(await readFile(join(root, 'data', name), 'utf8'));
-const [papers, datasets, benchmarks, industryNews, pretrainingReading] = await Promise.all([
-  readJson('papers.json'), readJson('datasets.json'), readJson('benchmarks.json'), readJson('industry-news.json'),
-  readFile(join(root, 'docs', 'pretraining-reading.md'), 'utf8')
+const [papers, datasets, benchmarks, industryNews] = await Promise.all([
+  readJson('papers.json'), readJson('datasets.json'), readJson('benchmarks.json'), readJson('industry-news.json')
 ]);
 
 const tracks = [
@@ -69,7 +68,7 @@ const trackAnchor = (title) => title.toLowerCase().replace(/&/g, '').replace(/ /
 let readme = '<p align="center"><img src="assets/branding/autodrive-research-logo.png" alt="AutoDrive Research — Awesome Autonomous Driving Research" width="360"></p>\n\n';
 readme += '<p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>\n\n';
 readme += `<p align="center"><strong>${papers.length}</strong> papers &nbsp;·&nbsp; <strong>${datasets.length}</strong> datasets &nbsp;·&nbsp; <strong>${benchmarks.length}</strong> benchmarks<br><sub>Updated ${reviewDate} · Verified paper &amp; author links</sub></p>\n\n`;
-readme += '<p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#pretraining-reading">Reading</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
+readme += '<p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>\n\n';
 readme += '> **Community** · [Join our WeChat group](assets/branding/wechat-group-20261124.png) for paper discussions and research exchange.\n>\n> <sub>Open the invitation image and scan it in WeChat. Valid before December 1, 2026.</sub>\n\n';
 readme += '## Industry Research News\n\n';
 const projectPreviews = industryNews.projectPreviews ?? [];
@@ -115,7 +114,6 @@ readme += '**Datasets** · ' + datasetCategories.map(title=>`[${title}](#${ancho
 readme += '**Benchmarks** · ' + benchmarkCategories.map(title=>`[${title}](#${anchor(title)})`).join(' · ') + '\n\n';
 readme += '[Paper Studio](paper-studio/README.md) · Local paper-to-WeChat workspace ([noncommercial source license](paper-studio/LICENSE)).\n\n';
 readme += '[Link audit](data/github-audit.json) · [Discovery history](data/adfeed-audit.json) · [Media discoveries](data/media-discovery-audit.json) · [License](#license)\n\n</details>\n\n';
-readme += pretrainingReading.trim() + '\n\n';
 readme += '## Papers\n\n';
 readme += '![Paper](assets/icons/paper.svg) Paper · ![GitHub](assets/icons/github.svg) GitHub · ![Project](assets/icons/project.svg) Project · ![Pending](assets/icons/github-pending.svg) Pending · ![Partial](assets/icons/github-partial.svg) Partial. Missing links are omitted.\n\n';
 readme += '<sub>Newest first · 2024 and earlier grouped together · Dataset names verified against papers; unknowns left blank.</sub>\n\n';
