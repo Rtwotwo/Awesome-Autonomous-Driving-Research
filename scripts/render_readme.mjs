@@ -73,9 +73,12 @@ readme += '> **Community** · [Join our WeChat group](assets/branding/wechat-gro
 readme += '## Industry Research News\n\n';
 const projectPreviews = industryNews.projectPreviews ?? [];
 const previewCount = projectPreviews.length ? ` · ${projectPreviews.length} project preview${projectPreviews.length === 1 ? '' : 's'}` : '';
-readme += `<details open>\n<summary><strong>Company research</strong> · ${industryNews.entries.length} reports${previewCount}</summary>\n\n`;
+const reportCount = industryNews.entries.filter(item => item.publicationType === 'company-technical-report').length;
+const seriesCount = industryNews.entries.length - reportCount;
+const seriesLabel = seriesCount ? ` · ${seriesCount} series paper${seriesCount === 1 ? '' : 's'}` : '';
+readme += `<details open>\n<summary><strong>Company research</strong> · ${reportCount} reports${seriesLabel}${previewCount}</summary>\n\n`;
 readme += '**On our radar** · ' + industryNews.watchlist.map(html).join(' · ') + '\n\n';
-readme += `<sub>Since ${html(industryNews.coverageStart)} · Official company-team reports link to a research track. Dates use the first arXiv submission or the labeled official release date.</sub>\n\n`;
+readme += `<sub>Since ${html(industryNews.coverageStart)} · Reports and series papers link to a research track. Dates use the first arXiv submission or the labeled official release date.</sub>\n\n`;
 const newsPapers = new Map(papers.map(p => [p.id, p]));
 const newsItems = [...industryNews.entries, ...projectPreviews]
   .sort((a, b) => b.date.localeCompare(a.date) || (a.paperId ?? a.name).localeCompare(b.paperId ?? b.name));
@@ -92,12 +95,8 @@ const newsTable = (items) => {
     const trackTitle = tracks.find(([id]) => id === paper.track)?.[1];
     if (!trackTitle) throw new Error(`Industry news references unknown track: ${paper.track}`);
     const dateLabel = item.dateType === 'official-report-release' ? '<br><sub>Report release</sub>' : '';
-    const predecessors = (item.predecessorPaperIds ?? []).map(id => {
-      const predecessor = newsPapers.get(id);
-      return `[${html(predecessor.name)} (${html(predecessor.submitted ?? predecessor.year)})](${predecessor.paper})`;
-    });
-    const series = predecessors.length ? `<br><sub>Earlier in the series · ${predecessors.join(' · ')}</sub>` : '';
-    table += `| ${item.date}${dateLabel} | **${companies}** | [**${html(paper.name)}**](#${trackAnchor(trackTitle)})<br><sub>${html(item.highlight)}</sub>${series} | ${paperResources(paper)} |\n`;
+    const seriesLabel = item.publicationType === 'company-series-paper' ? 'Series paper · ' : '';
+    table += `| ${item.date}${dateLabel} | **${companies}** | [**${html(paper.name)}**](#${trackAnchor(trackTitle)})<br><sub>${seriesLabel}${html(item.highlight)}</sub> | ${paperResources(paper)} |\n`;
   }
   return table + '\n';
 };

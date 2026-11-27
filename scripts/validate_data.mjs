@@ -40,6 +40,8 @@ unique(papers, 'papers'); unique(datasets, 'datasets'); unique(benchmarks, 'benc
 const newsIds = new Set();
 const paperIds = new Set(papers.map(p => p.id));
 const papersById = new Map(papers.map(p => [p.id, p]));
+const officialReports = new Map((industryNews.entries ?? [])
+  .filter(item => item.publicationType === 'company-technical-report').map(item => [item.paperId, item]));
 const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
   && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 if (!Array.isArray(industryNews.watchlist) || !industryNews.watchlist.length) errors.push('industry news: watchlist required');
@@ -54,15 +56,18 @@ for (const item of industryNews.entries || []) {
   if (!['arxiv-first-submission', 'official-report-release'].includes(item.dateType)) errors.push(`${label}: date basis must be explicit`);
   if (item.dateType === 'official-report-release' && (!https(papersById.get(item.paperId)?.paper)
       || /^https:\/\/arxiv\.org\//i.test(papersById.get(item.paperId)?.paper))) errors.push(`${label}: official release dates require a non-arXiv report`);
-  if (item.predecessorPaperIds !== undefined && (!Array.isArray(item.predecessorPaperIds)
-      || new Set(item.predecessorPaperIds).size !== item.predecessorPaperIds.length
-      || item.predecessorPaperIds.some(id => id === item.paperId || !https(papersById.get(id)?.paper)))) {
-    errors.push(`${label}: predecessors must be distinct catalog papers with source links`);
+  if (item.publicationType === 'company-series-paper') {
+    const report = officialReports.get(item.seriesReportId);
+    if (!report || report.date <= item.date || !https(item.seriesSource)
+        || item.companies?.some(company => !report.companies?.includes(company))) {
+      errors.push(`${label}: series paper requires a later official report from the same company and a primary series source`);
+    }
+  } else if (item.publicationType !== 'company-technical-report') {
+    errors.push(`${label}: company research type required`);
   }
-  if (item.publicationType !== 'company-technical-report') errors.push(`${label}: company technical report required`);
-  if (!Array.isArray(item.reportEvidence) || !item.reportEvidence.length
+  if (item.publicationType === 'company-technical-report' && (!Array.isArray(item.reportEvidence) || !item.reportEvidence.length
       || item.reportEvidence.some(e => !https(e.url) || !e.note || !item.companies?.includes(e.company))
-      || item.companies?.some(c => !item.reportEvidence.some(e => e.company === c))) errors.push(`${label}: official company report evidence required; affiliation alone is insufficient`);
+      || item.companies?.some(c => !item.reportEvidence.some(e => e.company === c)))) errors.push(`${label}: official company report evidence required; affiliation alone is insufficient`);
   if (!Array.isArray(item.companies) || !item.companies.length || item.companies.some(c => !industryNews.watchlist?.includes(c))) errors.push(`${label}: company must be in watchlist`);
   if (typeof item.highlight !== 'string' || item.highlight.length < 20 || item.highlight.length > 180) errors.push(`${label}: highlight must be 20-180 characters`);
   if (!https(item.dateSource) || !Array.isArray(item.affiliationEvidence) || !item.affiliationEvidence.length

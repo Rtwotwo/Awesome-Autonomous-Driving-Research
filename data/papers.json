@@ -9526,6 +9526,43 @@
     "citationURL": null
   },
   {
+    "id": "2611-06627",
+    "name": "Cosmos Interactive World Simulation",
+    "title": "Interactive World Simulation with Cosmos for Physical AI",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "submitted": "2026-11-04",
+    "venue": "Technical Report 2026",
+    "tags": [
+      "Interactive Simulation",
+      "Multi-View Driving",
+      "LiDAR"
+    ],
+    "datasets": [
+      "MADS",
+      "Driving-Sim-Eval",
+      "Traffic-Scenario-Eval"
+    ],
+    "paper": "https://arxiv.org/abs/2611.06627",
+    "project": "https://research.nvidia.com/labs/cosmos-lab/cosmos-simulation/",
+    "code": "https://github.com/NVIDIA/cosmos-framework",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "NVIDIA publishes the Cosmos Framework implementation, Sim-Auto inference and post-training guides, and model checkpoints.",
+    "stars": null,
+    "summary": "Adapts Cosmos 3 for interactive world simulation through streaming post-training. Its driving models generate synchronized camera views and LiDAR from scene controls, including a causal model for closed-loop rollouts.",
+    "codeCheckedAt": "2026-11-27",
+    "githubRepo": "https://github.com/NVIDIA/cosmos-framework",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-27",
+    "citationURL": null
+  },
+  {
     "id": "2611-00596",
     "name": "X-World 1.6",
     "title": "X-World 1.6: Building Controllable Virtual Cities with World Models",
@@ -10930,7 +10967,7 @@
   },
   {
     "id": "2606-03159",
-    "name": "NVIDIA OmniDreams",
+    "name": "Cosmos-Dreams (OmniDreams)",
     "title": "NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation",
     "track": "world-model",
     "year": 2026,
@@ -10960,7 +10997,8 @@
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
     "codeCheckedAt": "2026-10-09",
-    "project": "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/"
+    "project": "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/",
+    "submitted": "2026-06-02"
   },
   {
     "id": "2606-02800",
@@ -10975,12 +11013,14 @@
       "World Generation",
       "Physical AI"
     ],
-    "datasets": [],
+    "datasets": [
+      "MADS"
+    ],
     "paper": "https://arxiv.org/abs/2606.02800",
     "code": "https://github.com/nvidia/cosmos",
     "openSource": true,
     "stars": 11996,
-    "project": "https://huggingface.co/collections/nvidia/cosmos3",
+    "project": "https://research.nvidia.com/labs/cosmos-lab/cosmos3/",
     "zoteroKey": "nvidia_cosmos_2026",
     "codeStatus": "released",
     "summary": "Cosmos 3 is an omnimodal foundation world-model family that jointly processes and generates language, images, video, audio, and actions for physical AI.",
@@ -10992,7 +11032,8 @@
     "githubRepo": "https://github.com/nvidia/cosmos",
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
-    "codeCheckedAt": "2026-10-09"
+    "codeCheckedAt": "2026-10-09",
+    "submitted": "2026-06-01"
   },
   {
     "id": "2605-24892",
