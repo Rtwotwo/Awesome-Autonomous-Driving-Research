@@ -6969,6 +6969,33 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not refreshed during this primary-source verification; null does not mean zero."
+    },
+    "eponax-horizon-2026": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-27",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-34403": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-27",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32483": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-27",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
     }
   },
   "failures": []

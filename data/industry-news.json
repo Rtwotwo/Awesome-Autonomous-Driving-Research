@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-11-25",
-  "policy": "Company-team autonomous-driving technical reports selected from the five-track catalog. Require primary evidence of an official team report or company release; affiliations alone, individual/intern-led projects, sponsorships and backbone usage do not qualify. Do not infer internship or employment status. Dates are first arXiv submission dates, not media dates or revisions. Reuse catalog resource links and release status.",
+  "checkedAt": "2026-11-27",
+  "policy": "Company-team autonomous-driving technical reports selected from the five-track catalog. Require primary evidence of an official team report or company release; affiliations alone, individual/intern-led projects, sponsorships and backbone usage do not qualify. Do not infer internship or employment status. Dates are first arXiv submission dates, not media dates or revisions. Reuse catalog resource links and release status. Non-arXiv team reports use verified official release dates. Explicitly approved previews use company announcement dates and stay outside the paper catalog until a report is available. Earlier series papers can be cross-linked as context.",
   "watchlist": [
     "Xiaomi",
     "XPeng",
@@ -10,7 +10,9 @@
     "ByteDance",
     "Alibaba",
     "Li Auto",
-    "ZYT"
+    "ZYT",
+    "NVIDIA",
+    "Tesla"
   ],
   "coverage": [
     {
@@ -29,9 +31,49 @@
       "status": "watching",
       "note": "No attributable driving research paper was verified for this initial selection. General video models, model usage by other teams and business rumors were excluded. This is not evidence that the company has no driving research.",
       "sources": []
+    },
+    {
+      "company": "Tesla",
+      "checkedAt": "2026-11-27",
+      "status": "watching",
+      "note": "The Article 39 FSD (Supervised) dashboard is regulatory safety evidence. The inspected sources did not establish a qualifying company driving-model research report.",
+      "sources": [
+        "https://www.tesla.com/fsd-evidence-dashboard",
+        "https://ir.tesla.com/_flysystem/s3/sec/000162828026026551/tsla-20260422-gen.pdf"
+      ]
     }
   ],
   "entries": [
+    {
+      "paperId": "eponax-horizon-2026",
+      "date": "2026-11-26",
+      "dateType": "official-report-release",
+      "companies": [
+        "Horizon Robotics"
+      ],
+      "highlight": "Surround-view world-action training and onboard trajectory planning tested on public roads.",
+      "checkedAt": "2026-11-27",
+      "dateSource": "https://github.com/GarlicBa/EponaX/commit/14c582fe269961ff8b7d42e97cc203e541d1a692",
+      "affiliationEvidence": [
+        {
+          "company": "Horizon Robotics",
+          "url": "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+          "note": "The PDF is signed Horizon Robotics World Model Team. The author project commit dated November 26 publishes and links the PDF."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "Horizon Robotics",
+          "url": "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+          "note": "The PDF is signed Horizon Robotics World Model Team. The author project commit dated November 26 publishes and links the PDF."
+        }
+      ],
+      "predecessorPaperIds": [
+        "2605-14696",
+        "2506-24113"
+      ]
+    },
     {
       "paperId": "2611-25474",
       "date": "2026-11-19",
@@ -282,6 +324,32 @@
       ]
     },
     {
+      "paperId": "2606-03159",
+      "date": "2026-06-02",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "NVIDIA"
+      ],
+      "highlight": "Real-time action-conditioned video generation for reactive closed-loop driving simulation.",
+      "checkedAt": "2026-11-27",
+      "dateSource": "https://arxiv.org/abs/2606.03159",
+      "affiliationEvidence": [
+        {
+          "company": "NVIDIA",
+          "url": "https://research.nvidia.com/publication/2026-06_nvidia-omnidreams-real-time-generative-world-model-closed-loop-autonomous",
+          "note": "NVIDIA Research publishes this team system report as a whitepaper with links to arXiv, its project, model, and implementation."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "NVIDIA",
+          "url": "https://research.nvidia.com/publication/2026-06_nvidia-omnidreams-real-time-generative-world-model-closed-loop-autonomous",
+          "note": "NVIDIA Research publishes this team system report as a whitepaper with links to arXiv, its project, model, and implementation."
+        }
+      ]
+    },
+    {
       "paperId": "2605-24892",
       "date": "2026-05-24",
       "dateType": "arxiv-first-submission",
@@ -503,6 +571,53 @@
         "NIO, Momenta, Horizon Robotics and ByteDance remain on watch; business announcements and affiliation-only papers are insufficient.",
         "The Alpamayo CES January 2026 announcement refers to a report first submitted in 2025; its announcement date was not substituted for a 2026 paper date."
       ]
+    },
+    {
+      "checkedAt": "2026-11-27",
+      "fromDate": "2026-01-01",
+      "throughDate": "2026-11-27",
+      "scope": "Targeted company-team report review and Epona series verification.",
+      "addedNewsIds": [
+        "eponax-horizon-2026",
+        "2606-03159"
+      ],
+      "addedPaperIds": [
+        "eponax-horizon-2026"
+      ],
+      "addedProjectPreviews": [
+        "WorldGPT"
+      ],
+      "sources": [
+        "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+        "https://github.com/GarlicBa/EponaX/commit/14c582fe269961ff8b7d42e97cc203e541d1a692",
+        "https://arxiv.org/html/2605.14696",
+        "https://arxiv.org/abs/2506.24113",
+        "https://research.nvidia.com/publication/2026-06_nvidia-omnidreams-real-time-generative-world-model-closed-loop-autonomous",
+        "https://www.xiaopeng.com/tech_research/5624.html",
+        "https://worldgpt-1.github.io/",
+        "https://www.tesla.com/fsd-evidence-dashboard"
+      ],
+      "limitations": [
+        "The Epona series links provide historical context. EponaV2 is a research paper with Horizon Robotics affiliations, and original Epona first appeared in 2025.",
+        "WorldGPT has a company project page and announcement. The project lists its technical report as forthcoming.",
+        "Tesla safety disclosures were verified but did not establish an eligible driving-model research report."
+      ]
+    }
+  ],
+  "projectPreviews": [
+    {
+      "name": "WorldGPT",
+      "date": "2026-11-24",
+      "dateType": "company-announcement",
+      "companies": [
+        "XPeng"
+      ],
+      "highlight": "Cross-embodiment world-action model with driving evaluation and demonstrations.",
+      "checkedAt": "2026-11-27",
+      "dateSource": "https://www.xiaopeng.com/tech_research/5624.html",
+      "publicationType": "company-project-preview",
+      "reportStatus": "pending",
+      "project": "https://worldgpt-1.github.io/"
     }
   ]
 }

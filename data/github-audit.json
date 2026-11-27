@@ -11859,6 +11859,59 @@
       "readmeMatch": null,
       "rootFiles": [],
       "searches": []
+    },
+    "eponax-horizon-2026": {
+      "checkedAt": "2026-11-27",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The author GitHub repository hosts the project website and report. The model implementation was not verified.",
+      "evidence": [
+        "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+        "https://garlicba.github.io/EponaX/",
+        "https://github.com/GarlicBa/EponaX/commit/14c582fe269961ff8b7d42e97cc203e541d1a692",
+        "https://github.com/GarlicBa/EponaX"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-34403": {
+      "checkedAt": "2026-11-27",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author code or project page was verified in the primary record and full paper.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.34403",
+        "https://arxiv.org/pdf/2611.34403"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32483": {
+      "checkedAt": "2026-11-27",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The author-linked repository contains only a title README. No model implementation or release commitment was verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32483",
+        "https://arxiv.org/html/2611.32483",
+        "https://github.com/Zhisheng-researcher/CodeWAM"
+      ],
+      "readmeMatch": true,
+      "rootFiles": [
+        "README.md"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {

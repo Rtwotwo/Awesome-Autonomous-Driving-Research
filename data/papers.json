@@ -1,5 +1,39 @@
 [
   {
+    "id": "2611-34403",
+    "name": "Recoverability Policy Editing",
+    "title": "Recoverability policy editing for closed-loop safety in autonomous driving",
+    "track": "e2e",
+    "year": 2026,
+    "published": "2026-11",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Closed-Loop Safety",
+      "Policy Editing",
+      "Recoverability"
+    ],
+    "datasets": [
+      "nuPlan"
+    ],
+    "paper": "https://arxiv.org/abs/2611.34403",
+    "project": null,
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "No author code or project page was verified in the primary record and full paper.",
+    "stars": null,
+    "summary": "Learns a local correction that intervenes when the original driving policy enters a recoverable unsafe region, then hands control back after recovery. Evaluated in closed-loop simulation on nuPlan scenarios.",
+    "codeCheckedAt": "2026-11-27",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-27",
+    "citationURL": null,
+    "submitted": "2026-11-25"
+  },
+  {
     "id": "2611-30918",
     "name": "CoSel",
     "title": "CoSel: Cooperation as Selection for End-to-End Driving",
@@ -8485,6 +8519,79 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2611-32483",
+    "name": "CodeWAM",
+    "title": "CodeWAM: A Code World Action Model for End-to-End Autonomous Driving",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "venue": "arXiv 2026",
+    "tags": [
+      "World-Action Model",
+      "Ego Dynamics",
+      "Trajectory Selection"
+    ],
+    "datasets": [
+      "NAVSIM v1",
+      "NAVSIM v2",
+      "nuScenes"
+    ],
+    "paper": "https://arxiv.org/abs/2611.32483",
+    "project": null,
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "The author-linked repository contains only a title README. No model implementation or release commitment was verified.",
+    "stars": null,
+    "summary": "Combines executable ego dynamics with a learned scene model to evaluate candidate trajectories. Its selection objective checks how each candidate would execute and whether it remains consistent with the preceding plan and recorded motion.",
+    "codeCheckedAt": "2026-11-27",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-27",
+    "citationURL": null,
+    "submitted": "2026-11-24"
+  },
+  {
+    "id": "eponax-horizon-2026",
+    "name": "EponaX",
+    "title": "EponaX: Recipes for Training and Deploying World-Action Models in the Real World",
+    "track": "world-model",
+    "year": 2026,
+    "published": "2026-11",
+    "venue": "Technical Report 2026",
+    "tags": [
+      "World-Action Model",
+      "Surround Cameras",
+      "Onboard Planning"
+    ],
+    "datasets": [
+      "NAVSIM v1",
+      "NAVSIM v2",
+      "nuScenes",
+      "Bench2Drive"
+    ],
+    "paper": "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+    "project": "https://garlicba.github.io/EponaX/",
+    "openSource": false,
+    "codeStatus": "not-found",
+    "codeNote": "The author GitHub repository hosts the project website and report. The model implementation was not verified.",
+    "stars": null,
+    "summary": "Learns future appearance, depth, and semantics from surround cameras and structured navigation during training. Deployment keeps the trajectory path and uses recurrent conditioning to refine candidate plans, with benchmark and urban road tests reported.",
+    "codeCheckedAt": "2026-11-27",
+    "githubRepo": null,
+    "githubRepoRole": null,
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-27",
+    "citationURL": null,
+    "releasedAt": "2026-11-26"
+  },
+  {
     "id": "2611-30007",
     "name": "One Latent World",
     "title": "One Latent World for Heterogeneous LiDARs: A Scan Pattern Agnostic 4D World Model via Direct Ray Decoding",
@@ -10834,7 +10941,9 @@
       "Closed-Loop Evaluation",
       "Long-Tail Scenarios"
     ],
-    "datasets": [],
+    "datasets": [
+      "Physical AI Autonomous Vehicles NuRec"
+    ],
     "paper": "https://arxiv.org/abs/2606.03159",
     "openSource": true,
     "stars": 346,
@@ -10850,7 +10959,8 @@
     "githubRepo": "https://github.com/nv-tlabs/omni-dreams",
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
-    "codeCheckedAt": "2026-10-09"
+    "codeCheckedAt": "2026-10-09",
+    "project": "https://research.nvidia.com/labs/sil/projects/omnidreams-blog/"
   },
   {
     "id": "2606-02800",
@@ -10987,7 +11097,12 @@
       "Data-Efficient Planning",
       "Annotation-Free Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "nuScenes",
+      "NAVSIM v1",
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2605.14696",
     "openSource": false,
     "stars": 35,
@@ -11004,7 +11119,8 @@
     "githubRepo": "https://github.com/JiaweiXu8/EponaV2",
     "githubRepoRole": "pending-implementation",
     "githubStarsCheckedAt": "2026-10-09",
-    "codeCheckedAt": "2026-10-09"
+    "codeCheckedAt": "2026-10-09",
+    "submitted": "2026-05-14"
   },
   {
     "id": "2605-11596",
@@ -12482,7 +12598,10 @@
       "Long-Horizon Prediction",
       "Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2506.24113",
     "code": "https://github.com/Kevin-thu/Epona",
     "openSource": true,
@@ -12499,7 +12618,8 @@
     "githubRepo": "https://github.com/Kevin-thu/Epona",
     "githubRepoRole": "implementation",
     "githubStarsCheckedAt": "2026-10-09",
-    "codeCheckedAt": "2026-10-09"
+    "codeCheckedAt": "2026-10-09",
+    "submitted": "2025-06-30"
   },
   {
     "id": "2504-10485",

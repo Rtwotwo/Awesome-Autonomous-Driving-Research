@@ -1225,6 +1225,102 @@
           "datasetVerification": "The paper evaluates all 220 Bench2Drive routes against a schedule-matched planning-only baseline."
         }
       ]
+    },
+    {
+      "checkedAt": "2026-11-27",
+      "searchWindow": {
+        "from": "2026-11-21",
+        "to": "2026-11-27"
+      },
+      "catalogBefore": 464,
+      "catalogAfter": 467,
+      "sources": [
+        {
+          "source": "Physical AI Heart",
+          "urls": [
+            "https://www.jintiankansha.com/column/KoaJGso2E0",
+            "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+          ],
+          "finding": "Current public index inaccessible. The predecessor and attributed searches did not verify a new article in the window."
+        },
+        {
+          "source": "ADFeed (AI DevFeed)",
+          "urls": [
+            "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "https://www.jintiankansha.com/column/HW4Hx23mHq"
+          ],
+          "finding": "Both public entry points were inaccessible. No attributable new article was verified in targeted public searches."
+        },
+        {
+          "source": "QbitAI",
+          "urls": [
+            "https://tech.sinsc.com/media/rss-mp-lzl",
+            "https://www.qbitai.com/2026/11/512565.html"
+          ],
+          "finding": "Checked the public feed and the November 25 Looped World Models coverage. The cited paper evaluates ScienceWorld and ALFWorld and does not provide a direct autonomous-driving experiment.",
+          "excluded": [
+            {
+              "name": "Looped World Models",
+              "articleDate": "2026-11-25",
+              "article": "https://www.qbitai.com/2026/11/512565.html",
+              "paper": "https://arxiv.org/abs/2606.18208"
+            }
+          ]
+        },
+        {
+          "source": "Intelligent Driving and Embodied Data Mining",
+          "urls": [
+            "https://www.gairdao.com/app/articles/cypbpypv"
+          ],
+          "finding": "Prior attributed repost inaccessible. Targeted searches did not establish recent attribution."
+        },
+        {
+          "source": "Xinzhiyuan",
+          "urls": [
+            "https://aiera.com.cn/",
+            "https://www.sina.cn/media/5703921756",
+            "https://hub-assets-cache.baai.ac.cn/?tag_id=6"
+          ],
+          "finding": "Checked the official site, public profile and prior index. No attributable recent research paper was verified from these accessible views."
+        },
+        {
+          "source": "arXiv",
+          "urls": [
+            "https://arxiv.org/list/cs.RO/recent",
+            "https://arxiv.org/list/cs.CV/recent"
+          ],
+          "finding": "Primary-source fallback, with no media attribution inferred."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-32483",
+          "name": "CodeWAM",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32483",
+          "datasetEvidence": "https://arxiv.org/html/2611.32483",
+          "discovery": "arXiv",
+          "datasetVerification": "The experiments use NAVSIM v1/v2 and zero-shot nuScenes validation."
+        },
+        {
+          "id": "2611-34403",
+          "name": "Recoverability Policy Editing",
+          "submitted": "2026-11-25",
+          "paper": "https://arxiv.org/abs/2611.34403",
+          "datasetEvidence": "https://arxiv.org/pdf/2611.34403",
+          "discovery": "arXiv",
+          "datasetVerification": "The full paper reports closed-loop evaluation on 1,708 nuPlan scenarios."
+        },
+        {
+          "id": "eponax-horizon-2026",
+          "name": "EponaX",
+          "published": "2026-11-26",
+          "paper": "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+          "datasetEvidence": "https://garlicba.github.io/EponaX/paper/EponaX_Tech_Report.pdf",
+          "discovery": "Author project and user lead",
+          "datasetVerification": "The report uses NAVSIM v1/v2 and evaluates transfer on nuScenes and Bench2Drive."
+        }
+      ]
     }
   ]
 }

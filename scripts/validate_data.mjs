@@ -39,6 +39,7 @@ function unique(items, label) {
 unique(papers, 'papers'); unique(datasets, 'datasets'); unique(benchmarks, 'benchmarks'); unique(leaderboard, 'leaderboard');
 const newsIds = new Set();
 const paperIds = new Set(papers.map(p => p.id));
+const papersById = new Map(papers.map(p => [p.id, p]));
 const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
   && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
 if (!Array.isArray(industryNews.watchlist) || !industryNews.watchlist.length) errors.push('industry news: watchlist required');
@@ -50,7 +51,14 @@ for (const item of industryNews.entries || []) {
   newsIds.add(item.paperId);
   if (!validDate(item.date) || !validDate(item.checkedAt) || item.date > item.checkedAt) errors.push(`${label}: invalid dates`);
   if (validDate(industryNews.coverageStart) && item.date < industryNews.coverageStart) errors.push(`${label}: date precedes coverageStart`);
-  if (item.dateType !== 'arxiv-first-submission') errors.push(`${label}: date basis must be explicit`);
+  if (!['arxiv-first-submission', 'official-report-release'].includes(item.dateType)) errors.push(`${label}: date basis must be explicit`);
+  if (item.dateType === 'official-report-release' && (!https(papersById.get(item.paperId)?.paper)
+      || /^https:\/\/arxiv\.org\//i.test(papersById.get(item.paperId)?.paper))) errors.push(`${label}: official release dates require a non-arXiv report`);
+  if (item.predecessorPaperIds !== undefined && (!Array.isArray(item.predecessorPaperIds)
+      || new Set(item.predecessorPaperIds).size !== item.predecessorPaperIds.length
+      || item.predecessorPaperIds.some(id => id === item.paperId || !https(papersById.get(id)?.paper)))) {
+    errors.push(`${label}: predecessors must be distinct catalog papers with source links`);
+  }
   if (item.publicationType !== 'company-technical-report') errors.push(`${label}: company technical report required`);
   if (!Array.isArray(item.reportEvidence) || !item.reportEvidence.length
       || item.reportEvidence.some(e => !https(e.url) || !e.note || !item.companies?.includes(e.company))
@@ -60,6 +68,23 @@ for (const item of industryNews.entries || []) {
   if (!https(item.dateSource) || !Array.isArray(item.affiliationEvidence) || !item.affiliationEvidence.length
       || item.affiliationEvidence.some(e => !https(e.url) || !e.note || !item.companies?.includes(e.company))
       || item.companies?.some(c => !item.affiliationEvidence.some(e => e.company === c))) errors.push(`${label}: primary date and company evidence required`);
+}
+const previews = industryNews.projectPreviews ?? [];
+if (!Array.isArray(previews)) errors.push('industry news: projectPreviews must be an array');
+const previewNames = new Set();
+const catalogNames = new Set(papers.map(paper => paper.name.trim().toLowerCase()));
+for (const item of Array.isArray(previews) ? previews : []) {
+  const name = typeof item.name === 'string' ? item.name.trim().toLowerCase() : '';
+  const label = `industry news preview ${item.name}`;
+  if (!name || previewNames.has(name) || catalogNames.has(name)) errors.push(`${label}: duplicate or missing project name`);
+  previewNames.add(name);
+  if (item.paperId !== undefined || item.publicationType !== 'company-project-preview'
+      || item.reportStatus !== 'pending' || item.dateType !== 'company-announcement') errors.push(`${label}: project preview type and pending report status required`);
+  if (!validDate(item.date) || !validDate(item.checkedAt) || item.date > item.checkedAt
+      || item.date < industryNews.coverageStart) errors.push(`${label}: invalid announcement date`);
+  if (!https(item.project) || !https(item.dateSource) || !Array.isArray(item.companies) || !item.companies.length
+      || item.companies.some(company => !industryNews.watchlist.includes(company))) errors.push(`${label}: official project and company announcement required`);
+  if (typeof item.highlight !== 'string' || item.highlight.length < 20 || item.highlight.length > 180) errors.push(`${label}: highlight must be 20-180 characters`);
 }
 const benchmarkIds = new Set(benchmarks.map((item) => item.id));
 for (const paper of papers) {
