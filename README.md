@@ -2,7 +2,7 @@
 
 <p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>
 
-<p align="center"><strong>487</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-28 · Verified paper &amp; author links</sub></p>
+<p align="center"><strong>488</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-28 · Verified paper &amp; author links</sub></p>
 
 <p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
@@ -13,7 +13,7 @@
 ## Industry Research News
 
 <details open>
-<summary><strong>Company research</strong> · 18 reports · 1 series paper · 1 project preview</summary>
+<summary><strong>Company research</strong> · 19 reports · 1 series paper · 1 project preview</summary>
 
 **On our radar** · Xiaomi · XPeng · NIO · Momenta · Horizon Robotics · ByteDance · Alibaba · Li Auto · Zhuoyu Technology (ZYT) · NVIDIA · Tesla
 
@@ -40,6 +40,7 @@
 | 2026-05-18 | **Xiaomi** | [**Xiaomi EV World Model**](#driving-world-models)<br><sub>Joint reconstruction and generation for consistent multi-view driving simulation.</sub> | <a href="https://arxiv.org/abs/2605.18137" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | 2026-05-14 | **Horizon Robotics** | [**EponaV2**](#driving-world-models)<br><sub>Series paper · The EponaX predecessor predicts future geometry and semantics to improve trajectory planning.</sub> | <a href="https://arxiv.org/abs/2605.14696" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/JiaweiXu8/EponaV2" title="GitHub — code pending"><img src="assets/icons/github-pending.svg" alt="GitHub — code pending" width="28" height="24"></a> |
 | 2026-04-22 | **XPeng** | [**X-Cache**](#driving-world-models)<br><sub>Cross-chunk block caching accelerates few-step autoregressive driving world models.</sub> | <a href="https://arxiv.org/abs/2604.20289" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| 2026-04-20 | **Xiaomi** | [**OneVL**](#vision-language-action-models)<br><sub>One-step latent reasoning uses language and future-frame supervision to inform fast driving trajectory prediction.</sub> | <a href="https://arxiv.org/abs/2604.18486" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/xiaomi-research/onevl" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-embodied-intelligence.github.io/OneVL/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | 2026-03-20 | **XPeng** | [**X-World**](#driving-world-models)<br><sub>Controllable multi-camera world simulation for closed-loop driving development.</sub> | <a href="https://arxiv.org/abs/2603.19979" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 
 <sub>[Sources & coverage](data/industry-news.json) · Watchlist membership does not imply a verified paper entry.</sub>
@@ -50,7 +51,7 @@
 
 | [**E2E**](#end-to-end-autonomous-driving) | [**VLA**](#vision-language-action-models) | [**World Models**](#driving-world-models) | [**RSI**](#recursive-self-improvement-for-autonomous-driving) | [**Perception**](#perception--other-driving-research) |
 |:---:|:---:|:---:|:---:|:---:|
-| 123 papers | 138 papers | 140 papers | 39 papers | 47 papers |
+| 123 papers | 139 papers | 140 papers | 39 papers | 47 papers |
 
 <details>
 <summary><strong>Resource Guide</strong> · Datasets, evaluation protocols, and tools</summary>
@@ -226,10 +227,10 @@ _123 papers; 61 with a verified public code link._
 
 ### Vision-Language-Action Models
 
-_138 papers; 61 with a verified public code link._
+_139 papers; 62 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 87 papers</summary>
+<summary><strong>2026</strong> · 88 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
@@ -297,6 +298,7 @@ _138 papers; 61 with a verified public code link._
 | **CRAFT**<br><sub>CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies</sub> | 2026 | <sub>Counterfactual Learning · Interactive Reinforcement Learning · Policy Fine-Tuning</sub> |  | <a href="https://arxiv.org/abs/2605.04470" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/CurryChen77/CraftPolicy" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://currychen77.github.io/CRAFT" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **Fast-dDrive**<br><sub>Fast-dDrive: Efficient Block-Diffusion VLM for Autonomous Driving</sub> | 2026 | <sub>VLM · Block diffusion · Efficient inference</sub> | Waymo Open End-to-End Driving, nuScenes | <a href="https://arxiv.org/abs/2605.23163" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/NVlabs/Fast-dLLM" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://nvlabs.github.io/Fast-dLLM/fast_ddrive/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **LVDrive**<br><sub>LVDrive: Latent Visual Representation Enhanced Vision-Language-Action Autonomous Driving Model</sub> | 2026 | <sub>VLA · Latent future prediction · Closed-loop planning</sub> | Bench2Drive | <a href="https://arxiv.org/abs/2605.22089" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
+| **OneVL**<br><sub>Xiaomi OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation</sub> | arXiv 2026 | <sub>Latent Reasoning · World Models · Trajectory Planning</sub> | NAVSIM, ROADWork, Impromptu, Alpamayo-R1 | <a href="https://arxiv.org/abs/2604.18486" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/xiaomi-research/onevl" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a>&nbsp;<a href="https://xiaomi-embodied-intelligence.github.io/OneVL/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **OneDrive**<br><sub>OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models</sub> | 2026 | <sub>Unified Multimodal Decoding · Structured Actions · End-to-End Planning</sub> |  | <a href="https://arxiv.org/abs/2604.17915" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/Z1zyw/OneDrive" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a> |
 | **UniDriveVLA**<br><sub>UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving</sub> | 2026 | <sub>Joint Perception and Planning · 3D Grounding · VLA</sub> |  | <a href="https://arxiv.org/abs/2604.02190" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/xiaomi-research/unidrivevla" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |
 | **DVGT-2**<br><sub>DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale</sub> | 2026 | <sub>Vision-Geometry-Action · 3D Geometry · Action Planning</sub> |  | <a href="https://arxiv.org/abs/2604.00813" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/wzzheng/DVGT" title="GitHub — code released"><img src="assets/icons/github.svg" alt="GitHub — code released" width="28" height="24"></a> |

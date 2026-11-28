@@ -12283,6 +12283,31 @@
         "pyproject.toml"
       ],
       "searches": []
+    },
+    "2604-18486": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/xiaomi-research/onevl",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Xiaomi Research publishes inference code and links released model weights and the first author’s training implementation.",
+      "evidence": [
+        "https://arxiv.org/abs/2604.18486",
+        "https://arxiv.org/html/2604.18486v3",
+        "https://xiaomi-embodied-intelligence.github.io/OneVL/",
+        "https://github.com/xiaomi-research/onevl",
+        "https://github.com/xiaomi-research/onevl/blob/main/infer_onevl.py",
+        "https://github.com/GeorgeLuImmortal/OneVL_training",
+        "https://huggingface.co/collections/xiaomi-research/onevl-models"
+      ],
+      "readmeMatch": "OneVL",
+      "rootFiles": [
+        "README.md",
+        "eval_results.py",
+        "infer_onevl.py"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
@@ -12462,6 +12487,13 @@
       ],
       "scope": "User-supplied SealedLoop preprint, verified against the arXiv record, full text, author project, implementation and paired evaluation records.",
       "limitations": "The published release contains the gate and decision replay. Full training loops and some figure and table scripts remain pending."
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "added": [
+        "2604-18486"
+      ],
+      "scope": "User-supplied Xiaomi OneVL paper and official company technical report. Verified all four reported evaluation benchmarks and released inference and training resources."
     }
   ]
 }

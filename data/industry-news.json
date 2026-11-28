@@ -533,6 +533,32 @@
       ]
     },
     {
+      "paperId": "2604-18486",
+      "date": "2026-04-20",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "Xiaomi"
+      ],
+      "highlight": "One-step latent reasoning uses language and future-frame supervision to inform fast driving trajectory prediction.",
+      "checkedAt": "2026-11-28",
+      "dateSource": "https://arxiv.org/abs/2604.18486v1",
+      "affiliationEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://arxiv.org/html/2604.18486v3",
+          "note": "The latest report is signed Xiaomi Embodied Intelligence Team."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "Xiaomi",
+          "url": "https://github.com/xiaomi-research/onevl",
+          "note": "The official Xiaomi Research release explicitly links arXiv:2604.18486 as its Technical Report and publishes code and model weights."
+        }
+      ]
+    },
+    {
       "paperId": "2603-19979",
       "date": "2026-03-20",
       "dateType": "arxiv-first-submission",
@@ -767,6 +793,28 @@
         "Li Auto NativeDrive, Xiaomi-affiliated GeoVLDrive and Toyota-affiliated R2R are cataloged as research papers. Primary author affiliation did not by itself establish independent official company-report publication.",
         "AutoE2E is officially released by the Autoware Foundation Robotaxi Working Group. The announcement identifies TIER IV as sponsor, not the company report issuer. AXE is a KAIST lab challenge report.",
         "Official company pages and public archives are selective. Tesla regulatory evidence and Momenta business disclosures were not treated as technical reports, and full coverage of ByteDance, Horizon Robotics, Alibaba or ZYT was not established."
+      ]
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "fromDate": "2026-01-01",
+      "throughDate": "2026-11-28",
+      "scope": "Targeted backfill of the user-supplied Xiaomi OneVL technical report.",
+      "addedNewsIds": [
+        "2604-18486"
+      ],
+      "addedPaperIds": [
+        "2604-18486"
+      ],
+      "sources": [
+        "https://arxiv.org/abs/2604.18486v1",
+        "https://arxiv.org/html/2604.18486v3",
+        "https://xiaomi-embodied-intelligence.github.io/OneVL/",
+        "https://github.com/xiaomi-research/onevl",
+        "https://github.com/GeorgeLuImmortal/OneVL_training"
+      ],
+      "limitations": [
+        "This was a targeted check of OneVL."
       ]
     }
   ],

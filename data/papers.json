@@ -6530,6 +6530,44 @@
     "citationURL": null
   },
   {
+    "id": "2604-18486",
+    "name": "OneVL",
+    "title": "Xiaomi OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation",
+    "track": "vla",
+    "year": 2026,
+    "published": "2026-04",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Latent Reasoning",
+      "World Models",
+      "Trajectory Planning"
+    ],
+    "datasets": [
+      "NAVSIM",
+      "ROADWork",
+      "Impromptu",
+      "Alpamayo-R1"
+    ],
+    "paper": "https://arxiv.org/abs/2604.18486",
+    "project": "https://xiaomi-embodied-intelligence.github.io/OneVL/",
+    "code": "https://github.com/xiaomi-research/onevl",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Xiaomi Research publishes inference code and links released model weights and the first author’s training implementation.",
+    "stars": null,
+    "summary": "Generates latent reasoning tokens in parallel and supervises them with language and future visual decoders. Uses the latent tokens for driving trajectory prediction in a single pass.",
+    "codeCheckedAt": "2026-11-28",
+    "githubRepo": "https://github.com/xiaomi-research/onevl",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-28",
+    "citationURL": null,
+    "submitted": "2026-04-20"
+  },
+  {
     "id": "2604-17915",
     "name": "OneDrive",
     "title": "OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models",
