@@ -7167,6 +7167,15 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-33794": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during primary-source verification."
     }
   },
   "failures": []

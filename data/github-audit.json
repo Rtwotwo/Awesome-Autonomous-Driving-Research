@@ -12256,6 +12256,33 @@
         "Embodied/document/vflash/README.md"
       ],
       "searches": []
+    },
+    "2611-33794": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/zilin-huang/SealedLoop",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Publishes the sequential gate, paired evaluation records, and decision-replay scripts. The full driving and manipulation loop scripts and remaining figure and table scripts are pending.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.33794",
+        "https://arxiv.org/html/2611.33794v1",
+        "https://zilin-huang.github.io/SealedLoop/",
+        "https://github.com/zilin-huang/SealedLoop",
+        "https://huggingface.co/datasets/zilinhuang/SealedLoop",
+        "https://github.com/zilin-huang/SealedLoop/blob/main/sealedloop/gate.py",
+        "https://github.com/zilin-huang/SealedLoop/blob/main/sealedloop/confseq.py",
+        "https://github.com/zilin-huang/SealedLoop/blob/main/scripts/verify_decisions.py"
+      ],
+      "readmeMatch": "SealedLoop",
+      "rootFiles": [
+        "sealedloop",
+        "scripts",
+        "README.md",
+        "pyproject.toml"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
@@ -12427,6 +12454,14 @@
       "scope": "Recent autonomous-driving papers and verified 2026 company-report backfill; named experiment data and author resource status checked.",
       "discoveryAudit": "data/media-discovery-audit.json",
       "limitations": "The arXiv recent pages and public account indexes are partial snapshots. Unverified implementation links were omitted."
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "added": [
+        "2611-33794"
+      ],
+      "scope": "User-supplied SealedLoop preprint, verified against the arXiv record, full text, author project, implementation and paired evaluation records.",
+      "limitations": "The published release contains the gate and decision replay. Full training loops and some figure and table scripts remain pending."
     }
   ]
 }

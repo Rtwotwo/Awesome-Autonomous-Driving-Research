@@ -13876,6 +13876,43 @@
     "codeCheckedAt": "2026-10-09"
   },
   {
+    "id": "2611-33794",
+    "name": "SealedLoop",
+    "title": "Keep or Roll Back? Out-of-Loop Judges for Self-Improving VLA and End-to-End Embodied Policies",
+    "track": "rsi",
+    "year": 2026,
+    "published": "2026-11",
+    "venue": "arXiv 2026",
+    "tags": [
+      "Independent Evaluation",
+      "Sequential Testing",
+      "Policy Rollback"
+    ],
+    "datasets": [
+      "NAVSIM",
+      "LIBERO-Object"
+    ],
+    "paper": "https://arxiv.org/abs/2611.33794",
+    "project": "https://zilin-huang.github.io/SealedLoop/",
+    "openSource": true,
+    "codeStatus": "released",
+    "codeNote": "Publishes the sequential gate, paired evaluation records, and decision-replay scripts. The full driving and manipulation loop scripts and remaining figure and table scripts are pending.",
+    "stars": null,
+    "summary": "Uses an independent evaluator and a sequential paired test to decide whether to retain or roll back policy updates. Separates errors in the in-loop judge from gains that fail to transfer, using NAVSIM, LIBERO-Object and a full-scale vehicle study.",
+    "codeCheckedAt": "2026-11-28",
+    "githubRepo": "https://github.com/zilin-huang/SealedLoop",
+    "githubRepoRole": "implementation",
+    "githubStarsCheckedAt": null,
+    "citationCount": null,
+    "citationSource": "OpenAlex",
+    "citationStatus": "unavailable",
+    "citationCheckedAt": "2026-11-28",
+    "citationURL": null,
+    "submitted": "2026-11-25",
+    "code": "https://github.com/zilin-huang/SealedLoop",
+    "codeScope": "partial"
+  },
+  {
     "id": "2611-32529",
     "name": "ContinualDrive",
     "title": "ContinualDrive: A Deployment-Anchored, Multi-Axis Benchmark for Continual Updates of Learned Driving Planners",

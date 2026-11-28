@@ -2,7 +2,7 @@
 
 <p align="center"><strong>A research map for autonomous driving.</strong><br><sub>Explore papers, implementations, datasets, and evaluation benchmarks.</sub></p>
 
-<p align="center"><strong>486</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-28 · Verified paper &amp; author links</sub></p>
+<p align="center"><strong>487</strong> papers &nbsp;·&nbsp; <strong>46</strong> datasets &nbsp;·&nbsp; <strong>8</strong> benchmarks<br><sub>Updated 2026-11-28 · Verified paper &amp; author links</sub></p>
 
 <p align="center"><a href="#industry-research-news">News</a> &nbsp;/&nbsp; <a href="#papers">Papers</a> &nbsp;/&nbsp; <a href="#public-datasets">Datasets</a> &nbsp;/&nbsp; <a href="#public-evaluation-benchmarks">Benchmarks</a> &nbsp;/&nbsp; <a href="#leaderboard">Leaderboard</a> &nbsp;/&nbsp; <a href="CONTRIBUTING.md">Contribute</a></p>
 
@@ -50,7 +50,7 @@
 
 | [**E2E**](#end-to-end-autonomous-driving) | [**VLA**](#vision-language-action-models) | [**World Models**](#driving-world-models) | [**RSI**](#recursive-self-improvement-for-autonomous-driving) | [**Perception**](#perception--other-driving-research) |
 |:---:|:---:|:---:|:---:|:---:|
-| 123 papers | 138 papers | 140 papers | 38 papers | 47 papers |
+| 123 papers | 138 papers | 140 papers | 39 papers | 47 papers |
 
 <details>
 <summary><strong>Resource Guide</strong> · Datasets, evaluation protocols, and tools</summary>
@@ -560,13 +560,14 @@ _140 papers; 68 with a verified public code link._
 
 ### Recursive Self-Improvement for Autonomous Driving
 
-_38 papers; 16 with a verified public code link._
+_39 papers; 17 with a verified public code link._
 
 <details open>
-<summary><strong>2026</strong> · 26 papers</summary>
+<summary><strong>2026</strong> · 27 papers</summary>
 
 | **Method / Paper** | **Venue** | **Focus** | **Datasets** | **Links** |
 |---|---|---|---|:---:|
+| **SealedLoop**<br><sub>Keep or Roll Back? Out-of-Loop Judges for Self-Improving VLA and End-to-End Embodied Policies</sub> | arXiv 2026 | <sub>Independent Evaluation · Sequential Testing · Policy Rollback</sub> | NAVSIM, LIBERO-Object | <a href="https://arxiv.org/abs/2611.33794" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/zilin-huang/SealedLoop" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://zilin-huang.github.io/SealedLoop/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **ContinualDrive**<br><sub>ContinualDrive: A Deployment-Anchored, Multi-Axis Benchmark for Continual Updates of Learned Driving Planners</sub> | arXiv 2026 | <sub>Continual Learning · Closed-Loop Evaluation</sub> | nuPlan | <a href="https://arxiv.org/abs/2611.32529" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a>&nbsp;<a href="https://github.com/continualdrive/benchmark" title="GitHub — partial code release"><img src="assets/icons/github-partial.svg" alt="GitHub — partial code release" width="28" height="24"></a>&nbsp;<a href="https://lzrbit.github.io/continualdrive/" title="Official project page"><img src="assets/icons/project.svg" alt="Official project page" width="28" height="24"></a> |
 | **ROSE-Drive**<br><sub>ROSE-Drive: Runtime Orchestration and System Evolution for Autonomous Driving</sub> | arXiv 2026 | <sub>System Evolution · Runtime Orchestration</sub> | Bench2Drive v0.0.3, Bench2Drive v0.0.4, Fail2Drive, Longest6 | <a href="https://arxiv.org/abs/2611.30438" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
 | **PAD**<br><sub>PAD: Policy-Aware Data Valuation for Autonomous Driving</sub> | arXiv 2026 | <sub>Policy Improvement · Data Valuation</sub> | NAVSIM v2, SimScale | <a href="https://arxiv.org/abs/2611.25604" title="Read paper"><img src="assets/icons/paper.svg" alt="Read paper" width="28" height="24"></a> |
