@@ -1,0 +1,2710 @@
+{
+  "checkedAt": "2026-11-28",
+  "baseCommit": "02f337bd2837ba4760f79b2108f496c5c4971e93",
+  "catalogPaperCount": 488,
+  "scope": "All papers whose datasets field was empty at the start of this audit.",
+  "policy": "Record named datasets and benchmarks used directly for training, validation or evaluation in the primary paper. Related-work mentions, unnamed private collections, reused baseline checkpoints and custom simulations are not treated as datasets. Evidence links point to the paper or the supporting section.",
+  "reviewedPapers": 241,
+  "verifiedPapers": 203,
+  "stillBlankPapers": 38,
+  "statusCounts": {
+    "named-dataset-not-confirmed": 31,
+    "verified": 203,
+    "no-reported-experimental-dataset": 5,
+    "full-text-not-verified": 2
+  },
+  "byTrack": {
+    "e2e": {
+      "named-dataset-not-confirmed": 4,
+      "verified": 67
+    },
+    "vla": {
+      "verified": 63,
+      "named-dataset-not-confirmed": 8,
+      "no-reported-experimental-dataset": 1
+    },
+    "world-model": {
+      "named-dataset-not-confirmed": 9,
+      "verified": 61
+    },
+    "rsi": {
+      "verified": 10,
+      "named-dataset-not-confirmed": 5,
+      "full-text-not-verified": 2,
+      "no-reported-experimental-dataset": 1
+    },
+    "perception-other": {
+      "named-dataset-not-confirmed": 5,
+      "no-reported-experimental-dataset": 3,
+      "verified": 2
+    }
+  },
+  "records": {
+    "2611-31814": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2611.31814",
+      "datasets": [],
+      "note": "The benchmark is built from a recorded downtown drive and separate sensor-rig recordings. The cited public datasets describe released comparison models rather than the main evaluation collection."
+    },
+    "2611-30739": {
+      "status": "verified",
+      "source": "https://arxiv.org/pdf/2611.30739",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/pdf/2611.30739#page=5",
+        "NAVSIM": "https://arxiv.org/pdf/2611.30739#page=5",
+        "Bench2Drive": "https://arxiv.org/pdf/2611.30739#page=6"
+      }
+    },
+    "2611-23719": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2611.23719",
+      "datasets": [],
+      "note": "The experiments use held-out expert driving and takeover recordings without a named benchmark or collection."
+    },
+    "2609-21486": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.21486",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2609.21486#Sx4.SSx1.p1.1"
+      }
+    },
+    "2609-09650": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2609.09650",
+      "datasets": [],
+      "note": "Training uses newly generated exploration trajectories. The experiments use study-specific traffic simulations without an identified named benchmark dataset."
+    },
+    "2609-01609": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.01609",
+      "datasets": [
+        "CARLA"
+      ],
+      "evidence": {
+        "CARLA": "https://arxiv.org/html/2609.01609#S4.SS1.p1.1"
+      }
+    },
+    "2606-31830": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.31830",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2606.31830#S4.SS1.SSSx1.p1.1"
+      }
+    },
+    "2606-19836": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.19836",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2606.19836#abstract1.1",
+        "NAVSIM": "https://arxiv.org/html/2606.19836#S4.SS1.SSS0.Px1.p2.1"
+      }
+    },
+    "2606-19641": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.19641",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM v2",
+        "HUGSIM",
+        "Gigapixel"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2606.19641#S4.SS0.SSS0.Px1.p1.1",
+        "NAVSIM v2": "https://arxiv.org/html/2606.19641#A3.p1.1",
+        "HUGSIM": "https://arxiv.org/html/2606.19641#A3.p1.1",
+        "Gigapixel": "https://arxiv.org/html/2606.19641#S4.SS0.SSS0.Px3"
+      }
+    },
+    "2606-07464": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.07464",
+      "datasets": [
+        "PhysicalAI-AV",
+        "NVIDIA NuRec"
+      ],
+      "evidence": {
+        "PhysicalAI-AV": "https://arxiv.org/html/2606.07464#S5.SS3.p1.1",
+        "NVIDIA NuRec": "https://arxiv.org/html/2606.07464#S5.SS3.p1.1"
+      }
+    },
+    "2606-07170": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.07170",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2606.07170#S4.p1.1"
+      }
+    },
+    "2605-31116": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.31116",
+      "datasets": [
+        "NAVSIM v1/v2",
+        "WOD-E2E"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2605.31116#S4.SS1.SSS0.Px1.p1.1",
+        "WOD-E2E": "https://arxiv.org/html/2605.31116#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2605-15120": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.15120",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2605.15120#S5.SS1.p1.1"
+      }
+    },
+    "2605-08084": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.08084",
+      "datasets": [
+        "nuScenes",
+        "Waymo Open Perception Dataset",
+        "Argoverse 2 Sensor",
+        "nuPlan",
+        "CARLA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2605.08084#S4.SS3",
+        "Waymo Open Perception Dataset": "https://arxiv.org/html/2605.08084#S4.SS3",
+        "Argoverse 2 Sensor": "https://arxiv.org/html/2605.08084#S4.SS3",
+        "nuPlan": "https://arxiv.org/html/2605.08084#S4.SS3",
+        "CARLA": "https://arxiv.org/html/2605.08084#S4.SS3"
+      }
+    },
+    "2605-04647": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.04647",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2605.04647#S6.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2604-15308": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.15308",
+      "datasets": [
+        "Senna-2 open-loop benchmark",
+        "Senna-2 3DGS simulation benchmark"
+      ],
+      "evidence": {
+        "Senna-2 open-loop benchmark": "https://arxiv.org/html/2604.15308#S4.SS1.p4.1",
+        "Senna-2 3DGS simulation benchmark": "https://arxiv.org/html/2604.15308#S4.SS1.p3.1"
+      }
+    },
+    "2604-08366": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.08366",
+      "datasets": [
+        "NAVSIM",
+        "OpenScene"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2604.08366#S7.SS1.p1.1",
+        "OpenScene": "https://arxiv.org/html/2604.08366#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2603-29163": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.29163",
+      "datasets": [
+        "NAVSIM v1/v2",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2603.29163#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2603.29163#S4.SS1.p1.1"
+      }
+    },
+    "guo-flowad-2026": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.13399",
+      "datasets": [
+        "nuScenes",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2603.13399#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2603.13399#S4.SS1.p2.1"
+      }
+    },
+    "2602-22801": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.22801",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2602.22801#A5.SS1.p4.1"
+      }
+    },
+    "2602-20060": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.20060",
+      "datasets": [
+        "CARLA Longest6"
+      ],
+      "evidence": {
+        "CARLA Longest6": "https://arxiv.org/html/2602.20060#S7.p2.1"
+      }
+    },
+    "2602-13936": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.13936",
+      "datasets": [
+        "nuScenes",
+        "nuPlan",
+        "Waymo Open Motion Dataset"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2602.13936#S4.SS1.p1.1",
+        "nuPlan": "https://arxiv.org/html/2602.13936#S4.SS1.p1.1",
+        "Waymo Open Motion Dataset": "https://arxiv.org/html/2602.13936#S4.SS1.p1.1"
+      }
+    },
+    "2601-12901": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.12901",
+      "datasets": [
+        "nuPlan",
+        "Lt90"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2601.12901#A3.p1.1",
+        "Lt90": "https://arxiv.org/html/2601.12901#S5.SS3.p4.1"
+      }
+    },
+    "2601-05083": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.05083",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2601.05083#S4.SS2.SSS4.Px2.p1.1"
+      }
+    },
+    "2601-01762": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.01762",
+      "datasets": [
+        "Bench2Drive",
+        "Fail2Drive",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2601.01762#A1.SS2.p1.1",
+        "Fail2Drive": "https://arxiv.org/html/2601.01762#A1.SS2.p3.1",
+        "nuScenes": "https://arxiv.org/html/2601.01762#S4.SS1.p1.1"
+      }
+    },
+    "2512-20563": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.20563",
+      "datasets": [
+        "LEAD",
+        "CARLA Longest6 v2",
+        "Bench2Drive",
+        "CARLA Town13",
+        "NAVSIM",
+        "WOD-E2E"
+      ],
+      "evidence": {
+        "LEAD": "https://arxiv.org/html/2512.20563#S4.SS1.p3.1",
+        "CARLA Longest6 v2": "https://arxiv.org/html/2512.20563#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2512.20563#S4.SS1.p2.1",
+        "CARLA Town13": "https://arxiv.org/html/2512.20563#S4.SS1.p6.1",
+        "NAVSIM": "https://arxiv.org/html/2512.20563#S4.SS2.p5.1",
+        "WOD-E2E": "https://arxiv.org/html/2512.20563#S4.SS2.p5.1"
+      }
+    },
+    "2512-07745": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.07745",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2512.07745#abstract1.1"
+      }
+    },
+    "2512-06865": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.06865",
+      "datasets": [
+        "nuScenes-Geography"
+      ],
+      "evidence": {
+        "nuScenes-Geography": "https://arxiv.org/html/2512.06865#S5.p1.1"
+      }
+    },
+    "2512-00470": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.00470",
+      "datasets": [
+        "nuPlan"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2512.00470#S4.SS5.p1.1"
+      }
+    },
+    "2511-18729": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.18729",
+      "datasets": [
+        "nuScenes",
+        "ADV-NuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2511.18729#abstract1.1",
+        "ADV-NuScenes": "https://arxiv.org/html/2511.18729#abstract1.1"
+      }
+    },
+    "2511-17150": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.17150",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2511.17150#Sx4.SSx1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2511.17150#Sx4.SSx1.p1.1"
+      }
+    },
+    "2511-16518": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.16518",
+      "datasets": [
+        "NAVSIM",
+        "RoboAfford"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2511.16518#S5.SS2.SSS2.p1.1",
+        "RoboAfford": "https://arxiv.org/html/2511.16518#S5.SS1.SSS1.p2.1"
+      }
+    },
+    "2511-09013": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.09013",
+      "datasets": [
+        "DAIR-V2X",
+        "V2X-Sim"
+      ],
+      "evidence": {
+        "DAIR-V2X": "https://arxiv.org/html/2511.09013#Sx7.SSx4.SSS0.Px4.p1.1",
+        "V2X-Sim": "https://arxiv.org/html/2511.09013#Sx7.SSx4.SSS0.Px4.p1.1"
+      }
+    },
+    "2511-01768": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.01768",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2511.01768#S4.SS4.p1.1"
+      }
+    },
+    "2510-24108": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2510.24108",
+      "datasets": [
+        "NAVSIM",
+        "HUGSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2510.24108#S4.SS1.p1.1",
+        "HUGSIM": "https://arxiv.org/html/2510.24108#S4.SS1.p1.1"
+      }
+    },
+    "2508-09158": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2508.09158",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2508.09158#Sx11.SSx1.SSSx2.Px1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2508.09158#Sx12.p4.1"
+      }
+    },
+    "2508-05402": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2508.05402",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2508.05402#S4.SS3.p3.1",
+        "NAVSIM": "https://arxiv.org/html/2508.05402#S4.SS2.p1.1"
+      }
+    },
+    "2507-14456": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2507.14456",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2507.14456#S4.SS1.p1.1"
+      }
+    },
+    "2506-08541": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.08541",
+      "datasets": [
+        "Waymo Open Motion Dataset"
+      ],
+      "evidence": {
+        "Waymo Open Motion Dataset": "https://arxiv.org/html/2506.08541#S4.SS1.SSS1.p1.1"
+      }
+    },
+    "2506-07725": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.07725",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2506.07725#S4.SS2.p1.1"
+      }
+    },
+    "2506-06664": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.06664",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2506.06664#S4.SS2.p1.1"
+      }
+    },
+    "2506-06659": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.06659",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2506.06659#Sx4.SSx1.SSS0.Px2.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2506.06659#Sx4.SSx2.SSS0.Px2.p1.1"
+      }
+    },
+    "2506-04218": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.04218",
+      "datasets": [
+        "NAVSIM v2",
+        "nuPlan"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2506.04218#S4.SS1.p1.1",
+        "nuPlan": "https://arxiv.org/html/2506.04218#S4.SS1.p1.1"
+      }
+    },
+    "2506-00034": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.00034",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2506.00034#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2506.00034#S4.SS1.p1.1"
+      }
+    },
+    "2505-15111": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2505.15111",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2505.15111#S4.SS1.p2.1",
+        "Bench2Drive": "https://arxiv.org/html/2505.15111#S4.SS2.p1.1"
+      }
+    },
+    "2505-09315": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2505.09315",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2505.09315#S4.SS1.p4.1"
+      }
+    },
+    "2503-14182": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.14182",
+      "datasets": [
+        "nuScenes",
+        "NeuroNCAP",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2503.14182#S7.SS9.p1.1",
+        "NeuroNCAP": "https://arxiv.org/html/2503.14182#S7.SS9.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2503.14182#S7.SS7.p1.1"
+      }
+    },
+    "2503-12820": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.12820",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2503.12820#S4.SS1.p2.1"
+      }
+    },
+    "2503-10434": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.10434",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2503.10434#S5.SS1.p1.1"
+      }
+    },
+    "2503-08612": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.08612",
+      "datasets": [
+        "Bench2Drive",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2503.08612#S4.SS4.p1.1",
+        "nuScenes": "https://arxiv.org/html/2503.08612#S4.SS1.p1.1"
+      }
+    },
+    "2503-07656": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.07656",
+      "datasets": [
+        "Bench2Drive",
+        "nuScenes",
+        "Dev10"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2503.07656#S4.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2503.07656#S4.SS1.p1.1",
+        "Dev10": "https://arxiv.org/html/2503.07656#S4.SS3.p1.1"
+      }
+    },
+    "2503-05689": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.05689",
+      "datasets": [
+        "OpenScene",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "OpenScene": "https://arxiv.org/html/2503.05689#S4.SS1.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2503.05689#S4.SS1.p1.1"
+      }
+    },
+    "2503-03125": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.03125",
+      "datasets": [
+        "nuScenes",
+        "Turning-nuScenes",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2503.03125#S4.SS2.SSS2",
+        "Turning-nuScenes": "https://arxiv.org/html/2503.03125#S4.SS2.SSS2",
+        "Bench2Drive": "https://arxiv.org/html/2503.03125#S4.SS1.p1.1"
+      }
+    },
+    "2411-15139": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2411.15139",
+      "datasets": [
+        "NAVSIM",
+        "nuScenes",
+        "CARLA Longest6"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2411.15139#S4.SS2.p1.1",
+        "nuScenes": "https://arxiv.org/html/2411.15139#A1.SS0.SSS0.Px2.p1.1",
+        "CARLA Longest6": "https://arxiv.org/html/2411.15139#A2.SS0.SSS0.Px1"
+      }
+    },
+    "2406-15349": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2406.15349",
+      "datasets": [
+        "NAVSIM",
+        "OpenScene",
+        "nuPlan"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2406.15349#abstract1.1",
+        "OpenScene": "https://arxiv.org/html/2406.15349#S4.SS1.p4.1",
+        "nuPlan": "https://arxiv.org/html/2406.15349#S4.SS1.p2.1"
+      }
+    },
+    "2406-06978": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2406.06978",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2406.06978#S3"
+      }
+    },
+    "2405-19620": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2405.19620",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2405.19620#S4.p1.1"
+      }
+    },
+    "2402-13243": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2402.13243",
+      "datasets": [
+        "CARLA Town05",
+        "Bench2Drive",
+        "NAVSIM v1/v2",
+        "nuScenes"
+      ],
+      "evidence": {
+        "CARLA Town05": "https://arxiv.org/html/2402.13243#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2402.13243#S4.SS1.p1.1",
+        "NAVSIM v1/v2": "https://arxiv.org/html/2402.13243#A1.SS2.p4.1",
+        "nuScenes": "https://arxiv.org/html/2402.13243#A1.SS2.p5.1"
+      }
+    },
+    "2312-03031": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.03031",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2312.03031#abstract1.1"
+      }
+    },
+    "2303-12077": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2303.12077",
+      "datasets": [
+        "nuScenes",
+        "CARLA Town05"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2303.12077#S4.p1.1",
+        "CARLA Town05": "https://arxiv.org/html/2303.12077#S4.p1.1"
+      }
+    },
+    "2212-10156": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2212.10156",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2212.10156#S3.p1.1"
+      }
+    },
+    "2207-07601": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2207.07601",
+      "datasets": [
+        "nuScenes",
+        "CARLA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2207.07601#S4.p1.1",
+        "CARLA": "https://arxiv.org/html/2207.07601#S4.p1.1"
+      }
+    },
+    "2205-15997": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2205.15997",
+      "datasets": [
+        "CARLA Leaderboard",
+        "CARLA Longest6"
+      ],
+      "evidence": {
+        "CARLA Leaderboard": "https://arxiv.org/html/2205.15997#S4.SS9",
+        "CARLA Longest6": "https://arxiv.org/html/2205.15997#S4.SS8.p1.1"
+      }
+    },
+    "2109-04456": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2109.04456",
+      "datasets": [
+        "CARLA Leaderboard"
+      ],
+      "evidence": {
+        "CARLA Leaderboard": "https://arxiv.org/html/2109.04456#S4.p3.1"
+      }
+    },
+    "2108-08265": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2108.08265",
+      "datasets": [
+        "NoCrash",
+        "CARLA Leaderboard"
+      ],
+      "evidence": {
+        "NoCrash": "https://arxiv.org/html/2108.08265#A4.p2.1",
+        "CARLA Leaderboard": "https://arxiv.org/html/2108.08265#S4.p1.1"
+      }
+    },
+    "2104-12861": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2104.12861",
+      "datasets": [
+        "nuScenes",
+        "CARLA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2104.12861#S4.SS1.p1.1",
+        "CARLA": "https://arxiv.org/html/2104.12861#S4.SS1.p1.1"
+      }
+    },
+    "2104-09224": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2104.09224",
+      "datasets": [
+        "CARLA Town05 Short",
+        "CARLA Town05 Long"
+      ],
+      "evidence": {
+        "CARLA Town05 Short": "https://arxiv.org/html/2104.09224#S4.SS3.p1.1",
+        "CARLA Town05 Long": "https://arxiv.org/html/2104.09224#S4.p3.1"
+      }
+    },
+    "2101-06806": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2101.06806",
+      "datasets": [
+        "UrbanExpert"
+      ],
+      "evidence": {
+        "UrbanExpert": "https://arxiv.org/html/2101.06806#S4.SS0.SSS0.Px1.p1.1"
+      }
+    },
+    "2008-05930": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2008.05930",
+      "datasets": [],
+      "note": "The authors use a private collection of manual driving and custom simulation scenarios. KITTI appears as a dataset-size comparison."
+    },
+    "cvpr2020-data-aggregation": {
+      "status": "verified",
+      "source": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Prakash_Exploring_Data_Aggregation_in_Policy_Learning_for_Vision-Based_Urban_Autonomous_CVPR_2020_paper.pdf",
+      "datasets": [
+        "CARLA NoCrash"
+      ],
+      "evidence": {
+        "CARLA NoCrash": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Prakash_Exploring_Data_Aggregation_in_Policy_Learning_for_Vision-Based_Urban_Autonomous_CVPR_2020_paper.pdf#page=1"
+      }
+    },
+    "1911-10868": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/1911.10868",
+      "datasets": [
+        "CARLA",
+        "NoCrash"
+      ],
+      "evidence": {
+        "CARLA": "https://arxiv.org/html/1911.10868#A2.SS4.SSS2.p1.1",
+        "NoCrash": "https://arxiv.org/html/1911.10868#S6.SS5.p2.1"
+      }
+    },
+    "2609-00111": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.00111",
+      "datasets": [
+        "NAVSIM",
+        "WOD-E2E"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2609.00111#S3.SS3.SSS0.Px2.p1.1",
+        "WOD-E2E": "https://arxiv.org/html/2609.00111#S3.SS3.SSS0.Px2.p1.1"
+      }
+    },
+    "bassole-hybriddrivevla-2026": {
+      "status": "verified",
+      "source": "https://openaccess.thecvf.com/content/CVPR2026/papers/Bassole_HybridDriveVLA_Vision-Language-Action_Model_with_Visual_CoT_reasoning_and_ToT_Evaluation_CVPR_2026_paper.pdf",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://openaccess.thecvf.com/content/CVPR2026/papers/Bassole_HybridDriveVLA_Vision-Language-Action_Model_with_Visual_CoT_reasoning_and_ToT_Evaluation_CVPR_2026_paper.pdf#page=6",
+        "NAVSIM": "https://openaccess.thecvf.com/content/CVPR2026/papers/Bassole_HybridDriveVLA_Vision-Language-Action_Model_with_Visual_CoT_reasoning_and_ToT_Evaluation_CVPR_2026_paper.pdf#page=6"
+      }
+    },
+    "2608-18035": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.18035",
+      "datasets": [
+        "Bench2Drive",
+        "nuScenes",
+        "NAVSIM v1"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2608.18035#S5.SS1.SSSx2.p1.1",
+        "nuScenes": "https://arxiv.org/html/2608.18035#S5.SS1.SSSx2.p1.1",
+        "NAVSIM v1": "https://arxiv.org/html/2608.18035#S5.SS1.SSSx2.p1.1"
+      }
+    },
+    "2608-12854": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.12854",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2608.12854#S4.SS1.p1.1"
+      }
+    },
+    "2608-10413": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.10413",
+      "datasets": [
+        "NAVSIM",
+        "SimScale"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2608.10413#S4.SS3.p1.1",
+        "SimScale": "https://arxiv.org/html/2608.10413#S4.SS2.p3.1"
+      }
+    },
+    "2608-09591": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.09591",
+      "datasets": [
+        "nuScenes-PCF",
+        "NAVSIM-PCF",
+        "PCF-CoT"
+      ],
+      "evidence": {
+        "nuScenes-PCF": "https://arxiv.org/html/2608.09591#S4.SS2.p1.1",
+        "NAVSIM-PCF": "https://arxiv.org/html/2608.09591#S4.SS2.p1.1",
+        "PCF-CoT": "https://arxiv.org/html/2608.09591#S3.SS2.SSS2.p2.1"
+      }
+    },
+    "2608-01755": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.01755",
+      "datasets": [
+        "AD-MCQ-500",
+        "nuScenes"
+      ],
+      "evidence": {
+        "AD-MCQ-500": "https://arxiv.org/html/2608.01755#A4.SS2.SSS0.Px3.p1.1",
+        "nuScenes": "https://arxiv.org/html/2608.01755#A4.SS2.SSS0.Px3.p1.1"
+      }
+    },
+    "2608-10976": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2608.10976",
+      "datasets": [],
+      "note": "The report describes an internally assembled hybrid training corpus and production evaluations without an independently identifiable named data collection in the inspected sections."
+    },
+    "2607-14727": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.14727",
+      "datasets": [
+        "ROADWork"
+      ],
+      "evidence": {
+        "ROADWork": "https://arxiv.org/html/2607.14727#S4.SS1.p1.1"
+      }
+    },
+    "2607-08072": {
+      "status": "no-reported-experimental-dataset",
+      "source": "https://arxiv.org/html/2607.08072",
+      "datasets": [],
+      "note": "Review or perspective. Dataset mentions describe reviewed work, not experiments performed by this paper."
+    },
+    "2607-06403": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.06403",
+      "datasets": [
+        "GM-100"
+      ],
+      "evidence": {
+        "GM-100": "https://arxiv.org/html/2607.06403#S5.SS2.p1.1"
+      }
+    },
+    "2607-03182": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.03182",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2607.03182#S4.SS1.p1.1"
+      }
+    },
+    "2607-01658": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.01658",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2607.01658#S4.SS1.p1.1"
+      }
+    },
+    "2606-24742": {
+      "status": "verified",
+      "source": "https://arxiv.org/pdf/2606.24742",
+      "datasets": [
+        "Suboptimal-Value-Bench"
+      ],
+      "evidence": {
+        "Suboptimal-Value-Bench": "https://arxiv.org/pdf/2606.24742#page=6"
+      }
+    },
+    "2606-08525": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.08525",
+      "datasets": [
+        "DriveReward",
+        "DriveReward-Bench",
+        "nuPlan",
+        "Bench2Drive",
+        "Senna",
+        "OmniDrive",
+        "DriveGPT4"
+      ],
+      "evidence": {
+        "DriveReward": "https://arxiv.org/html/2606.08525#S5.SS5.p1.1",
+        "DriveReward-Bench": "https://arxiv.org/html/2606.08525#S3.SS2.p1.1",
+        "nuPlan": "https://arxiv.org/html/2606.08525#S5.SS3.SSS0.Px2.p2.1",
+        "Bench2Drive": "https://arxiv.org/html/2606.08525#S5.SS3.SSS0.Px2.p1.1",
+        "Senna": "https://arxiv.org/html/2606.08525#Sx1.SS4.SSS0.Px2.p1.1",
+        "OmniDrive": "https://arxiv.org/html/2606.08525#Sx1.SS4.SSS0.Px2.p1.1",
+        "DriveGPT4": "https://arxiv.org/html/2606.08525#Sx1.SS4.SSS0.Px2.p1.1"
+      }
+    },
+    "2606-28758": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2606.28758",
+      "datasets": [],
+      "note": "The report describes an internal XPeng driving corpus without a proper dataset name."
+    },
+    "2605-23270": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.23270",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2605.23270#S5.SS1.p1.1"
+      }
+    },
+    "2605-21061": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.21061",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM",
+        "nuScenes-QA",
+        "nu-Caption",
+        "nu-X"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2605.21061#S4.SS3.SSS3.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2605.21061#S4.SS2.SSS1",
+        "nuScenes-QA": "https://arxiv.org/html/2605.21061#A3.p3.1",
+        "nu-Caption": "https://arxiv.org/html/2605.21061#A3.p3.1",
+        "nu-X": "https://arxiv.org/html/2605.21061#A3.p3.1"
+      }
+    },
+    "2605-04470": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.04470",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2605.04470#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2604-17915": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.17915",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2604.17915#S4.SS1.SSSx1.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2604.17915#S4.SS1.SSSx1.p1.1"
+      }
+    },
+    "2604-02190": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.02190",
+      "datasets": [
+        "nuScenes",
+        "Bench2Drive",
+        "DriveBench",
+        "MMStar",
+        "MMMU",
+        "RealWorldQA",
+        "AI2D",
+        "MME",
+        "ChartQA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2604.02190#S4.SS2.SSS0.Px1",
+        "Bench2Drive": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "DriveBench": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "MMStar": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "MMMU": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "RealWorldQA": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "AI2D": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "MME": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1",
+        "ChartQA": "https://arxiv.org/html/2604.02190#S4.SS1.SSS0.Px2.p1.1"
+      }
+    },
+    "2604-00813": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.00813",
+      "datasets": [
+        "nuScenes",
+        "OpenScene",
+        "Waymo Open Dataset",
+        "KITTI",
+        "DDAD",
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1",
+        "OpenScene": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1",
+        "Waymo Open Dataset": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1",
+        "KITTI": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1",
+        "DDAD": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1",
+        "NAVSIM v1/v2": "https://arxiv.org/html/2604.00813#S4.SS1.p1.1"
+      }
+    },
+    "2603-28116": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.28116",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM",
+        "P3-CoT"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2603.28116#A3.SS2.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2603.28116#S5.SS2.p3.1",
+        "P3-CoT": "https://arxiv.org/html/2603.28116#S4.SS1"
+      }
+    },
+    "2603-14972": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.14972",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2603.14972#abstract1.1"
+      }
+    },
+    "2603-14851": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.14851",
+      "datasets": [
+        "nuSync",
+        "nuScenes",
+        "CARLA-Garage",
+        "OmniDrive",
+        "ScienceQA",
+        "FigureQA"
+      ],
+      "evidence": {
+        "nuSync": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1",
+        "CARLA-Garage": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1",
+        "OmniDrive": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1",
+        "ScienceQA": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1",
+        "FigureQA": "https://arxiv.org/html/2603.14851#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2603-11041": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.11041",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2603.11041#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2603.11041#S4.SS1.p1.1"
+      }
+    },
+    "2603-09465": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.09465",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2603.09465#S4.SS1.SSS0.Px2.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2603.09465#S4.SS1.SSS0.Px2.p1.1"
+      }
+    },
+    "2603-06049": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.06049",
+      "datasets": [
+        "NAVSIM v1/v2",
+        "nuScenes"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2603.06049#S5.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2603.06049#S5.SS1.p2.1"
+      }
+    },
+    "2603-01928": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.01928",
+      "datasets": [
+        "NAVSIM",
+        "SURDS"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2603.01928#S4.SS1.p1.1",
+        "SURDS": "https://arxiv.org/html/2603.01928#S4.SS1.p5.1"
+      }
+    },
+    "2603-01441": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.01441",
+      "datasets": [
+        "Bench2Drive",
+        "Action Dreaming"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2603.01441#S4.SS3.p1.1",
+        "Action Dreaming": "https://arxiv.org/html/2603.01441#S4.SS2"
+      }
+    },
+    "2603-01063": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.01063",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2603.01063#S4.SS1.p1.1"
+      }
+    },
+    "2602-21172": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.21172",
+      "datasets": [
+        "NAVSIM",
+        "WOD-E2E"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2602.21172#S3.p3.1",
+        "WOD-E2E": "https://arxiv.org/html/2602.21172#S5.SS2.p1.1"
+      }
+    },
+    "2602-20794": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.20794",
+      "datasets": [
+        "NuInstruct",
+        "DriveLM",
+        "OmniDrive",
+        "nuScenes-Plan",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NuInstruct": "https://arxiv.org/html/2602.20794#S4.SS2.p1.1",
+        "DriveLM": "https://arxiv.org/html/2602.20794#S4.SS2.p1.1",
+        "OmniDrive": "https://arxiv.org/html/2602.20794#S4.SS2.p1.1",
+        "nuScenes-Plan": "https://arxiv.org/html/2602.20794#S4.SS1.p2.1",
+        "NAVSIM": "https://arxiv.org/html/2602.20794#S4.SS1.p2.1"
+      }
+    },
+    "2602-13329": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.13329",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2602.13329#S4.p1.1"
+      }
+    },
+    "2602-10719": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.10719",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2602.10719#A6.SS0.SSS0.Px3.p1.1"
+      }
+    },
+    "2601-06474": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.06474",
+      "datasets": [
+        "nuScenes",
+        "OmniDrive-nuScenes",
+        "nuScenes-QA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2601.06474#S4.SS1.p2.1",
+        "OmniDrive-nuScenes": "https://arxiv.org/html/2601.06474#S4.SS1.p2.1",
+        "nuScenes-QA": "https://arxiv.org/html/2601.06474#S4.SS4.p1.1"
+      }
+    },
+    "2601-05640": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.05640",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2601.05640#S4.SS1.p2.1"
+      }
+    },
+    "2601-05611": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.05611",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2601.05611#S4.SS1.SSS0.Px2.p1.1"
+      }
+    },
+    "2512-22939": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.22939",
+      "datasets": [
+        "nuScenes",
+        "NeuroNCAP"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2512.22939#S4.SS1.p1.1",
+        "NeuroNCAP": "https://arxiv.org/html/2512.22939#S4.SS4"
+      }
+    },
+    "2512-10719": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.10719",
+      "datasets": [
+        "nuScenes",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2512.10719#S4.SS2.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2512.10719#S4.SS3"
+      }
+    },
+    "2512-06112": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.06112",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM v1",
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2512.06112#S3.SS4.p1.1",
+        "NAVSIM v1": "https://arxiv.org/html/2512.06112#S3.SS4",
+        "nuScenes": "https://arxiv.org/html/2512.06112#A1.SS1.p1.1"
+      }
+    },
+    "2512-01830": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.01830",
+      "datasets": [
+        "nuScenes",
+        "LingoQA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2512.01830#S4.SS2.p1.1",
+        "LingoQA": "https://arxiv.org/html/2512.01830#S4.SS1.p1.1"
+      }
+    },
+    "2512-24426": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2512.24426",
+      "datasets": [],
+      "note": "Training and evaluation draw on an in-house driving corpus; the symbolic labels denote subsets of that corpus."
+    },
+    "2511-00088": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.00088",
+      "datasets": [
+        "PhysicalAI-AV",
+        "AlpaSim public scenario set"
+      ],
+      "evidence": {
+        "PhysicalAI-AV": "https://arxiv.org/html/2511.00088#S6.SS4.p2.1",
+        "AlpaSim public scenario set": "https://arxiv.org/html/2511.00088#S6.SS1.p6.1"
+      }
+    },
+    "2511-00062": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.00062",
+      "datasets": [
+        "PAI-Bench",
+        "RDS-HQ"
+      ],
+      "evidence": {
+        "PAI-Bench": "https://arxiv.org/html/2511.00062#S6.SS1.SSS1.p1.1",
+        "RDS-HQ": "https://arxiv.org/html/2511.00062#S6.SS3.SSS2.p3.1"
+      }
+    },
+    "2509-20109": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2509.20109",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2509.20109#S5.SS1.p1.1"
+      }
+    },
+    "2509-05578": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2509.05578",
+      "datasets": [
+        "nuScenes",
+        "OmniDrive",
+        "nuScenes-QA"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2509.05578#S4.SS2.p3.1",
+        "OmniDrive": "https://arxiv.org/html/2509.05578#S3.SS4.p1.1",
+        "nuScenes-QA": "https://arxiv.org/html/2509.05578#S4.SS2.p3.1"
+      }
+    },
+    "2507-23318": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2507.23318",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2507.23318#Sx4.SSx1.SSS0.Px2.p1.1"
+      }
+    },
+    "2506-13757": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.13757",
+      "datasets": [
+        "nuPlan",
+        "nuScenes",
+        "Bench2Drive",
+        "WOD-E2E"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2506.13757#S4.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2506.13757#A6.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2506.13757#S4.SS2.p6.1",
+        "WOD-E2E": "https://arxiv.org/html/2506.13757#S4.SS1.p1.1"
+      }
+    },
+    "2506-08052": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.08052",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive",
+        "DriveLM",
+        "DriveBench",
+        "LingoQA"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2506.08052#A5.p2.1",
+        "Bench2Drive": "https://arxiv.org/html/2506.08052#A9.SS2.p1.1",
+        "DriveLM": "https://arxiv.org/html/2506.08052#S5.SS1.SSS0.Px2.p1.1",
+        "DriveBench": "https://arxiv.org/html/2506.08052#S5.SS2.SSS0.Px5.p1.1",
+        "LingoQA": "https://arxiv.org/html/2506.08052#S5.SS1.SSS0.Px2.p1.1"
+      }
+    },
+    "2505-19381": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2505.19381",
+      "datasets": [],
+      "note": "The paper describes its own training and closed-loop experiments. Public benchmarks in the introduction describe prior approaches."
+    },
+    "2505-16278": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2505.16278",
+      "datasets": [
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2505.16278#S3.SS1.p1.1"
+      }
+    },
+    "2505-00284": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2505.00284",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2505.00284#abstract1.1"
+      }
+    },
+    "2503-23463": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.23463",
+      "datasets": [
+        "nuScenes",
+        "TOD3Cap",
+        "nuCaption",
+        "nuScenesQA",
+        "nuX",
+        "GPT-Driver"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1",
+        "TOD3Cap": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1",
+        "nuCaption": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1",
+        "nuScenesQA": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1",
+        "nuX": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1",
+        "GPT-Driver": "https://arxiv.org/html/2503.23463#S4.SS1.p1.1"
+      }
+    },
+    "2503-15558": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2503.15558",
+      "datasets": [],
+      "note": "The report describes internally curated physical-common-sense and embodied reasoning evaluations. A named benchmark suitable for this catalog was not confirmed from the inspected experiment description."
+    },
+    "2503-07608": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.07608",
+      "datasets": [
+        "MetaAD"
+      ],
+      "evidence": {
+        "MetaAD": "https://arxiv.org/html/2503.07608#S4.SS1.p1.1"
+      }
+    },
+    "2410-23262": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2410.23262",
+      "datasets": [
+        "nuScenes",
+        "Waymo Open Motion Dataset",
+        "Waymo Open Dataset"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2410.23262#S3.SS2.p1.1",
+        "Waymo Open Motion Dataset": "https://arxiv.org/html/2410.23262#S3.SS1.p4.1",
+        "Waymo Open Dataset": "https://arxiv.org/html/2410.23262#S3.SS1.p1.1"
+      }
+    },
+    "2406-03008": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2406.03008",
+      "datasets": [
+        "SDN",
+        "BDD-X"
+      ],
+      "evidence": {
+        "SDN": "https://arxiv.org/html/2406.03008#S5.SS2.p1.1",
+        "BDD-X": "https://arxiv.org/html/2406.03008#S5.SS6"
+      }
+    },
+    "2402-12289": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2402.12289",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2402.12289#S5.SS3.p2.1"
+      }
+    },
+    "2401-05577": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2401.05577",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2401.05577#S1.I1.i4.p1.1"
+      }
+    },
+    "2312-14150": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.14150",
+      "datasets": [
+        "DriveLM-nuScenes",
+        "DriveLM-CARLA"
+      ],
+      "evidence": {
+        "DriveLM-nuScenes": "https://arxiv.org/html/2312.14150#S4.p2.1",
+        "DriveLM-CARLA": "https://arxiv.org/html/2312.14150#S4.p2.1"
+      }
+    },
+    "2312-09245": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.09245",
+      "datasets": [
+        "CARLA Town05Long"
+      ],
+      "evidence": {
+        "CARLA Town05Long": "https://arxiv.org/html/2312.09245#S4.SS4.p1.1"
+      }
+    },
+    "2312-07488": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.07488",
+      "datasets": [
+        "LangAuto"
+      ],
+      "evidence": {
+        "LangAuto": "https://arxiv.org/html/2312.07488#A2.p2.1"
+      }
+    },
+    "2312-00438": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.00438",
+      "datasets": [
+        "BDD-X",
+        "VQAv2",
+        "OK-VQA",
+        "GQA",
+        "TDIUC"
+      ],
+      "evidence": {
+        "BDD-X": "https://arxiv.org/html/2312.00438#A1.SS0.SSS0.Px2.p1.1",
+        "VQAv2": "https://arxiv.org/html/2312.00438#A1.SS0.SSS0.Px1.p1.1",
+        "OK-VQA": "https://arxiv.org/html/2312.00438#A1.SS0.SSS0.Px1.p1.1",
+        "GQA": "https://arxiv.org/html/2312.00438#A1.SS0.SSS0.Px1.p1.1",
+        "TDIUC": "https://arxiv.org/html/2312.00438#A1.SS0.SSS0.Px1.p1.1"
+      }
+    },
+    "2311-05332": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2311.05332",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2311.05332#S3.SS2.p1.1"
+      }
+    },
+    "2310-03026": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2310.03026",
+      "datasets": [],
+      "note": "The evaluation uses study-specific driving scenarios. No named dataset was confirmed."
+    },
+    "2310-01957": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2310.01957",
+      "datasets": [],
+      "note": "The authors generate a driving QA corpus in a custom simulator. A proper dataset name was not confirmed."
+    },
+    "2310-01415": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2310.01415",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2310.01415#S4.p1.1"
+      }
+    },
+    "2310-01412": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2310.01412",
+      "datasets": [
+        "BDD-X"
+      ],
+      "evidence": {
+        "BDD-X": "https://arxiv.org/html/2310.01412#S4.SS2"
+      }
+    },
+    "2309-16292": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2309.16292",
+      "datasets": [
+        "Highway-env"
+      ],
+      "evidence": {
+        "Highway-env": "https://arxiv.org/html/2309.16292#S4.SS3.p3.1"
+      }
+    },
+    "2309-10228": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2309.10228",
+      "datasets": [],
+      "note": "No named dataset or benchmark was verified in the experiments."
+    },
+    "2210-12511": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2210.12511",
+      "datasets": [
+        "Situated Dialogue Navigation (SDN)"
+      ],
+      "evidence": {
+        "Situated Dialogue Navigation (SDN)": "https://arxiv.org/html/2210.12511#S7"
+      }
+    },
+    "2611-24876": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2611.24876",
+      "datasets": [],
+      "note": "The self-play study uses generated goals and scenario rollouts. No named dataset was verified."
+    },
+    "2611-19969": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2611.19969",
+      "datasets": [],
+      "note": "The experiments use generated traffic scenarios and held-out scenario sets without a named dataset."
+    },
+    "2611-00596": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2611.00596",
+      "datasets": [],
+      "note": "The report describes internal recordings and an automated consistency evaluation; a named collection or benchmark was not confirmed."
+    },
+    "2609-21712": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2609.21712",
+      "datasets": [],
+      "note": "The report describes internal multi-view driving and qualitative evaluation; no named benchmark was verified."
+    },
+    "2609-20377": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.20377",
+      "datasets": [
+        "NAVSIM",
+        "HUGSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2609.20377#Sx4.SSx1.SSS0.Px1.p1.1",
+        "HUGSIM": "https://arxiv.org/html/2609.20377#Sx4.SSx1.SSS0.Px1.p1.1"
+      }
+    },
+    "2609-03602": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.03602",
+      "datasets": [
+        "NAVSIM v1/v2",
+        "nuScenes"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2609.03602#Sx4.SSx1.SSS0.Px1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2609.03602#Sx4.SSx1.SSS0.Px1.p1.1"
+      }
+    },
+    "2608-28404": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.28404",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2608.28404#S5.SS2.SSS0.Px3.p2.1"
+      }
+    },
+    "2608-22187": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.22187",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2608.22187#S4.SS2.p1.1"
+      }
+    },
+    "2608-20974": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.20974",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2608.20974#Sx3.SSx3.SSS0.Px3.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2608.20974#Sx4.SSx1.SSS0.Px1.p1.1"
+      }
+    },
+    "2608-20430": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.20430",
+      "datasets": [
+        "CounterDrive",
+        "NAVSIM",
+        "nuScenes"
+      ],
+      "evidence": {
+        "CounterDrive": "https://arxiv.org/html/2608.20430#S5.SS4.SSS2.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2608.20430#S5.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2608.20430#S5.SS1.p1.1"
+      }
+    },
+    "2608-19085": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.19085",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2608.19085#A3.p1.1"
+      }
+    },
+    "2608-10107": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.10107",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2608.10107#Sx4.SSx1.p1.1"
+      }
+    },
+    "2608-07468": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.07468",
+      "datasets": [
+        "NAVSIM",
+        "WOD-E2E",
+        "PhysicalAI-AV",
+        "nuScenes"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2608.07468#S5.SS1.SSS0.Px1.p1.1",
+        "WOD-E2E": "https://arxiv.org/html/2608.07468#S5.SS1.SSS0.Px1.p1.1",
+        "PhysicalAI-AV": "https://arxiv.org/html/2608.07468#S5.SS1.SSS0.Px1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2608.07468#S5.SS2.p4.1"
+      }
+    },
+    "2608-03084": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2608.03084",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2608.03084#Sx4.SSx1.SSS0.Px2.p1.1"
+      }
+    },
+    "2607-29031": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.29031",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2607.29031#Sx4.p1.1"
+      }
+    },
+    "2607-26056": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.26056",
+      "datasets": [
+        "LeWM",
+        "CLEAR-LeWM"
+      ],
+      "evidence": {
+        "LeWM": "https://arxiv.org/html/2607.26056#S4.SS0.SSS0.Px1.p1.1",
+        "CLEAR-LeWM": "https://arxiv.org/html/2607.26056#S4.SS0.SSS0.Px1.p1.1"
+      }
+    },
+    "2607-20988": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.20988",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2607.20988#S4.SS1.p1.1"
+      }
+    },
+    "2607-17521": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2607.17521",
+      "datasets": [
+        "NAVSIM",
+        "OpenScene",
+        "nuScenes",
+        "ParallelDomain",
+        "RealDriveSim"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2607.17521#S4.SS2.p3.1",
+        "OpenScene": "https://arxiv.org/html/2607.17521#S4.SS2.p3.1",
+        "nuScenes": "https://arxiv.org/html/2607.17521#S4.SS1.p1.1",
+        "ParallelDomain": "https://arxiv.org/html/2607.17521#S4.SS1.p1.1",
+        "RealDriveSim": "https://arxiv.org/html/2607.17521#S4.SS1.p1.1"
+      }
+    },
+    "2606-30421": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.30421",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2606.30421#S4.SS1.SSS1.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2606.30421#S4.SS1.SSS1.p1.1"
+      }
+    },
+    "2606-15869": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.15869",
+      "datasets": [
+        "NAVSIM v2",
+        "CityWalk"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2606.15869#S4.p2.1",
+        "CityWalk": "https://arxiv.org/html/2606.15869#S4.p2.1"
+      }
+    },
+    "2605-24892": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2605.24892",
+      "datasets": [],
+      "note": "The experiments use an in-house driving corpus without a named dataset."
+    },
+    "2605-18137": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.18137",
+      "datasets": [
+        "Waymo Open Dataset",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Waymo Open Dataset": "https://arxiv.org/html/2605.18137#S2.SS2.p3.1",
+        "nuScenes": "https://arxiv.org/html/2605.18137#S4.SS2"
+      }
+    },
+    "2605-17682": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.17682",
+      "datasets": [
+        "Occ3D-nuScenes"
+      ],
+      "evidence": {
+        "Occ3D-nuScenes": "https://arxiv.org/html/2605.17682#S3.SS2"
+      }
+    },
+    "2605-11596": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.11596",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2605.11596#A1.SS0.SSS0.Px4.p1.1"
+      }
+    },
+    "2605-11550": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.11550",
+      "datasets": [
+        "OpenScene",
+        "DrivingDojo",
+        "CoVLA",
+        "NAVSIM",
+        "nuScenes"
+      ],
+      "evidence": {
+        "OpenScene": "https://arxiv.org/html/2605.11550#S2.SS3.p1.1",
+        "DrivingDojo": "https://arxiv.org/html/2605.11550#S2.SS3.p1.1",
+        "CoVLA": "https://arxiv.org/html/2605.11550#S2.SS3.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2605.11550#S9.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2605.11550#S9.SS1.p1.1"
+      }
+    },
+    "2605-10564": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.10564",
+      "datasets": [
+        "Bench2Drive",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2605.10564#S4.SS1.p3.1",
+        "nuScenes": "https://arxiv.org/html/2605.10564#A5.p1.1"
+      }
+    },
+    "2605-10426": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.10426",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2605.10426#S4.SS1.SSS0.Px1.p1.1",
+        "NAVSIM v1/v2": "https://arxiv.org/html/2605.10426#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2605-09701": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2605.09701",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2605.09701#S4.SS1.p1.1"
+      }
+    },
+    "2604-20289": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2604.20289",
+      "datasets": [],
+      "note": "X-World is the evaluated model. The evaluation clips are described by scenario group, without an independently named dataset."
+    },
+    "2604-04198": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.04198",
+      "datasets": [
+        "NAVSIM v1",
+        "nuScenes",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM v1": "https://arxiv.org/html/2604.04198#S5.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2604.04198#S5.SS1.p2.1",
+        "Bench2Drive": "https://arxiv.org/html/2604.04198#S5.SS1.p3.1"
+      }
+    },
+    "2604-02714": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.02714",
+      "datasets": [
+        "NAVSIM",
+        "nuScenes"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2604.02714#S4.SS1.SSSx1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2604.02714#S4.SS1.SSSx1.p1.1"
+      }
+    },
+    "2604-01765": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2604.01765",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2604.01765#S4.SS1.p1.1"
+      }
+    },
+    "2603-27287": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.27287",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2603.27287#S4.SS1.p1.1"
+      }
+    },
+    "2603-24581": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.24581",
+      "datasets": [
+        "NAVSIM v2",
+        "HUGSIM"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2603.24581#S4.SS1.SSS2",
+        "HUGSIM": "https://arxiv.org/html/2603.24581#S4.SS1.SSS2"
+      }
+    },
+    "2603-19979": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2603.19979",
+      "datasets": [],
+      "note": "The report describes a curated internal driving video corpus and evaluation clips without a named dataset."
+    },
+    "2603-16666": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.16666",
+      "datasets": [
+        "LIBERO",
+        "RoboTwin 2.0"
+      ],
+      "evidence": {
+        "LIBERO": "https://arxiv.org/html/2603.16666#S4.SS2.p1.1",
+        "RoboTwin 2.0": "https://arxiv.org/html/2603.16666#S4.SS2.p1.1"
+      }
+    },
+    "2603-14948": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2603.14948",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM",
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2603.14948#S4.SS2.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2603.14948#S4.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2603.14948#S4.SS1.p1.1"
+      }
+    },
+    "2602-10884": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.10884",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2602.10884#S4.SS1.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2602.10884#S4.SS1.p2.1"
+      }
+    },
+    "2602-06521": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.06521",
+      "datasets": [
+        "NAVSIM",
+        "nuScenes"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2602.06521#S1.I1.i4.p1.1",
+        "nuScenes": "https://arxiv.org/html/2602.06521#S1.I1.i4.p1.1"
+      }
+    },
+    "2602-01536": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2602.01536",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2602.01536#S4.p1.1"
+      }
+    },
+    "2601-22032": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.22032",
+      "datasets": [
+        "NAVSIM v1/v2",
+        "Bench2Drive",
+        "CoVLA",
+        "DrivingDojo",
+        "OpenScene"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2601.22032#S4.SS1.p1.1",
+        "Bench2Drive": "https://arxiv.org/html/2601.22032#S4.SS1.p1.1",
+        "CoVLA": "https://arxiv.org/html/2601.22032#S3.SS2.SSS0.Px1.p1.1",
+        "DrivingDojo": "https://arxiv.org/html/2601.22032#S3.SS2.SSS0.Px1.p1.1",
+        "OpenScene": "https://arxiv.org/html/2601.22032#S3.SS2.SSS0.Px1.p1.1"
+      }
+    },
+    "2601-04453": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2601.04453",
+      "datasets": [
+        "Bench2Drive",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Bench2Drive": "https://arxiv.org/html/2601.04453#S4.SS2.p1.1",
+        "nuScenes": "https://arxiv.org/html/2601.04453#S4.SS2.p1.1"
+      }
+    },
+    "2512-23421": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.23421",
+      "datasets": [
+        "nuPlan",
+        "nuScenes",
+        "NAVSIM",
+        "OpenDV"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2512.23421#A2.SS2.p2.1",
+        "nuScenes": "https://arxiv.org/html/2512.23421#S4.SS1.SSS0.Px2.p2.1",
+        "NAVSIM": "https://arxiv.org/html/2512.23421#S4.SS1.SSS0.Px2.p2.1",
+        "OpenDV": "https://arxiv.org/html/2512.23421#A2.SS2.p2.1"
+      }
+    },
+    "2512-19133": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.19133",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2512.19133#Sx4.SSx4.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2512.19133#Sx4.SSx4.p1.1"
+      }
+    },
+    "2512-04441": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.04441",
+      "datasets": [
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "NAVSIM v1/v2": "https://arxiv.org/html/2512.04441#S4.SS3.p1.1"
+      }
+    },
+    "2511-23369": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2511.23369",
+      "datasets": [
+        "NAVSIM"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2511.23369#A2.SS2.p1.1"
+      }
+    },
+    "2510-12796": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2510.12796",
+      "datasets": [
+        "nuPlan",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuPlan": "https://arxiv.org/html/2510.12796#S4.SS2.p2.1",
+        "NAVSIM": "https://arxiv.org/html/2510.12796#S4.SS1.p1.1"
+      }
+    },
+    "2510-10726": {
+      "status": "verified",
+      "source": "https://arxiv.org/pdf/2510.10726",
+      "datasets": [
+        "iBims-1",
+        "NYUv2",
+        "ScanNet",
+        "DL3DV"
+      ],
+      "evidence": {
+        "iBims-1": "https://arxiv.org/pdf/2510.10726#page=7",
+        "NYUv2": "https://arxiv.org/pdf/2510.10726#page=7",
+        "ScanNet": "https://arxiv.org/pdf/2510.10726#page=7",
+        "DL3DV": "https://arxiv.org/pdf/2510.10726#page=15"
+      }
+    },
+    "2510-04333": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2510.04333",
+      "datasets": [
+        "OpenScene",
+        "NAVSIM v1/v2"
+      ],
+      "evidence": {
+        "OpenScene": "https://arxiv.org/html/2510.04333#S4.p1.1",
+        "NAVSIM v1/v2": "https://arxiv.org/html/2510.04333#S4.SS0.SSS0.Px3.p1.1"
+      }
+    },
+    "2510-06209": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2510.06209",
+      "datasets": [],
+      "note": "The training and co-evaluation use curated internal logged clips and generated video samples. A named dataset was not confirmed."
+    },
+    "2508-06571": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2508.06571",
+      "datasets": [
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "NAVSIM v2": "https://arxiv.org/html/2508.06571#abstract1.1"
+      }
+    },
+    "2507-00603": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2507.00603",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2507.00603#S4.SS1.p1.1"
+      }
+    },
+    "2504-01941": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2504.01941",
+      "datasets": [
+        "NAVSIM",
+        "Bench2Drive"
+      ],
+      "evidence": {
+        "NAVSIM": "https://arxiv.org/html/2504.01941#abstract1.1",
+        "Bench2Drive": "https://arxiv.org/html/2504.01941#abstract1.1"
+      }
+    },
+    "2503-14492": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2503.14492",
+      "datasets": [
+        "OpenDV",
+        "Ego-Exo4D"
+      ],
+      "evidence": {
+        "OpenDV": "https://arxiv.org/html/2503.14492#S5.p2.1",
+        "Ego-Exo4D": "https://arxiv.org/html/2503.14492#S5.p2.1"
+      }
+    },
+    "2501-14729": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2501.14729",
+      "datasets": [
+        "OmniDrive-nuScenes",
+        "nuScenes"
+      ],
+      "evidence": {
+        "OmniDrive-nuScenes": "https://arxiv.org/html/2501.14729#S1.SS1.p4.1",
+        "nuScenes": "https://arxiv.org/html/2501.14729#S1.SS1.p2.1"
+      }
+    },
+    "2501-03575": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2501.03575",
+      "datasets": [
+        "TokenBench",
+        "DAVIS",
+        "MS-COCO 2017",
+        "ImageNet-1K",
+        "RealEstate10K",
+        "DL3DV-10K"
+      ],
+      "evidence": {
+        "TokenBench": "https://arxiv.org/html/2501.03575#S4.SS3.p3.1",
+        "DAVIS": "https://arxiv.org/html/2501.03575#S4.SS3.p3.1",
+        "MS-COCO 2017": "https://arxiv.org/html/2501.03575#S4.SS3.p1.1",
+        "ImageNet-1K": "https://arxiv.org/html/2501.03575#S4.SS3.p1.1",
+        "RealEstate10K": "https://arxiv.org/html/2501.03575#S6.SS1.SSS3.p2.1",
+        "DL3DV-10K": "https://arxiv.org/html/2501.03575#S6.SS1.SSS1.p1.1"
+      }
+    },
+    "2412-10371": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2412.10371",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2412.10371#abstract1.1"
+      }
+    },
+    "2406-08481": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2406.08481",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2406.08481#S5.SS1.p1.1",
+        "NAVSIM": "https://arxiv.org/html/2406.08481#S5.SS1.p2.1"
+      }
+    },
+    "2405-17398": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2405.17398",
+      "datasets": [
+        "OpenDV-YouTube",
+        "nuScenes",
+        "Waymo Open Dataset",
+        "CODA"
+      ],
+      "evidence": {
+        "OpenDV-YouTube": "https://arxiv.org/html/2405.17398#A3.SS7.p1.1",
+        "nuScenes": "https://arxiv.org/html/2405.17398#A4.SS3.p1.1",
+        "Waymo Open Dataset": "https://arxiv.org/html/2405.17398#S4.SS2.p2.1",
+        "CODA": "https://arxiv.org/html/2405.17398#A5.SS5.p1.1"
+      }
+    },
+    "2403-09630": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2403.09630",
+      "datasets": [
+        "OpenDV-2K",
+        "nuScenes"
+      ],
+      "evidence": {
+        "OpenDV-2K": "https://arxiv.org/html/2403.09630#S2.p1.1",
+        "nuScenes": "https://arxiv.org/html/2403.09630#S4.SS2.p2.1"
+      }
+    },
+    "2312-02934": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2312.02934",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2312.02934#S4.SS1.p2.1"
+      }
+    },
+    "2311-17918": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2311.17918",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2311.17918#A1.SS6.SSS0.Px1.p1.1"
+      }
+    },
+    "2311-16038": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2311.16038",
+      "datasets": [
+        "Occ3D-nuScenes",
+        "nuScenes"
+      ],
+      "evidence": {
+        "Occ3D-nuScenes": "https://arxiv.org/html/2311.16038#S4.SS1.p1.1",
+        "nuScenes": "https://arxiv.org/html/2311.16038#S4.SS1.p1.1"
+      }
+    },
+    "2311-13549": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2311.13549",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2311.13549#S3.SS3.p2.1"
+      }
+    },
+    "2310-07771": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2310.07771",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2310.07771#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2309-17080": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2309.17080",
+      "datasets": [],
+      "note": "The training set is described as proprietary London driving footage without a named benchmark."
+    },
+    "2309-09777": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2309.09777",
+      "datasets": [
+        "nuScenes"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2309.09777#S6.p4.1"
+      }
+    },
+    "2210-07729": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2210.07729",
+      "datasets": [
+        "CARLA Town05"
+      ],
+      "evidence": {
+        "CARLA Town05": "https://arxiv.org/html/2210.07729#A1.SS3.p1.1"
+      }
+    },
+    "2105-00636": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2105.00636",
+      "datasets": [
+        "CARLA Leaderboard",
+        "NoCrash"
+      ],
+      "evidence": {
+        "CARLA Leaderboard": "https://arxiv.org/html/2105.00636#S5.SS0.SSS0.Px2.p1.1",
+        "NoCrash": "https://arxiv.org/html/2105.00636#S5.SS0.SSS0.Px2.p1.1"
+      }
+    },
+    "2104-15060": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2104.15060",
+      "datasets": [
+        "CARLA",
+        "Gibson"
+      ],
+      "evidence": {
+        "CARLA": "https://arxiv.org/html/2104.15060#S4.p2.1",
+        "Gibson": "https://arxiv.org/html/2104.15060#S4.SS3.p2.1"
+      }
+    },
+    "2610-17799": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2610.17799",
+      "datasets": [
+        "MetaDrive"
+      ],
+      "evidence": {
+        "MetaDrive": "https://arxiv.org/html/2610.17799#S4.SS1.p1.1"
+      }
+    },
+    "2610-08761": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2610.08761",
+      "datasets": [
+        "PhysicalAI-Autonomous-Vehicles"
+      ],
+      "evidence": {
+        "PhysicalAI-Autonomous-Vehicles": "https://arxiv.org/html/2610.08761#A1.SS1.SSS2.p6.1"
+      }
+    },
+    "2610-08640": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2610.08640",
+      "datasets": [
+        "UrbanNav"
+      ],
+      "evidence": {
+        "UrbanNav": "https://arxiv.org/html/2610.08640#S4.SS1.SSS0.Px1.p1.1"
+      }
+    },
+    "2609-20756": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2609.20756",
+      "datasets": [
+        "Waymo Open Motion Dataset",
+        "NVIDIA NuRec",
+        "AlpaSim"
+      ],
+      "evidence": {
+        "Waymo Open Motion Dataset": "https://arxiv.org/html/2609.20756#S4.SS2.SSS0.Px1.p1.1",
+        "NVIDIA NuRec": "https://arxiv.org/html/2609.20756#S4.SS1.SSS0.Px6.p1.1",
+        "AlpaSim": "https://arxiv.org/html/2609.20756#S4.SS1.SSS0.Px10.p1.1"
+      }
+    },
+    "self-improving-autonomous-vehicles-real-world-rl-2026": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://ijcai.org/proceedings/2026/493",
+      "datasets": [],
+      "note": "The experiments use custom real-vehicle urban tasks. No named dataset was verified."
+    },
+    "2606-03678": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2606.03678",
+      "datasets": [
+        "MetaDrive",
+        "CARLA"
+      ],
+      "evidence": {
+        "MetaDrive": "https://arxiv.org/html/2606.03678#A3.SS1.SSS0.Px1.p1.1",
+        "CARLA": "https://arxiv.org/html/2606.03678#S3.SS5.SSS0.Px1.p1.1"
+      }
+    },
+    "agentic-ai-driving-skillbank-2026": {
+      "status": "verified",
+      "source": "https://www.scitepress.org/Papers/2026/143581/143581.pdf",
+      "datasets": [
+        "Highway-env"
+      ],
+      "evidence": {
+        "Highway-env": "https://www.scitepress.org/Papers/2026/143581/143581.pdf#page=8"
+      }
+    },
+    "feng-breaking-2026": {
+      "status": "verified",
+      "source": "https://www.nature.com/articles/s41467-026-69761-x?error=cookies_not_supported&code=2fe1e58e-f62f-4487-9b78-eba011892cbc",
+      "datasets": [
+        "nuPlan"
+      ],
+      "evidence": {
+        "nuPlan": "https://www.nature.com/articles/s41467-026-69761-x?error=cookies_not_supported&code=2fe1e58e-f62f-4487-9b78-eba011892cbc#Sec4"
+      }
+    },
+    "uncertainty-safe-evolving-rl-2025": {
+      "status": "full-text-not-verified",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0952197625021165",
+      "datasets": [],
+      "note": "The publisher and DOI records were checked, but the inspected public material did not establish a named experimental dataset. The full experimental section could not be verified."
+    },
+    "2510-06038": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2510.06038",
+      "datasets": [
+        "MetaDrive Safety Benchmark"
+      ],
+      "evidence": {
+        "MetaDrive Safety Benchmark": "https://arxiv.org/html/2510.06038#S3.SS3.p1.1"
+      }
+    },
+    "2408-12187": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2408.12187",
+      "datasets": [],
+      "note": "The experiments use study-specific simulated traffic scenarios. No named dataset was verified."
+    },
+    "expert-agent-positive-feedback-2025": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://journals.sagepub.com/doi/full/10.3233/ATDE250441",
+      "datasets": [],
+      "note": "The publisher paper describes custom intersection and lane-changing scenarios in SMARTS; it does not identify a separately named dataset."
+    },
+    "2506-03568": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2506.03568",
+      "datasets": [
+        "MetaDrive Safety Benchmark"
+      ],
+      "evidence": {
+        "MetaDrive Safety Benchmark": "https://arxiv.org/html/2506.03568#S3.SS1.p1.1"
+      }
+    },
+    "2408-12805": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2408.12805",
+      "datasets": [],
+      "note": "The author preprint describes random traffic flow simulations and data collected from its driving agent without naming a dataset."
+    },
+    "human-feedback-self-evolving-driving-2024": {
+      "status": "no-reported-experimental-dataset",
+      "source": "https://link.springer.com/article/10.1007/s43684-024-00071-z?error=cookies_not_supported&code=7eaa53b7-b83d-45f3-8107-16b6e6259024",
+      "datasets": [],
+      "note": "Review or perspective. Dataset mentions describe reviewed work, not experiments performed by this paper."
+    },
+    "dcar-l-dynamic-confidence-2023": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://static-content.springer.com/esm/art%3A10.1038%2Fs42256-023-00610-y/MediaObjects/42256_2023_610_MOESM1_ESM.pdf",
+      "datasets": [],
+      "note": "The supplement describes collecting driving trajectories and constructing the experiment dataset, without a verified name for that dataset."
+    },
+    "2210-16575": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2210.16575",
+      "datasets": [
+        "Highway-env"
+      ],
+      "evidence": {
+        "Highway-env": "https://arxiv.org/html/2210.16575#S4.SS1.p1.1"
+      }
+    },
+    "trustworthy-safety-improvement-rl-2022": {
+      "status": "full-text-not-verified",
+      "source": "https://www.sciencedirect.com/science/article/pii/S0968090X22000997",
+      "datasets": [],
+      "note": "The publisher and DOI records were checked, but the inspected public material did not establish a named experimental dataset. The full experimental section could not be verified."
+    },
+    "2611-24051": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/pdf/2611.24051",
+      "datasets": [],
+      "note": "The study generates counterfactual scenes in CARLA. Bench2Drive and leaderboard figures describe the underlying planner in prior work."
+    },
+    "2610-40257": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2610.40257",
+      "datasets": [],
+      "note": "The authors run a custom SUMO truck simulation. SUMO is the simulator rather than the name of a dataset or standard evaluation benchmark used in the experiments."
+    },
+    "2610-33758": {
+      "status": "no-reported-experimental-dataset",
+      "source": "https://arxiv.org/html/2610.33758",
+      "datasets": [],
+      "note": "Review or perspective. Dataset mentions describe reviewed work, not experiments performed by this paper."
+    },
+    "2512-23585": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2512.23585",
+      "datasets": [
+        "Driving Anomaly Data (DAD)"
+      ],
+      "evidence": {
+        "Driving Anomaly Data (DAD)": "https://arxiv.org/html/2512.23585#S3.SS1.p1.1"
+      }
+    },
+    "2511-08439": {
+      "status": "no-reported-experimental-dataset",
+      "source": "https://arxiv.org/html/2511.08439",
+      "datasets": [],
+      "note": "Review or perspective. Dataset mentions describe reviewed work, not experiments performed by this paper."
+    },
+    "2509-19789": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2509.19789",
+      "datasets": [],
+      "note": "The paper reports proprietary training and evaluation sets without a dataset name."
+    },
+    "2508-01778": {
+      "status": "verified",
+      "source": "https://arxiv.org/html/2508.01778",
+      "datasets": [
+        "nuScenes",
+        "NAVSIM v2"
+      ],
+      "evidence": {
+        "nuScenes": "https://arxiv.org/html/2508.01778#S4.SS4.p1.1",
+        "NAVSIM v2": "https://arxiv.org/html/2508.01778#S4.SS4.p1.1"
+      }
+    },
+    "2508-06534": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2508.06534",
+      "datasets": [],
+      "note": "The paper evaluates its own CARLA-based sandbox and generated adversarial scenes. No named dataset was confirmed."
+    },
+    "2508-19882": {
+      "status": "no-reported-experimental-dataset",
+      "source": "https://arxiv.org/html/2508.19882",
+      "datasets": [],
+      "note": "Review or perspective. Dataset mentions describe reviewed work, not experiments performed by this paper."
+    },
+    "2506-02554": {
+      "status": "named-dataset-not-confirmed",
+      "source": "https://arxiv.org/html/2506.02554",
+      "datasets": [],
+      "note": "The authors describe a study-specific real-world sensor collection. No proper name for the dataset was confirmed."
+    }
+  }
+}

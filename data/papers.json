@@ -233,7 +233,11 @@
       "Test-Time Adaptation",
       "Distribution Shift"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2611.30739",
     "code": null,
     "project": null,
@@ -1509,7 +1513,9 @@
       "Token Representation",
       "Risk-Aware Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2609.21486",
     "openSource": false,
     "stars": null,
@@ -1767,7 +1773,9 @@
       "Risk-Aware Diffusion",
       "Candidate Ranking"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2609.01609",
     "openSource": false,
     "codeStatus": "not-found",
@@ -1796,7 +1804,9 @@
       "Geospatial Priors",
       "Anticipatory Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2606.31830",
     "openSource": true,
     "stars": 61,
@@ -1862,7 +1872,10 @@
       "Interactive Simulation",
       "Long-Tail Safety"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2606.19836",
     "openSource": true,
     "stars": 515,
@@ -1893,7 +1906,12 @@
       "Self-Play",
       "Closed-Loop Reinforcement Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM v2",
+      "HUGSIM",
+      "Gigapixel"
+    ],
     "paper": "https://arxiv.org/abs/2606.19641",
     "openSource": false,
     "stars": 52,
@@ -1925,7 +1943,10 @@
       "Long-Context Memory",
       "Planning-Aware Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "PhysicalAI-AV",
+      "NVIDIA NuRec"
+    ],
     "paper": "https://arxiv.org/abs/2606.07464",
     "openSource": false,
     "stars": null,
@@ -1955,7 +1976,9 @@
       "Cross-Entropy Search",
       "Trajectory Scoring"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2606.07170",
     "openSource": true,
     "stars": 27,
@@ -1987,7 +2010,10 @@
       "Perception-Free Planning",
       "Reconstruction Supervision"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2",
+      "WOD-E2E"
+    ],
     "paper": "https://arxiv.org/abs/2605.31116",
     "openSource": false,
     "stars": null,
@@ -2017,7 +2043,9 @@
       "Trajectory Scoring",
       "Multi-Metric Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.15120",
     "code": "https://github.com/WilliamXuanYu/CLOVER",
     "openSource": true,
@@ -2050,7 +2078,13 @@
       "Multi-Modal Datasets",
       "Data Standardization"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Waymo Open Perception Dataset",
+      "Argoverse 2 Sensor",
+      "nuPlan",
+      "CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2605.08084",
     "code": "https://github.com/kesai-labs/py123d",
     "openSource": true,
@@ -2080,7 +2114,9 @@
       "Discrete Diffusion",
       "Trajectory Editing"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2605.04647",
     "openSource": false,
     "stars": null,
@@ -2110,7 +2146,10 @@
       "Reinforcement Learning",
       "Closed-Loop Adaptation"
     ],
-    "datasets": [],
+    "datasets": [
+      "Senna-2 open-loop benchmark",
+      "Senna-2 3DGS simulation benchmark"
+    ],
     "paper": "https://arxiv.org/abs/2604.15308",
     "openSource": false,
     "stars": 276,
@@ -2142,7 +2181,10 @@
       "Data Scaling",
       "Evaluation Alignment"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "OpenScene"
+    ],
     "paper": "https://arxiv.org/abs/2604.08366",
     "openSource": false,
     "stars": null,
@@ -2172,7 +2214,10 @@
       "Sparse Proposals",
       "Multi-Modal Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2603.29163",
     "code": "https://github.com/swc-17/SparseDriveV2",
     "openSource": true,
@@ -2203,7 +2248,10 @@
       "Scene Flow",
       "Closed-Loop Evaluation"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2603.13399",
     "openSource": true,
     "stars": 18,
@@ -2234,7 +2282,9 @@
       "Reinforcement Learning",
       "Real-World Validation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2602.22801",
     "openSource": true,
     "stars": 181,
@@ -2266,7 +2316,9 @@
       "One-Step Planning",
       "Multi-Modal Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Longest6"
+    ],
     "paper": "https://arxiv.org/abs/2602.20060",
     "code": "https://github.com/wjl2244/MeanFuser",
     "openSource": true,
@@ -2297,7 +2349,11 @@
       "Motion Prediction",
       "Domain Generalization"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "nuPlan",
+      "Waymo Open Motion Dataset"
+    ],
     "paper": "https://arxiv.org/abs/2602.13936",
     "code": "https://github.com/ZY-Zong/Physics-guided-Causal-Model",
     "openSource": true,
@@ -2328,7 +2384,10 @@
       "Diffusion Planning",
       "Adaptive Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "Lt90"
+    ],
     "paper": "https://arxiv.org/abs/2601.12901",
     "openSource": false,
     "stars": null,
@@ -2358,7 +2417,9 @@
       "Vision Transformer Backbone",
       "Trajectory Scoring"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2601.05083",
     "openSource": true,
     "stars": 285,
@@ -2389,7 +2450,11 @@
       "Lateral-Longitudinal Planning",
       "Path-Conditioned Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "Fail2Drive",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2601.01762",
     "openSource": false,
     "stars": 11,
@@ -2457,7 +2522,14 @@
       "Privileged Learning",
       "Closed-Loop Evaluation"
     ],
-    "datasets": [],
+    "datasets": [
+      "LEAD",
+      "CARLA Longest6 v2",
+      "Bench2Drive",
+      "CARLA Town13",
+      "NAVSIM",
+      "WOD-E2E"
+    ],
     "paper": "https://arxiv.org/abs/2512.20563",
     "code": "https://github.com/kesai-labs/lead",
     "openSource": true,
@@ -2488,7 +2560,9 @@
       "Reinforcement Learning",
       "Diverse Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2512.07745",
     "code": "https://github.com/hustvl/DiffusionDriveV2",
     "openSource": true,
@@ -2519,7 +2593,9 @@
       "Geospatial Priors",
       "Robust Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes-Geography"
+    ],
     "paper": "https://arxiv.org/abs/2512.06865",
     "openSource": true,
     "stars": 3,
@@ -2551,7 +2627,9 @@
       "Intent-Kinematics Disentanglement",
       "Feature Alignment"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan"
+    ],
     "paper": "https://arxiv.org/abs/2512.00470",
     "openSource": false,
     "stars": 12,
@@ -2582,7 +2660,10 @@
       "Flow Matching",
       "Safety-Constrained Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "ADV-NuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2511.18729",
     "code": "https://github.com/liulin815/GuideFlow",
     "openSource": false,
@@ -2613,7 +2694,10 @@
       "Diffusion Planning",
       "Trajectory Refinement"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2511.17150",
     "openSource": false,
     "stars": null,
@@ -2643,7 +2727,10 @@
       "Cross-Embodiment Transfer",
       "Autonomous Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "RoboAfford"
+    ],
     "paper": "https://arxiv.org/abs/2511.16518",
     "code": "https://github.com/XiaomiMiMo/MiMo-Embodied",
     "openSource": true,
@@ -2675,7 +2762,10 @@
       "Multi-Agent Planning",
       "V2X"
     ],
-    "datasets": [],
+    "datasets": [
+      "DAIR-V2X",
+      "V2X-Sim"
+    ],
     "paper": "https://arxiv.org/abs/2511.09013",
     "openSource": true,
     "stars": 25,
@@ -2706,7 +2796,9 @@
       "Multi-View Fusion",
       "Efficient Transformers"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2511.01768",
     "code": "https://github.com/happinesslz/UniLION",
     "openSource": true,
@@ -2806,7 +2898,10 @@
       "Zero-Shot Planning",
       "Policy Optimization"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "HUGSIM"
+    ],
     "paper": "https://arxiv.org/abs/2510.24108",
     "code": "https://github.com/woxihuanjiangguo/ZTRS",
     "openSource": true,
@@ -2941,7 +3036,10 @@
       "Iterative Planning",
       "Closed-Loop Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2508.09158",
     "openSource": false,
     "stars": null,
@@ -2970,7 +3068,10 @@
       "Knowledge Distillation",
       "Planning-Centric Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2508.05402",
     "code": "https://github.com/YuruiAI/DistillDrive",
     "openSource": true,
@@ -3072,7 +3173,9 @@
       "Driving Skills",
       "Adaptive Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2507.14456",
     "code": "https://github.com/newbrains1/GEMINUS",
     "openSource": true,
@@ -3179,7 +3282,9 @@
       "Motion Prediction",
       "Multi-Modal Forecasting"
     ],
-    "datasets": [],
+    "datasets": [
+      "Waymo Open Motion Dataset"
+    ],
     "paper": "https://arxiv.org/abs/2506.08541",
     "openSource": true,
     "stars": 83,
@@ -3211,7 +3316,9 @@
       "Fast-Slow Planning",
       "Inference Efficiency"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2506.07725",
     "code": "https://github.com/opendrivelab/ETA",
     "openSource": true,
@@ -3241,7 +3348,9 @@
       "Trajectory Scoring",
       "Multi-Modal Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2506.06664",
     "code": "https://github.com/NVlabs/GTRS",
     "openSource": true,
@@ -3272,7 +3381,10 @@
       "Safety Scoring",
       "Imitation Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2506.06659",
     "openSource": true,
     "stars": 38,
@@ -3303,7 +3415,10 @@
       "Pseudo-Simulation",
       "Open-Loop Metrics"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2",
+      "nuPlan"
+    ],
     "paper": "https://arxiv.org/abs/2506.04218",
     "code": "https://github.com/autonomousvision/navsim",
     "openSource": true,
@@ -3334,7 +3449,10 @@
       "Gaussian Representation",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2506.00034",
     "code": "https://github.com/Say2L/GaussianFusion",
     "openSource": true,
@@ -3365,7 +3483,10 @@
       "Iterative Refinement",
       "Sparse Representation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2505.15111",
     "code": "https://github.com/Kguo-cs/iPad",
     "openSource": true,
@@ -3396,7 +3517,9 @@
       "Multi-Modal Trajectories",
       "Trajectory Diversity"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2505.09315",
     "openSource": false,
     "stars": null,
@@ -3426,7 +3549,11 @@
       "Historical Prediction",
       "Trajectory Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NeuroNCAP",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2503.14182",
     "openSource": true,
     "stars": 111,
@@ -3457,7 +3584,9 @@
       "Expert-Guided Planning",
       "Multi-Head Policy"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2503.12820",
     "openSource": false,
     "stars": null,
@@ -3487,7 +3616,9 @@
       "Personalized Driving Styles",
       "Trajectory Generation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2503.10434",
     "openSource": false,
     "stars": null,
@@ -3516,7 +3647,10 @@
       "Hierarchical Planning",
       "Multi-Granularity Queries"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2503.08612",
     "openSource": true,
     "stars": 140,
@@ -3546,7 +3680,11 @@
       "Unified Perception-Prediction-Planning",
       "Transformer Architecture"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "nuScenes",
+      "Dev10"
+    ],
     "paper": "https://arxiv.org/abs/2503.07656",
     "openSource": true,
     "stars": 243,
@@ -3577,7 +3715,10 @@
       "Goal-Conditioned Planning",
       "Multi-Modal Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenScene",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2503.05689",
     "code": "https://github.com/YvanYin/GoalFlow",
     "openSource": true,
@@ -3608,7 +3749,11 @@
       "Occlusion Robustness",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Turning-nuScenes",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2503.03125",
     "code": "https://github.com/adept-thu/MomAD",
     "openSource": true,
@@ -3639,7 +3784,11 @@
       "Real-Time Planning",
       "Multi-Modal Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "nuScenes",
+      "CARLA Longest6"
+    ],
     "paper": "https://arxiv.org/abs/2411.15139",
     "code": "https://github.com/hustvl/DiffusionDrive",
     "openSource": true,
@@ -3670,7 +3819,11 @@
       "Non-Reactive Simulation",
       "Data-Driven Evaluation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "OpenScene",
+      "nuPlan"
+    ],
     "paper": "https://arxiv.org/abs/2406.15349",
     "code": "https://github.com/autonomousvision/navsim",
     "openSource": true,
@@ -3701,7 +3854,9 @@
       "Multi-Teacher Learning",
       "Trajectory Selection"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2406.06978",
     "openSource": false,
     "stars": 417,
@@ -3733,7 +3888,9 @@
       "Multi-Task Learning",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2405.19620",
     "code": "https://github.com/swc-17/SparseDrive",
     "openSource": true,
@@ -3763,7 +3920,12 @@
       "Vectorized Scene Representation",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Town05",
+      "Bench2Drive",
+      "NAVSIM v1/v2",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2402.13243",
     "openSource": true,
     "stars": 1380,
@@ -3796,7 +3958,9 @@
       "BEV Representation",
       "Trajectory Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2312.03031",
     "code": "https://github.com/NVlabs/BEV-Planner",
     "openSource": true,
@@ -3826,7 +3990,10 @@
       "Vectorized Scene Representation",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "CARLA Town05"
+    ],
     "paper": "https://arxiv.org/abs/2303.12077",
     "code": "https://github.com/hustvl/VAD",
     "openSource": true,
@@ -3856,7 +4023,9 @@
       "Unified Autonomous Driving",
       "Planning-Oriented Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2212.10156",
     "openSource": true,
     "stars": 4775,
@@ -3888,7 +4057,10 @@
       "End-to-End Planning",
       "Closed-Loop Evaluation"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2207.07601",
     "code": "https://github.com/OpenDriveLab/ST-P3",
     "openSource": true,
@@ -3920,7 +4092,10 @@
       "Imitation Learning",
       "End-to-End Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Leaderboard",
+      "CARLA Longest6"
+    ],
     "paper": "https://arxiv.org/abs/2205.15997",
     "openSource": true,
     "stars": 1607,
@@ -3951,7 +4126,9 @@
       "Bird’s-Eye View",
       "Imitation Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Leaderboard"
+    ],
     "paper": "https://arxiv.org/abs/2109.04456",
     "code": "https://github.com/autonomousvision/neat",
     "openSource": true,
@@ -3981,7 +4158,10 @@
       "Reinforcement Learning",
       "CARLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "NoCrash",
+      "CARLA Leaderboard"
+    ],
     "paper": "https://arxiv.org/abs/2108.08265",
     "code": "https://github.com/zhejz/carla-roach",
     "openSource": true,
@@ -4011,7 +4191,10 @@
       "Optical Flow Distillation",
       "Interpretability"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2104.12861",
     "project": "https://sites.google.com/view/ivmp",
     "openSource": false,
@@ -4041,7 +4224,10 @@
       "Sensor Fusion",
       "Imitation Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Town05 Short",
+      "CARLA Town05 Long"
+    ],
     "paper": "https://arxiv.org/abs/2104.09224",
     "code": "https://github.com/autonomousvision/transfuser",
     "openSource": true,
@@ -4071,7 +4257,9 @@
       "Online Mapping",
       "Neural Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "UrbanExpert"
+    ],
     "paper": "https://arxiv.org/abs/2101.06806",
     "openSource": false,
     "stars": null,
@@ -4129,7 +4317,9 @@
       "Imitation Learning",
       "Policy Generalization"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA NoCrash"
+    ],
     "paper": "https://openaccess.thecvf.com/content_CVPR_2020/html/Prakash_Exploring_Data_Aggregation_in_Policy_Learning_for_Vision-Based_Urban_Autonomous_CVPR_2020_paper.html",
     "code": "https://github.com/autonomousvision/data_aggregation",
     "openSource": true,
@@ -4159,7 +4349,10 @@
       "Implicit Affordances",
       "Urban Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA",
+      "NoCrash"
+    ],
     "paper": "https://arxiv.org/abs/1911.10868",
     "openSource": true,
     "stars": 61,
@@ -5861,7 +6054,10 @@
       "3D Perception",
       "Joint Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "WOD-E2E"
+    ],
     "paper": "https://arxiv.org/abs/2609.00111",
     "code": "https://github.com/QwenLM/Qwen-Drive-1.0",
     "openSource": true,
@@ -5892,7 +6088,10 @@
       "Waypoint Evaluation",
       "Safety and Comfort"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://openaccess.thecvf.com/content/CVPR2026/html/Bassole_HybridDriveVLA_Vision-Language-Action_Model_with_Visual_CoT_reasoning_and_ToT_Evaluation_CVPR_2026_paper.html",
     "openSource": false,
     "stars": null,
@@ -5920,7 +6119,11 @@
       "Traffic Element Conditioning",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "nuScenes",
+      "NAVSIM v1"
+    ],
     "paper": "https://arxiv.org/abs/2608.18035",
     "openSource": true,
     "stars": 10,
@@ -5951,7 +6154,9 @@
       "Predictive Dynamics",
       "Joint Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2608.12854",
     "openSource": false,
     "stars": null,
@@ -5981,7 +6186,10 @@
       "Retrieval Augmentation",
       "Distribution Shift"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "SimScale"
+    ],
     "paper": "https://arxiv.org/abs/2608.10413",
     "code": "https://github.com/ZebinX/DriveVLA-M0",
     "openSource": true,
@@ -6012,7 +6220,11 @@
       "Reasoning Optimization",
       "Trajectory Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes-PCF",
+      "NAVSIM-PCF",
+      "PCF-CoT"
+    ],
     "paper": "https://arxiv.org/abs/2608.09591",
     "openSource": false,
     "stars": null,
@@ -6041,7 +6253,10 @@
       "Reinforcement Learning with Verifiable Rewards",
       "Reasoning Supervision"
     ],
-    "datasets": [],
+    "datasets": [
+      "AD-MCQ-500",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2608.01755",
     "openSource": true,
     "stars": 40,
@@ -6103,7 +6318,9 @@
       "VLM Planning",
       "Robustness"
     ],
-    "datasets": [],
+    "datasets": [
+      "ROADWork"
+    ],
     "paper": "https://arxiv.org/abs/2607.14727",
     "openSource": false,
     "stars": null,
@@ -6165,7 +6382,9 @@
       "Data Scaling",
       "Real-World Deployment"
     ],
-    "datasets": [],
+    "datasets": [
+      "GM-100"
+    ],
     "paper": "https://arxiv.org/abs/2607.06403",
     "code": "https://github.com/robbyant/lingbot-vla-v2",
     "openSource": true,
@@ -6196,7 +6415,9 @@
       "Navigation-Conditioned Planning",
       "Continuous Actions"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2607.03182",
     "openSource": false,
     "stars": null,
@@ -6225,7 +6446,9 @@
       "Spatial Grounding",
       "Action-Grounded Supervision"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2607.01658",
     "code": "https://github.com/ShivaTeam/DriveTeach-VLA",
     "openSource": true,
@@ -6255,7 +6478,9 @@
       "Cross-Domain Robotics",
       "World-Value Modeling"
     ],
-    "datasets": [],
+    "datasets": [
+      "Suboptimal-Value-Bench"
+    ],
     "paper": "https://arxiv.org/abs/2606.24742",
     "openSource": false,
     "stars": null,
@@ -6319,7 +6544,15 @@
       "Trajectory Selection",
       "Data Scaling"
     ],
-    "datasets": [],
+    "datasets": [
+      "DriveReward",
+      "DriveReward-Bench",
+      "nuPlan",
+      "Bench2Drive",
+      "Senna",
+      "OmniDrive",
+      "DriveGPT4"
+    ],
     "paper": "https://arxiv.org/abs/2606.08525",
     "openSource": false,
     "stars": null,
@@ -6380,7 +6613,9 @@
       "Trajectory Generation",
       "Global Consistency"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2605.23270",
     "code": "https://github.com/AFARI-Research/ChainFlow-VLA",
     "openSource": true,
@@ -6411,7 +6646,13 @@
       "Future-State Grounding",
       "Trajectory Recovery"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM",
+      "nuScenes-QA",
+      "nu-Caption",
+      "nu-X"
+    ],
     "paper": "https://arxiv.org/abs/2605.21061",
     "openSource": false,
     "stars": null,
@@ -6441,7 +6682,9 @@
       "Interactive Reinforcement Learning",
       "Policy Fine-Tuning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2605.04470",
     "openSource": true,
     "stars": 26,
@@ -6580,7 +6823,10 @@
       "Structured Actions",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2604.17915",
     "code": "https://github.com/Z1zyw/OneDrive",
     "openSource": true,
@@ -6613,7 +6859,17 @@
       "3D Grounding",
       "VLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Bench2Drive",
+      "DriveBench",
+      "MMStar",
+      "MMMU",
+      "RealWorldQA",
+      "AI2D",
+      "MME",
+      "ChartQA"
+    ],
     "paper": "https://arxiv.org/abs/2604.02190",
     "code": "https://github.com/xiaomi-research/unidrivevla",
     "openSource": true,
@@ -6644,7 +6900,14 @@
       "3D Geometry",
       "Action Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "OpenScene",
+      "Waymo Open Dataset",
+      "KITTI",
+      "DDAD",
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2604.00813",
     "code": "https://github.com/wzzheng/DVGT",
     "openSource": true,
@@ -6675,7 +6938,11 @@
       "Reinforcement Fine-Tuning",
       "Unified Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM",
+      "P3-CoT"
+    ],
     "paper": "https://arxiv.org/abs/2603.28116",
     "code": "https://github.com/haha-yuki-haha/AutoDrive-P3_with_Run-then-walk",
     "openSource": true,
@@ -6707,7 +6974,9 @@
       "Post-Training",
       "Distribution Shift"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2603.14972",
     "openSource": false,
     "stars": null,
@@ -6737,7 +7006,14 @@
       "Mixture-of-Transformers",
       "Efficient Inference"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuSync",
+      "nuScenes",
+      "CARLA-Garage",
+      "OmniDrive",
+      "ScienceQA",
+      "FigureQA"
+    ],
     "paper": "https://arxiv.org/abs/2603.14851",
     "openSource": true,
     "stars": 65,
@@ -6769,7 +7045,10 @@
       "Dynamics Tokens",
       "Action Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2603.11041",
     "openSource": true,
     "stars": 61,
@@ -6800,7 +7079,10 @@
       "Knowledge Distillation",
       "Perception-Planning Alignment"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2603.09465",
     "code": "https://github.com/hey-cjj/EvoDriveVLA",
     "openSource": true,
@@ -6874,7 +7156,10 @@
       "Reinforcement Learning",
       "Policy Improvement"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2603.06049",
     "code": "https://github.com/Mashiroln/curious_vla",
     "openSource": true,
@@ -6904,7 +7189,10 @@
       "Latent Reasoning",
       "Spatio-Temporal Grounding"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "SURDS"
+    ],
     "paper": "https://arxiv.org/abs/2603.01928",
     "openSource": false,
     "stars": 43,
@@ -6935,7 +7223,10 @@
       "Language-Action Alignment",
       "Parallel Action Generation"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "Action Dreaming"
+    ],
     "paper": "https://arxiv.org/abs/2603.01441",
     "openSource": false,
     "stars": null,
@@ -6965,7 +7256,9 @@
       "Reinforcement Learning",
       "Long-Tail Exploration"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2603.01063",
     "openSource": false,
     "stars": 5,
@@ -6997,7 +7290,10 @@
       "Reasoning-Free VLA",
       "Driving Policy"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "WOD-E2E"
+    ],
     "paper": "https://arxiv.org/abs/2602.21172",
     "openSource": true,
     "stars": 13,
@@ -7028,7 +7324,13 @@
       "3D Grounding",
       "VLM"
     ],
-    "datasets": [],
+    "datasets": [
+      "NuInstruct",
+      "DriveLM",
+      "OmniDrive",
+      "nuScenes-Plan",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2602.20794",
     "openSource": true,
     "stars": 104,
@@ -7059,7 +7361,9 @@
       "Spatio-Temporal Reasoning",
       "3D Grounding"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2602.13329",
     "openSource": false,
     "stars": null,
@@ -7089,7 +7393,9 @@
       "Vision-Only Backbones",
       "Representation Complementarity"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2602.10719",
     "openSource": false,
     "stars": null,
@@ -7119,7 +7425,11 @@
       "4D Scene Understanding",
       "Unified Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "OmniDrive-nuScenes",
+      "nuScenes-QA"
+    ],
     "paper": "https://arxiv.org/abs/2601.06474",
     "openSource": true,
     "stars": 87,
@@ -7150,7 +7460,9 @@
       "Hierarchical Planning",
       "3D Grounding"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2601.05640",
     "openSource": true,
     "stars": 76,
@@ -7181,7 +7493,9 @@
       "VLM Transfer",
       "Trajectory Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2601.05611",
     "openSource": false,
     "stars": null,
@@ -7315,7 +7629,10 @@
       "Hierarchical Planning",
       "Parallel Trajectories"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NeuroNCAP"
+    ],
     "paper": "https://arxiv.org/abs/2512.22939",
     "openSource": true,
     "stars": 67,
@@ -7347,7 +7664,10 @@
       "3D Reasoning",
       "VLM Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2512.10719",
     "openSource": true,
     "stars": 95,
@@ -7378,7 +7698,11 @@
       "Parallel Planning",
       "Structured Actions"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM v1",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2512.06112",
     "code": "https://github.com/fudan-generative-vision/WAM-Flow",
     "openSource": true,
@@ -7411,7 +7735,10 @@
       "Reinforcement Learning",
       "Driving Policy"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "LingoQA"
+    ],
     "paper": "https://arxiv.org/abs/2512.01830",
     "openSource": true,
     "stars": 43,
@@ -7513,7 +7840,10 @@
       "Trajectory Planning",
       "Long-Tail Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "PhysicalAI-AV",
+      "AlpaSim public scenario set"
+    ],
     "paper": "https://arxiv.org/abs/2511.00088",
     "code": "https://github.com/NVlabs/alpamayo",
     "openSource": true,
@@ -7547,7 +7877,10 @@
       "Video Generation",
       "Flow-Based Modeling"
     ],
-    "datasets": [],
+    "datasets": [
+      "PAI-Bench",
+      "RDS-HQ"
+    ],
     "paper": "https://arxiv.org/abs/2511.00062",
     "code": "https://github.com/nvidia-cosmos/cosmos-predict2.5",
     "openSource": true,
@@ -7614,7 +7947,9 @@
       "Reflective Reasoning",
       "Trajectory Generation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2509.20109",
     "openSource": false,
     "stars": 35,
@@ -7646,7 +7981,11 @@
       "3D Spatial Understanding",
       "VLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "OmniDrive",
+      "nuScenes-QA"
+    ],
     "paper": "https://arxiv.org/abs/2509.05578",
     "openSource": false,
     "stars": null,
@@ -8074,7 +8413,9 @@
       "Efficient Inference",
       "VLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2507.23318",
     "openSource": false,
     "stars": null,
@@ -8173,7 +8514,12 @@
       "Autoregressive VLA",
       "Reinforcement Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "nuScenes",
+      "Bench2Drive",
+      "WOD-E2E"
+    ],
     "paper": "https://arxiv.org/abs/2506.13757",
     "openSource": true,
     "stars": 661,
@@ -8205,7 +8551,13 @@
       "Action Tokenization",
       "Reinforcement Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive",
+      "DriveLM",
+      "DriveBench",
+      "LingoQA"
+    ],
     "paper": "https://arxiv.org/abs/2506.08052",
     "code": "https://github.com/xiaomi-research/recogdrive",
     "openSource": true,
@@ -8302,7 +8654,9 @@
       "Scenario Specialization",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2505.16278",
     "openSource": true,
     "stars": 236,
@@ -8334,7 +8688,9 @@
       "Open-Loop Benchmarking",
       "Inference Cost"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2505.00284",
     "code": "https://github.com/michigan-traffic-lab/LightEMMA",
     "openSource": true,
@@ -8365,7 +8721,14 @@
       "Language-Conditioned Driving",
       "VLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "TOD3Cap",
+      "nuCaption",
+      "nuScenesQA",
+      "nuX",
+      "GPT-Driver"
+    ],
     "paper": "https://arxiv.org/abs/2503.23463",
     "openSource": true,
     "stars": 820,
@@ -8461,7 +8824,9 @@
       "Reinforcement Learning",
       "Long-Tail Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "MetaAD"
+    ],
     "paper": "https://arxiv.org/abs/2503.07608",
     "code": "https://github.com/hustvl/AlphaDrive",
     "openSource": true,
@@ -8492,7 +8857,11 @@
       "Trajectory Generation",
       "Joint Driving Tasks"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "Waymo Open Motion Dataset",
+      "Waymo Open Dataset"
+    ],
     "paper": "https://arxiv.org/abs/2410.23262",
     "project": "https://waymo.com/research/emma/",
     "openSource": false,
@@ -8522,7 +8891,10 @@
       "Social Reasoning",
       "Driving Agents"
     ],
-    "datasets": [],
+    "datasets": [
+      "SDN",
+      "BDD-X"
+    ],
     "paper": "https://arxiv.org/abs/2406.03008",
     "code": "https://github.com/sled-group/driVLMe",
     "openSource": true,
@@ -8552,7 +8924,9 @@
       "Hierarchical Planning",
       "Hybrid Driving System"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2402.12289",
     "project": "https://tsinghua-mars-lab.github.io/DriveVLM/",
     "openSource": false,
@@ -8583,7 +8957,9 @@
       "Long-Tail Reasoning",
       "Motion Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2401.05577",
     "openSource": false,
     "stars": null,
@@ -8612,7 +8988,10 @@
       "Driving Reasoning",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "DriveLM-nuScenes",
+      "DriveLM-CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2312.14150",
     "code": "https://github.com/OpenDriveLab/DriveLM",
     "project": "https://opendrivelab.com/DriveLM/",
@@ -8643,7 +9022,9 @@
       "Behavior Planning",
       "Closed-Loop Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Town05Long"
+    ],
     "paper": "https://arxiv.org/abs/2312.09245",
     "code": "https://github.com/OpenGVLab/DriveMLM",
     "openSource": false,
@@ -8674,7 +9055,9 @@
       "Closed-Loop Control",
       "Instruction Following"
     ],
-    "datasets": [],
+    "datasets": [
+      "LangAuto"
+    ],
     "paper": "https://arxiv.org/abs/2312.07488",
     "code": "https://github.com/opendilab/LMDrive",
     "openSource": true,
@@ -8704,7 +9087,13 @@
       "Driving Instruction Tuning",
       "In-Context Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "BDD-X",
+      "VQAv2",
+      "OK-VQA",
+      "GQA",
+      "TDIUC"
+    ],
     "paper": "https://arxiv.org/abs/2312.00438",
     "code": "https://github.com/SaFo-Lab/Dolphins",
     "project": "https://vlm-driver.github.io/",
@@ -8737,7 +9126,9 @@
       "Driving Reasoning",
       "Open-World Scenarios"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2311.05332",
     "code": null,
     "openSource": false,
@@ -8828,7 +9219,9 @@
       "Trajectory Planning",
       "Numerical Reasoning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2310.01415",
     "code": "https://github.com/PointsCoder/GPT-Driver",
     "project": "https://pointscoder.github.io/projects/gpt_driver/index.html",
@@ -8859,7 +9252,9 @@
       "End-to-End Control",
       "Driving Explanations"
     ],
-    "datasets": [],
+    "datasets": [
+      "BDD-X"
+    ],
     "paper": "https://arxiv.org/abs/2310.01412",
     "project": "https://tonyxuqaq.github.io/projects/DriveGPT4/",
     "openSource": true,
@@ -8889,7 +9284,9 @@
       "Knowledge and Memory",
       "Self-Evolving Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "Highway-env"
+    ],
     "paper": "https://arxiv.org/abs/2309.16292",
     "code": "https://github.com/PJLab-ADG/DiLu",
     "project": "https://pjlab-adg.github.io/DiLu/",
@@ -8949,7 +9346,9 @@
       "Interactive Driving",
       "Human-Agent Collaboration"
     ],
-    "datasets": [],
+    "datasets": [
+      "Situated Dialogue Navigation (SDN)"
+    ],
     "paper": "https://arxiv.org/abs/2210.12511",
     "code": "https://github.com/sled-group/DOROTHIE",
     "project": "https://sled.eecs.umich.edu/publication/ma-2022-emnlp-dorothie/",
@@ -10970,7 +11369,10 @@
       "Multimodal Future Prediction",
       "World Modeling"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "HUGSIM"
+    ],
     "paper": "https://arxiv.org/abs/2609.20377",
     "openSource": false,
     "stars": null,
@@ -10999,7 +11401,10 @@
       "World-Action Model",
       "Semantic Video Representation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2609.03602",
     "openSource": false,
     "stars": null,
@@ -11029,7 +11434,9 @@
       "Driving Data Scaling",
       "World Generation"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2608.28404",
     "code": "https://github.com/valeoai/VATIX",
     "openSource": true,
@@ -11060,7 +11467,9 @@
       "Driving Simulation",
       "World Model"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2608.22187",
     "openSource": false,
     "stars": null,
@@ -11090,7 +11499,10 @@
       "World-Action Modeling",
       "Self-Supervised Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2608.20974",
     "code": "https://github.com/AFARI-Research/WA-JEPA",
     "openSource": true,
@@ -11120,7 +11532,11 @@
       "World-Action Modeling",
       "Action-Conditioned Prediction"
     ],
-    "datasets": [],
+    "datasets": [
+      "CounterDrive",
+      "NAVSIM",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2608.20430",
     "openSource": false,
     "stars": null,
@@ -11149,7 +11565,9 @@
       "World-Action Modeling",
       "Latent Dynamics"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2608.19085",
     "openSource": false,
     "stars": null,
@@ -11178,7 +11596,9 @@
       "World-Action Modeling",
       "4D Scene Representation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2608.10107",
     "openSource": false,
     "stars": null,
@@ -11208,7 +11628,12 @@
       "Training-Time Prediction",
       "End-to-End Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "WOD-E2E",
+      "PhysicalAI-AV",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2608.07468",
     "code": "https://github.com/H-EmbodVis/SimWAM",
     "openSource": true,
@@ -11239,7 +11664,9 @@
       "Scene Understanding",
       "End-to-End Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2608.03084",
     "code": "https://github.com/ASH-2046/SUV",
     "openSource": true,
@@ -11272,7 +11699,9 @@
       "Latent Dynamics",
       "Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2607.29031",
     "openSource": false,
     "stars": 23,
@@ -11304,7 +11733,10 @@
       "JEPA",
       "Reward-Free Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "LeWM",
+      "CLEAR-LeWM"
+    ],
     "paper": "https://arxiv.org/abs/2607.26056",
     "openSource": true,
     "stars": 202,
@@ -11335,7 +11767,9 @@
       "Latent World Modeling",
       "Driving Policy"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2607.20988",
     "openSource": false,
     "stars": null,
@@ -11365,7 +11799,13 @@
       "3D Scene Modeling",
       "Future-Aware Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "OpenScene",
+      "nuScenes",
+      "ParallelDomain",
+      "RealDriveSim"
+    ],
     "paper": "https://arxiv.org/abs/2607.17521",
     "openSource": false,
     "stars": 7,
@@ -11397,7 +11837,10 @@
       "World Modeling",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2606.30421",
     "openSource": false,
     "stars": null,
@@ -11529,7 +11972,10 @@
       "Efficient Inference",
       "Decoupled Video and Action"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2",
+      "CityWalk"
+    ],
     "paper": "https://arxiv.org/abs/2606.15869",
     "openSource": false,
     "stars": 18,
@@ -11661,7 +12107,10 @@
       "World Generation",
       "Autonomous Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "Waymo Open Dataset",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.18137",
     "openSource": false,
     "stars": null,
@@ -11691,7 +12140,9 @@
       "3D Scene Dynamics",
       "Motion Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Occ3D-nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.17682",
     "openSource": false,
     "stars": null,
@@ -11759,7 +12210,9 @@
       "Long-Horizon Rollout",
       "Self-Correction"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.11596",
     "openSource": true,
     "stars": 60,
@@ -11789,7 +12242,13 @@
       "World-Action Co-Modeling",
       "Joint Prediction and Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenScene",
+      "DrivingDojo",
+      "CoVLA",
+      "NAVSIM",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.11550",
     "openSource": true,
     "stars": 69,
@@ -11820,7 +12279,10 @@
       "Long-Horizon World Modeling",
       "VLM Reasoning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2605.10564",
     "code": "https://github.com/hotdogcheesewhite/DeepSight",
     "openSource": true,
@@ -11851,7 +12313,10 @@
       "Planning-Oriented VLA",
       "3D Grounding"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2605.10426",
     "code": "https://github.com/AFARI-Research/CoWorld-VLA",
     "openSource": true,
@@ -11881,7 +12346,9 @@
       "Latent World Model",
       "Future-Conditioned Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2605.09701",
     "openSource": false,
     "stars": null,
@@ -11942,7 +12409,11 @@
       "Domain Generalization",
       "Robustness"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1",
+      "nuScenes",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2604.04198",
     "openSource": true,
     "stars": 63,
@@ -11973,7 +12444,10 @@
       "Reinforcement Learning",
       "World Modeling"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2604.02714",
     "openSource": true,
     "stars": 30,
@@ -12006,7 +12480,9 @@
       "Geometry-Grounded World Model",
       "Unified Generation and Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2604.01765",
     "openSource": true,
     "stars": 60,
@@ -12037,7 +12513,9 @@
       "Unified VLA and World Model",
       "Closed-Loop Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2603.27287",
     "openSource": true,
     "stars": 30,
@@ -12068,7 +12546,10 @@
       "Spatial Representation",
       "Temporal Dynamics"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2",
+      "HUGSIM"
+    ],
     "paper": "https://arxiv.org/abs/2603.24581",
     "openSource": false,
     "stars": null,
@@ -12128,7 +12609,10 @@
       "Training-Time Imagination",
       "Inference Efficiency"
     ],
-    "datasets": [],
+    "datasets": [
+      "LIBERO",
+      "RoboTwin 2.0"
+    ],
     "paper": "https://arxiv.org/abs/2603.16666",
     "openSource": true,
     "stars": 1554,
@@ -12160,7 +12644,11 @@
       "Scene Generation",
       "Motion Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2603.14948",
     "code": "https://github.com/TabGuigui/WorldDrive",
     "openSource": true,
@@ -12239,7 +12727,10 @@
       "Temporal Residual Dynamics",
       "World-Model Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2602.10884",
     "code": "https://github.com/mengtan00/ResWorld",
     "openSource": true,
@@ -12270,7 +12761,10 @@
       "Latent Dynamics",
       "Joint Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2602.06521",
     "code": "https://github.com/liulin815/DriveWorld-VLA",
     "openSource": true,
@@ -12300,7 +12794,9 @@
       "Unified Driving World Model",
       "Geometry and Dynamics"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2602.01536",
     "openSource": false,
     "stars": null,
@@ -12330,7 +12826,13 @@
       "Self-Supervised Video Learning",
       "Planning Representation"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2",
+      "Bench2Drive",
+      "CoVLA",
+      "DrivingDojo",
+      "OpenScene"
+    ],
     "paper": "https://arxiv.org/abs/2601.22032",
     "openSource": true,
     "stars": 196,
@@ -12361,7 +12863,10 @@
       "World Modeling",
       "End-to-End Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "Bench2Drive",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2601.04453",
     "openSource": false,
     "stars": 1,
@@ -12468,7 +12973,12 @@
       "Video Generation",
       "Joint Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "nuScenes",
+      "NAVSIM",
+      "OpenDV"
+    ],
     "paper": "https://arxiv.org/abs/2512.23421",
     "openSource": true,
     "stars": 157,
@@ -12501,7 +13011,10 @@
       "Latent World Model",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2512.19133",
     "openSource": false,
     "stars": 42,
@@ -12533,7 +13046,9 @@
       "World-Model Planning",
       "Multi-Modal Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2512.04441",
     "openSource": true,
     "stars": 275,
@@ -12673,7 +13188,9 @@
       "Synthetic Data Generation",
       "Policy Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2511.23369",
     "openSource": true,
     "stars": 331,
@@ -12705,7 +13222,10 @@
       "Data Scaling Laws",
       "Policy Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2510.12796",
     "openSource": true,
     "stars": 413,
@@ -12736,7 +13256,12 @@
       "Geometric Foundation Model",
       "World Representation"
     ],
-    "datasets": [],
+    "datasets": [
+      "iBims-1",
+      "NYUv2",
+      "ScanNet",
+      "DL3DV"
+    ],
     "paper": "https://arxiv.org/abs/2510.10726",
     "openSource": true,
     "stars": 1211,
@@ -12767,7 +13292,10 @@
       "Closed-Loop Recovery",
       "World Modeling"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenScene",
+      "NAVSIM v1/v2"
+    ],
     "paper": "https://arxiv.org/abs/2510.04333",
     "openSource": true,
     "stars": 165,
@@ -12974,7 +13502,9 @@
       "Policy Post-Training",
       "VLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2508.06571",
     "openSource": false,
     "stars": 81,
@@ -13149,7 +13679,9 @@
       "Self-Supervised World Model",
       "Annotation-Free Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2507.00603",
     "code": "https://github.com/ucaszyp/World4Drive",
     "openSource": true,
@@ -13303,7 +13835,10 @@
       "BEV World Model",
       "Closed-Loop Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "NAVSIM",
+      "Bench2Drive"
+    ],
     "paper": "https://arxiv.org/abs/2504.01941",
     "code": "https://github.com/liyingyanUCAS/WoTE",
     "openSource": true,
@@ -13334,7 +13869,10 @@
       "Multi-Modal Conditioning",
       "Simulation"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenDV",
+      "Ego-Exo4D"
+    ],
     "paper": "https://arxiv.org/abs/2503.14492",
     "code": "https://github.com/nvidia-cosmos/cosmos-transfer1",
     "openSource": true,
@@ -13365,7 +13903,10 @@
       "World Generation",
       "Unified World Model"
     ],
-    "datasets": [],
+    "datasets": [
+      "OmniDrive-nuScenes",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2501.14729",
     "code": "https://github.com/LMD0311/HERMES",
     "openSource": true,
@@ -13396,7 +13937,14 @@
       "Video Generation",
       "Physical AI"
     ],
-    "datasets": [],
+    "datasets": [
+      "TokenBench",
+      "DAVIS",
+      "MS-COCO 2017",
+      "ImageNet-1K",
+      "RealEstate10K",
+      "DL3DV-10K"
+    ],
     "paper": "https://arxiv.org/abs/2501.03575",
     "code": "https://github.com/nvidia-cosmos/cosmos-predict1",
     "openSource": true,
@@ -13427,7 +13975,9 @@
       "3D Scene Modeling",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2412.10371",
     "code": "https://github.com/wzzheng/GaussianAD",
     "openSource": true,
@@ -13527,7 +14077,10 @@
       "Self-Supervised Representation",
       "End-to-End Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM"
+    ],
     "paper": "https://arxiv.org/abs/2406.08481",
     "code": "https://github.com/BraveGroup/LAW",
     "openSource": true,
@@ -13558,7 +14111,12 @@
       "Controllable Generation",
       "Generalization"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenDV-YouTube",
+      "nuScenes",
+      "Waymo Open Dataset",
+      "CODA"
+    ],
     "paper": "https://arxiv.org/abs/2405.17398",
     "code": "https://github.com/OpenDriveLab/Vista",
     "openSource": true,
@@ -13590,7 +14148,10 @@
       "Large-Scale Pretraining",
       "Zero-Shot Generalization"
     ],
-    "datasets": [],
+    "datasets": [
+      "OpenDV-2K",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2403.09630",
     "project": "https://github.com/OpenDriveLab/DriveAGI",
     "openSource": true,
@@ -13623,7 +14184,9 @@
       "Multi-Camera Generation",
       "Diffusion Model"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2312.02934",
     "code": "https://github.com/fudan-zvg/WoVoGen",
     "openSource": true,
@@ -13653,7 +14216,9 @@
       "Counterfactual Planning",
       "World Model"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2311.17918",
     "code": "https://github.com/BraveGroup/Drive-WM",
     "project": "https://drive-wm.github.io/",
@@ -13685,7 +14250,10 @@
       "3D Scene Forecasting",
       "Planning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Occ3D-nuScenes",
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2311.16038",
     "code": "https://github.com/wzzheng/OccWorld",
     "openSource": true,
@@ -13716,7 +14284,9 @@
       "Autoregressive Prediction",
       "Driving Control"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2311.13549",
     "openSource": false,
     "stars": null,
@@ -13745,7 +14315,9 @@
       "Multi-View Video",
       "Layout Control"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2310.07771",
     "code": "https://github.com/shalfun/DrivingDiffusion",
     "openSource": false,
@@ -13805,7 +14377,9 @@
       "Real-World Driving",
       "Controllable Generation"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes"
+    ],
     "paper": "https://arxiv.org/abs/2309.09777",
     "code": "https://github.com/JeffWang987/DriveDreamer",
     "openSource": true,
@@ -13835,7 +14409,9 @@
       "Model-Based Imitation",
       "Urban Driving"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Town05"
+    ],
     "paper": "https://arxiv.org/abs/2210.07729",
     "code": "https://github.com/wayveai/mile",
     "openSource": true,
@@ -13865,7 +14441,10 @@
       "Model-Based Imitation",
       "CARLA"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA Leaderboard",
+      "NoCrash"
+    ],
     "paper": "https://arxiv.org/abs/2105.00636",
     "code": "https://github.com/dotchen/WorldOnRails",
     "project": "https://dotchen.github.io/world_on_rails/",
@@ -13896,7 +14475,10 @@
       "Action-Conditioned Generation",
       "Neural World Model"
     ],
-    "datasets": [],
+    "datasets": [
+      "CARLA",
+      "Gibson"
+    ],
     "paper": "https://arxiv.org/abs/2104.15060",
     "code": "https://github.com/nv-tlabs/DriveGAN_code",
     "openSource": true,
@@ -14229,7 +14811,9 @@
       "Flow policy",
       "CBF-MPC"
     ],
-    "datasets": [],
+    "datasets": [
+      "MetaDrive"
+    ],
     "paper": "https://arxiv.org/abs/2610.17799",
     "code": "https://github.com/lzqw/SOAR-Flow",
     "project": "https://lzqw.github.io/SOAR-Flow/",
@@ -14276,7 +14860,9 @@
       "Adaptive Curriculum",
       "Human-Calibrated Verification"
     ],
-    "datasets": [],
+    "datasets": [
+      "PhysicalAI-Autonomous-Vehicles"
+    ],
     "paper": "https://arxiv.org/abs/2610.08761",
     "code": "https://github.com/NVlabs/alpajudge",
     "project": "https://veri-fine.github.io/",
@@ -14309,7 +14895,9 @@
       "World-Policy Co-Adaptation",
       "Urban Navigation"
     ],
-    "datasets": [],
+    "datasets": [
+      "UrbanNav"
+    ],
     "paper": "https://arxiv.org/abs/2610.08640",
     "openSource": false,
     "codeStatus": "not-found",
@@ -14464,7 +15052,11 @@
       "Privileged Teacher",
       "Reinforcement Learning"
     ],
-    "datasets": [],
+    "datasets": [
+      "Waymo Open Motion Dataset",
+      "NVIDIA NuRec",
+      "AlpaSim"
+    ],
     "paper": "https://arxiv.org/abs/2609.20756",
     "code": null,
     "openSource": false,
@@ -14738,7 +15330,10 @@
       "Safety-Critical Scenario Generation",
       "Pareto Optimization"
     ],
-    "datasets": [],
+    "datasets": [
+      "MetaDrive",
+      "CARLA"
+    ],
     "paper": "https://arxiv.org/abs/2606.03678",
     "code": null,
     "openSource": false,
@@ -14862,7 +15457,9 @@
       "Reusable Driving Skills",
       "Continual Self-Improvement"
     ],
-    "datasets": [],
+    "datasets": [
+      "Highway-env"
+    ],
     "paper": "https://doi.org/10.5220/0014358100004052",
     "openSource": false,
     "stars": null,
@@ -14891,7 +15488,9 @@
       "Safety-Critical Learning",
       "Real-World Testing"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuPlan"
+    ],
     "paper": "https://www.nature.com/articles/s41467-026-69761-x",
     "code": "https://github.com/michigan-traffic-lab/Dense-Learning-for-AV-Training",
     "openSource": true,
@@ -14987,7 +15586,9 @@
       "Proxy value propagation",
       "Safe exploration"
     ],
-    "datasets": [],
+    "datasets": [
+      "MetaDrive Safety Benchmark"
+    ],
     "paper": "https://arxiv.org/abs/2510.06038",
     "code": "https://github.com/lzqw/H-DSAC",
     "project": null,
@@ -15079,7 +15680,9 @@
       "Safe exploration",
       "Self-improvement"
     ],
-    "datasets": [],
+    "datasets": [
+      "MetaDrive Safety Benchmark"
+    ],
     "paper": "https://arxiv.org/abs/2506.03568",
     "code": "https://github.com/lzqw/C-HAC",
     "project": null,
@@ -15234,7 +15837,9 @@
       "Failure-Driven Policy Updates",
       "Safety-Critical Scenarios"
     ],
-    "datasets": [],
+    "datasets": [
+      "Highway-env"
+    ],
     "paper": "https://arxiv.org/abs/2210.16575",
     "code": "https://github.com/data-and-decision-lab/self-improving-RL",
     "openSource": true,
@@ -15935,7 +16540,9 @@
       "Anomaly detection",
       "Data curation"
     ],
-    "datasets": [],
+    "datasets": [
+      "Driving Anomaly Data (DAD)"
+    ],
     "paper": "https://arxiv.org/abs/2512.23585",
     "code": null,
     "project": null,
@@ -16352,7 +16959,10 @@
       "BEV Semantics",
       "Sensor Fusion"
     ],
-    "datasets": [],
+    "datasets": [
+      "nuScenes",
+      "NAVSIM v2"
+    ],
     "paper": "https://arxiv.org/abs/2508.01778",
     "code": "https://github.com/SunZhigang7/DiffSemanticFusion_MaplessQCNet",
     "openSource": true,
