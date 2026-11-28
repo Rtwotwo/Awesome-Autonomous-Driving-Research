@@ -1321,6 +1321,254 @@
           "datasetVerification": "The report uses NAVSIM v1/v2 and evaluates transfer on nuScenes and Bench2Drive."
         }
       ]
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "searchWindow": {
+        "from": "2026-11-22",
+        "to": "2026-11-28"
+      },
+      "catalogBefore": 468,
+      "catalogAfter": 486,
+      "sources": [
+        {
+          "source": "Physical AI Heart",
+          "urls": [
+            "https://www.jintiankansha.com/column/KoaJGso2E0",
+            "https://www.jintiankansha.com/column/SRQSJLMVTf?type=recent"
+          ],
+          "finding": "Current public account index is readable and explicitly lists its AutoVLA-D article. The predecessor index confirms it stopped updating after migration. The current index supplied a relative publication label, with no individual article URL verified.",
+          "duplicates": [
+            {
+              "id": "2611-12382",
+              "name": "AutoVLA-D",
+              "articleTitle": "NeurIPS 2026 | AutoVLA-D asks what autonomous-driving VLA models should learn",
+              "articleDateLabel": "3 days ago on the checked index",
+              "sourceIndex": "https://www.jintiankansha.com/column/KoaJGso2E0",
+              "paper": "https://arxiv.org/abs/2611.12382"
+            }
+          ]
+        },
+        {
+          "source": "ADFeed (AI DevFeed)",
+          "urls": [
+            "https://www.jintiankansha.me/column/HW4Hx23mHq?page=1",
+            "https://www.jintiankansha.com/column/HW4Hx23mHq"
+          ],
+          "finding": "Public index pages loaded but neither displayed an attributable relevant article from the seven-day window. The index may lag the account."
+        },
+        {
+          "source": "QbitAI",
+          "urls": [
+            "https://tech.sinsc.com/media/rss-mp-lzl",
+            "https://www.qbitai.com/2026/11/512897.html",
+            "https://www.qbitai.com/2026/11/512454.html"
+          ],
+          "finding": "The NWM 3.0 coverage is attributable to QbitAI. NIO confirms the announcement but no full report was linked. The Amap ABot-World 0.5 page did not establish a dedicated driving-research report.",
+          "excluded": [
+            {
+              "name": "NWM 3.0",
+              "articleDate": "2026-11-26",
+              "article": "https://www.qbitai.com/2026/11/512897.html",
+              "officialAnnouncement": "https://www.nio.com/news/20261125001"
+            },
+            {
+              "name": "ABot-World 0.5",
+              "articleDate": "2026-11-24",
+              "article": "https://www.qbitai.com/2026/11/512454.html",
+              "project": "https://amap-cvlab.github.io/ABot-World/"
+            }
+          ]
+        },
+        {
+          "source": "Intelligent Driving and Embodied Data Mining",
+          "urls": [
+            "https://www.gairdao.com/app/articles/cypbpypv"
+          ],
+          "finding": "The signed GAIR DAO repost attributes SafeDriveVLA to the account on October 26, outside this window. No recent attributable paper discovered."
+        },
+        {
+          "source": "Xinzhiyuan",
+          "urls": [
+            "https://aiera.com.cn/",
+            "https://www.sina.cn/media/5703921756",
+            "https://hub-assets-cache.baai.ac.cn/?tag_id=6"
+          ],
+          "finding": "The official homepage snapshot was stale. The current public profile covered FSD v15 as a product release and BAAI Physical AI as an institution announcement; no attributable in-window driving paper was verified."
+        },
+        {
+          "source": "arXiv",
+          "urls": [
+            "https://arxiv.org/list/cs.RO/recent?show=500",
+            "https://arxiv.org/list/cs.CV/recent?show=500"
+          ],
+          "finding": "Primary-source fallback, with publication dates taken from paper records rather than daily announcement lists. No media attribution inferred."
+        }
+      ],
+      "additions": [
+        {
+          "id": "2611-34658",
+          "name": "FeaXDrive2",
+          "submitted": "2026-11-25",
+          "paper": "https://arxiv.org/abs/2611.34658",
+          "datasetEvidence": "https://arxiv.org/html/2611.34658v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The abstract reports NAVSIM v1 and v2 results."
+        },
+        {
+          "id": "2611-34614",
+          "name": "Commit2Drive",
+          "submitted": "2026-11-25",
+          "paper": "https://arxiv.org/abs/2611.34614",
+          "datasetEvidence": "https://arxiv.org/html/2611.34614v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experiments train and evaluate on Bench2Drive."
+        },
+        {
+          "id": "2611-33878",
+          "name": "Road-KSU",
+          "submitted": "2026-11-25",
+          "paper": "https://arxiv.org/abs/2611.33878",
+          "datasetEvidence": "https://arxiv.org/html/2611.33878v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The Road-KSU experiments use a geographic split of NAVSIM derived from nuPlan."
+        },
+        {
+          "id": "2611-33621",
+          "name": "Sample-and-Verify",
+          "submitted": "2026-11-25",
+          "paper": "https://arxiv.org/abs/2611.33621",
+          "datasetEvidence": "https://arxiv.org/html/2611.33621v1",
+          "discovery": "arXiv",
+          "datasetVerification": "WOD-E2E and NAVSIM are both used for primary experiments."
+        },
+        {
+          "id": "2611-33439",
+          "name": "OnCue",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.33439",
+          "datasetEvidence": "https://arxiv.org/html/2611.33439v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experimental setup uses Waymo Open Motion Dataset for generator training and held-out evaluation in MetaDrive."
+        },
+        {
+          "id": "2611-33255",
+          "name": "CriticalScenes",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.33255",
+          "datasetEvidence": "https://arxiv.org/html/2611.33255v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experiments use nuScenes source scenes, generated CriticalScenes examples, and NeuroNCAP closed-loop evaluation."
+        },
+        {
+          "id": "2611-32964",
+          "name": "DriveAnswer",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32964",
+          "datasetEvidence": "https://arxiv.org/html/2611.32964v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper constructs DriveAnswer from nuScenes and directly evaluates the benchmark."
+        },
+        {
+          "id": "2611-32745",
+          "name": "MemAnchorWorld",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32745",
+          "datasetEvidence": "https://arxiv.org/html/2611.32745v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experiments train and validate on Occ3D-nuScenes."
+        },
+        {
+          "id": "2611-32650",
+          "name": "LaWanle",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32650",
+          "datasetEvidence": "https://arxiv.org/html/2611.32650v1",
+          "discovery": "arXiv",
+          "datasetVerification": "LaWanle draws its evaluated turns from HUGSIM, AlpaSim, and Odyssey."
+        },
+        {
+          "id": "2611-32529",
+          "name": "ContinualDrive",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32529",
+          "datasetEvidence": "https://arxiv.org/html/2611.32529v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The benchmark defines its training stream and evaluation groups on nuPlan."
+        },
+        {
+          "id": "2611-32510",
+          "name": "GeoVLDrive",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32510",
+          "datasetEvidence": "https://arxiv.org/html/2611.32510v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper trains and evaluates on NAVSIM-derived NAVSIM 3DQA and evaluates planning on NAVSIM."
+        },
+        {
+          "id": "2611-32216",
+          "name": "NativeDrive",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32216",
+          "datasetEvidence": "https://arxiv.org/html/2611.32216v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The main results use NAVSIM v1/v2 and Appendix B.3 reports WOD-E2E experiments."
+        },
+        {
+          "id": "2611-32029",
+          "name": "ReCast",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.32029",
+          "datasetEvidence": "https://arxiv.org/html/2611.32029v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experimental setup evaluates standard and counterfactual forecasts on Occ3D-nuScenes."
+        },
+        {
+          "id": "2611-31952",
+          "name": "VLG-Drive",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.31952",
+          "datasetEvidence": "https://arxiv.org/html/2611.31952v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The paper trains and evaluates on NAVSIM and runs closed-loop evaluation on HUGSIM."
+        },
+        {
+          "id": "2611-31814",
+          "name": "Released-to-Real",
+          "submitted": "2026-11-24",
+          "paper": "https://arxiv.org/abs/2611.31814",
+          "datasetEvidence": "https://arxiv.org/html/2611.31814v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The experiments use a local downtown driving collection and camera rigs without a verified named dataset for the main experiments."
+        },
+        {
+          "id": "2611-30511",
+          "name": "AXE",
+          "submitted": "2026-11-23",
+          "paper": "https://arxiv.org/abs/2611.30511",
+          "datasetEvidence": "https://arxiv.org/html/2611.30511v1",
+          "discovery": "arXiv",
+          "datasetVerification": "The report trains on NVIDIA NuRec and PAI-AV and evaluates in AlpaSim."
+        },
+        {
+          "id": "2611-22374",
+          "name": "AutoE2E",
+          "submitted": "2026-11-17",
+          "paper": "https://arxiv.org/abs/2611.22374",
+          "datasetEvidence": "https://arxiv.org/html/2611.22374v1",
+          "discovery": "Autoware Foundation and arXiv",
+          "datasetVerification": "The report uses nuPlan for initial training and KITScenes for fine-tuning and open-loop validation."
+        },
+        {
+          "id": "2611-08449",
+          "name": "VFlash",
+          "submitted": "2026-11-05",
+          "paper": "https://arxiv.org/abs/2611.08449",
+          "datasetEvidence": "https://arxiv.org/html/2611.08449v1",
+          "discovery": "NVIDIA Research and NVlabs",
+          "datasetVerification": "The driving policy experiments train and evaluate on NAVSIM and WOD-E2E. The other listed benchmarks are used for robot control or trajectory evaluation."
+        }
+      ]
     }
   ]
 }

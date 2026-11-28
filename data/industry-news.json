@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-27",
+  "checkedAt": "2026-11-28",
   "policy": "Company-team autonomous-driving technical reports selected from the five-track catalog. Require primary evidence of an official team report or company release; affiliations alone, individual/intern-led projects, sponsorships and backbone usage do not qualify. Do not infer internship or employment status. Dates are first arXiv submission dates, not media dates or revisions. Reuse catalog resource links and release status. Non-arXiv team reports use verified official release dates. Explicitly approved previews use company announcement dates and stay outside the paper catalog until a report is available. Documented series papers within the News window have separate rows with a series label.",
   "watchlist": [
     "Xiaomi",
@@ -119,6 +119,32 @@
           "company": "Xiaomi",
           "url": "https://github.com/Xiaomi-EV/Xiaomi-Drive-o1",
           "note": "The company project repository presents the DriveFoundry manuscript as the Xiaomi-Drive-o1 system report with Xiaomi EV affiliation. Manuscript and release materials remain under development; this is not a final software release."
+        }
+      ]
+    },
+    {
+      "paperId": "2611-08449",
+      "date": "2026-11-05",
+      "dateType": "arxiv-first-submission",
+      "companies": [
+        "NVIDIA"
+      ],
+      "highlight": "Parallel decoding produces structured visual plans that condition driving policies on NAVSIM and Waymo E2E.",
+      "checkedAt": "2026-11-28",
+      "dateSource": "https://arxiv.org/abs/2611.08449",
+      "affiliationEvidence": [
+        {
+          "company": "NVIDIA",
+          "url": "https://arxiv.org/html/2611.08449v1",
+          "note": "Primary paper lists NVIDIA affiliations. NVIDIA Research hosts the first-party project and its driving-policy results."
+        }
+      ],
+      "publicationType": "company-technical-report",
+      "reportEvidence": [
+        {
+          "company": "NVIDIA",
+          "url": "https://github.com/NVlabs/Eagle",
+          "note": "The official NVlabs release lists VFlash in its November 2026 releases and explicitly links this arXiv version as the VFlash Report."
         }
       ]
     },
@@ -707,6 +733,40 @@
       "limitations": [
         "The original Epona, Cosmos-Drive-Dreams and Cosmos-Transfer2.5 are 2025 publications. Only 2026 entries were added to News.",
         "The checked Waymo World Model and Wayve GAIA-4 project announcements did not link a dedicated technical report."
+      ]
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "fromDate": "2026-01-01",
+      "throughDate": "2026-11-28",
+      "scope": "Reviewed 2026 catalog report candidates and company sites, with targeted checks of recent official model releases and their research reports.",
+      "addedNewsIds": [
+        "2611-08449"
+      ],
+      "addedPaperIds": [
+        "2611-08449"
+      ],
+      "sources": [
+        "https://research.nvidia.com/labs/lpr/vflash/",
+        "https://github.com/NVlabs/Eagle",
+        "https://arxiv.org/abs/2611.08449",
+        "https://www.nio.com/news/20261125001",
+        "https://www.xiaopeng.com/tech_research/5624.html",
+        "https://www.momenta.ai/en/news.html",
+        "https://www.zyt.com/zh/solution/",
+        "https://www.tesla.com/fsd-evidence-dashboard",
+        "https://waymo.com/research/",
+        "https://research.nvidia.com/labs/aspire/",
+        "https://arxiv.org/abs/2611.32216",
+        "https://arxiv.org/abs/2611.32510",
+        "https://arxiv.org/abs/2611.31814",
+        "https://www.autoware.org/news/autoware-foundation-and-tier-iv-join-forces-to-releases-autoe2e-an-open-source-ai-model-for-end-to-end-autonomy"
+      ],
+      "limitations": [
+        "The NIO IN announcement for NWM 3.0 did not link a full research report. XPeng WorldGPT remains a previously approved preview pending an independently verifiable full report.",
+        "Li Auto NativeDrive, Xiaomi-affiliated GeoVLDrive and Toyota-affiliated R2R are cataloged as research papers. Primary author affiliation did not by itself establish independent official company-report publication.",
+        "AutoE2E is officially released by the Autoware Foundation Robotaxi Working Group. The announcement identifies TIER IV as sponsor, not the company report issuer. AXE is a KAIST lab challenge report.",
+        "Official company pages and public archives are selective. Tesla regulatory evidence and Momenta business disclosures were not treated as technical reports, and full coverage of ByteDance, Horizon Robotics, Alibaba or ZYT was not established."
       ]
     }
   ],

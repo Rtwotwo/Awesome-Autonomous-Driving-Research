@@ -7005,6 +7005,168 @@
       "status": "unavailable",
       "matchedTitle": null,
       "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-34658": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-34614": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-33878": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-33621": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-33439": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-33255": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32964": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32745": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32650": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32529": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32510": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32216": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-32029": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-31952": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-31814": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-30511": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-22374": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
+    },
+    "2611-08449": {
+      "count": null,
+      "source": "OpenAlex",
+      "url": null,
+      "checkedAt": "2026-11-28",
+      "status": "unavailable",
+      "matchedTitle": null,
+      "note": "Citation count was not checked during this primary-source verification."
     }
   },
   "failures": []

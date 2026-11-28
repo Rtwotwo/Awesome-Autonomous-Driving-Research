@@ -11936,6 +11936,326 @@
         "cosmos_framework"
       ],
       "searches": []
+    },
+    "2611-34658": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.34658",
+        "https://arxiv.org/html/2611.34658v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-34614": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.34614",
+        "https://arxiv.org/html/2611.34614v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-33878": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.33878",
+        "https://arxiv.org/html/2611.33878v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-33621": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/hzxbzp/sample-and-verify",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The author repository publishes the sampler, verifier training and evaluation for WOD-E2E and NAVSIM.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.33621",
+        "https://arxiv.org/html/2611.33621v1",
+        "https://github.com/hzxbzp/sample-and-verify"
+      ],
+      "readmeMatch": "Sample-and-Verify",
+      "rootFiles": [
+        "sav",
+        "navsim",
+        "scripts",
+        "README.md"
+      ],
+      "searches": []
+    },
+    "2611-33439": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.33439",
+        "https://arxiv.org/html/2611.33439v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-33255": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.33255",
+        "https://arxiv.org/html/2611.33255v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32964": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32964",
+        "https://arxiv.org/html/2611.32964v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32745": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32745",
+        "https://arxiv.org/html/2611.32745v1",
+        "https://memanchorworld.github.io/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32650": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32650",
+        "https://arxiv.org/html/2611.32650v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32529": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/continualdrive/benchmark",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "The author repository ships runnable benchmark code, the data split, training and evaluation. The paper also promises a full checkpoint release, which was not verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32529",
+        "https://arxiv.org/html/2611.32529v1",
+        "https://lzrbit.github.io/continualdrive/",
+        "https://github.com/continualdrive/benchmark"
+      ],
+      "readmeMatch": "ContinualDrive",
+      "rootFiles": [
+        "benchmark.py",
+        "README.md",
+        "configs"
+      ],
+      "searches": []
+    },
+    "2611-32510": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32510",
+        "https://arxiv.org/html/2611.32510v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32216": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "pending",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "The arXiv abstract states that code will be released. No author implementation URL was verified.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32216",
+        "https://arxiv.org/html/2611.32216v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-32029": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.32029",
+        "https://arxiv.org/html/2611.32029v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-31952": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.31952",
+        "https://arxiv.org/html/2611.31952v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-31814": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.31814",
+        "https://arxiv.org/html/2611.31814v1",
+        "https://released-to-real.github.io/"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-30511": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "not-found",
+      "codeScope": null,
+      "repository": null,
+      "repositoryRole": null,
+      "stars": null,
+      "note": "No author implementation linked in the inspected primary paper and verified project resources.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.30511",
+        "https://arxiv.org/html/2611.30511v1"
+      ],
+      "readmeMatch": null,
+      "rootFiles": [],
+      "searches": []
+    },
+    "2611-22374": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": null,
+      "repository": "https://github.com/autowarefoundation/auto_e2e",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "Autoware Foundation publishes the evaluated v1.0 implementation, including training and evaluation code, and links the two checkpoints.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.22374",
+        "https://arxiv.org/html/2611.22374v1",
+        "https://autowarefoundation.github.io/auto_e2e/",
+        "https://github.com/autowarefoundation/auto_e2e",
+        "https://github.com/autowarefoundation/auto_e2e/releases/tag/v1.0",
+        "https://huggingface.co/AutowareFoundation/auto_e2e"
+      ],
+      "readmeMatch": "AutoE2E",
+      "rootFiles": [
+        "Model",
+        "Academic_Paper",
+        "README.md"
+      ],
+      "searches": []
+    },
+    "2611-08449": {
+      "checkedAt": "2026-11-28",
+      "codeStatus": "released",
+      "codeScope": "partial",
+      "repository": "https://github.com/NVlabs/Eagle",
+      "repositoryRole": "implementation",
+      "stars": null,
+      "note": "NVIDIA releases VFlash generation and driving evaluation code in Eagle. The target and drafter checkpoints are announced for later release.",
+      "evidence": [
+        "https://arxiv.org/abs/2611.08449",
+        "https://arxiv.org/html/2611.08449v1",
+        "https://research.nvidia.com/labs/lpr/vflash/",
+        "https://github.com/NVlabs/Eagle",
+        "https://github.com/NVlabs/Eagle/tree/main/Embodied",
+        "https://github.com/NVlabs/Eagle/blob/main/Embodied/document/vflash/README.md",
+        "https://github.com/NVlabs/Eagle/blob/main/Embodied/evaluation/vflash/generation.py",
+        "https://github.com/NVlabs/Eagle/tree/main/Embodied/evaluation/vflash"
+      ],
+      "readmeMatch": "VFlash",
+      "rootFiles": [
+        "Embodied/evaluation/vflash/generation.py",
+        "Embodied/evaluation/vflash/driving.py",
+        "Embodied/document/vflash/README.md"
+      ],
+      "searches": []
     }
   },
   "lastIncrementalUpdate": {
@@ -12081,6 +12401,32 @@
       "scope": "Recent driving papers, with named experimental datasets and author resources checked. Existing dataset metadata supplies the new README column.",
       "discoveryAudit": "data/media-discovery-audit.json",
       "limitations": "Public outlet indexes are partial. Existing dataset fields were not comprehensively re-audited."
+    },
+    {
+      "checkedAt": "2026-11-28",
+      "added": [
+        "2611-34658",
+        "2611-34614",
+        "2611-33878",
+        "2611-33621",
+        "2611-33439",
+        "2611-33255",
+        "2611-32964",
+        "2611-32745",
+        "2611-32650",
+        "2611-32529",
+        "2611-32510",
+        "2611-32216",
+        "2611-32029",
+        "2611-31952",
+        "2611-31814",
+        "2611-30511",
+        "2611-22374",
+        "2611-08449"
+      ],
+      "scope": "Recent autonomous-driving papers and verified 2026 company-report backfill; named experiment data and author resource status checked.",
+      "discoveryAudit": "data/media-discovery-audit.json",
+      "limitations": "The arXiv recent pages and public account indexes are partial snapshots. Unverified implementation links were omitted."
     }
   ]
 }
